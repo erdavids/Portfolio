@@ -24,13 +24,12 @@ h1, h2, h3 {
 }
 
 .float_left_div {
-  margin-right:50%;
   float:left;
+  width: 60%;
 }
 
 p {
   margin-left: 1%;
-  margin-right: 30%;
   
 }
 
