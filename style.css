@@ -1,4 +1,8 @@
-nav_bar {
+* {
+  font-family: 'Cutive Mono', monospace;
+}
+
+.nav_bar {
   border-bottom: 1px solid black;
   position: relative;
 }
