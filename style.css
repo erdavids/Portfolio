@@ -23,6 +23,11 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
+.float_left_div {
+  margin-right:50%;
+  float:left;
+}
+
 p {
   margin-left: 1%;
   margin-right: 30%;
