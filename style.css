@@ -11,6 +11,7 @@
 .project_block {
   border-bottom: 1px solid black;
   position: relative;
+  width: 60%;
 }
 
 img {
@@ -25,7 +26,6 @@ h1, h2, h3 {
 
 .float_left_div {
   float:left;
-  width: 60%;
 }
 
 p {
