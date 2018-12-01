@@ -17,6 +17,10 @@
   width: 60%;
 }
 
+.project_images {
+  text-align:center;
+}
+
 img {
   margin: 1%;
 }
