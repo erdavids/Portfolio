@@ -10,11 +10,10 @@
 
 .project_block {
   border-bottom: 1px solid black;
-  position: relative;
 }
 
 .project_description {
-  width: 60%;
+  
 }
 
 .project_images {
@@ -22,10 +21,11 @@
 }
 
 img {
-  margin: 1%;
+  display:inline;
+  margin:auto;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   margin-left: 1%;
   margin-right: 5%;
   font-weight: bold;
