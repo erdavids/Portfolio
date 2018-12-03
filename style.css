@@ -5,7 +5,7 @@
 
 
 .nav_bar {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid silver;
     position: relative;
     text-align: center;
 }
@@ -15,7 +15,7 @@ div ul {
 }
 
 .project_block {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid silver;
 }
 
 .project_description {
