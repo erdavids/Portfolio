@@ -5,46 +5,50 @@
 
 
 .nav_bar {
-  border-bottom: 1px solid black;
-  position: relative;
+    border-bottom: 1px solid black;
+    position: relative;
+    text-align: center;
+}
+
+div ul {
+    display: inline-block;
 }
 
 .project_block {
-  border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .project_description {
-  
+    width: 75%;
+    margin: auto;
 }
 
 .project_images {
-  text-align:center;
+    text-align:center;
 }
 
 img {
-  display:inline;
-  margin:auto;
-  padding: 30px;
+    display:inline;
+    margin:auto;
+    padding: 15px;
 }
 
 h1, h2, h3, h4 {
-  margin-left: 1%;
-  margin-right: 5%;
-  font-weight: bold;
+    margin-left: 1%;
+    margin-right: 5%;
+    font-weight: bold;
 }
 
 
 
 p {
-  margin-left: 1%;
-  
+    margin-left: 1%;
+    
 }
 
 .nav_bar_element {
-  float: right;
-  margin-top: 1%;
-  font-size: 20px;
-  vertical-align: bottom;
+    font-size: 20px;
+    
 }
 
 li + li {
@@ -52,8 +56,9 @@ li + li {
 }
 
 .name_text {
-  margin-left: 1%;
-  font-size: 40px;
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
 }
 
 ul {
@@ -87,3 +92,4 @@ li a:hover:not(.active) {
     color: blue;
     text-decoration: none;
 }
+
