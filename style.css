@@ -1,7 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Cutive+Mono);
+@import url(https://fonts.googleapis.com/css?family=Volkhov);
 * {
-  font-family: 'Cutive Mono', monospace;
+    font-family: 'Volkhov', monospace;
 }
+
 
 .nav_bar {
   border-bottom: 1px solid black;
