@@ -98,7 +98,7 @@ li a:hover:not(.active) {
     display: table;
     margin-left:auto;
     margin-right:auto;
-    width: 80%;
+    width: 600px;
     outline: 1px solid red;
     border-spacing: 12px;
     border-collapse: separate;
