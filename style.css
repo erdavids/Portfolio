@@ -102,7 +102,7 @@ li a:hover:not(.active) {
     width: 80%;
     outline: 1px solid red;
     border-spacing: 12px;
-    border-collapse: separate;
+    border-collapse: collapse;
 }
 
 .reactive_project_image {
