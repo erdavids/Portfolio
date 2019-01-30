@@ -31,6 +31,8 @@ div ul {
 img {
     display:inline;
     margin:auto;
+    padding: 5px;
+    
 }
 
 h1, h2, h3, h4 {
@@ -93,8 +95,8 @@ li a:hover:not(.active) {
     text-decoration: none;
 }
 
-.low_padding {
-    padding: 2 !important;
+.nopadding {
+    padding: 0 !important;
     margin: 0 !important;
 }
 
