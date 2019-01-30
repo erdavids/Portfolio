@@ -4,6 +4,10 @@
     font-family: 'Poppins';
 }
 
+html
+{
+    font-size: 100%;
+}
 
 .nav_bar {
     border-bottom: 1px solid silver;
