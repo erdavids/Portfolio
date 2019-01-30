@@ -31,7 +31,6 @@ div ul {
 img {
     display:inline;
     margin:auto;
-    padding: 15px;
 }
 
 h1, h2, h3, h4 {
@@ -95,20 +94,3 @@ li a:hover:not(.active) {
 }
 
 
-/* Columns for print page */
-.column {
-    float: left;
-    width: 25%;
-    padding: 2px;
-}
-
-.column img {
-    margin-top: 8px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
