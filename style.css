@@ -95,19 +95,6 @@ li a:hover:not(.active) {
 }
 
 
-.reactive_project_block {
-    margin-left:auto;
-    margin-right:auto;
-    width: 80%;
-    outline: 1px solid red;
-}
-
-.reactive_project_image {
-    outline: 1px solid blue;
-    width: 100%;
-    
-}
-
 /* Columns for print page */
 .column {
     float: left;
