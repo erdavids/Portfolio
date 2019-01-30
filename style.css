@@ -93,8 +93,8 @@ li a:hover:not(.active) {
     text-decoration: none;
 }
 
-.nopadding {
-    padding: 0 !important;
+.low_padding {
+    padding: 2 !important;
     margin: 0 !important;
 }
 
