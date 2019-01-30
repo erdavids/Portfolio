@@ -107,3 +107,21 @@ li a:hover:not(.active) {
     width: 100%;
     
 }
+
+/* Columns for print page */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.column img {
+    margin-top: 12px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
