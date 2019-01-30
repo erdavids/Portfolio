@@ -96,9 +96,10 @@ li a:hover:not(.active) {
 
 .reactive_project_block {
     display: table;
+    table-layout: fixed;
     margin-left:auto;
     margin-right:auto;
-    width: 600px;
+    width: 80%px;
     outline: 1px solid red;
     border-spacing: 12px;
     border-collapse: separate;
@@ -107,6 +108,6 @@ li a:hover:not(.active) {
 .reactive_project_image {
     display: table-cell;
     outline: 1px solid blue;
-    width: 20px;
+    width: 100%;
     
 }
