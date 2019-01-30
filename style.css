@@ -99,7 +99,7 @@ li a:hover:not(.active) {
     table-layout: fixed;
     margin-left:auto;
     margin-right:auto;
-    width: 80%px;
+    width: 80%;
     outline: 1px solid red;
     border-spacing: 12px;
     border-collapse: separate;
