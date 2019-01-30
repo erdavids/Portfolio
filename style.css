@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins);
+
 * {
     font-family: 'Poppins';
 }
@@ -95,18 +96,13 @@ li a:hover:not(.active) {
 
 
 .reactive_project_block {
-    display: table;
-    table-layout: fixed;
     margin-left:auto;
     margin-right:auto;
     width: 80%;
     outline: 1px solid red;
-    border-spacing: 12px;
-    border-collapse: collapse;
 }
 
 .reactive_project_image {
-    display: table-cell;
     outline: 1px solid blue;
     width: 100%;
     
