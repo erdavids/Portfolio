@@ -93,4 +93,9 @@ li a:hover:not(.active) {
     text-decoration: none;
 }
 
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
 
