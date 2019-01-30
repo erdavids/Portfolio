@@ -93,3 +93,19 @@ li a:hover:not(.active) {
     text-decoration: none;
 }
 
+
+.reactive_project_block {
+    display: table;
+    margin-left:auto;
+    margin-right:auto;
+    width: 80%;
+    outline: 1px solid red;
+    border-spacing: 12px;
+    border-collapse: separate;
+}
+
+.reactive_project_image {
+    display: table-cell;
+    outline: 1px solid blue;
+    
+}
