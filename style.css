@@ -107,7 +107,6 @@ li a:hover:not(.active) {
 .reactive_project_image {
     display: table-cell;
     outline: 1px solid blue;
-    max-height: 100%;
-    max-width: 100%;
+    width: auto;
     
 }
