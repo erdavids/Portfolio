@@ -40,8 +40,6 @@ div ul {
 
 
 h1, h2, h3, h4 {
-    margin-left: 1%;
-    margin-right: 5%;
     font-weight: bold;
     font-family: 'Poppins';
 }
@@ -49,9 +47,8 @@ h1, h2, h3, h4 {
 
 
 p {
-    margin-left: 1%;
+    margin-right: 1%;
     font-family: 'Poppins';
-    font-size: 16px;
 }
 
 .nav_bar_element {
