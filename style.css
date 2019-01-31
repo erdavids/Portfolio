@@ -110,13 +110,9 @@ li a:hover:not(.active) {
 
 /*-- Trying to make a custom grid system -- */
 /* Create two equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 25%;
-    padding: 5px;
-}
 
-.fake {
+
+.column  {
     float: left;
     width: 33.3%;
     padding: 5px;
