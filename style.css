@@ -111,26 +111,26 @@ li a:hover:not(.active) {
 /* Create two equal columns that floats next to each other */
 
 
-.column  {
+.column_2  {
     float: left;
     width: 33.3%;
     padding: 5px;
 }
 
-.column_2 {
+.column_3 {
     float: left;
     width: 50%;
     padding:5px;
 }
 
 /* Clearfix (clear floats) */
-.row::after {
+.row_2::after {
     content: "";
     clear: both;
     display: table;
 }
 
-.row_2::after {
+.row_3::after {
     content: "";
     clear: both;
     display: table;
