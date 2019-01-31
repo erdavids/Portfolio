@@ -122,7 +122,17 @@ li a:hover:not(.active) {
     padding: 10px;
 }
 
+.col-2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
 .column img {
+    margin-top: 12px;
+}
+
+.col-2 img {
     margin-top: 12px;
 }
 
