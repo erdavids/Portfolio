@@ -42,11 +42,13 @@ div ul {
 h1, h2, h3, h4 {
     font-weight: bold;
     font-family: 'Poppins';
+    margin-left: 5px;
 }
 
 
 
 p {
+    margin-left: 5px;
     margin-right: 1%;
     font-family: 'Poppins';
 }
