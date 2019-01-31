@@ -4,10 +4,10 @@
     font-family: 'Poppins';
 }
 
+
 body
 {
     font-family: 'Poppins';
-    font-size: 16px;
 }
 
 .nav_bar {
@@ -44,6 +44,8 @@ h1, h2, h3, h4 {
     margin-left: 1%;
     margin-right: 5%;
     font-weight: bold;
+    font-family: 'Poppins';
+    font-size: 100%
 }
 
 
@@ -65,6 +67,7 @@ li + li {
 .name_text {
     text-align: center;
     margin: auto;
+    font-family: 'Poppins';
     font-size: 40px;
 }
 
