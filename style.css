@@ -117,7 +117,7 @@ li a:hover:not(.active) {
 .container {
     width: 80%;
     margin:auto;
-    display: grid;
+    display: inline-block;
     grid-template-columns: repeat(12, 1fr);
 }
 .col-3 {
