@@ -137,7 +137,6 @@ li a:hover:not(.active) {
     display: table;
 }
 .container {
-    width: 40%;
     margin: auto;
 }
 
