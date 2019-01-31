@@ -52,12 +52,19 @@ h1, h2, h3, h4 {
     font-size: 30%;
 }
 
+h1              { font-size: 2em; margin: .67em 0 }
+h2              { font-size: 1.5em; margin: .75em 0 }
+h3              { font-size: 1.17em; margin: .83em 0 }
+h4              { margin: 1.12em 0 }
+h5              { font-size: .83em; margin: 1.5em 0 }
+h6              { font-size: .75em; margin: 1.67em 0 }
+
 
 
 p {
     margin-left: 1%;
     font-family: 'Poppins';
-    font-size: 100%
+    font-size: 16px;
 }
 
 .nav_bar_element {
