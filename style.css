@@ -118,6 +118,12 @@ li a:hover:not(.active) {
     padding: 5px;
 }
 
+.column_2 {
+    float: left;
+    width: 50%;
+    padding:5px;
+}
+
 /* Clearfix (clear floats) */
 .row::after {
     content: "";
