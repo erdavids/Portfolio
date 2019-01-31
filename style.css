@@ -115,8 +115,8 @@ li a:hover:not(.active) {
 
 /*-- Trying to make a custom grid system -- */
 .grid-container{
-    width: 100%;
-    max-width: 1200px;
+    width: 80%;
+    margin: auto;
 }
 
 /*-- our cleafix hack -- */
@@ -132,8 +132,7 @@ li a:hover:not(.active) {
     min-height: 1px;
     width: 16.66%;
     /*-- our gutter -- */
-    padding: 12px;
-    background-color: #FFDCDC;
+    padding: 6px;
 }
 
 .col-1{ width: 16.66%; }
