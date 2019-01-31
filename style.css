@@ -131,6 +131,11 @@ li a:hover:not(.active) {
     display: table;
 }
 
+.row_2::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 .container {
     width: 80%;
     margin: auto;
