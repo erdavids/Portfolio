@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins);
 
 * {
+    box-sizing: border-box;
     font-family: 'Poppins';
 }
 
