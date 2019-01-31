@@ -125,3 +125,8 @@ li a:hover:not(.active) {
     display: table;
 }
 
+.container {
+    width: 80%;
+    margin: auto;
+}
+
