@@ -117,24 +117,9 @@ li a:hover:not(.active) {
 $pad: 20px;
 
 .grid {
-    background: white;
-    margin: 0 0 $pad 0;
-    
-    &:after {
-        /* Or @extend clearfix */
-        content: "";
-        display: table;
-        clear: both;
-    }
+    width: 80%;
 }
 
-[class*='col-'] {
-    float: left;
-    padding-right: $pad;
-    .grid &:last-of-type {
-        padding-right: 0;
-    }
-}
 .col-2-3 {
     width: 66.66%;
 }
