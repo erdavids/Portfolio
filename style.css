@@ -116,11 +116,28 @@ li a:hover:not(.active) {
 /*-- Trying to make a custom grid system -- */
 .container {
     width: 80%;
-    margin:auto;
-    display: inline-block;
-    grid-template-columns: repeat(12, 1fr);
 }
-.col-3 {
-    grid-column: span 4;
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 1.5rem;
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery__item--1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    
+    /** Alternative Syntax **/
+    /* grid-column: 1 / span 2;  */
+    /* grid-row: 1 / span 2; */
 }
 
