@@ -38,12 +38,6 @@ div ul {
     text-align:center;
 }
 
-img {
-    display:inline;
-    margin:auto;
-    padding: 5px;
-    
-}
 
 h1, h2, h3, h4 {
     margin-left: 1%;
@@ -116,22 +110,22 @@ li a:hover:not(.active) {
 
 /*-- Trying to make a custom grid system -- */
 /* Create two equal columns that floats next to each other */
-.column {
+.column-4 {
     float: left;
     width: 25%;
-    padding: 10px;
+    padding: 5px;
 }
 
-
-.column img {
-    margin-top: 12px;
+.column-3 {
+    float: left;
+    width: 33.3%;
+    padding: 5px;
 }
 
-
-/* Clear floats after the columns */
-.row:after {
+/* Clearfix (clear floats) */
+.row::after {
     content: "";
-    display: table;
     clear: both;
+    display: table;
 }
 
