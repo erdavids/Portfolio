@@ -25,11 +25,11 @@ div ul {
     display: inline-block;
 }
 
-.project_block {
+.bottom_border {
     border-bottom: 1px solid silver;
 }
 
-.project_description {
+.project_block {
     width: 75%;
     margin: auto;
 }
