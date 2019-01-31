@@ -49,15 +49,7 @@ h1, h2, h3, h4 {
     margin-right: 5%;
     font-weight: bold;
     font-family: 'Poppins';
-    font-size: 30%;
 }
-
-h1              { font-size: 2em; margin: .67em 0 }
-h2              { font-size: 1.5em; margin: .75em 0 }
-h3              { font-size: 1.17em; margin: .83em 0 }
-h4              { margin: 1.12em 0 }
-h5              { font-size: .83em; margin: 1.5em 0 }
-h6              { font-size: .75em; margin: 1.67em 0 }
 
 
 
@@ -121,3 +113,32 @@ li a:hover:not(.active) {
 }
 
 
+/*-- Trying to make a custom grid system -- */
+.grid-container{
+    width: 100%;
+    max-width: 1200px;
+}
+
+/*-- our cleafix hack -- */
+.row:before,
+.row:after {
+    content:"";
+    display: table ;
+    clear:both;
+}
+
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+    width: 16.66%;
+    /*-- our gutter -- */
+    padding: 12px;
+    background-color: #FFDCDC;
+}
+
+.col-1{ width: 16.66%; }
+.col-2{ width: 33.33%; }
+.col-3{ width: 50%;    }
+.col-4{ width: 66.66%; }
+.col-5{ width: 83.33%; }
+.col-6{ width: 100%;   }
