@@ -116,10 +116,16 @@ li a:hover:not(.active) {
 
 /*-- Trying to make a custom grid system -- */
 /* Create two equal columns that floats next to each other */
-.column {
+.column-2 {
     float: left;
     width: 50%;
     padding: 10px;
+}
+
+.column-3 {
+    float: left;
+    width: 33.3%
+    padding:10px;
 }
 
 .column img {
@@ -131,5 +137,7 @@ li a:hover:not(.active) {
     content: "";
     display: table;
     clear: both;
+    width: 80%;
+    margin: auto;
 }
 
