@@ -116,7 +116,7 @@ li a:hover:not(.active) {
     padding: 5px;
 }
 
-.column-3 {
+.fake {
     float: left;
     width: 33.3%;
     padding: 5px;
