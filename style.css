@@ -116,6 +116,12 @@ li a:hover:not(.active) {
     padding: 5px;
 }
 
+.column_1_5 {
+    float: left;
+    width: 20%;
+    padding: 5px;
+}
+
 .column_2  {
     float: left;
     width: 33.3%;
@@ -134,12 +140,25 @@ li a:hover:not(.active) {
     padding: 5px;
 }
 
+.column_6 {
+    float: left;
+    width: 100%;
+    padding: 5px;
+}
+
 /* Clearfix (clear floats) */
 .row_1::after {
     content: "";
     clear: both;
     display: table;
 }
+
+.row_1_5::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 .row_2::after {
     content: "";
     clear: both;
@@ -157,7 +176,9 @@ li a:hover:not(.active) {
     clear: both;
     display: table;
 }
-/*.container {*/
-/*    margin: auto;*/
-/*}*/
 
+.row_5::after {
+    content: "";
+    clear: both;
+    display: table;
+}
