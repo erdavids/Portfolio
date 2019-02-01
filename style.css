@@ -122,6 +122,12 @@ li a:hover:not(.active) {
     padding: 5px;
 }
 
+.column_1_4 {
+    float: left;
+    width: 25%;
+    padding: 5px;
+}
+
 .column_2  {
     float: left;
     width: 33.3%;
