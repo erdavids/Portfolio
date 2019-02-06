@@ -101,6 +101,11 @@ li a:hover:not(.active) {
     text-decoration: none;
 }
 
+a {
+    color: royalblue;
+    text-decoration: none;
+}
+
 .nopadding {
     padding: 0 !important;
     margin: 0 !important;
