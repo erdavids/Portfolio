@@ -18,7 +18,7 @@ body
 }
 
 div {
-    
+
 }
 
 div ul {
@@ -30,7 +30,7 @@ div ul {
 }
 
 .project_block {
-    width: 75%;
+    width: 70%;
     margin: auto;
 }
 
@@ -55,7 +55,7 @@ p {
 
 .nav_bar_element {
     font-size: 20px;
-    
+
 }
 
 li + li {
@@ -74,7 +74,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    
+
 }
 
 li {
