@@ -22,6 +22,7 @@
 
       overflow: hidden;
     }
+
     .background{
         /* The image used */
         background-image: url("/Images/StitchCounter/test-girl.jpg");
@@ -37,12 +38,26 @@
         /* Blur Effect */
         filter:blur(6px);
         transform: scale(1.1);
+      }
 
+      .container {
+        position: relative;
+      }
 
+      .device {
+        margin-left: 30%
+        position: absolute;
+        top: 50%
       }
     </style>
 
     <body >
-      <div class="background">hellow</div>
-      </body>
+      <div class="background">
+        <div class="container">
+          <div class="device">
+            <a href="Images/StitchCounter/blue_framed.png"><img src="Images/StitchCounter/blue_framed.png"/></a>
+          </div>
+        </div>
+      </div>
+    </body>
 </html>
