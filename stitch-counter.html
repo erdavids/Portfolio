@@ -23,6 +23,10 @@
       overflow: hidden;
     }
 
+    .all {
+      position: absolute;
+    }
+
     .background{
         /* The image used */
         background-image: url("/Images/StitchCounter/test-girl.jpg");
@@ -36,8 +40,11 @@
         background-size: cover;
 
         /* Blur Effect */
-        filter:blur(6px);
+        filter:blur(0px);
         transform: scale(1.1);
+
+        position: relative;
+
       }
 
       .container {
@@ -45,18 +52,16 @@
       }
 
       .device {
-        width: 100px;
         margin-left: 30%;
-        position: absolute;
+        position: relative;
         top: 50%
       }
     </style>
 
     <body >
-      <div class="background">
-            <a href="Images/StitchCounter/blue_framed.png"><img src="Images/StitchCounter/blue_framed.png" width="20%"/></a>
-          </div>
-        </div>
+      <div class="all"
+        <div class="background"></div>
+        <div class="device"><a href="Images/StitchCounter/blue_framed.png"><img src="Images/StitchCounter/blue_framed.png" width="20%"/></a></div>
       </div>
     </body>
 </html>
