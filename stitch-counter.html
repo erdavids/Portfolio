@@ -22,14 +22,17 @@
 
       overflow: hidden;
     }
+    .all {
+      height: 100vh;
+      width: 100vw;
+    }
 
     .background{
         /* The image used */
         background-image: url("/Images/StitchCounter/test-girl.jpg");
 
         /* Full height */
-        height: 1000px;
-        width: 1000px;
+
 
         /* Center and scale the image nicely */
         background-position: center;
@@ -39,6 +42,7 @@
         /* Blur Effect */
         filter:blur(0px);
         transform: scale(1.1);
+        z-index: 0;
       }
 
 
@@ -46,12 +50,13 @@
         width: 100px;
         margin-left: 30%;
         position: absolute;
-        top: 50%
+        top: 50%;
+        z-index: 1;
       }
     </style>
 
     <body >
-      <div>
+      <div class="all">
         <div class="background">
         </div>
         <a href="Images/StitchCounter/blue_framed.png"><img src="Images/StitchCounter/blue_framed.png" width="20%"/></a>
