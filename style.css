@@ -14,15 +14,10 @@ body
 .nav_bar {
     border-bottom: 1px solid silver;
     position: relative;
-    text-align: center;
 }
 
 div {
 
-}
-
-div ul {
-    display: inline-block;
 }
 
 .bottom_border {
@@ -55,7 +50,6 @@ p {
 
 .nav_bar_element {
     font-size: 20px;
-
 }
 
 li + li {
@@ -78,7 +72,7 @@ ul {
 }
 
 li {
-    float: left;
+    float: right;
 }
 
 li a {
