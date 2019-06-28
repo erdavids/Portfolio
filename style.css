@@ -21,6 +21,9 @@ div {
 
 }
 
+div ul {
+    display: inline-block;
+}
 
 .bottom_border {
     border-bottom: 1px solid silver;
