@@ -13,7 +13,8 @@ body
 
 .nav_bar {
     border-bottom: 1px solid silver;
-    width: 70%;
+    position: relative;
+    text-align: center;
 }
 
 div {
@@ -49,7 +50,8 @@ p {
 }
 
 .nav_bar_element {
-    font-size: 40px;
+    font-size: 20px;
+
 }
 
 li + li {
@@ -57,7 +59,10 @@ li + li {
 }
 
 .name_text {
-    font-size: 60px;
+    text-align: center;
+    margin: auto;
+    font-family: 'Poppins';
+    font-size: 40px;
 }
 
 ul {
@@ -69,7 +74,7 @@ ul {
 }
 
 li {
-    float: right;
+    float: left;
 }
 
 li a {
