@@ -9,6 +9,10 @@
           gtag('js', new Date());
 
           gtag('config', 'UA-138963802-1');
+
+          var myArray = ['red', 'green', 'blue'];
+          var rand = myArray[Math.floor(Math.random() * myArray.length)];
+          document.getElementById("color-text").style.backgroundColor = rand;
         </script>
 
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -24,7 +28,7 @@
         </div>
 
         <div class="project_block">
-          <p>I'm a Software Engineer currently located in Atlanta, GA.</p>
+          <p>I'm a <span id="color-text">Software Engineer</span> currently located in Atlanta, GA.</p>
           <p>This project is actually one of my earliest and helped spark my interest in generative art.</p>
           <p>Overall the logic behind the output is simple. Each sprite has odd numbered dimensions and consists of randomly chosen colors placed symmetrically. Each image is statistically one of a kind, and messing around with some of the options in the code can create some extremely interesting results.</p>
 
