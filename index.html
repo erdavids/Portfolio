@@ -24,9 +24,6 @@
             </ul>
         </div>
 
-        <p></p>
-        <p></p>
-
         <div class="project_block">
           <p>I'm a <span class="color-text">Software Engineer</span> currently working at <span class="color-text">Chick-fil-A</span> in Atlanta, GA. In my current role on the <span class="color-text">Quality Engineering</span> team, I help design and maintain automation frameworks for CI/CD pipelines. I'm passionate about solving difficult problems and I get to do that everyday.</p>
           <p>I also own a <span class="color-text">Small Business</span> with exactly one employee. My current focus is developing <span class="color-text">Mobile Apps</span> and my first release was a minimalist stitch counter for the crocheting and knitting community. I'm proudly watching as it quickly approaches <span class="color-text">1,000 Downloads</span>.</p>
@@ -39,5 +36,21 @@
 
 
 
+
+
+        <script>
+          var myArray = ['#d47564', '#e8c498', '#4fa4a5', '#5c6182'];
+
+          var elements = document.getElementsByClassName("color-text");
+          var c = ''
+          var last_c = ''
+          for(var i=0; i<elements.length; i++) {
+              c = myArray[Math.floor(Math.random() * myArray.length)];
+              while (c == last_c) {
+                c = myArray[Math.floor(Math.random() * myArray.length)];
+              }
+              elements[i].style.color = c;
+          }
+        </script>
     </body>
 </html>
