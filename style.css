@@ -109,6 +109,8 @@ a {
     text-decoration: none;
 }
 
+a:visited { text-decoration: none;}
+
 .nopadding {
     padding: 0 !important;
     margin: 0 !important;
