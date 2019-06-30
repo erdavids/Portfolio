@@ -9,10 +9,6 @@
           gtag('js', new Date());
 
           gtag('config', 'UA-138963802-1');
-
-          var myArray = ['red', 'green', 'blue'];
-          var rand = myArray[Math.floor(Math.random() * myArray.length)];
-          document.getElementById("color-text").style.backgroundColor = rand;
         </script>
 
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -64,6 +60,12 @@
                 </div>
             </div>
         </div>
+
+        <script>
+          var myArray = ['red', 'green', 'blue'];
+          var rand = myArray[Math.floor(Math.random() * myArray.length)];
+          document.getElementById("color-text").style.color = rand;
+        </script>
 
         <div class="bottom_border">
             <div class="project_block">
