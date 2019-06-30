@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins);
 
 * {
+    color: 'rgb(15, 15, 15)'
     box-sizing: border-box;
     font-family: 'Poppins';
 }
@@ -40,7 +41,7 @@ div ul {
 
 .color-text {
 
-  
+
 }
 
 
