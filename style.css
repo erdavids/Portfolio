@@ -109,7 +109,7 @@ a {
     text-decoration: none;
 }
 
-a:visited { text-decoration: none; color: inherit;}
+a:visited { text-decoration: none; color: black;}
 
 .nopadding {
     padding: 0 !important;
