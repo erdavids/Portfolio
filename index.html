@@ -90,6 +90,7 @@
             success: function(data) {
             // Get the 3 most recent commits (test)
               var el = document.createElement( 'html' );
+              console.log(data)
 
               el.innerHTML = data.items[0].description;
           		var l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
