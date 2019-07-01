@@ -81,12 +81,12 @@
               }
           }
 
-          // Parsing the big boi
+          // Parsing the big boi (Testing rss update)
           var url= 'https://github.com/erdavids.atom';
           $.ajax({
             type: 'GET',
             url: "https://api.rss2json.com/v1/api.json?rss_url=" + url,
-            dataType: 'jsonp',
+            dataType: 'json',
             success: function(data) {
             // Get the 3 most recent commits (test)
               var el = document.createElement( 'html' );
