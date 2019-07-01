@@ -74,14 +74,15 @@
           }
 
 
-          // Hopefully this will let me get commit history
-          $.get('https://github.com/erdavids/Generative-Pebbles/commits.atom', function (data) {
-              $(data).find("entry").each(function () { // or "item" or whatever suits your feed
-                  var el = $(this);
-
-                  console.log("------------------------");
-                  console.log("title      : " + el.find("content").text());
-              });
+          var url= 'https://github.com/erdavids/Generative-Pebbles/commits.atom';
+          $.ajax({
+            type: 'GET',
+            url: "https://api.rss2json.com/v1/api.json?rss_url=" + url,
+            dataType: 'jsonp',
+            success: function(data) {
+              console.log(data.feed.description);
+              console.log(data);
+            }
           });
         </script>
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
