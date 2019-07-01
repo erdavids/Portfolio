@@ -42,11 +42,11 @@
 
 
           <h3>Recent Github Commits:</h3>
-          <p><a id="commit-1" href=""></a></p>
-          <p><a id="commit-2" href=""></a></p>
-          <p><a id="commit-3" href=""></a></p>
-          <p><a id="commit-4" href=""></a></p>
-          <p><a id="commit-5" href=""></a></p>
+          <p style="padding-left:10px"><a id="commit-1" href=""></a></p>
+          <p style="padding-left:10px"><a id="commit-2" href=""></a></p>
+          <p style="padding-left:10px"><a id="commit-3" href=""></a></p>
+          <p style="padding-left:10px"><a id="commit-4" href=""></a></p>
+          <p style="padding-left:10px"><a id="commit-5" href=""></a></p>
 
 
 
@@ -94,27 +94,27 @@
               el.innerHTML = data.items[0].description;
           		var l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
               document.getElementById("commit-1").href = data.items[0].link.trim()
-              document.getElementById("commit-1").textContent = "  " + l.trim();
+              document.getElementById("commit-1").textContent = "> " + l.trim();
 
               el.innerHTML = data.items[1].description;
           		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
               document.getElementById("commit-2").href = data.items[0].link.trim()
-              document.getElementById("commit-2").textContent = "  " + l.trim();
+              document.getElementById("commit-2").textContent = "> " + l.trim();
 
               el.innerHTML = data.items[2].description;
           		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
               document.getElementById("commit-3").href = data.items[0].link.trim()
-              document.getElementById("commit-3").textContent = "  " + l.trim();
+              document.getElementById("commit-3").textContent = "> " + l.trim();
 
               el.innerHTML = data.items[3].description;
           		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
               document.getElementById("commit-4").href = data.items[0].link.trim()
-              document.getElementById("commit-4").textContent = "  " + l.trim();
+              document.getElementById("commit-4").textContent = "> " + l.trim();
 
               el.innerHTML = data.items[4].description;
           		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
               document.getElementById("commit-5").href = data.items[0].link.trim()
-              document.getElementById("commit-5").textContent = "  " + l.trim();
+              document.getElementById("commit-5").textContent = "> " + l.trim();
 
               console.log(l.trim())
             }
