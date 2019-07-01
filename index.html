@@ -88,7 +88,7 @@
             url: "https://api.rss2json.com/v1/api.json?rss_url=" + url,
             dataType: 'jsonp',
             success: function(data) {
-            // Get the 3 most recent commits
+            // Get the 3 most recent commits (test)
               var el = document.createElement( 'html' );
 
               el.innerHTML = data.items[0].description;
