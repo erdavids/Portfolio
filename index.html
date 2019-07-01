@@ -51,6 +51,15 @@
               }
               elements[i].style.color = c;
           }
+
+          var links = document.getElementsByTagName("a");
+          for(var i=0;i<links.length;i++)
+          {
+              if(links[i].href)
+              {
+                  links[i].style.color = myArray[Math.floor(Math.random() * myArray.length)];
+              }
+          }
         </script>
     </body>
 </html>
