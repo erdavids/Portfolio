@@ -50,7 +50,14 @@ h1, h2, h3, h4 {
     margin-left: 5px;
 }
 
+icons {
+  text-align: center;
+}
 
+ion-icon {
+  font-size: 64px;
+  display: inline-block;
+}
 
 p {
     margin-left: 5px;
