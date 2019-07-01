@@ -59,9 +59,6 @@
 
         <script>
 
-//<blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">Current Goals:<br>💰 Make $1.00 from a side project<br>💡 Run a successful Kickstarter<br>📚 Write a novel<br>📱 Create two more mobile apps<br>📢 Speak at a tech conference<br>🎥 Gain 1,000 YouTube subscribers</p>&mdash; Eric Davidson (@TheBuffED) <a href="https://twitter.com/TheBuffED/status/1145119731780898817?ref_src=twsrc%5Etfw" data-width="80%">June 29, 2019</a></blockquote>
-//<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
           var myArray = ['#d47564', '#e8c498', '#4fa4a5', '#5c6182'];
 
           var elements = document.getElementsByClassName("color-text");
@@ -84,16 +81,37 @@
               }
           }
 
-
-          var url= 'https://github.com/erdavids/Generative-Pebbles/commits.atom';
+          // Parsing the big boi
+          var url= 'https://github.com/erdavids.atom';
           $.ajax({
             type: 'GET',
             url: "https://api.rss2json.com/v1/api.json?rss_url=" + url,
             dataType: 'jsonp',
             success: function(data) {
-              console.log(data.feed.description);
-              console.log(data.items[0].title.getElementsByTagName("UL")[0]);
+            // Get the 3 most recent commits
+              var el = document.createElement( 'html' );
 
+              el.innerHTML = data.items[0].description;
+          		var l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
+              document.getElementById("commit-1").textContent = l.trim();
+
+              el.innerHTML = data.items[1].description;
+          		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
+              document.getElementById("commit-2").textContent = l.trim();
+
+              el.innerHTML = data.items[2].description;
+          		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
+              document.getElementById("commit-3").textContent = l.trim();
+
+              el.innerHTML = data.items[3].description;
+          		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
+              document.getElementById("commit-4").textContent = l.trim();
+
+              el.innerHTML = data.items[4].description;
+          		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
+              document.getElementById("commit-5").textContent = l.trim();
+
+              console.log(l.trim())
             }
           });
         </script>
