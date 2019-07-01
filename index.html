@@ -81,7 +81,7 @@
             dataType: 'jsonp',
             success: function(data) {
               console.log(data.feed.description);
-              console.log(data.items[0].title);
+              console.log(data.items[0].title.getElementsByTagName("UL")[0]);
 
             }
           });
