@@ -6,8 +6,8 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * @author Rose Pritchard
  */
 
-/*    red         tan        aqua       purple
-/* ['#d47564', '#CAA67A', '#4fa4a5', '#5c6182']; */
+/*    red         tan        aqua       purple      blue
+/* ['#d47564', '#CAA67A', '#4fa4a5', '#5c6182']   #6AB0D3; */
 @import url(https://fonts.googleapis.com/css?family=Poppins);
 
 code[class*="language-"],
