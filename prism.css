@@ -6,6 +6,8 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * @author Rose Pritchard
  */
 
+/*    red         tan        aqua       purple
+/* ['#d47564', '#CAA67A', '#4fa4a5', '#5c6182']; */
 @import url(https://fonts.googleapis.com/css?family=Poppins);
 
 code[class*="language-"],
@@ -57,7 +59,7 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #999;
+	color: #5c6182;
 }
 
 .token.punctuation {
@@ -93,7 +95,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-	color: #4fa4a5;
+	color: #CAA67A;
 }
 
 .token.string,
@@ -101,13 +103,13 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.regex,
 .token.variable {
-	color: #CAA67A;
+	color: #4fa4a5;
 }
 
 .token.operator,
 .token.entity,
 .token.url {
-	color: #67cdcc;
+	color: #d47564;
 }
 
 .token.important,
