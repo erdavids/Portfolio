@@ -51,7 +51,7 @@ pre[class*="language-"] {
 	border-radius: .3em;
 	white-space: normal;
 }
-
+'#d47564', '#CAA67A', '#4fa4a5', '#5c6182'
 .token.comment,
 .token.block-comment,
 .token.prolog,
@@ -78,7 +78,7 @@ pre[class*="language-"] {
 .token.boolean,
 .token.number,
 .token.function {
-	color: #f08d49;
+	color: #d47564;
 }
 
 .token.property,
@@ -93,7 +93,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-	color: #cc99cd;
+	color: #4fa4a5;
 }
 
 .token.string,
@@ -101,7 +101,7 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.regex,
 .token.variable {
-	color: #7ec699;
+	color: #CAA67A;
 }
 
 .token.operator,
