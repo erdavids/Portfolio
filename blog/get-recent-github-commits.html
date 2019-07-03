@@ -50,24 +50,24 @@
           <p>I've embedded an example below that displays my most recent commit. If you want to see yours, all you need to do is replace my username (you won't be able to edit in the embedded code unfortunately).</p>
           <p>I used rss2json to convert the feed so that it can be easily manipulated with Javascript. It's actually a paid service, with the free version only updating the request every hour.</p>
 
-          <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="TheBuffED" data-slug-hash="wLXdaZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Display Last Git Push">
-            <span>See the Pen <a href="https://codepen.io/TheBuffED/pen/wLXdaZ/">
-            Display Last Git Push</a> by Eric Davidson (<a href="https://codepen.io/TheBuffED">@TheBuffED</a>)
-            on <a href="https://codepen.io">CodePen</a>.</span>
-          </p>
-          <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+          <pre><code class="language-css">var url= 'https://github.com/{username}.atom';
+$.ajax({
+  type: 'GET',
+  cache: false,
+  url: "https://api.rss2json.com/v1/api.json?rss_url=" + url,
+  dataType: 'json',
+  success: function(data) {
+    // Get the 3 most recent commits (Last test)
+    var el = document.createElement( 'html' );
+    console.log(data)
 
-          <pre><code class="language-css">body {
-            font: 100% Helvetica, sans-serif;
-            color: #333;
-          }
+    el.innerHTML = data.items[0].description;
+    var l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
+    document.getElementById("commit-1").href = data.items[0].link.trim()
+    document.getElementById("commit-1").textContent = "> " + l.trim();
 
-          .box {
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            -ms-border-radius: 10px;
-            border-radius: 10px;
-          }</code></pre>
+  }
+});</code></pre>
 
 
           <h2>Enhancements</h2>
