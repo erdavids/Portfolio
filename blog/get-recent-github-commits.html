@@ -50,24 +50,24 @@
           <p>I've embedded an example below that displays my most recent commit. If you want to see yours, all you need to do is replace my username (you won't be able to edit in the embedded code unfortunately).</p>
           <p>I used rss2json to convert the feed so that it can be easily manipulated with Javascript. It's actually a paid service, with the free version only updating the request every hour.</p>
 
-          <pre><code class="language-javascript">var url= 'https://github.com/{username}.atom';
-$.ajax({
-  type: 'GET',
-  cache: false,
-  url: "https://api.rss2json.com/v1/api.json?rss_url=" + url,
-  dataType: 'json',
-  success: function(data) {
-    // Get the 3 most recent commits (Last test)
-    var el = document.createElement( 'html' );
-    console.log(data)
+          <pre><code class="language-javascript">
+            var url= 'https://github.com/{username}.atom';
+            $.ajax({
+                type: 'GET',
+                cache: false,
+                url: "https://api.rss2json.com/v1/api.json?rss_url=" + url,
+                dataType: 'json',
+                success: function(data) {
+                    var el = document.createElement( 'html' );
+                    console.log(data)
 
-    el.innerHTML = data.items[0].description;
-    var l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
-    document.getElementById("commit-1").href = data.items[0].link.trim()
-    document.getElementById("commit-1").textContent = "> " + l.trim();
-
-  }
-});</code></pre>
+                    el.innerHTML = data.items[0].description;
+                    var l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
+                    document.getElementById("commit-1").href = data.items[0].link.trim()
+                    document.getElementById("commit-1").textContent = "> " + l.trim();
+              }
+            });
+        </code></pre>
 
 
           <h2>Enhancements</h2>
