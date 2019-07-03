@@ -17,7 +17,7 @@
         <link rel="stylesheet" type="text/css" href="/style.css">
     </head>
     <body>
-        <h1 class="name_text"><a href="index.html" class="color-text">Eric Davidson</a></h1>
+        <h1 class="name_text"><a href="https://erdavids.com" class="color-text">Eric Davidson</a></h1>
         <div class="nav_bar bottom_border">
             <ul>
                 <li class="nav_bar_element"><a href="about">Apps</a></li>
@@ -28,22 +28,22 @@
         </div>
 
         <div class="project_block">
-          <h2>How to Get Recent Github Commits with Javascript</h2>
+          <h1>How to Get Recent Github Commits with Javascript</h1>
           <p>When people visit my site, I want them to be aware that I'm working on new projects and have an easy way of following my recent progress. Obviously they would see all of that if they visit my Github profile, but I didn't want to waste the opportunity of my first impression with this visitor.</p>
           <p>Once I started rolling with the idea of displaying commits on my home page, I was pleasantly surpised by how simple it was to set up.</p>
 
-          <h3>RSS Feed</h3>
+          <h2>RSS Feed</h2>
           <p>Luckily for me, Github helps out by providing an RSS feed for both user accounts and individual repositories. It took me a little while to hunt down definitive info on these, all you have to do is add <b>.atom</b> to feed you would like to access.</p>
           <ul>
             <li><p>Feed for my Github profile - https://github.com/erdavids.atom</p></li>
             <li><p>Feed for single repository - https://github.com/erdavids/Oblong/commits/master.atom</p></li>
           </ul>
 
-          <h3>JQuery</h3>
+          <h2>JQuery</h2>
           <p>You'll be using Ajax to grab any recent activity, so you'll need to make sure you are using JQuery.</p>
           <p>The easiest way is to add a snippet from <a href="https://developers.google.com/speed/libraries/" target="_blank">Google's hosted libraries</a> listed under JQuery.</p>
 
-          <h3>Actual Code</h3>
+          <h2>Actual Code</h2>
           <p>I've embedded an example below that displays my most recent commit. If you want to see yours, all you need to do is replace my username (you won't be able to edit in the embedded code unfortunately).</p>
           <p>I used rss2json to convert the feed so that it can be easily manipulated with Javascript. It's actually a paid service, with the free version only updating the request every hour.</p>
 
@@ -84,7 +84,7 @@
                   links[i].style.color = myArray[Math.floor(Math.random() * myArray.length)];
               }
           }
-
+        </script>
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     </body>
 </html>
