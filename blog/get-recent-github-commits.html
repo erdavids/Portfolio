@@ -50,7 +50,7 @@
           <p>I've embedded an example below that displays my most recent commit. If you want to see yours, all you need to do is replace my username (you won't be able to edit in the embedded code unfortunately).</p>
           <p>I used rss2json to convert the feed so that it can be easily manipulated with Javascript. It's actually a paid service, with the free version only updating the request every hour.</p>
 
-          <pre><code class="language-css">var url= 'https://github.com/{username}.atom';
+          <pre><code class="language-javascript">var url= 'https://github.com/{username}.atom';
 $.ajax({
   type: 'GET',
   cache: false,
