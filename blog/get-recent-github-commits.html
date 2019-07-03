@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138963802-1"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8d7586204f74683a9d24dc447/17eb59f014f48f8438ee970f1.js");</script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-138963802-1');
+        </script>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1 class="name_text"><a href="index.html" class="color-text">Eric Davidson</a></h1>
+        <div class="nav_bar bottom_border">
+            <ul>
+                <li class="nav_bar_element"><a href="about">Apps</a></li>
+                <li class="nav_bar_element"><a href="prints">Blog</a></li>
+                <li class="nav_bar_element"><a href="prints">Art</a></li>
+                <li class="nav_bar_element"><a href="more">More</a></li>
+            </ul>
+        </div>
+
+        <div class="project_block">
+          <h2>How to Get Recent Github Commits with Javascript</h2>
+          <p>When people visit my site, I want them to be aware that I'm working on new projects and have an easy way of following my recent progress. Obviously they would see all of that if they visit my Github profile, but I didn't want to waste the opportunity of my first impression with this visitor.</p>
+          <p>Once I started rolling with the idea of displaying commits on my home page, I was pleasantly surpised by how simple it was to set up.</p>
+
+          <h3>RSS Feed</h3>
+          <p>Luckily for me, Github helps out by providing an RSS feed for both user accounts and individual repositories. It took me a little while to hunt down definitive info on these, all you have to do is add <b>.atom</b> to feed you would like to access.</p>
+          <ul>
+            <li><p>Feed for my Github profile - https://github.com/erdavids.atom</p></li>
+            <li><p>Feed for single repository - https://github.com/erdavids/Oblong/commits/master.atom</p></li>
+          </ul>
+
+          <h3>JQuery</h3>
+          <p>You'll be using Ajax to grab any recent activity, so you'll need to make sure you are using JQuery.</p>
+          <p>The easiest way is to add a snippet from <a href="https://developers.google.com/speed/libraries/" target="_blank">Google's hosted libraries</a> listed under JQuery.</p>
+
+          <h3>Actual Code</h3>
+          <p>I've embedded an example below that displays my most recent commit. If you want to see yours, all you need to do is replace my username (you won't be able to edit in the embedded code unfortunately).</p>
+          <p>I used rss2json to convert the feed so that it can be easily manipulated with Javascript. It's actually a paid service, with the free version only updating the request every hour.</p>
+
+          <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="TheBuffED" data-slug-hash="wLXdaZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Display Last Git Push">
+            <span>See the Pen <a href="https://codepen.io/TheBuffED/pen/wLXdaZ/">
+            Display Last Git Push</a> by Eric Davidson (<a href="https://codepen.io/TheBuffED">@TheBuffED</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+          <h3>Enhancements</h3>
+          <p>My advice would be to copy all this code into your own environment and start playing around with the request response. There's a lot of cool info on your Github activity in those feeds that you can use to add a lot of personality to your portfolio.</p>
+        </div>
+
+
+
+        <script>
+
+          var myArray = ['#d47564', '#e8c498', '#4fa4a5', '#5c6182'];
+
+          var elements = document.getElementsByClassName("color-text");
+          var c = ''
+          var last_c = ''
+          for(var i=0; i<elements.length; i++) {
+              c = myArray[Math.floor(Math.random() * myArray.length)];
+              while (c == last_c) {
+                c = myArray[Math.floor(Math.random() * myArray.length)];
+              }
+              elements[i].style.color = c;
+          }
+
+          var links = document.getElementsByTagName("a");
+          for(var i=0;i<links.length;i++)
+          {
+              if(links[i].href)
+              {
+                  links[i].style.color = myArray[Math.floor(Math.random() * myArray.length)];
+              }
+          }
+
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    </body>
+</html>
