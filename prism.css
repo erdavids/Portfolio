@@ -6,10 +6,13 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * @author Rose Pritchard
  */
 
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #ccc;
 	background: none;
+	font-family: 'Poppins';
 	font-size: 1em;
 	text-align: left;
 	white-space: pre;
