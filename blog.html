@@ -1,0 +1,95 @@
+i
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138963802-1"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8d7586204f74683a9d24dc447/17eb59f014f48f8438ee970f1.js");</script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-138963802-1');
+        </script>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1 class="name_text"><a href="index.html" class="color-text">Eric Davidson</a></h1>
+        <div class="nav_bar bottom_border">
+            <ul>
+                <li class="nav_bar_element"><a href="/about">Apps</a></li>
+                <li class="nav_bar_element"><a href="/blog">Blog</a></li>
+                <li class="nav_bar_element"><a href="/prints">Art</a></li>
+                <li class="nav_bar_element"><a href="/more">More</a></li>
+            </ul>
+        </div>
+
+        <div class="project_block">
+          <h2>My Blog</h2>
+          <p>I write about quite a few different topics.</p>
+
+
+          <div class="row_3">
+            <div class="column_3">
+              <h3>Recent</h3>
+              <p style="padding-left:25px"><a id="commit-1" href=""></a></p>
+              <p style="padding-left:25px"><a id="commit-2" href=""></a></p>
+              <p style="padding-left:25px"><a id="commit-3" href=""></a></p>
+              <p style="padding-left:25px"><a id="commit-4" href=""></a></p>
+              <p style="padding-left:25px"><a id="commit-5" href=""></a></p>
+              <h3>Programming Tutorials</h3>
+              <p style="padding-left:25px">> Coming soon!</p>
+              <p style="padding-left:25px">> Coming soon!</p>
+              <p style="padding-left:25px">> Coming soon!</p>
+              <h3>Personal Development</h3>
+              <p style="padding-left:25px">> Coming soon!</p>
+              <p style="padding-left:25px">> Coming soon!</p>
+              <p style="padding-left:25px">> Coming soon!</p>
+            </div>
+            <div class="column_3">
+              <h3>Popular</h3>
+              <p style="padding-left:25px">> Coming soon!</p>
+              <p style="padding-left:25px">> Coming soon!</p>
+              <p style="padding-left:25px">> Coming soon!</p>
+              <p style="padding-left:25px">> Coming soon!</p>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+
+
+        <script>
+
+          var myArray = ['#d47564', '#CAA67A', '#4fa4a5', '#5c6182'];
+
+          var elements = document.getElementsByClassName("color-text");
+          var c = ''
+          var last_c = ''
+          for(var i=0; i<elements.length; i++) {
+              c = myArray[Math.floor(Math.random() * myArray.length)];
+              while (c == last_c) {
+                c = myArray[Math.floor(Math.random() * myArray.length)];
+              }
+              elements[i].style.color = c;
+          }
+
+          var links = document.getElementsByTagName("a");
+          for(var i=0;i<links.length;i++)
+          {
+              if(links[i].href)
+              {
+                  links[i].style.color = myArray[Math.floor(Math.random() * myArray.length)];
+              }
+          }
+          </script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    </body>
+</html>
