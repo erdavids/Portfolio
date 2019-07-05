@@ -80,7 +80,7 @@ pre[class*="language-"] {
 .token.boolean,
 .token.number,
 .token.function {
-	color: #CAA67A;
+	color: #d47564;
 }
 
 .token.property,
@@ -95,7 +95,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-	color: #d47564;
+	color: #CAA67A;
 }
 
 .token.string,
