@@ -40,10 +40,10 @@
 
 
           <img src="../Images/gol.gif" class="center" style="width:30%"/>
-          <p class="center"><em>Conway's Game of Life<em></p>
+          <p class="center"><em>Conway's Game of Life</em></p>
 
 
-          <p>The [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) is a famous set of four simple rules that determine the "birth" and "death" of each cell in the system. Each of the rules play a part in advancing the system through each generation. Although the rules are simple and easy to understand, complex patterns quickly begin to emerge and ultimately form fascinating results.</p>
+          <p>The <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> is a famous set of four simple rules that determine the "birth" and "death" of each cell in the system. Each of the rules play a part in advancing the system through each generation. Although the rules are simple and easy to understand, complex patterns quickly begin to emerge and ultimately form fascinating results.</p>
 
           <p>Rules may be responsible for creating the foundation of something interesting, but even something as exciting as Conway's Game of Life is predictable. Since the four rules are the determining factors for each generation, the way to produce unforeseeable results is to introduce randomization at the starting state of the cells. Beginning with a random matrix will make each execution unique without needing to change the rules.</p>
 
@@ -74,15 +74,12 @@
           <p>Here's a look at two completely different outputs from the solution I ended up with:</p>
 
 
-          ![](https://thepracticaldev.s3.amazonaws.com/i/e2dt7cz2zuja2h2isakw.png)
-          <figcaption>9x9</figcaption>
+          <img src="../Images/Example-5x5-10-1500.jpg" class="center" style="width:30%"/>
+          <img src="../Images/Example-43x43-6-1900.jpg" class="center" style="width:30%"/>
 
-          ![](https://thepracticaldev.s3.amazonaws.com/i/79mdf2afvlq3xadqasza.png)
-          <figcaption>37x37</figcaption>
+          <p>These two images don't resemble each other at all, but they're both the results of the same system. Not to mention, due to the complexity of the image and the **randomness** of the sprite generation, there is an extremely high probability that even with the same arguments, these images will forever be one of a kind. I love it.</p>
 
-          These two images don't resemble each other at all, but they're both the results of the same system. Not to mention, due to the complexity of the image and the **randomness** of the sprite generation, there is an extremely high probability that even with the same arguments, these images will forever be one of a kind. I love it.
-
-          If you want thousands of examples of how diverse the results can be, check out [this twitter bot](https://twitter.com/generatorsprite) I set up on a Raspberry Pi that makes a new post every 20 minutes.
+          <p>If you want thousands of examples of how diverse the results can be, check out <a href="https://twitter.com/generatorsprite">this twitter bot</a> I set up on a Raspberry Pi that makes a new post every 20 minutes.</p>
 
           <blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="und" dir="ltr">9x9-31-1500 <a href="https://t.co/8SwFByUSFv">pic.twitter.com/8SwFByUSFv</a></p>&mdash; SpriteGenerator (@GeneratorSprite) <a href="https://twitter.com/GeneratorSprite/status/1148367439090135040?ref_src=twsrc%5Etfw">July 8, 2019</a></blockquote>
           <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -92,9 +89,9 @@
 
           <p>If you want to start playing around with the sprite generator, there's a little foundation work that has to be done first.</p>
 
-          <p>Setting up a proper environment with Python can be tricky. If you haven't worked with Python before, you'll probably need to download [Python 2.7.10](https://www.python.org/download/releases/2.7/). I plan to eventually update this tutorial for Python 3+ as 2.7 becomes deprecated.</p>
+          <p>Setting up a proper environment with Python can be tricky. If you haven't worked with Python before, you'll probably need to download <a href="https://www.python.org/download/releases/2.7/">Python 2.7.10</a>. I plan to eventually update this tutorial for Python 3+ as 2.7 becomes deprecated.</p>
 
-          <p>Dependency issues happen a lot with Python projects. If you start running into problems, you can do what I did and set up a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/). Last but not least, make sure you have Pillow installed as well.</p>
+          <p>Dependency issues happen a lot with Python projects. If you start running into problems, you can do what I did and set up a <a href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/">virtual environment</a>. Last but not least, make sure you have Pillow installed as well.</p>
 
           <p>Once you have the environment set up, you can copy my code into a file with extension .py and execute with the following command:</p>
 
