@@ -121,6 +121,11 @@ a:visited { text-decoration: none; color: black;}
     margin: 0 !important;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /*-- Trying to make a custom grid system -- */
 /* Create two equal columns that floats next to each other */
