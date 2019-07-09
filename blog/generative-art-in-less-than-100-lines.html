@@ -84,60 +84,63 @@
 
           If you want thousands of examples of how diverse the results can be, check out [this twitter bot](https://twitter.com/generatorsprite) I set up on a Raspberry Pi that makes a new post every 20 minutes.
 
-          {% twitter 1138160180213030913 %}
+          <blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="und" dir="ltr">9x9-31-1500 <a href="https://t.co/8SwFByUSFv">pic.twitter.com/8SwFByUSFv</a></p>&mdash; SpriteGenerator (@GeneratorSprite) <a href="https://twitter.com/GeneratorSprite/status/1148367439090135040?ref_src=twsrc%5Etfw">July 8, 2019</a></blockquote>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-          ## The Environment
 
-          If you want to start playing around with the sprite generator, there's a little foundation work that has to be done first.
+          <h3>The Environment</h3>
 
-          Setting up a proper environment with Python can be tricky. If you haven't worked with Python before, you'll probably need to download [Python 2.7.10](https://www.python.org/download/releases/2.7/). I plan to eventually update this tutorial for Python 3+ as 2.7 becomes deprecated.
+          <p>If you want to start playing around with the sprite generator, there's a little foundation work that has to be done first.</p>
 
-          Dependency issues happen a lot with Python projects. If you start running into problems, you can do what I did and set up a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/). Last but not least, make sure you have Pillow installed as well.
+          <p>Setting up a proper environment with Python can be tricky. If you haven't worked with Python before, you'll probably need to download [Python 2.7.10](https://www.python.org/download/releases/2.7/). I plan to eventually update this tutorial for Python 3+ as 2.7 becomes deprecated.</p>
 
-          Once you have the environment set up, you can copy my code into a file with extension .py and execute with the following command:
+          <p>Dependency issues happen a lot with Python projects. If you start running into problems, you can do what I did and set up a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/). Last but not least, make sure you have Pillow installed as well.</p>
 
-          ` python spritething.py [SPRITE_DIMENSIONS] [NUMBER] [IMAGE_SIZE] `
+          <p>Once you have the environment set up, you can copy my code into a file with extension .py and execute with the following command:</p>
 
-          Something **very important** to note is that the sprite dimensions must be an **odd number**. The reason behind that is the way that symmetry is handled, which will make more sense as you dig into the implementation.
+          <p style="padding-left:25px">$ python spritething.py [SPRITE_DIMENSIONS] [NUMBER] [IMAGE_SIZE]</p>
 
-          ## The Code
-          {% gist https://gist.github.com/erdavids/ba72d00d2dc4d04f6765cf4a6460ed5a %}
+          <p>Something <b>very important</b> to note is that the sprite dimensions must be an **odd number**. The reason behind that is the way that symmetry is handled, which will make more sense as you dig into the implementation.</p>
 
-          This solution is a long way from perfect, but it shows that creating generative art doesn't take a ton of code. I'll try my best to explain the key pieces.
+          <h3>The Code</h3>
 
-          The **main** function starts by creating the initial image and determining the size of the sprites. The two for loops are responsible for defining a border for each sprite, basically dividing the dimensions of the image by the number of sprites requested. These values are used to determine the coordinates for each one.
+          <script
+            src="https://gist.github.com/erdavids/ba72d00d2dc4d04f6765cf4a6460ed5a">
+          </script>
 
-          Let's ignore padding and take a look at the image below. Imagine that each of the four squares represents a sprite with a size of 1. The border that is being passed to the next function refers to the top left and bottom right coordinates. So the tuple for the top left sprite would be (0,0,1,1) whereas the tuple for the top right would be (1,0,2,1). These will be used as the dimensions and base coordinates for the squares of each sprite.
+          <p>This solution is a long way from perfect, but it shows that creating generative art doesn't take a ton of code. I'll try my best to explain the key pieces.</p>
+
+          <p>The **main** function starts by creating the initial image and determining the size of the sprites. The two for loops are responsible for defining a border for each sprite, basically dividing the dimensions of the image by the number of sprites requested. These values are used to determine the coordinates for each one.</p>
+
+          <p>Let's ignore padding and take a look at the image below. Imagine that each of the four squares represents a sprite with a size of 1. The border that is being passed to the next function refers to the top left and bottom right coordinates. So the tuple for the top left sprite would be (0,0,1,1) whereas the tuple for the top right would be (1,0,2,1). These will be used as the dimensions and base coordinates for the squares of each sprite.</p>
 
           ![](https://thepracticaldev.s3.amazonaws.com/i/supm7on8bfh6p3vmkrm6.png)
           <figcaption>Example of determining sprite borders</figcaption>
 
-          The function **create_invader** determines the border for each square within the sprite. The same process for determining the border is applied here and represented below, only instead of the full image we're using a pre-determined border to work inside. These final coordinates for each square will be used in the next function to actually draw the sprite.
+          <p>The function **create_invader** determines the border for each square within the sprite. The same process for determining the border is applied here and represented below, only instead of the full image we're using a pre-determined border to work inside. These final coordinates for each square will be used in the next function to actually draw the sprite.</p>
 
           ![](https://thepracticaldev.s3.amazonaws.com/i/zk7hs3jbcmj7cnfug1n9.png)
           <figcaption>Breaking down a 3x3 sprite</figcaption>
 
-          To determine the color, a simple array of three random RGB tuples and three blacks are used to simulate a 50% chance of being drawn. The lambda functions near the top of the code are responsible for generating the RGB values.
+          <p>To determine the color, a simple array of three random RGB tuples and three blacks are used to simulate a 50% chance of being drawn. The lambda functions near the top of the code are responsible for generating the RGB values.</p>
 
-          The real trick of this function is creating symmetry. Each square is paired with an element value. In the image below you can see the element values increment as they reach the center and then decrement. Squares with matching element values are drawn with the same color.
+          <p>The real trick of this function is creating symmetry. Each square is paired with an element value. In the image below you can see the element values increment as they reach the center and then decrement. Squares with matching element values are drawn with the same color.</p>
 
           ![](https://thepracticaldev.s3.amazonaws.com/i/5i5cxb8lmaoa4yq3wdkd.png)
           <figcaption>Element values and symmetrical colors for a row in a 7x7 sprite</figcaption>
 
-          As **create_square** receives its parameters from **create_invader**, it uses a queue and the element values from before to ensure symmetry. The first occurrence of the values have their colors pushed onto the queue and the mirrored squares pop the colors off.
+          <p>As **create_square** receives its parameters from **create_invader**, it uses a queue and the element values from before to ensure symmetry. The first occurrence of the values have their colors pushed onto the queue and the mirrored squares pop the colors off.</p>
 
           ![](https://thepracticaldev.s3.amazonaws.com/i/g8w2ebggqffrhldhvoal.gif)
           <figcaption>The complete generation process</figcaption>
 
-          I realize how difficult it is to read through and understand someone else's solution for a problem, and the roughness of the code certainly does not help with its complexity, but hopefully you've got a pretty good idea for how it works. Ultimately it would be incredible if you are able to scrap my code altogether and figure out an entirely different solution.
+          <p>I realize how difficult it is to read through and understand someone else's solution for a problem, and the roughness of the code certainly does not help with its complexity, but hopefully you've got a pretty good idea for how it works. Ultimately it would be incredible if you are able to scrap my code altogether and figure out an entirely different solution.</p>
 
-          ## Conclusion
+          <h3>Conclusion</h3>
 
-          Generative art takes time to fully appreciate, but it's so worth it. I love being able to combine programming with a more traditional visual goal, and I have definitely learned a lot in every one of my projects.
+          <p>Generative art takes time to fully appreciate, but it's so worth it. I love being able to combine programming with a more traditional visual goal, and I have definitely learned a lot in every one of my projects.</p>
 
-          Overall there may be more useful projects to pursue and generative art may not be something you need experience with, but it's a ton of fun and you never know how it might separate you from the crowd.
-
-          Thank you for reading!
+          <p>Overall there may be more useful projects to pursue and generative art may not be something you need experience with, but it's a ton of fun and you never know how it might separate you from the crowd.</p>
     </div>
 
         <div class="project_block">
