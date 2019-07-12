@@ -1,5 +1,6 @@
 function setup() {
-  createCanvas(640, 480);
+  var myCanvas = createCanvas(640, 480);
+  myCanvas.parent("sketch-div");
 }
 
 function draw() {
