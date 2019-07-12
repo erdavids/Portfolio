@@ -1,11 +1,22 @@
-function setup() {
-  var canvas = createCanvas(800, 800);
-  // Move the canvas so it’s inside our <div id="sketch-holder">.
-  canvas.parent('sketch-div');
+// sketch.js
 
+var cnv;
+
+function centerCanvas() {
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
+}
+
+function setup() {
+  cnv = createCanvas(100, 100);
+  centerCanvas();
   background(255, 0, 200);
 }
 
+function windowResized() {
+  centerCanvas();
+}
 function draw() {
   if (mouseIsPressed) {
     fill(0);
