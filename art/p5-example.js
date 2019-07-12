@@ -1,6 +1,8 @@
 function setup() {
-  var canvas = createCanvas(500, 500);
-  canvas.parent('sketch-div');
+  var cnv = createCanvas(400, 400);
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
   background(255, 0, 200);
 }
 
