@@ -1,5 +1,6 @@
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  var canvas = createCanvas(500, 500);
+  canvas.parent('sketch-div');
   background(255, 0, 200);
 }
 
