@@ -9,7 +9,7 @@ function centerCanvas() {
 }
 
 function setup() {
-  cnv = createCanvas(100, 100);
+  cnv = createCanvas(600, 600);
   centerCanvas();
   background(255, 0, 200);
 }
@@ -17,6 +17,7 @@ function setup() {
 function windowResized() {
   centerCanvas();
 }
+
 function draw() {
   if (mouseIsPressed) {
     fill(0);
