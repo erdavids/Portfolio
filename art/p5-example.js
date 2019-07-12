@@ -12,6 +12,8 @@ function setup() {
   var canvasDiv = document.getElementById('sketchdiv')
   var width = canvasDiv.offsetWidth
 
+  console.log(width)
+
   var cnv = createCanvas(width, 400);
   canvas.parent('sketchdiv');
 
