@@ -1,9 +1,7 @@
 // sketch.js
 
-
 function setup() {
-  var cnv = createCanvas(600, 600);
-  background(255, 0, 200);
+  createCanvas(640, 480);
 }
 
 function draw() {
