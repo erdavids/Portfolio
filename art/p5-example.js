@@ -17,7 +17,7 @@ function setup() {
   var cnv = createCanvas(width, 400);
   cnv.parent('sketchdiv');
 
-  background(255, 0, 200);
+  background(20, 20, 20);
 }
 
 function draw() {
