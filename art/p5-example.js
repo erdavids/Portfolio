@@ -3,7 +3,6 @@
 
 function setup() {
   var cnv = createCanvas(600, 600);
-  centerCanvas();
   background(255, 0, 200);
 }
 
