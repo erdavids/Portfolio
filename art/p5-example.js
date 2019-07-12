@@ -15,7 +15,7 @@ function setup() {
   console.log(width)
 
   var cnv = createCanvas(width, 400);
-  canvas.parent('sketchdiv');
+  cnv.parent('sketchdiv');
 
   background(255, 0, 200);
 }
