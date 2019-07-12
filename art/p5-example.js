@@ -17,7 +17,7 @@ function setup() {
   var cnv = createCanvas(width, 400);
   cnv.parent('sketchdiv');
 
-  background(20, 20, 20);
+  background(200, 200, 200);
 
   for (let i = 0; i < 100; i++) {
     let r = random(-50, 50);
@@ -26,5 +26,5 @@ function setup() {
 }
 
 function draw() {
-  
+
 }
