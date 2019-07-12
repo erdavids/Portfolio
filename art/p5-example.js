@@ -8,11 +8,12 @@
 
 function setup() {
   // Move the canvas so it’s inside our <div id="sketch-holder">.
-  var cnv = createCanvas(400, 400);
+
+  var canvasDiv = document.getElementById('sketchdiv')
+  var width = canvasDiv.offsetWidth
+
+  var cnv = createCanvas(width, 400);
   canvas.parent('sketchdiv');
-  var x = (windowWidth - width) / 2;
-  var y = 0
-  cnv.position(x, y)
 
   background(255, 0, 200);
 }
