@@ -18,13 +18,13 @@ function setup() {
   cnv.parent('sketchdiv');
 
   background(20, 20, 20);
+
+  for (let i = 0; i < 100; i++) {
+    let r = random(-50, 50);
+    line(50, i, 50 + r, i);
+  }
 }
 
 function draw() {
-  if (mouseIsPressed) {
-    fill(0);
-  } else {
-    fill(255);
-  }
-  ellipse(mouseX, mouseY, 80, 80);
+  
 }
