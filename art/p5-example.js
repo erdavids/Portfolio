@@ -11,17 +11,16 @@ function setup() {
 
   var canvasDiv = document.getElementById('sketchdiv')
   var width = canvasDiv.offsetWidth
+  var height = 600
 
-  console.log(width)
-
-  var cnv = createCanvas(width, 400);
+  var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
 
   background(200, 200, 200);
 
   for (let i = 0; i < 100; i++) {
     let r = random(-50, 50);
-    line(50, i, 50 + r, i);
+    line(width/2, i, 50 + r, i);
   }
 }
 
