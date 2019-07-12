@@ -1,5 +1,5 @@
 function setup() {
-  var canvas = createCanvas(100, 100);
+  var canvas = createCanvas(800, 800);
   // Move the canvas so it’s inside our <div id="sketch-holder">.
   canvas.parent('sketch-div');
 
