@@ -14,15 +14,18 @@ function setup() {
   var height = 600
 
 
+  var cnv = createCanvas(width, height);
+  cnv.parent('sketchdiv');
+
   img = loadImage('pixel-bezier/example.jpg');
   image(img, 0, 0)
-  console.log(img.width)
-
-  var cnv = createCanvas(width, img.height);
-  cnv.parent('sketchdiv');
 
 }
 
 function draw() {
-  image(img, 0, 0, width, width*(img.width/img.height));
+  image(img, 0, 0);
+}
+
+function mousePressed() {
+  img.resize(50, 0);
 }
