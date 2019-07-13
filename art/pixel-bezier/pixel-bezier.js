@@ -23,12 +23,14 @@ function setup() {
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
 
-
-
 }
 
 function draw() {
-  image(img, 0, 0);
+  let x = floor(random(img.width));
+  let y = floor(random(img.height));
+  let pix = img.get(x, y);
+  fill(pix, 128);
+  bezier(x+random(-10, 10),y+random(-10,10),x, y, x+random(-10, 10),y+random(-10,10));
 }
 
 function mousePressed() {
