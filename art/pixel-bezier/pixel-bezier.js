@@ -13,10 +13,12 @@ function setup() {
   var width = canvasDiv.offsetWidth
   var height = 600
 
-  var cnv = createCanvas(width, height);
+  img = loadImage('pixel-bezier/example.jpg');
+  img.resize(width, 0);
+
+  var cnv = createCanvas(width, img.height);
   cnv.parent('sketchdiv');
 
-  img = loadImage('pixel-bezier/example.jpg');
 }
 
 function draw() {
