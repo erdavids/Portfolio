@@ -18,8 +18,12 @@ function setup() {
   cnv.parent('sketchdiv');
 
   img = loadImage('pixel-bezier/example.jpg');
+  image(img, 0, 0);
   img.resize(width, 0);
-  image(img, 0, 0)
+  image(img, 0, 0);
+
+  resizeCanvas(width, img.height);
+
 
 }
 
