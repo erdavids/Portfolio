@@ -16,6 +16,7 @@ function setup() {
 
   img = loadImage('pixel-bezier/example.jpg');
   image(img, 0, 0)
+  console.log(img.width)
 
   var cnv = createCanvas(width, img.height);
   cnv.parent('sketchdiv');
