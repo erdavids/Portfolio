@@ -16,7 +16,7 @@ function setup() {
   img = loadImage('pixel-bezier/example.jpg');
   console.log(img.width);
   console.log(img.height);
-  img.resize(width, 0);
+  img.resize(200, 0);
   console.log(img.width);
   console.log(img.height);
 
