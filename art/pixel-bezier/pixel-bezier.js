@@ -18,6 +18,7 @@ function setup() {
   cnv.parent('sketchdiv');
 
   img = loadImage('pixel-bezier/example.jpg');
+  img.resize(width, 0);
   image(img, 0, 0)
 
 }
