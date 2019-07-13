@@ -27,5 +27,5 @@ function draw() {
 }
 
 function mousePressed() {
-  img.resize(50, 0);
+  img.resize(width, 0);
 }
