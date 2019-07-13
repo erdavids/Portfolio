@@ -15,13 +15,14 @@ function setup() {
 
   var canvasDiv = document.getElementById('sketchdiv')
   var width = canvasDiv.offsetWidth
-  var height = 600
 
+  img.resize(width, 0);
+
+  var height = img.height;
 
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
 
-  img.resize(width, 0);
 
 
 }
