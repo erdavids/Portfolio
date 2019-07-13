@@ -17,7 +17,7 @@ function setup() {
 
   var canvasDiv = document.getElementById('sketchdiv');
   var width = canvasDiv.offsetWidth;
-  var height = img.height;
+  var height = 700;
   console.log(img.width);
   console.log(img.height);
 
@@ -33,5 +33,5 @@ function draw() {
 }
 
 function mousePressed() {
-  img.resize(width, 0);
+  console.log(img.height)
 }
