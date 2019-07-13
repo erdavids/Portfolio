@@ -6,6 +6,10 @@
 //   background(255, 0, 200);
 // }
 
+function preload() {
+  img = loadImage('pixel-bezier/example.jpg');
+}
+
 function setup() {
   // Move the canvas so it’s inside our <div id="sketch-holder">.
 
@@ -16,8 +20,7 @@ function setup() {
 
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
-
-  img = loadImage('pixel-bezier/example.jpg');
+  
   img.resize(width, 0);
 
 
