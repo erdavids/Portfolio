@@ -13,7 +13,9 @@ function setup() {
   var width = canvasDiv.offsetWidth
   var height = 600
 
+
   img = loadImage('pixel-bezier/example.jpg');
+  image(img, 0, 0)
 
   var cnv = createCanvas(width, img.height);
   cnv.parent('sketchdiv');
