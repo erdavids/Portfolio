@@ -13,17 +13,15 @@ function preload() {
 function setup() {
   // Move the canvas so it’s inside our <div id="sketch-holder">.
 
-  img.resize(width, 0);
-
-  var canvasDiv = document.getElementById('sketchdiv');
-  var width = canvasDiv.offsetWidth;
-  var height = 700;
-  console.log(img.width);
-  console.log(img.height);
+  var canvasDiv = document.getElementById('sketchdiv')
+  var width = canvasDiv.offsetWidth
+  var height = 600
 
 
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
+
+  img.resize(width, 0);
 
 
 }
