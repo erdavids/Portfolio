@@ -30,7 +30,12 @@ function draw() {
   let y = floor(random(img.height));
   let pix = img.get(x, y);
   fill(pix, 128);
-  bezier(x+random(-10, 10),y+random(-10,10),x, y, x+random(-10, 10),y+random(-10,10));
+
+  beginShape();
+  curveVertex(x + random(-30, 30), y + random(-30, 30));
+  curveVertex(x, y);
+  curveVertex(x + random(-30, 30), y + random(-30, 30));
+  endShape();
 }
 
 function mousePressed() {
