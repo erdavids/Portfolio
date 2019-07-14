@@ -23,25 +23,22 @@ function setup() {
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
 
-  strokeWeight(3)
+  strokeWeight(2)
 }
 
 function draw() {
   let x = floor(random(img.width));
   let y = floor(random(img.height));
   let pix = img.get(x, y);
-  fill(pix, 128);
+  stroke(pix, 128);
+  noFill();
 
   beginShape();
-  curveVertex(84, 91);
-  curveVertex(84, 91);
-  curveVertex(68, 19);
-  curveVertex(21, 17);
-  curveVertex(32, 91);
-  curveVertex(32, 91);
-  // curveVertex(x + random(-30, 30), y + random(-30, 30));
-  // curveVertex(x, y);
-  // curveVertex(x + random(-30, 30), y + random(-30, 30));
+  curveVertex(x + random(-30, 30), y + random(-30, 30));
+  curveVertex(x + random(-30, 30), y + random(-30, 30));
+  curveVertex(x, y);
+  curveVertex(x + random(-30, 30), y + random(-30, 30));
+  curveVertex(x + random(-30, 30), y + random(-30, 30));
   endShape();
 }
 
