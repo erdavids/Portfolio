@@ -30,15 +30,15 @@ function draw() {
   let x = floor(random(img.width));
   let y = floor(random(img.height));
   let pix = img.get(x, y);
-  stroke(pix, 128);
+  stroke(pix, 80);
   noFill();
 
   beginShape();
-  curveVertex(x + random(-30, 30), y + random(-30, 30));
-  curveVertex(x + random(-30, 30), y + random(-30, 30));
+  curveVertex(x + random(-15, 15), y + random(-15, 15));
+  curveVertex(x + random(-15, 15), y + random(-15, 15));
   curveVertex(x, y);
-  curveVertex(x + random(-30, 30), y + random(-30, 30));
-  curveVertex(x + random(-30, 30), y + random(-30, 30));
+  curveVertex(x + random(-15, 15), y + random(-15, 15));
+  curveVertex(x + random(-15, 15), y + random(-15, 15));
   endShape();
 }
 
