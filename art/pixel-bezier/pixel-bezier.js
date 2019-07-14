@@ -23,6 +23,7 @@ function setup() {
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
 
+  strokeWeight(3)
 }
 
 function draw() {
@@ -32,9 +33,15 @@ function draw() {
   fill(pix, 128);
 
   beginShape();
-  curveVertex(x + random(-30, 30), y + random(-30, 30));
-  curveVertex(x, y);
-  curveVertex(x + random(-30, 30), y + random(-30, 30));
+  curveVertex(84, 91);
+  curveVertex(84, 91);
+  curveVertex(68, 19);
+  curveVertex(21, 17);
+  curveVertex(32, 91);
+  curveVertex(32, 91);
+  // curveVertex(x + random(-30, 30), y + random(-30, 30));
+  // curveVertex(x, y);
+  // curveVertex(x + random(-30, 30), y + random(-30, 30));
   endShape();
 }
 
