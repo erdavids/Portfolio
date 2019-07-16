@@ -13,7 +13,7 @@ function setup() {
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
 
-  background(random(colors))
+  cnv.background(random(colors))
 
   var section_size = height/5
 
@@ -24,6 +24,7 @@ function setup() {
     for (let j = -50; j < width+50; j += 5) {
       curveVertex(j, i * section_size + random(-5, 5));
     }
+    endShape();
   }
 
 }
