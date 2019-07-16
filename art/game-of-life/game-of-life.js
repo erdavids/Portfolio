@@ -9,7 +9,7 @@ let r, g, b;
 function setup() {
   var canvasDiv = document.getElementById('sketchdiv')
   var width = canvasDiv.offsetWidth
-  var height = 400
+  var height = 800
 
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
