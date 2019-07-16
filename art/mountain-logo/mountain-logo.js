@@ -25,9 +25,13 @@ function setup() {
     b = random(255);
     fill(r, g, b);
     beginShape();
-    for (let j = -50; j < width+50; j += 5) {
+    for (let j = -50; j < width+50; j += 15) {
       curveVertex(j, i * section_size + random(-5, 5));
     }
+    curveVertex(width+50, height);
+    curveVertex(0, height);
+    curveVertex(-50, i * section_size);
+
     endShape();
   }
 
