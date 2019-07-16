@@ -59,9 +59,9 @@ function init() {
   for (let i = 0; i < columns; i++) {
     for (let j = 0; j < rows; j++) {
       // Lining the edges with 0s
-      //if (i == 0 || j == 0 || i == columns-1 || j == rows-1) board[i][j] = 0;
+      if (i == 0 || j == 0 || i == columns-1 || j == rows-1) board[i][j] = 0;
       // Filling the rest randomly
-      board[i][j] = floor(random(2));
+      else board[i][j] = floor(random(2));
       next[i][j] = 0;
     }
   }
