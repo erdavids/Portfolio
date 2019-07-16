@@ -42,8 +42,11 @@ function setup() {
   stroke(255, 255, 255);
   strokeWeight(8)
   beginShape();
+
+  let start_point = 450
   for (let j = -50; j < width+50; j += 30) {
-    curveVertex(j, 350 + random(-25, 120))
+    curveVertex(j, start_point + random(-100, 50))
+    start_point -= 15
   }
 
   curveVertex(width+50, height);
