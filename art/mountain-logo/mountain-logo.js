@@ -24,6 +24,7 @@ function setup() {
     g = random(255);
     b = random(255);
     fill(r, g, b);
+    stroke(r, g, b);
     beginShape();
     for (let j = -50; j < width+50; j += 15) {
       curveVertex(j, i * section_size + random(-5, 5));
@@ -35,6 +36,18 @@ function setup() {
     endShape(CLOSE);
   }
 
+
+  fill(15, 15, 15);
+  stroke(255, 255, 255);
+  beginShape();
+  for (let j = -50; j < width+50; j += 30) {
+    curveVertex(j, 400 + random(-20, 50))
+  }
+
+  curveVertex(width+50, height);
+  curveVertex(0, height);
+  curveVertex(-50, i * section_size);
+  endShape(CLOSE);
 }
 
 function draw() {
