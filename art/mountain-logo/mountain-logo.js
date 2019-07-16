@@ -24,6 +24,7 @@ function setup() {
     g = random(255);
     b = random(255);
     fill(r, g, b);
+    print(str(r) + "," + str(g) + "," + str(b))
     stroke(r, g, b);
     beginShape();
     for (let j = -50; j < width+50; j += 15) {
@@ -37,11 +38,11 @@ function setup() {
   }
 
 
-  fill(15, 15, 15);
+  fill(35, 35, 35);
   stroke(255, 255, 255);
   strokeWeight(8)
   beginShape();
-  for (let j = -50; j < width+50; j += 50) {
+  for (let j = -50; j < width+50; j += 30) {
     curveVertex(j, 350 + random(-25, 120))
   }
 
