@@ -39,13 +39,15 @@ function setup() {
 
   fill(15, 15, 15);
   stroke(255, 255, 255);
+  strokeWeight(10)
   beginShape();
   for (let j = -50; j < width+50; j += 30) {
-    curveVertex(j, 400 + random(-20, 50))
+    curveVertex(j, 350 + random(-25, 70))
   }
 
   curveVertex(width+50, height);
-  curveVertex(0, height);
+  curveVertex(width/2, height+200);
+  curveVertex(0, height+200);
   curveVertex(-50, i * section_size);
   endShape(CLOSE);
 }
