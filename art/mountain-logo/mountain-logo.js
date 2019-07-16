@@ -64,7 +64,3 @@ function keyTyped() {
     setup()
   }
 }
-
-function mousePressed() {
-  console.log(img.height)
-}
