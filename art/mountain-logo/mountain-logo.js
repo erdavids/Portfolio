@@ -32,7 +32,7 @@ function setup() {
     curveVertex(0, height);
     curveVertex(-50, i * section_size);
 
-    endShape();
+    endShape(CLOSE);
   }
 
 }
