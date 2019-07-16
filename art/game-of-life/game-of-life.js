@@ -27,6 +27,7 @@ function setup() {
   for (i = 0; i < columns; i++) {
     next[i] = new Array(rows);
   }
+  frameRate(5);
   init();
 }
 
