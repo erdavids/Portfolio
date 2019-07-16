@@ -63,6 +63,7 @@ function keyTyped() {
   if (key === 'r') {
     setup()
   }
+}
 
 function mousePressed() {
   console.log(img.height)
