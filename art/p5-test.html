@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138963802-1"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8d7586204f74683a9d24dc447/17eb59f014f48f8438ee970f1.js");</script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-138963802-1');
+        </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="/style.css">
         <script src="/prism.js"></script>
@@ -22,9 +34,11 @@
         </div>
 
         <div class="project_block">
-          <h2>P5 Test Template</h2>
+          <h2>How to Embed p5.js Sketches into your Personal Site</h2>
 
-          <p>I'm working on learning more about <span class="color-text">p5.js</span>, and this will serve as a great starting point</p>
+          <p>Using <span class="color-text">p5.js</span> to add some color and personality to your website is a lot easier than it seems! When I started working with p5, I was able to learn quickly thanks to their <span class="color-text">amazing examples</span>, but it took a long time for me to intergrate the sketches properly into a page.</p>
+
+          <p>Here's a <span class="color-text">simple example</span> of a p5 sketch...</p>
 
           <div class="row_2">
               <div class="column_6">
@@ -32,6 +46,20 @@
                 </div>
               </div>
           </div>
+
+          <p>You can see that the sketch fits nicely into the article. In order to make this happen, I had to attach my p5 canvas to the document by specifying a div id. Here's the code that made all of this happen...</p>
+
+          <h3>HTML:</h3>
+          <script src="https://gist.github.com/erdavids/e61cb0054f3bda36421ac8d1de2b83b3.js"></script>
+
+          <h3>Javascript:</h3>
+          <script src="https://gist.github.com/erdavids/7f5bb94edcf7f77e147d544d7a032c3f.js"></script>
+
+          <h3>CSS:</h3>
+          <script src="https://gist.github.com/erdavids/9baf455093ae4fa8f647583843d14bf5.js"></script>
+
+
+
       </div>
 
         <div class="project_block">
