@@ -15,6 +15,10 @@ function setup() {
 function draw() {
   let x = random(width);
   let y = random(height);
-  fill(random(255), random(255), random(255), 10);
-  ellipse(x, y, random(20), random(20));
+
+  noStroke();
+  fill(random(255), random(255), random(255), 120);
+
+  var s = random(100)
+  ellipse(x, y, s, s);
 }
