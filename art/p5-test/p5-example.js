@@ -1,13 +1,6 @@
-// function setup() {
-//   var cnv = createCanvas(400, 400);
-//   var x = (windowWidth - width) / 2;
-//   var y = (windowHeight - height) / 2;
-//   cnv.position(x, y);
-//   background(255, 0, 200);
-// }
+
 
 function setup() {
-  // Move the canvas so it’s inside our <div id="sketch-holder">.
 
   var canvasDiv = document.getElementById('sketchdiv')
   var width = canvasDiv.offsetWidth
@@ -16,14 +9,12 @@ function setup() {
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
 
-  background(200, 200, 200);
-
-  for (let i = 0; i < 100; i++) {
-    let r = random(-50, 50);
-    line(width/2, i, 50 + r, i);
-  }
+  background(206, 200, 176);
 }
 
 function draw() {
-
+  let x = random(width);
+  let y = random(height);
+  fill(random(255), random(255), random(255), 10);
+  ellipse(x, y, random(20), random(20));
 }
