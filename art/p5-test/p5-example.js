@@ -3,7 +3,7 @@
 function setup() {
   var canvasDiv = document.getElementById('sketchdiv')
   var width = canvasDiv.offsetWidth
-  var height = 600
+  var height = 350
 
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
