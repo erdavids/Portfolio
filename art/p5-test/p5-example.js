@@ -1,6 +1,7 @@
 
 
 function setup() {
+
   var canvasDiv = document.getElementById('sketchdiv')
   var width = canvasDiv.offsetWidth
   var height = 350
