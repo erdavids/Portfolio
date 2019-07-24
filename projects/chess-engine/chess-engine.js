@@ -61,6 +61,7 @@ function setup() {
 
   // Piece placement (Rather long but a one time deal)
   draw_piece_on_grid(bR, 0, 0);
+  image(bR, square_size, 0, square_size, square_size);
 
 }
 
