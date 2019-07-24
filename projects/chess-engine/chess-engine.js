@@ -6,10 +6,7 @@ function setup() {
 
   var canvasDiv = document.getElementById('sketchdiv')
   var width = canvasDiv.offsetWidth
-
-  img.resize(width, 0);
-
-  var height = img.height;
+  var height = width
 
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
