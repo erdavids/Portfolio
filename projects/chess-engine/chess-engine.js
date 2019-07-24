@@ -13,12 +13,17 @@ function setup() {
 
   var square_size = width/8
 
+  // starts as white
+  var square_color = 0
   for (let x = 0; x < width; x += square_size) {
     for (let y = 0; y < height; y += square_size) {
-      r = random(255);
-      g = random(255);
-      b = random(255);
-      fill(r, g, b);
+      if (square_color == 0) {
+        fill(230, 230, 230);
+        square_color = 1;
+      } else {
+        fill(0, 150, 150)
+        square_color = 0;
+      }
       rect(x, y, square_size, square_size);
     }
   }
