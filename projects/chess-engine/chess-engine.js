@@ -18,16 +18,15 @@ function preload() {
   wR = loadImage('../projects/chess-engine/chess-images/wR.png');
 }
 
-function grid_to_pixel(x, y) {
+function grid_to_pixel(x, y, s) {
   console.log(x)
   return [x*square_size, y*square_size];
 }
 
-function draw_piece_on_grid(piece, x, y) {
-  var pix = grid_to_pixel(x, y);
+function draw_piece_on_grid(piece, x, y, s) {
+  var pix = grid_to_pixel(x, y, s);
   console.log(pix);
   image(piece, pix[0], pix[1], square_size, square_size);
-
 }
 
 function setup() {
@@ -63,7 +62,7 @@ function setup() {
   }
 
   // Piece placement (Rather long but a one time deal)
-  draw_piece_on_grid(bR, 0, 0);
+  draw_piece_on_grid(bR, 0, 0, square_size);
   image(bR, square_size, 0, square_size, square_size);
 
 }
