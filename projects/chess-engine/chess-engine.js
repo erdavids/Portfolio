@@ -38,9 +38,14 @@ function setup() {
     }
   }
 
-  image(bR, 0, 0, square_size, square_size)
+  image(bR, 0, 0, square_size, square_size);
 
 }
 
 function draw() {
+}
+
+function mouseClicked() {
+  // remove the background
+  image(bR, 200, 200, square_size, square_size);
 }
