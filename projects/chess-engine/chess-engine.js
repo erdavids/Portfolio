@@ -1,5 +1,10 @@
 
 let r, g, b;
+let bR;
+
+function preload() {
+  bR = loadImage('./chess-images/bR');
+}
 
 function setup() {
   // Move the canvas so it’s inside our <div id="sketch-holder">.
@@ -32,6 +37,8 @@ function setup() {
       square_color = 1;
     }
   }
+
+  img(bR, 0, 0, square_size, square_size)
 
 }
 
