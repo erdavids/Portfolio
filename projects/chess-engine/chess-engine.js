@@ -27,6 +27,10 @@ function draw_piece_on_grid(piece, x, y) {
   image(piece, pix[0], pix[1], square_size, square_size);
 }
 
+function grid_clicked(x, y) {
+  return [int(mouseX / square_size), int(mouseY / square_size)];
+}
+
 function setup() {
   // Move the canvas so it’s inside our <div id="sketch-holder">.
 
@@ -96,6 +100,6 @@ function draw() {
 }
 
 function mouseClicked() {
-  console.log(int(mouseX / square_size));
-  rect(int(mouseX / square_size), int(mouseY / square_size), square_size, square_size);
+  var grid_clicked = grid_clicked(mouseX, mouseY)
+  console.log(grid_clicked)
 }
