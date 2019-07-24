@@ -26,6 +26,11 @@ function setup() {
       }
       rect(x, y, square_size, square_size);
     }
+    if (square_color == 1) {
+      square_color = 0;
+    } else {
+      square_color = 1;
+    }
   }
 
 }
