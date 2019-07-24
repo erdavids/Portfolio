@@ -57,7 +57,7 @@ function setup() {
   ]
 
   draw_empty_board();
-  draw_pieces();
+  draw_initial_pieces();
   //draw_initial_pieces();
   // Piece placement (Rather long but a one time deal)
   //draw_piece_on_grid(bR, 0, 0, square_size);
@@ -85,14 +85,7 @@ function draw_empty_board() {
   }
 }
 
-function draw_pieces() {
-  for (let x = 0; x < 8; x++) {
-    for (let y = 0; y < 8; x++) {
-      if (board[x][y] == 1)
-        draw_piece_on_grid(bP, x, y);
-    }
-  }
-}
+
 
 function draw_initial_pieces() {
   // Black pieces
