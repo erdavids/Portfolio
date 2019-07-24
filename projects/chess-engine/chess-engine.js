@@ -3,7 +3,7 @@ let r, g, b;
 let bR;
 
 function preload() {
-  bR = loadImage('../projects/chess-engine/chess-images/bR.png');
+  bR = loadImage('chess-images/bR.png');
 }
 
 function setup() {
@@ -38,7 +38,7 @@ function setup() {
     }
   }
 
-  img(bR, 0, 0, square_size, square_size)
+  image(bR, 0, 0, square_size, square_size)
 
 }
 
