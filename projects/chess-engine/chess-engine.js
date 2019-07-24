@@ -60,7 +60,7 @@ function setup() {
   }
 
   // Piece placement (Rather long but a one time deal)
-  draw_piece_on_grid(bB, 2, 0);
+  draw_piece_on_grid(bR, 0, 0);
 
 }
 
