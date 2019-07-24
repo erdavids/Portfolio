@@ -96,5 +96,6 @@ function draw() {
 }
 
 function mouseClicked() {
-  console.log( mouseX / square_size);
+  console.log(int(mouseX / square_size));
+  rect(int(mouseX / square_size), int(mouseY / square_size), square_size, square_size);
 }
