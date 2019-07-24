@@ -18,6 +18,7 @@ function setup() {
       r = random(255);
       g = random(255);
       b = random(255);
+      fill(r, g, b);
       rect(x, y, square_size, square_size);
     }
   }
