@@ -62,10 +62,13 @@ function setup() {
     }
   }
 
+  draw_initial_board();
   // Piece placement (Rather long but a one time deal)
-  draw_piece_on_grid(bR, 0, 0, square_size);
-  image(bR, square_size, 0, square_size, square_size);
+  //draw_piece_on_grid(bR, 0, 0, square_size);
+}
 
+function draw_initial_board() {
+  draw_piece_on_grid(bR, 0, 0, square_size);
 }
 
 function draw() {
