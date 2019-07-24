@@ -58,9 +58,6 @@ function setup() {
 
   draw_empty_board();
   draw_initial_pieces();
-  //draw_initial_pieces();
-  // Piece placement (Rather long but a one time deal)
-  //draw_piece_on_grid(bR, 0, 0, square_size);
 }
 
 function draw_empty_board() {
@@ -123,5 +120,10 @@ function draw() {
 // move state?
 function mouseClicked() {
   var grid_click = grid_clicked(mouseX, mouseY)
-  console.log(grid_click)
+  if (grid_click[0] < 8 && grid_click[0] >= 0 && grid_click[1] < 8 && grid_click[1] >= 0) {
+    var piece = board[grid_click[0]][grid_click[1]];
+    fill(0, 0, 0, 0);
+    stroke(230, 0, 0);
+    rect(grid_to_pixel(grid_click[0]), grid_to_pixel(grid_click[1]), square_size, square_size);
+  }
 }
