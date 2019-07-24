@@ -2,6 +2,7 @@
 let r, g, b;
 let bB, bR, bK, bN, bP, bQ, wB, wK, wN, wP, wQ, wR;
 let square_size;
+let board;
 
 function preload() {
   bB = loadImage('../projects/chess-engine/chess-images/bB.png');
@@ -43,6 +44,13 @@ function setup() {
 
   square_size = width/8
 
+  draw_empty_board();
+  draw_initial_pieces();
+  // Piece placement (Rather long but a one time deal)
+  //draw_piece_on_grid(bR, 0, 0, square_size);
+}
+
+function draw_empty_board() {
   // starts as white
   var square_color = 0
   for (let x = 0; x < width; x += square_size) {
@@ -62,13 +70,9 @@ function setup() {
       square_color = 1;
     }
   }
-
-  draw_initial_board();
-  // Piece placement (Rather long but a one time deal)
-  //draw_piece_on_grid(bR, 0, 0, square_size);
 }
 
-function draw_initial_board() {
+function draw_initial_pieces() {
   // Black pieces
   draw_piece_on_grid(bR, 0, 0);
   draw_piece_on_grid(bN, 1, 0);
@@ -99,6 +103,9 @@ function draw_initial_board() {
 function draw() {
 }
 
+
+// Control the state
+// move state?
 function mouseClicked() {
   var grid_click = grid_clicked(mouseX, mouseY)
   console.log(grid_click)
