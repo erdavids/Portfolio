@@ -96,6 +96,5 @@ function draw() {
 }
 
 function mouseClicked() {
-  // remove the background
-  //image(bR, 200, 200, square_size, square_size);
+  console.log( mouseX / square_size);
 }
