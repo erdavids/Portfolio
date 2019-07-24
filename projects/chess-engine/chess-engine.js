@@ -1,6 +1,7 @@
 
 let r, g, b;
 let bR;
+let square_size;
 
 function preload() {
   bR = loadImage('../projects/chess-engine/chess-images/bR.png');
