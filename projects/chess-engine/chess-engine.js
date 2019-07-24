@@ -127,10 +127,11 @@ function mouseClicked() {
   var grid_click = grid_clicked(mouseX, mouseY)
   if (grid_click[0] < 8 && grid_click[0] >= 0 && grid_click[1] < 8 && grid_click[1] >= 0) {
     if (state == 'neutral') {
-      var piece = board[grid_click[0]][grid_click[1]];
+      console.log(grid_click);
+      var piece = board[grid_click[1]][grid_click[0]];
       console.log(piece);
       if (piece > 6) {
-        moves = get_moves(piece, grid_click[0], grid_click[1]);
+        moves = get_moves(piece, grid_click[1], grid_click[0]);
         console.log(moves)
         state = 'moving'
       }
