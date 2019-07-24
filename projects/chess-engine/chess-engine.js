@@ -67,7 +67,18 @@ function setup() {
 }
 
 function draw_initial_board() {
+  // Black pieces
   draw_piece_on_grid(bR, 0, 0);
+  draw_piece_on_grid(bN, 1, 0);
+  draw_piece_on_grid(bB, 2, 0);
+  draw_piece_on_grid(bK, 3, 0)
+  draw_piece_on_grid(bQ, 4, 0);
+  draw_piece_on_grid(bB, 5, 0);
+  draw_piece_on_grid(bN, 6, 0);
+  draw_piece_on_grid(bR, 7, 0);
+  for (let x = 0; x < 8; x++) {
+    draw_piece_on_grid(bP, x, 1);
+  }
 }
 
 function draw() {
