@@ -71,13 +71,26 @@ function draw_initial_board() {
   draw_piece_on_grid(bR, 0, 0);
   draw_piece_on_grid(bN, 1, 0);
   draw_piece_on_grid(bB, 2, 0);
-  draw_piece_on_grid(bK, 3, 0)
-  draw_piece_on_grid(bQ, 4, 0);
+  draw_piece_on_grid(bQ, 3, 0)
+  draw_piece_on_grid(bK, 4, 0);
   draw_piece_on_grid(bB, 5, 0);
   draw_piece_on_grid(bN, 6, 0);
   draw_piece_on_grid(bR, 7, 0);
   for (let x = 0; x < 8; x++) {
     draw_piece_on_grid(bP, x, 1);
+  }
+
+  // White pieces
+  draw_piece_on_grid(wR, 0, 7);
+  draw_piece_on_grid(wN, 1, 7);
+  draw_piece_on_grid(wB, 2, 7);
+  draw_piece_on_grid(wQ, 3, 7)
+  draw_piece_on_grid(wK, 4, 7);
+  draw_piece_on_grid(wB, 5, 7);
+  draw_piece_on_grid(wN, 6, 7);
+  draw_piece_on_grid(wR, 7, 7);
+  for (let x = 0; x < 8; x++) {
+    draw_piece_on_grid(bP, x, 6);
   }
 }
 
@@ -86,5 +99,5 @@ function draw() {
 
 function mouseClicked() {
   // remove the background
-  image(bR, 200, 200, square_size, square_size);
+  //image(bR, 200, 200, square_size, square_size);
 }
