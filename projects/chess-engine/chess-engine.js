@@ -100,6 +100,6 @@ function draw() {
 }
 
 function mouseClicked() {
-  var grid_clicked = grid_clicked(mouseX, mouseY)
-  console.log(grid_clicked)
+  var grid_click = grid_clicked(mouseX, mouseY)
+  console.log(grid_click)
 }
