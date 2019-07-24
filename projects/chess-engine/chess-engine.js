@@ -147,4 +147,6 @@ function get_moves(p, x, y) {
       available_moves.push[[x, y-1]];
     }
   }
+
+  return available_moves;
 }
