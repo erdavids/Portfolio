@@ -5,6 +5,9 @@ let square_size;
 let piece_list;
 let board;
 
+let moves;
+let state;
+
 function preload() {
   bB = loadImage('../projects/chess-engine/chess-images/bB.png');
   bR = loadImage('../projects/chess-engine/chess-images/bR.png');
@@ -58,6 +61,8 @@ function setup() {
 
   draw_empty_board();
   draw_initial_pieces();
+
+  state = 'neutral';
 }
 
 function draw_empty_board() {
@@ -121,9 +126,25 @@ function draw() {
 function mouseClicked() {
   var grid_click = grid_clicked(mouseX, mouseY)
   if (grid_click[0] < 8 && grid_click[0] >= 0 && grid_click[1] < 8 && grid_click[1] >= 0) {
-    var piece = board[grid_click[0]][grid_click[1]];
-    fill(0, 0, 0);
-    stroke(230, 0, 0);
-    rect(grid_to_pixel(grid_click[0]), grid_to_pixel(grid_click[1]), square_size, square_size);
+    if (state == 'neutral') {
+      var piece = board[grid_click[0]][grid_click[1]];
+      if (piece > 6) {
+        moves = get_moves(piece, grid_click[0], grid_click[1]);
+        console.log(moves)
+        state = 'moving'
+      }
+    } else if (state == 'moving') {
+
+    }
+  }
+}
+
+function get_moves(p, x, y) {
+  var available_moves = []
+  // Pawn
+  if (p == 7) {
+    if (board[x][y-1] == 0) {
+      available_moves.push[[x, y-1]];
+    }
   }
 }
