@@ -2,6 +2,7 @@
 let r, g, b;
 let bB, bR, bK, bN, bP, bQ, wB, wK, wN, wP, wQ, wR;
 let square_size;
+let piece_list;
 let board;
 
 function preload() {
@@ -44,8 +45,20 @@ function setup() {
 
   square_size = width/8
 
+  board = [
+    [4, 2, 3, 5, 6, 3, 2, 4],
+    [1, 1, 1, 1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [7, 7, 7, 7, 7, 7, 7, 7],
+    [10, 8, 9, 11, 12, 9, 8, 10]
+  ]
+
   draw_empty_board();
-  draw_initial_pieces();
+  draw_pieces();
+  //draw_initial_pieces();
   // Piece placement (Rather long but a one time deal)
   //draw_piece_on_grid(bR, 0, 0, square_size);
 }
@@ -68,6 +81,15 @@ function draw_empty_board() {
       square_color = 0;
     } else {
       square_color = 1;
+    }
+  }
+}
+
+function draw_pieces() {
+  for (let x = 0; x < 8; x++) {
+    for (let x = 0; x < 8; x++) {
+      if (board[x][y] == 1)
+        draw_piece_on_grid(bP, x, y);
     }
   }
 }
