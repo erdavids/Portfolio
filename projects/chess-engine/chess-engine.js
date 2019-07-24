@@ -18,16 +18,16 @@ function preload() {
   wR = loadImage('../projects/chess-engine/chess-images/wR.png');
 }
 
-function grid_to_pixel(x, y, s) {
+function grid_to_pixel(x, y) {
   console.log(x)
   console.log(s)
-  return [x*s, y*s];
+  return [x*square_size, y*square_size];
 }
 
 function draw_piece_on_grid(piece, x, y, s) {
-  var pix = grid_to_pixel(x, y, s);
+  var pix = grid_to_pixel(x, y);
   console.log(pix);
-  image(piece, pix[0], pix[1], s, s);
+  image(piece, pix[0], pix[1], square_size, square_size);
 }
 
 function setup() {
@@ -40,7 +40,7 @@ function setup() {
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
 
-  var square_size = width/8
+  square_size = width/8
 
   // starts as white
   var square_color = 0
@@ -68,7 +68,7 @@ function setup() {
 }
 
 function draw_initial_board() {
-  draw_piece_on_grid(bR, 0, 0, square_size);
+  draw_piece_on_grid(bR, 0, 0);
 }
 
 function draw() {
