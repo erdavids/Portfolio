@@ -1,10 +1,30 @@
 
 let r, g, b;
-let bR;
+let bB, bR, bK, bN, bP, bQ, wB, wK, wN, wP, wQ, wR;
 let square_size;
 
 function preload() {
+  bB = loadImage('../projects/chess-engine/chess-images/bB.png');
   bR = loadImage('../projects/chess-engine/chess-images/bR.png');
+  bK = loadImage('../projects/chess-engine/chess-images/bK.png');
+  bN = loadImage('../projects/chess-engine/chess-images/bN.png');
+  bP = loadImage('../projects/chess-engine/chess-images/bP.png');
+  bQ = loadImage('../projects/chess-engine/chess-images/bQ.png');
+  wB = loadImage('../projects/chess-engine/chess-images/wB.png');
+  wK = loadImage('../projects/chess-engine/chess-images/wK.png');
+  wN = loadImage('../projects/chess-engine/chess-images/wN.png');
+  wP = loadImage('../projects/chess-engine/chess-images/wP.png');
+  wQ = loadImage('../projects/chess-engine/chess-images/wQ.png');
+  wR = loadImage('../projects/chess-engine/chess-images/wR.png');
+}
+
+function grid_to_pixel(x, y) {
+  return [x*square_size, y*square_size];
+}
+
+function draw_piece_on_grid(piece, x, y) {
+  var pix = grid_to_pixel(x, y);
+  image(piece, pix[0], pix[1], square_size, square_size);
 }
 
 function setup() {
@@ -39,7 +59,8 @@ function setup() {
     }
   }
 
-  image(bR, 0, 0, square_size, square_size);
+  // Piece placement (Rather long but a one time deal)
+  draw_piece_on_grid(bB, 2, 0);
 
 }
 
