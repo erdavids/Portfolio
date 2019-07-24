@@ -24,6 +24,7 @@ function grid_to_pixel(x, y) {
 
 function draw_piece_on_grid(piece, x, y) {
   var pix = grid_to_pixel(x, y);
+  console.log(pix);
   image(piece, pix[0], pix[1], square_size, square_size);
 }
 
