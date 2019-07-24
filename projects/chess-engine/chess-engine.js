@@ -20,13 +20,14 @@ function preload() {
 
 function grid_to_pixel(x, y, s) {
   console.log(x)
-  return [x*square_size, y*square_size];
+  console.log(s)
+  return [x*s, y*s];
 }
 
 function draw_piece_on_grid(piece, x, y, s) {
   var pix = grid_to_pixel(x, y, s);
   console.log(pix);
-  image(piece, pix[0], pix[1], square_size, square_size);
+  image(piece, pix[0], pix[1], s, s);
 }
 
 function setup() {
