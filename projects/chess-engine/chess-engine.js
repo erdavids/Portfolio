@@ -227,6 +227,14 @@ function get_moves(p, grid_click) {
       m[el] = [r - 2, c + 1];
       el += 1;
     }
+    if (r < 6 && c < 7 && board[r + 2][c + 1] < 6) {
+      m[el] = [r + 2, c + 1];
+      el += 1;
+    }
+    if (r < 6 && c > 0 && board[r + 2][c - 1] < 6) {
+      m[el] = [r + 2, c - 1];
+      el += 1;
+    }
   }
   return m;
 }
