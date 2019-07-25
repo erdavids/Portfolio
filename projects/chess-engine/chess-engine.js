@@ -136,13 +136,26 @@ function mouseClicked() {
       selected = piece
       selected_location[0] = grid_click[0]
       selected_location[1] = grid_click[1]
+      moves = get_moves(piece, grid_click)
+      console.log(moves);
     } else if (piece == 0 && selected != -1) {
+      if (moves.includes(grid_click)) {
+        console.log("Success!");
+      }
       draw_piece_on_grid(wB, grid_click[0], grid_click[1]);
-
       var pix = grid_to_pixel(selected_location[1], selected_location[0])
       rect(pix[0], pix[1], square_size, square_size)
 
     }
     console.log(board[grid_click[0]][grid_click[1]])
   }
+}
+
+function get_moves(p, grid_click) {
+  var el = 0;
+  var m = [];
+  if (p == 7) {
+    m[0] = [grid_click[0] - 1, grid_click[1]]
+  }
+  return m;
 }
