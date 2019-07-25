@@ -139,7 +139,7 @@ function mouseClicked() {
       moves = get_moves(piece, grid_click)
       console.log(moves);
     } else if (piece == 0 && selected != -1) {
-      if (moves.includes(grid_click)) {
+      if (valid_move(moves, grid_click)) {
         console.log("Success!");
       }
       draw_piece_on_grid(wB, grid_click[0], grid_click[1]);
@@ -159,4 +159,13 @@ function get_moves(p, grid_click) {
     m[1] = [grid_click[0] - 2, grid_click[1]]
   }
   return m;
+}
+
+function valid_move(moves, grid_click) {
+  for (var i = 0; i < moves.length; i++) {
+      if (moves[i][0] == grid_click[0] && moves[i][1] == grid_click[1]) {
+          return true;   // Found it
+      }
+  }
+  return false;
 }
