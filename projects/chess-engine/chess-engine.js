@@ -274,7 +274,7 @@ function get_moves(p, grid_click) {
       el += 1;
       ri += 1;
     }
-    if (r + ri >= 0 && board[r + ri][c] < 7 && board[r + ri][c] > 0) {
+    if (r + ri <= 7 && board[r + ri][c] < 7 && board[r + ri][c] > 0) {
       m[el] = [r + ri, c];
       el += 1;
     }
