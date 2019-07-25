@@ -239,19 +239,19 @@ function get_moves(p, grid_click) {
 
     //Wide Moves
     if (r > 0 && c > 1 && board[r - 1][c - 2] < 6) {
-      m[el] = [r - 2, c - 1];
+      m[el] = [r - 1, c - 2];
       el += 1;
     }
     if (r > 0 && c < 6 && board[r - 1][c + 2] < 6) {
-      m[el] = [r - 2, c + 1];
+      m[el] = [r - 1, c + 2];
       el += 1;
     }
     if (r < 7 && c < 6 && board[r + 1][c + 2] < 6) {
-      m[el] = [r + 2, c + 1];
+      m[el] = [r + 1, c + 2];
       el += 1;
     }
     if (r < 7 && c > 1 && board[r + 1][c - 2] < 6) {
-      m[el] = [r + 2, c - 1];
+      m[el] = [r + 1, c - 2];
       el += 1;
     }
   }
