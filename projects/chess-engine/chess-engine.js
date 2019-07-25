@@ -144,10 +144,22 @@ function mouseClicked() {
       console.log(moves);
     } else if (piece == 0 && selected != -1) {
       if (valid_move(moves, grid_click)) {
-        console.log("Success!");
+
+        // Update the board for the next moves
+        board[grid_click[0]][grid_click[1]] = piece
+        board[selected_location[0]][selected_location[1]] = 0
+
+        // Draw the piece in it's new location
         draw_piece_on_grid(piece_list[selected], grid_click[0], grid_click[1]);
+
+        // Cover the previous location (Need to actually draw the right color)
         var pix = grid_to_pixel(selected_location[1], selected_location[0])
         rect(pix[0], pix[1], square_size, square_size)
+
+        // Undo selection after successful move
+        selected = -1
+        selected_location[0] = -1
+        selected_location[1] = -1
       }
 
     }
