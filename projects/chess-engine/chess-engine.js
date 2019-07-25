@@ -469,42 +469,39 @@ function get_moves(p, grid_click) {
     var ri = 1;
     var ci = 1;
 
-    if (r - ri >= 0 && board[r - ri][c] < 7 && board[r - ri][c] > 0) {
+    if (r - ri >= 0 && board[r - ri][c] < 7) {
       m[el] = [r - ri, c];
       el += 1;
     }
-    if (r + ri <= 7 && board[r + ri][c] < 7 && board[r + ri][c] > 0) {
+    if (r + ri <= 7 && board[r + ri][c] < 7) {
       m[el] = [r + ri, c];
       el += 1;
     }
-    if (c + ci <= 7 && board[r][c + ci] < 7 && board[r][c + ci] > 0) {
+    if (c + ci <= 7 && board[r][c + ci] < 7) {
       m[el] = [r, c + ci];
       el += 1;
     }
-    if (c - ci >= 0 && board[r][c - ci] < 7 && board[r][c - ci] > 0) {
+    if (c - ci >= 0 && board[r][c - ci] < 7) {
       m[el] = [r, c - ci];
       el += 1;
     }
 
-    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] < 7 && board[r - ri][c - ci] > 0) {
+    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] < 7) {
       m[el] = [r - ri, c - ci]
       el += 1;
     }
-    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] < 7 && board[r - ri][c + ci] > 0) {
+    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] < 7) {
       m[el] = [r - ri, c + ci]
       el += 1;
     }
-    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] < 7 && board[r + ri][c + ci] > 0) {
+    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] < 7) {
       m[el] = [r + ri, c + ci]
       el += 1;
     }
-    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] < 7 && board[r + ri][c - ci] > 0) {
+    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] < 7) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
-
-
-
   }
 
   return m;
