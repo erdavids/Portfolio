@@ -142,7 +142,7 @@ function mouseClicked() {
       selected_location[1] = grid_click[1]
       moves = get_moves(piece, grid_click)
       console.log(moves);
-    } else if (piece == 0 && selected != -1) {
+    } else if (selected != -1) {
       if (valid_move(moves, grid_click)) {
 
         // Update the board for the next moves
@@ -177,9 +177,24 @@ function get_moves(p, grid_click) {
   var m = [];
   // White Pawn
   if (p == 7) {
-    // Should always be valid
-    m[0] = [grid_click[0] - 1, grid_click[1]]
-    m[2] = [grid_click[0] - 2, grid_click[1]]
+    // Regular moves
+    if (board[grid_click[0] - 1][grid_click[1]] == 0) {
+      m[el] = [grid_click[0] - 1, grid_click[1]];
+      el += 1;
+    }
+    if (grid_click[0] == 6 && board[grid_click[0] - 2][grid_click[1]] == 0) {
+      m[el] = [grid_click[0] - 2, grid_click[1]]
+      el += 1;
+    }
+    // Capturing
+    if (grid_click[1] > 0 && board[grid_click[0] - 1][grid_click[1] - 1] < 7 && board[grid_click[0] - 1][grid_click[1] - 1] > 0) {
+      m[el] = [grid_click[0] - 1, grid_click[1] - 1];
+      el += 1;
+    }
+    if (grid_click[1] < 7 && board[grid_click[0] - 1][grid_click[1] + 1] < 7 && board[grid_click[0] - 1][grid_click[1] - 1] > 0) {
+      m[el] = [grid_click[0] - 1, grid_click[1] + 1];
+      el += 1;
+    }
   }
   return m;
 }
