@@ -307,6 +307,7 @@ function get_moves(p, grid_click) {
     // Northwest
     while (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] == 0) {
       m[el] = [r - ri, c - ci];
+      console.log(m)
       el += 1;
       ri += 1;
       ci += 1;
@@ -357,7 +358,7 @@ function get_moves(p, grid_click) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
-  } 
+  }
 
   return m;
 }
