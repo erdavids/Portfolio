@@ -174,6 +174,10 @@ function mouseClicked() {
         selected = -1
         selected_location[0] = -1
         selected_location[1] = -1
+      } else {
+        selected = -1;
+        selected_location[0] = -1
+        selected_location[1] = -1
       }
 
     }
