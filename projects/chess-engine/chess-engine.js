@@ -126,6 +126,6 @@ function draw() {
 function mouseClicked() {
   var grid_click = grid_clicked(mouseX, mouseY);
   if (grid_click[0] < 8 && grid_click[0] >= 0 && grid_click[1] < 8 && grid_click[1] >= 0) {
-    console.log(grid_clicked())
+    console.log(board[grid_click[0]][grid_click[1]])
   }
 }
