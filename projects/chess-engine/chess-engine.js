@@ -357,6 +357,113 @@ function get_moves(p, grid_click) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
+  // White Queen
+  } else if (p == 12) {
+    // Up
+    var ri = 1;
+    while (r - ri >= 0 && board[r-ri][c] == 0) {
+      m[el] = [r - ri, c];
+      el += 1;
+      ri += 1;
+    }
+    if (r - ri >= 0 && board[r - ri][c] < 7 && board[r - ri][c] > 0) {
+      m[el] = [r - ri, c];
+      el += 1;
+    }
+
+    // Down
+    ri = 1
+    while (r + ri <= 7 && board[r + ri][c] == 0) {
+      m[el] = [r + ri, c];
+      el += 1;
+      ri += 1;
+    }
+    if (r + ri <= 7 && board[r + ri][c] < 7 && board[r + ri][c] > 0) {
+      m[el] = [r + ri, c];
+      el += 1;
+    }
+
+    // Right
+    var ci = 1
+    while (c + ci <= 7 && board[r][c + ci] == 0) {
+      m[el] = [r, c + ci];
+      el += 1;
+      ci += 1;
+    }
+    if (c + ci <= 7 && board[r][c + ci] < 7 && board[r][c + ci] > 0) {
+      m[el] = [r, c + ci];
+      el += 1;
+    }
+
+    // Left
+    ci = 1
+    while (c - ci >= 0 && board[r][c - ci] == 0) {
+      m[el] = [r, c - ci];
+      el += 1;
+      ci += 1;
+    }
+    if (c + ci >= 0 && board[r][c - ci] < 7 && board[r][c - ci] > 0) {
+      m[el] = [r, c - ci];
+      el += 1;
+    }
+
+
+    ri = 1;
+    ci = 1;
+
+    // Northwest
+    while (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] == 0) {
+      m[el] = [r - ri, c - ci];
+      el += 1;
+      ri += 1;
+      ci += 1;
+    }
+    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] < 7 && board[r - ri][c - ci] > 0) {
+      m[el] = [r - ri, c - ci]
+      el += 1;
+    }
+
+    // Northeast
+    ri = 1;
+    ci = 1;
+    while (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] == 0) {
+      m[el] = [r - ri, c + ci];
+      el += 1;
+      ri += 1;
+      ci += 1;
+    }
+    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] < 7 && board[r - ri][c + ci] > 0) {
+      m[el] = [r - ri, c + ci]
+      el += 1;
+    }
+
+    // Southeast
+    ri = 1;
+    ci = 1;
+    while (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] == 0) {
+      m[el] = [r + ri, c + ci];
+      el += 1;
+      ri += 1;
+      ci += 1;
+    }
+    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] < 7 && board[r + ri][c + ci] > 0) {
+      m[el] = [r + ri, c + ci]
+      el += 1;
+    }
+
+    // Southwest
+    ri = 1;
+    ci = 1;
+    while (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] == 0) {
+      m[el] = [r + ri, c - ci];
+      el += 1;
+      ri += 1;
+      ci += 1;
+    }
+    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] < 7 && board[r + ri][c - ci] > 0) {
+      m[el] = [r + ri, c - ci]
+      el += 1;
+    }
   }
 
   return m;
