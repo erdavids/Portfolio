@@ -3,6 +3,7 @@ let r, g, b;
 let bB, bR, bK, bN, bP, bQ, wB, wK, wN, wP, wQ, wR;
 let square_size;
 let piece_list;
+
 let board;
 
 let moves;
@@ -49,6 +50,9 @@ function setup() {
   cnv.parent('sketchdiv');
 
   square_size = width/8
+
+  // Used for drawing identical selected piece
+  piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
 
   board = [
     [4, 2, 3, 5, 6, 3, 2, 4],
@@ -141,10 +145,10 @@ function mouseClicked() {
     } else if (piece == 0 && selected != -1) {
       if (valid_move(moves, grid_click)) {
         console.log("Success!");
+        draw_piece_on_grid(piece_list[selected], grid_click[0], grid_click[1]);
+        var pix = grid_to_pixel(selected_location[1], selected_location[0])
+        rect(pix[0], pix[1], square_size, square_size)
       }
-      draw_piece_on_grid(wB, grid_click[0], grid_click[1]);
-      var pix = grid_to_pixel(selected_location[1], selected_location[0])
-      rect(pix[0], pix[1], square_size, square_size)
 
     }
     console.log(board[grid_click[0]][grid_click[1]])
