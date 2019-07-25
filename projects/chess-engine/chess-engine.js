@@ -300,14 +300,13 @@ function get_moves(p, grid_click) {
       el += 1;
     }
   // White Bishop
-  } else if (p == 10) {
+  } else if (p == 9) {
     var ri = 1;
     var ci = 1;
 
     // Northwest
     while (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] == 0) {
       m[el] = [r - ri, c - ci];
-      console.log(m)
       el += 1;
       ri += 1;
       ci += 1;
