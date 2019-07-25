@@ -140,7 +140,7 @@ function mouseClicked() {
       draw_piece_on_grid(wB, grid_click[0], grid_click[1]);
 
       var pix = grid_to_pixel(selected_location[1], selected_location[0])
-      rect(pix[1], pix[2], square_size, square_size)
+      rect(pix[1], pix[0], square_size, square_size)
 
     }
     console.log(board[grid_click[0]][grid_click[1]])
