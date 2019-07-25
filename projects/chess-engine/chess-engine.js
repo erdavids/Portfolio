@@ -278,6 +278,30 @@ function get_moves(p, grid_click) {
       m[el] = [r + ri, c];
       el += 1;
     }
+
+    // Right
+    var ci = 1
+    while (c + ci <= 7 && board[r][c + ci] == 0) {
+      m[el] = [r, c + ci];
+      el += 1;
+      ci += 1;
+    }
+    if (c + ci <= 7 && board[r][c + ci] < 7 && board[r][c + ci] > 0) {
+      m[el] = [r, c + ci];
+      el += 1;
+    }
+
+    // Left
+    var ci = 1
+    while (c - ci >= 0 && board[r][c - ci] == 0) {
+      m[el] = [r, c - ci];
+      el += 1;
+      ci += 1;
+    }
+    if (c + ci >= 0 && board[r][c - ci] < 7 && board[r][c - ci] > 0) {
+      m[el] = [r, c - ci];
+      el += 1;
+    }
   }
 
   return m;
