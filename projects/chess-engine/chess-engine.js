@@ -124,20 +124,8 @@ function draw() {
 // Control the state
 // move state?
 function mouseClicked() {
-  var grid_click = grid_clicked(mouseX, mouseY)
+  var grid_click = grid_clicked(mouseX, mouseY);
   if (grid_click[0] < 8 && grid_click[0] >= 0 && grid_click[1] < 8 && grid_click[1] >= 0) {
     console.log(grid_clicked())
   }
-}
-
-function get_moves(p, x, y) {
-  var available_moves = []
-  // Pawn
-  if (p == 7) {
-      return []
-      available_moves.push[[x, y-1]];
-    }
-  }
-
-  return available_moves;
 }
