@@ -181,7 +181,6 @@ function mouseClicked() {
       }
 
     }
-    console.log(board[grid_click[0]][grid_click[1]])
   }
 }
 
@@ -191,8 +190,6 @@ function get_moves(p, grid_click) {
   var m = [];
   var r = grid_click[0];
   var c = grid_click[1];
-  console.log("knight??");
-  console.log(p);
 
   // White Pawn
   if (p == 7) {
@@ -218,7 +215,6 @@ function get_moves(p, grid_click) {
 
   // White Knight
   } else if (p == 8) {
-    console.log("knight");
     // Tall Moves
     if (r > 1 && c > 0 && board[r - 2][c - 1] < 6) {
       m[el] = [r - 2, c - 1];
@@ -361,9 +357,7 @@ function get_moves(p, grid_click) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
-  } else if (p == 11) {
-
-  }
+  } 
 
   return m;
 }
