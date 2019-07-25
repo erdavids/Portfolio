@@ -254,7 +254,22 @@ function get_moves(p, grid_click) {
       m[el] = [r + 1, c - 2];
       el += 1;
     }
+  // White Rook
+  } else if (p == 10) {
+    // Up
+    var ri = 1;
+    while (r - ri >= 0 && board[r-ri][c] == 0) {
+      m[el] = [r - ri, c];
+      el += 1;
+      ri += 1;
+    }
+    if (r - ri - 1 >= 0 && board[r - ri - 1][c] < 7 && board[r - ri - 1][c] > 0) {
+      m[el] = [r - ri - 1, c];
+      el += 1;
+    }
+    // Down
   }
+
   return m;
 }
 
