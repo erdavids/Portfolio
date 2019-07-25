@@ -6,7 +6,9 @@ let piece_list;
 let board;
 
 let moves;
-let state;
+
+let selected;
+let selected_location;
 
 function preload() {
   bB = loadImage('../projects/chess-engine/chess-images/bB.png');
@@ -58,6 +60,9 @@ function setup() {
     [7, 7, 7, 7, 7, 7, 7, 7],
     [10, 8, 9, 11, 12, 9, 8, 10]
   ]
+
+  selected = -1;
+  selected_location = [-1, -1];
 
   draw_empty_board();
   draw_initial_pieces();
@@ -126,6 +131,15 @@ function draw() {
 function mouseClicked() {
   var grid_click = grid_clicked(mouseX, mouseY);
   if (grid_click[0] < 8 && grid_click[0] >= 0 && grid_click[1] < 8 && grid_click[1] >= 0) {
+    var piece = board[grid_click[0]][grid_click[1]]
+    if (piece > 6) {
+      selected = piece
+      selected_location[0] = grid_click[0]
+      selected_location[1] = grid_click[1]
+    } else if (piece == 0 && selected != -1) {
+      draw_piece_on_grid(wB, grid_click[0], grid_click[1]);
+
+    }
     console.log(board[grid_click[0]][grid_click[1]])
   }
 }
