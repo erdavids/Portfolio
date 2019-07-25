@@ -146,7 +146,7 @@ function mouseClicked() {
       if (valid_move(moves, grid_click)) {
 
         // Update the board for the next moves
-        board[grid_click[0]][grid_click[1]] = piece
+        board[grid_click[0]][grid_click[1]] = selected
         board[selected_location[0]][selected_location[1]] = 0
 
         // Draw the piece in it's new location
