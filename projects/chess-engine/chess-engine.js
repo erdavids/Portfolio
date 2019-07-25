@@ -215,15 +215,14 @@ function get_moves(p, grid_click) {
   // White Knight
   } else if (p == 8) {
     console.log("knight");
-    if (board[r - 2][c - 1] < 6) {
+    if (r > 1 && c > 0 && board[r - 2][c - 1] < 6) {
       m[el] = [r - 2, c - 1];
       el += 1;
     }
-    if (board[r - 2][c + 1] < 6) {
+    if (r > 1 && c < 7 && board[r - 2][c + 1] < 6) {
       m[el] = [r - 2, c + 1];
       el += 1;
     }
-
   }
   return m;
 }
