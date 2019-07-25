@@ -176,9 +176,11 @@ function mouseClicked() {
 function get_moves(p, grid_click) {
   var el = 0;
   var m = [];
+  // White Pawn
   if (p == 7) {
+    // Should always be valid
     m[0] = [grid_click[0] - 1, grid_click[1]]
-    m[1] = [grid_click[0] - 2, grid_click[1]]
+    m[2] = [grid_click[0] - 2, grid_click[1]]
   }
   return m;
 }
