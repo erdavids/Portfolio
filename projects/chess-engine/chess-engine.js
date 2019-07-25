@@ -154,6 +154,12 @@ function mouseClicked() {
 
         // Cover the previous location (Need to actually draw the right color)
         var pix = grid_to_pixel(selected_location[1], selected_location[0])
+        var light = (selected_location[0] % 2) == (selected_location[1] % 2);
+        if (light) {
+          fill(233, 227, 230);
+        } else {
+          fill(144, 162, 172)
+        }
         rect(pix[0], pix[1], square_size, square_size)
 
         // Undo selection after successful move
