@@ -303,7 +303,6 @@ function get_moves(p, grid_click) {
       m[el] = [r, c - ci];
       el += 1;
     }
-  }
   // White Bishop
   } else if (p == 10) {
     var ri = 1;
@@ -363,7 +362,7 @@ function get_moves(p, grid_click) {
       el += 1;
     }
   } else if (p == 11) {
-    
+
   }
 
   return m;
