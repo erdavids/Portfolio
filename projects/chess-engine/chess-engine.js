@@ -181,9 +181,13 @@ function mouseClicked() {
   }
 }
 
+// This will be a long one
 function get_moves(p, grid_click) {
   var el = 0;
   var m = [];
+  console.log("knight??");
+  console.log(p);
+
   // White Pawn
   if (p == 7) {
     // Regular moves
@@ -195,6 +199,7 @@ function get_moves(p, grid_click) {
       m[el] = [grid_click[0] - 2, grid_click[1]]
       el += 1;
     }
+
     // Capturing
     if (grid_click[1] > 0 && board[grid_click[0] - 1][grid_click[1] - 1] < 7 && board[grid_click[0] - 1][grid_click[1] - 1] > 0) {
       m[el] = [grid_click[0] - 1, grid_click[1] - 1];
@@ -204,6 +209,19 @@ function get_moves(p, grid_click) {
       m[el] = [grid_click[0] - 1, grid_click[1] + 1];
       el += 1;
     }
+
+  // White Knight
+  } else if (p == 8) {
+    console.log("knight");
+    if (board[grid_click[0] - 2][grid_click[1] - 1] < 6) {
+      m[el] = [grid_click[0] - 2, grid_click[1] - 1];
+      el += 1;
+    }
+    if (board[grid_click[0] - 2][grid_click[1] + 1] < 6) {
+      m[el] = [grid_click[0] - 2, grid_click[1] + 1];
+      el += 1;
+    }
+
   }
   return m;
 }
