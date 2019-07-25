@@ -358,7 +358,7 @@ function get_moves(p, grid_click) {
       el += 1;
     }
   // White Queen
-  } else if (p == 12) {
+  } else if (p == 11) {
     // Up
     var ri = 1;
     while (r - ri >= 0 && board[r-ri][c] == 0) {
