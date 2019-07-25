@@ -149,6 +149,15 @@ function mouseClicked() {
         board[grid_click[0]][grid_click[1]] = selected
         board[selected_location[0]][selected_location[1]] = 0
 
+        // Cover the new location (capture piece)
+        var pix = grid_to_pixel(grid_click[1], grid_click[0])
+        if ((grid_click[0] % 2) == (grid_click[1] % 2)) {
+          fill(233, 227, 230);
+        } else {
+          fill(144, 162, 172)
+        }
+        rect(pix[0], pix[1], square_size, square_size)
+
         // Draw the piece in it's new location
         draw_piece_on_grid(piece_list[selected], grid_click[0], grid_click[1]);
 
@@ -191,7 +200,7 @@ function get_moves(p, grid_click) {
       m[el] = [grid_click[0] - 1, grid_click[1] - 1];
       el += 1;
     }
-    if (grid_click[1] < 7 && board[grid_click[0] - 1][grid_click[1] + 1] < 7 && board[grid_click[0] - 1][grid_click[1] - 1] > 0) {
+    if (grid_click[1] < 7 && board[grid_click[0] - 1][grid_click[1] + 1] < 7 && board[grid_click[0] - 1][grid_click[1] + 1] > 0) {
       m[el] = [grid_click[0] - 1, grid_click[1] + 1];
       el += 1;
     }
