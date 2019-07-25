@@ -219,6 +219,7 @@ function get_moves(p, grid_click) {
   // White Knight
   } else if (p == 8) {
     console.log("knight");
+    // Tall Moves
     if (r > 1 && c > 0 && board[r - 2][c - 1] < 6) {
       m[el] = [r - 2, c - 1];
       el += 1;
@@ -232,6 +233,24 @@ function get_moves(p, grid_click) {
       el += 1;
     }
     if (r < 6 && c > 0 && board[r + 2][c - 1] < 6) {
+      m[el] = [r + 2, c - 1];
+      el += 1;
+    }
+
+    //Wide Moves
+    if (r > 0 && c > 1 && board[r - 1][c - 2] < 6) {
+      m[el] = [r - 2, c - 1];
+      el += 1;
+    }
+    if (r > 0 && c < 6 && board[r - 1][c + 2] < 6) {
+      m[el] = [r - 2, c + 1];
+      el += 1;
+    }
+    if (r < 7 && c < 6 && board[r + 1][c + 2] < 6) {
+      m[el] = [r + 2, c + 1];
+      el += 1;
+    }
+    if (r < 7 && c > 1 && board[r + 1][c - 2] < 6) {
       m[el] = [r + 2, c - 1];
       el += 1;
     }
