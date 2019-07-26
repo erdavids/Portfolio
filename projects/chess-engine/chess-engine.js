@@ -181,6 +181,8 @@ function mouseClicked() {
 
         // Computer's turn
         player_move = false;
+        console.log("Evaluation of Black Position...");
+        console.log(evaluate_board(board));
         computer_move();
       } else {
         selected = -1;
@@ -196,6 +198,9 @@ function mouseClicked() {
 function computer_move() {
   black_moves = get_black_moves(2, 0, 1);
   console.log(black_moves);
+
+  // Return to player move
+  player_move = true;
 }
 
 // Moves for White
@@ -848,4 +853,36 @@ function valid_move(moves, grid_click) {
       }
   }
   return false;
+}
+
+function evaluate_board(b) {
+  var p = 0;
+  var total_position = 0;
+  for (var r = 0; r < 8; r++) {
+    for (var c = 0; c < 8; c++) {
+      p = board[r][c];
+      // Black Pawn
+      if (p == 1) {
+        total_position += 10;
+      } else if (p == 2 || p == 3) {
+        total_position += 30;
+      } else if (p == 4) {
+        total_position += 40;
+      } else if (p == 5) {
+        total_position += 90;
+      } else if (p == 6) {
+        total_position += 900;
+      } else if (p == 7) {
+        total_position -= 10;
+      } else if (p == 8 || p == 9) {
+        total_position -= 30;
+      } else if (p == 10) {
+        total_position -= 40;
+      } else if (p == 11) {
+        total_position -= 90;
+      } else if (p == 12) {
+        total_position -= 900;
+      }
+    }
+  }
 }
