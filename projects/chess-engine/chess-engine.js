@@ -72,7 +72,7 @@ function setup() {
   testBoard[0][1] = 15
   console.log(board);
   console.log(testBoard);
-  console.log(testBoard[0[1] == 15]);
+  console.log(testBoard[0][1] == 15);
 
   selected = -1;
   selected_location = [-1, -1];
