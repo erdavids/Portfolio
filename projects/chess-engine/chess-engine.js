@@ -209,7 +209,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
 
           best_move = Math.max(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
           alpha = Math.max(alpha, best_move);
-          if (alpha >= beta) {
+          if (alpha > beta) {
             return best_move;
           }
         }
@@ -229,7 +229,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
 
           best_move = Math.min(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
           beta = Math.min(beta, best_move);
-          if (alpha >= beta) {
+          if (alpha > beta) {
             return best_move;
           }
         }
@@ -338,7 +338,7 @@ function computer_move() {
   // }
 
   position_count = 0;
-  var mtt = mini_max_root(2);
+  var mtt = mini_max_root(3);
   console.log(mtt);
 
   var best_piece = mtt[0];
