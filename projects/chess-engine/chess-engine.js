@@ -172,6 +172,7 @@ function mini_max_root(depth) {
 }
 
 function mini_max(depth, b, alpha, beta, is_max) {
+  console.log(depth);
   if (depth == 0) {
     return evaluate_board(b);
   }
