@@ -234,6 +234,8 @@ function mini_max(depth, b, alpha, beta, is_max) {
         }
       }
     }
+    console.log("beta");
+    console.log(beta);
     return best_move;
   }
 }
@@ -337,7 +339,7 @@ function computer_move() {
   // }
 
   position_count = 0;
-  var mtt = mini_max_root(3);
+  var mtt = mini_max_root(1);
   console.log(mtt);
 
   var best_piece = mtt[0];
