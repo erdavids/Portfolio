@@ -14,6 +14,8 @@ let selected_location;
 
 let player_move;
 
+let move_counter;
+
 function preload() {
   bB = loadImage('../projects/chess-engine/chess-images/bB.png');
   bR = loadImage('../projects/chess-engine/chess-images/bR.png');
@@ -79,6 +81,7 @@ function setup() {
 
   state = 'neutral';
   player_move = true;
+  position_count = 0;
 }
 
 function draw_empty_board() {
@@ -162,6 +165,7 @@ function mini_max_root(depth) {
 
         value = mini_max(depth - 1, temp_board, -100000, 100000, false);
 
+
         if (value > best_move) {
           bestMove = value;
 
@@ -181,10 +185,12 @@ function mini_max_root(depth) {
       }
     }
   }
+  console.log(position_count);
   return [t_p, t_r, t_c, t_nr, t_nc];
 }
 
 function mini_max(depth, b, alpha, beta, is_max) {
+  position_count += 1;
   console.log(depth);
   if (depth == 0) {
     return evaluate_board(b);
@@ -331,7 +337,8 @@ function computer_move() {
   //   }
   // }
 
-  var mtt = mini_max_root(2);
+  position_count = 0;
+  var mtt = mini_max_root(1);
   console.log(mtt);
 
   var best_piece = mtt[0];
