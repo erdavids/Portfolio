@@ -70,8 +70,6 @@ function setup() {
 
   var testBoard = get_board_copy(board);
   testBoard[0][1] = 15
-  console.log(board);
-  console.log(testBoard);
 
   selected = -1;
   selected_location = [-1, -1];
@@ -145,8 +143,6 @@ function draw() {
 function mini_max_root(depth) {
   var value = -10000
   var best_move = -9999;
-
-  var move_to_take = [];
 
   for (var r = 0; r < 8; r++) {
     for (var c = 0; c < 8; c++) {
@@ -271,8 +267,6 @@ function mouseClicked() {
 
         // Computer's turn
         player_move = false;
-        console.log("Evaluation of Black Position...");
-        console.log(evaluate_board(board));
         computer_move();
       } else {
         selected = -1;
