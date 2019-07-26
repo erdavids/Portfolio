@@ -68,11 +68,10 @@ function setup() {
     [10, 8, 9, 11, 12, 9, 8, 10]
   ]
 
-  var testBoard = JSON.parse(JSON.stringify(board));
+  var testBoard = get_board_copy(board);
   testBoard[0][1] = 15
   console.log(board);
   console.log(testBoard);
-  console.log(testBoard[0][1] == 15);
 
   selected = -1;
   selected_location = [-1, -1];
@@ -106,7 +105,10 @@ function draw_empty_board() {
   }
 }
 
-
+// Will be used heavily for evaluating future board positions
+function get_board_copy(b) {
+  return JSON.parse(JSON.stringify(b));
+}
 
 function draw_initial_pieces() {
   // Black pieces
