@@ -54,7 +54,7 @@ function setup() {
   square_size = width/8
 
   // Used for drawing identical selected piece
-  piece_list = [bP, bP, bN, bB, bR, bQ, bK, wK, wN, wB, wR, wQ, wP];
+  piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
 
   board = [
     [4, 2, 3, 5, 6, 3, 2, 4],
@@ -204,7 +204,7 @@ function get_moves(p, grid_click) {
   var c = grid_click[1];
 
   // White Pawn
-  if (p == 12) {
+  if (p == 7) {
     // Regular moves
     if (board[r - 1][c] == 0) {
       m[el] = [r - 1, c];
@@ -477,7 +477,7 @@ function get_moves(p, grid_click) {
       el += 1;
     }
   // White King
-} else if (p == 7) {
+} else if (p == 12) {
     var ri = 1;
     var ci = 1;
 
