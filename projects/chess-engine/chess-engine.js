@@ -144,6 +144,12 @@ function mini_max_root(depth) {
   var value = -10000
   var best_move = -9999;
 
+  var t_p = -1;
+  var t_r = -1;
+  var t_c = -1;
+  var t_nr = -1;
+  var t_nc = -1;
+
   for (var r = 0; r < 8; r++) {
     for (var c = 0; c < 8; c++) {
       black_moves = get_black_moves(board[r][c], r, c);
@@ -159,7 +165,11 @@ function mini_max_root(depth) {
         if (value > best_move) {
           bestMove = value;
 
-          return [board[r][c], r, c, black_moves[i][0], black_moves[i][1]];
+          t_p = board[r][c];
+          t_r = r;
+          t_c = c;
+          t_nr = black_moves[i][0];
+          t_nc = black_moves[i][1];
           // best_position = temp_evaluation;
           // best_piece = board[r][c];
           // best_r = r;
@@ -171,6 +181,7 @@ function mini_max_root(depth) {
       }
     }
   }
+  return [t_p, t_r, t_c, t_nr, t_nc];
 }
 
 function mini_max(depth, b, alpha, beta, is_max) {
