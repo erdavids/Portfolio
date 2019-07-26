@@ -801,36 +801,36 @@ function get_black_moves(p, r, c) {
     var ri = 1;
     var ci = 1;
 
-    if (r - ri >= 0 && board[r - ri][c] < 7) {
+    if (r - ri >= 0 && (board[r - ri][c] > 6 || board[r - ri][c] == 0)) {
       m[el] = [r - ri, c];
       el += 1;
     }
-    if (r + ri <= 7 && board[r + ri][c] < 7) {
+    if (r + ri <= 7 && (board[r + ri][c] > 6 || board[r + ri][c] == 0)) {
       m[el] = [r + ri, c];
       el += 1;
     }
-    if (c + ci <= 7 && board[r][c + ci] < 7) {
+    if (c + ci <= 7 && (board[r][c + ci] > 6 || board[r][c + ci] == 0)) {
       m[el] = [r, c + ci];
       el += 1;
     }
-    if (c - ci >= 0 && board[r][c - ci] < 7) {
+    if (c - ci >= 0 && (board[r][c - ci] > 6 || board[r][c - ci] == 0)) {
       m[el] = [r, c - ci];
       el += 1;
     }
 
-    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] < 7) {
+    if (r - ri >= 0 && c - ci >= 0 && (board[r - ri][c - ci] > 6 || board[r - ri][c - ci] == 0)) {
       m[el] = [r - ri, c - ci]
       el += 1;
     }
-    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] < 7) {
+    if (r - ri >= 0 && c + ci <= 7 && (board[r - ri][c + ci] > 6 || board[r - ri][c + ci] == 0)) {
       m[el] = [r - ri, c + ci]
       el += 1;
     }
-    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] < 7) {
+    if (r + ri <= 7 && c + ci <= 7 && (board[r + ri][c + ci] > 6 || board[r + ri][c + ci] == 0)) {
       m[el] = [r + ri, c + ci]
       el += 1;
     }
-    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] < 7) {
+    if (r + ri <= 7 && c - ci >= 0 && (board[r + ri][c - ci] > 6 || board[r + ri][c - ci] == 0)) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
