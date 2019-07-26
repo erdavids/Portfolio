@@ -644,7 +644,7 @@ function get_black_moves(p, r, c) {
       ri += 1;
       ci += 1;
     }
-    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] < 7 && board[r - ri][c - ci] > 0) {
+    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] > 6) {
       m[el] = [r - ri, c - ci]
       el += 1;
     }
@@ -658,7 +658,7 @@ function get_black_moves(p, r, c) {
       ri += 1;
       ci += 1;
     }
-    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] < 7 && board[r - ri][c + ci] > 0) {
+    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] > 6) {
       m[el] = [r - ri, c + ci]
       el += 1;
     }
@@ -672,7 +672,7 @@ function get_black_moves(p, r, c) {
       ri += 1;
       ci += 1;
     }
-    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] < 7 && board[r + ri][c + ci] > 0) {
+    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] > 6) {
       m[el] = [r + ri, c + ci]
       el += 1;
     }
@@ -686,7 +686,7 @@ function get_black_moves(p, r, c) {
       ri += 1;
       ci += 1;
     }
-    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] < 7 && board[r + ri][c - ci] > 0) {
+    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] > 6) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
