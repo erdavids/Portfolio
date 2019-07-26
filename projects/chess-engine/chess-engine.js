@@ -68,11 +68,11 @@ function setup() {
     [10, 8, 9, 11, 12, 9, 8, 10]
   ]
 
-  //var testBoard = JSON.parse(JSON.stringify(board));
-  var testBoard = [...board];
-  testBoard[0][0] = 15;
+  var testBoard = JSON.parse(JSON.stringify(board));
+  testBoard[0][1] = 15
   console.log(board);
   console.log(testBoard);
+  console.log(testBoard[0[1] == 15]);
 
   selected = -1;
   selected_location = [-1, -1];
