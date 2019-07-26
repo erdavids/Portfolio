@@ -549,37 +549,37 @@ function get_black_moves(p, r, c) {
   // Black Knight
   } else if (p == 2) {
     // Tall Moves
-    if (r > 1 && c > 0 && (board[r - 2][c - 1] > 7 || board[r - 2][c - 1] == 0)) {
+    if (r > 1 && c > 0 && (board[r - 2][c - 1] > 6 || board[r - 2][c - 1] == 0)) {
       m[el] = [r - 2, c - 1];
       el += 1;
     }
-    if (r > 1 && c < 7 && (board[r - 2][c + 1] > 7 || board[r - 2][c + 1] == 0)) {
+    if (r > 1 && c < 7 && (board[r - 2][c + 1] > 6 || board[r - 2][c + 1] == 0)) {
       m[el] = [r - 2, c + 1];
       el += 1;
     }
-    if (r < 6 && c < 7 && (board[r + 2][c + 1] > 7 || board[r + 2][c + 1] == 0)) {
+    if (r < 6 && c < 7 && (board[r + 2][c + 1] > 6 || board[r + 2][c + 1] == 0)) {
       m[el] = [r + 2, c + 1];
       el += 1;
     }
-    if (r < 6 && c > 0 && (board[r + 2][c - 1] > 7 || board[r + 2][c - 1] == 0)) {
+    if (r < 6 && c > 0 && (board[r + 2][c - 1] > 6 || board[r + 2][c - 1] == 0)) {
       m[el] = [r + 2, c - 1];
       el += 1;
     }
 
     //Wide Moves
-    if (r > 0 && c > 1 && (board[r - 1][c - 2] > 7 || board[r - 1][c - 2] == 0)) {
+    if (r > 0 && c > 1 && (board[r - 1][c - 2] > 6 || board[r - 1][c - 2] == 0)) {
       m[el] = [r - 1, c - 2];
       el += 1;
     }
-    if (r > 0 && c < 6 && (board[r - 1][c + 2] > 7 || board[r - 1][c + 2] == 0)) {
+    if (r > 0 && c < 6 && (board[r - 1][c + 2] > 6 || board[r - 1][c + 2] == 0)) {
       m[el] = [r - 1, c + 2];
       el += 1;
     }
-    if (r < 7 && c < 6 && (board[r + 1][c + 2] > 7 || board[r + 1][c + 2] == 0)) {
+    if (r < 7 && c < 6 && (board[r + 1][c + 2] > 6 || board[r + 1][c + 2] == 0)) {
       m[el] = [r + 1, c + 2];
       el += 1;
     }
-    if (r < 7 && c > 1 && (board[r + 1][c - 2] > 7 || board[r + 1][c - 2] == 0)) {
+    if (r < 7 && c > 1 && (board[r + 1][c - 2] > 6 || board[r + 1][c - 2] == 0)) {
       m[el] = [r + 1, c - 2];
       el += 1;
     }
