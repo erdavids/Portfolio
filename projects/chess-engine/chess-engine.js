@@ -210,7 +210,9 @@ function computer_move() {
 
   let new_r = -1;
   let new_c = -1;
+
   let best_position = -2000;
+  let temp_evaluation = 0;
 
   let temp_board;
 
@@ -222,7 +224,9 @@ function computer_move() {
         temp_board[black_moves[0]][black_moves[1]] = temp_board[r][c]
         temp_board[r][c] = 0
 
-        if (evaluate_board(temp_board) > best_position) {
+        temp_evaluation = evaluate_board(temp_board);
+        if (temp_evaluation > best_position) {
+          best_position = temp_evaluation;
           best_piece = board[r][c];
           best_r = r;
           best_c = c;
