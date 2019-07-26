@@ -221,7 +221,7 @@ function computer_move() {
       black_moves = get_black_moves(board[r][c], r, c);
       for (var i = 0; i < black_moves.length; i++) {
         temp_board = get_board_copy(board);
-        temp_board[black_moves[0]][black_moves[1]] = temp_board[r][c]
+        temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
         temp_board[r][c] = 0
 
         temp_evaluation = evaluate_board(temp_board);
@@ -231,8 +231,8 @@ function computer_move() {
           best_r = r;
           best_c = c;
 
-          new_r = black_moves[0];
-          new_c = black_moves[1];
+          new_r = black_moves[i][0];
+          new_c = black_moves[i][1];
         }
       }
     }
