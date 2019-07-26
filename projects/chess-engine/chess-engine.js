@@ -230,6 +230,8 @@ function computer_move() {
           console.log("moving the knight...");
           console.log(black_moves);
           console.log(temp_evaluation);
+
+          console.log(temp_board)
         }
         if (temp_evaluation > best_position) {
           best_position = temp_evaluation;
