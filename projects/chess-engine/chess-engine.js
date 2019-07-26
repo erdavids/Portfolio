@@ -7,6 +7,7 @@ let piece_list;
 let board;
 
 let moves;
+let black_moves;
 
 let selected;
 let selected_location;
@@ -193,7 +194,8 @@ function mouseClicked() {
 
 // The Cheating AI (The Crooked Rook!)
 function computer_move() {
-
+  black_moves = get_black_moves(2, 0, 1);
+  console.log(black_moves);
 }
 
 // Moves for White
