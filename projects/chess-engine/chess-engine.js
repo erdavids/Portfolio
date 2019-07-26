@@ -157,11 +157,11 @@ function mini_max_root(depth) {
     for (var c = 0; c < 8; c++) {
       var black_moves = get_black_moves(board[r][c], r, c);
       for (var i = 0; i < black_moves.length; i++) {
-        console.log(black_moves.length);
         var temp_board = get_board_copy(board);
         temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
         temp_board[r][c] = 0
         value = mini_max(depth - 1, temp_board, -100000, 100000, false);
+        console.log(value);
 
 
         if (value >= best_move) {
@@ -170,7 +170,6 @@ function mini_max_root(depth) {
           t_p = board[r][c];
           t_r = r;
           t_c = c;
-          console.log(black_moves);
           t_nr = black_moves[i][0];
           t_nc = black_moves[i][1];
           // best_position = temp_evaluation;
@@ -234,8 +233,6 @@ function mini_max(depth, b, alpha, beta, is_max) {
         }
       }
     }
-    console.log("beta");
-    console.log(beta);
     return best_move;
   }
 }
