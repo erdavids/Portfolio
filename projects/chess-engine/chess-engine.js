@@ -164,7 +164,7 @@ function mini_max_root(depth) {
         value = mini_max(depth - 1, temp_board, -100000, 100000, false);
 
 
-        if (value > best_move) {
+        if (value >= best_move) {
           best_move = value;
 
           t_p = board[r][c];
