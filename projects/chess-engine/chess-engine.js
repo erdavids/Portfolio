@@ -225,6 +225,7 @@ function computer_move() {
         temp_board[r][c] = 0
 
         temp_evaluation = evaluate_board(temp_board);
+        console.log(temp_evaluation);
         if (temp_evaluation > best_position) {
           best_position = temp_evaluation;
           best_piece = board[r][c];
