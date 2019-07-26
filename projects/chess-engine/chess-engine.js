@@ -155,7 +155,7 @@ function mini_max_root(depth) {
 
   for (var r = 0; r < 8; r++) {
     for (var c = 0; c < 8; c++) {
-      black_moves = get_black_moves(board[r][c], r, c);
+      var black_moves = get_black_moves(board[r][c], r, c);
       for (var i = 0; i < black_moves.length; i++) {
         console.log(black_moves.length);
         var temp_board = get_board_copy(board);
@@ -199,7 +199,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
     var best_move = -9999;
     for (var r = 0; r < 8; r++) {
       for (var c = 0; c < 8; c++) {
-        black_moves = get_black_moves(b[r][c], r, c);
+        var black_moves = get_black_moves(b[r][c], r, c);
         for (var i = 0; i < black_moves.length; i++) {
           var temp_board = get_board_copy(b);
           temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
@@ -220,7 +220,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
     var best_move = 9999;
     for (var r = 0; r < 8; r++) {
       for (var c = 0; c < 8; c++) {
-        white_moves = get_moves(b[r][c], r, c);
+        var white_moves = get_moves(b[r][c], r, c);
         for (var i = 0; i < white_moves.length; i++) {
           var temp_board = get_board_copy(b);
           temp_board[white_moves[i][0]][white_moves[i][1]] = temp_board[r][c]
