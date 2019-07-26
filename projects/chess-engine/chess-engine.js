@@ -68,7 +68,7 @@ function setup() {
     [10, 8, 9, 11, 12, 9, 8, 10]
   ]
 
-  var testBoard = board.slice();
+  var testBoard = JSON.parse(JSON.stringify(board));
   testBoard[0][0] = 15;
   console.log(board);
   console.log(testBoard);
