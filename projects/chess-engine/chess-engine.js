@@ -11,6 +11,8 @@ let moves;
 let selected;
 let selected_location;
 
+let player_move;
+
 function preload() {
   bB = loadImage('../projects/chess-engine/chess-images/bB.png');
   bR = loadImage('../projects/chess-engine/chess-images/bR.png');
@@ -52,7 +54,7 @@ function setup() {
   square_size = width/8
 
   // Used for drawing identical selected piece
-  piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
+  piece_list = [bP, bP, bN, bB, bR, bQ, bK, wK, wN, wB, wR, wQ, wP];
 
   board = [
     [4, 2, 3, 5, 6, 3, 2, 4],
@@ -72,6 +74,7 @@ function setup() {
   draw_initial_pieces();
 
   state = 'neutral';
+  player_move = true;
 }
 
 function draw_empty_board() {
@@ -134,7 +137,7 @@ function draw() {
 // move state?
 function mouseClicked() {
   var grid_click = grid_clicked(mouseX, mouseY);
-  if (grid_click[0] < 8 && grid_click[0] >= 0 && grid_click[1] < 8 && grid_click[1] >= 0) {
+  if (player_move && grid_click[0] < 8 && grid_click[0] >= 0 && grid_click[1] < 8 && grid_click[1] >= 0) {
     var piece = board[grid_click[0]][grid_click[1]]
     if (piece > 6) {
       selected = piece
@@ -174,6 +177,10 @@ function mouseClicked() {
         selected = -1
         selected_location[0] = -1
         selected_location[1] = -1
+
+        // Computer's turn
+        player_move = false;
+        computer_move();
       } else {
         selected = -1;
         selected_location[0] = -1
@@ -184,7 +191,12 @@ function mouseClicked() {
   }
 }
 
-// This will be a long one
+// The Cheating AI (The Crooked Rook!)
+function computer_move() {
+
+}
+
+// Moves for White
 function get_moves(p, grid_click) {
   var el = 0;
   var m = [];
@@ -192,7 +204,7 @@ function get_moves(p, grid_click) {
   var c = grid_click[1];
 
   // White Pawn
-  if (p == 7) {
+  if (p == 12) {
     // Regular moves
     if (board[r - 1][c] == 0) {
       m[el] = [r - 1, c];
@@ -465,7 +477,328 @@ function get_moves(p, grid_click) {
       el += 1;
     }
   // White King
-  } else if (p == 12) {
+} else if (p == 7) {
+    var ri = 1;
+    var ci = 1;
+
+    if (r - ri >= 0 && board[r - ri][c] < 7) {
+      m[el] = [r - ri, c];
+      el += 1;
+    }
+    if (r + ri <= 7 && board[r + ri][c] < 7) {
+      m[el] = [r + ri, c];
+      el += 1;
+    }
+    if (c + ci <= 7 && board[r][c + ci] < 7) {
+      m[el] = [r, c + ci];
+      el += 1;
+    }
+    if (c - ci >= 0 && board[r][c - ci] < 7) {
+      m[el] = [r, c - ci];
+      el += 1;
+    }
+
+    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] < 7) {
+      m[el] = [r - ri, c - ci]
+      el += 1;
+    }
+    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] < 7) {
+      m[el] = [r - ri, c + ci]
+      el += 1;
+    }
+    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] < 7) {
+      m[el] = [r + ri, c + ci]
+      el += 1;
+    }
+    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] < 7) {
+      m[el] = [r + ri, c - ci]
+      el += 1;
+    }
+  }
+
+  return m;
+}
+
+// Moves for Black
+function get_black_moves(p, r, c) {
+  var el = 0;
+  var m = [];
+
+  // Black Pawn
+  if (p == 1) {
+    // Regular moves
+    if (r + 1 < 7 && board[r + 1][c] == 0) {
+      m[el] = [r + 1, c];
+      el += 1;
+    }
+    if (r == 1 && board[r + 2][c] == 0) {
+      m[el] = [r + 2, c]
+      el += 1;
+    }
+
+    // Capturing
+    if (c > 0 && board[r + 1][c - 1] > 6) {
+      m[el] = [r + 1, c - 1];
+      el += 1;
+    }
+    if (c < 7 && board[r + 1][c + 1] > 6) {
+      m[el] = [r + 1, c + 1];
+      el += 1;
+    }
+
+  // Black Knight
+  } else if (p == 2) {
+    // Tall Moves
+    if (r > 1 && c > 0 && (board[r - 2][c - 1] > 7 || board[r - 2][c - 1] == 0)) {
+      m[el] = [r - 2, c - 1];
+      el += 1;
+    }
+    if (r > 1 && c < 7 && (board[r - 2][c + 1] > 7 || board[r - 2][c + 1] == 0)) {
+      m[el] = [r - 2, c + 1];
+      el += 1;
+    }
+    if (r < 6 && c < 7 && (board[r + 2][c + 1] > 7 || board[r + 2][c + 1] == 0)) {
+      m[el] = [r + 2, c + 1];
+      el += 1;
+    }
+    if (r < 6 && c > 0 && (board[r + 2][c - 1] > 7 || board[r + 2][c - 1] == 0)) {
+      m[el] = [r + 2, c - 1];
+      el += 1;
+    }
+
+    //Wide Moves
+    if (r > 0 && c > 1 && (board[r - 1][c - 2] > 7 || board[r - 1][c - 2] == 0)) {
+      m[el] = [r - 1, c - 2];
+      el += 1;
+    }
+    if (r > 0 && c < 6 && (board[r - 1][c + 2] > 7 || board[r - 1][c + 2] == 0)) {
+      m[el] = [r - 1, c + 2];
+      el += 1;
+    }
+    if (r < 7 && c < 6 && (board[r + 1][c + 2] > 7 || board[r + 1][c + 2] == 0)) {
+      m[el] = [r + 1, c + 2];
+      el += 1;
+    }
+    if (r < 7 && c > 1 && (board[r + 1][c - 2] > 7 || board[r + 1][c - 2] == 0)) {
+      m[el] = [r + 1, c - 2];
+      el += 1;
+    }
+  // Black Rook
+  } else if (p == 4) {
+    // Up
+    var ri = 1;
+    while (r - ri >= 0 && board[r-ri][c] == 0) {
+      m[el] = [r - ri, c];
+      el += 1;
+      ri += 1;
+    }
+    if (r - ri >= 0 && board[r - ri][c] < 7 && board[r - ri][c] > 0) {
+      m[el] = [r - ri, c];
+      el += 1;
+    }
+
+    // Down
+    ri = 1
+    while (r + ri <= 7 && board[r + ri][c] == 0) {
+      m[el] = [r + ri, c];
+      el += 1;
+      ri += 1;
+    }
+    if (r + ri <= 7 && board[r + ri][c] < 7 && board[r + ri][c] > 0) {
+      m[el] = [r + ri, c];
+      el += 1;
+    }
+
+    // Right
+    var ci = 1
+    while (c + ci <= 7 && board[r][c + ci] == 0) {
+      m[el] = [r, c + ci];
+      el += 1;
+      ci += 1;
+    }
+    if (c + ci <= 7 && board[r][c + ci] < 7 && board[r][c + ci] > 0) {
+      m[el] = [r, c + ci];
+      el += 1;
+    }
+
+    // Left
+    ci = 1
+    while (c - ci >= 0 && board[r][c - ci] == 0) {
+      m[el] = [r, c - ci];
+      el += 1;
+      ci += 1;
+    }
+    if (c + ci >= 0 && board[r][c - ci] < 7 && board[r][c - ci] > 0) {
+      m[el] = [r, c - ci];
+      el += 1;
+    }
+  // Black Bishop
+  } else if (p == 3) {
+    var ri = 1;
+    var ci = 1;
+
+    // Northwest
+    while (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] == 0) {
+      m[el] = [r - ri, c - ci];
+      el += 1;
+      ri += 1;
+      ci += 1;
+    }
+    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] < 7 && board[r - ri][c - ci] > 0) {
+      m[el] = [r - ri, c - ci]
+      el += 1;
+    }
+
+    // Northeast
+    ri = 1;
+    ci = 1;
+    while (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] == 0) {
+      m[el] = [r - ri, c + ci];
+      el += 1;
+      ri += 1;
+      ci += 1;
+    }
+    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] < 7 && board[r - ri][c + ci] > 0) {
+      m[el] = [r - ri, c + ci]
+      el += 1;
+    }
+
+    // Southeast
+    ri = 1;
+    ci = 1;
+    while (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] == 0) {
+      m[el] = [r + ri, c + ci];
+      el += 1;
+      ri += 1;
+      ci += 1;
+    }
+    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] < 7 && board[r + ri][c + ci] > 0) {
+      m[el] = [r + ri, c + ci]
+      el += 1;
+    }
+
+    // Southwest
+    ri = 1;
+    ci = 1;
+    while (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] == 0) {
+      m[el] = [r + ri, c - ci];
+      el += 1;
+      ri += 1;
+      ci += 1;
+    }
+    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] < 7 && board[r + ri][c - ci] > 0) {
+      m[el] = [r + ri, c - ci]
+      el += 1;
+    }
+  // Black Queen
+  } else if (p == 5) {
+    // Up
+    var ri = 1;
+    while (r - ri >= 0 && board[r-ri][c] == 0) {
+      m[el] = [r - ri, c];
+      el += 1;
+      ri += 1;
+    }
+    if (r - ri >= 0 && board[r - ri][c] < 7 && board[r - ri][c] > 0) {
+      m[el] = [r - ri, c];
+      el += 1;
+    }
+
+    // Down
+    ri = 1
+    while (r + ri <= 7 && board[r + ri][c] == 0) {
+      m[el] = [r + ri, c];
+      el += 1;
+      ri += 1;
+    }
+    if (r + ri <= 7 && board[r + ri][c] < 7 && board[r + ri][c] > 0) {
+      m[el] = [r + ri, c];
+      el += 1;
+    }
+
+    // Right
+    var ci = 1
+    while (c + ci <= 7 && board[r][c + ci] == 0) {
+      m[el] = [r, c + ci];
+      el += 1;
+      ci += 1;
+    }
+    if (c + ci <= 7 && board[r][c + ci] < 7 && board[r][c + ci] > 0) {
+      m[el] = [r, c + ci];
+      el += 1;
+    }
+
+    // Left
+    ci = 1
+    while (c - ci >= 0 && board[r][c - ci] == 0) {
+      m[el] = [r, c - ci];
+      el += 1;
+      ci += 1;
+    }
+    if (c - ci >= 0 && board[r][c - ci] < 7 && board[r][c - ci] > 0) {
+      m[el] = [r, c - ci];
+      el += 1;
+    }
+
+
+    ri = 1;
+    ci = 1;
+
+    // Northwest
+    while (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] == 0) {
+      m[el] = [r - ri, c - ci];
+      el += 1;
+      ri += 1;
+      ci += 1;
+    }
+    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] < 7 && board[r - ri][c - ci] > 0) {
+      m[el] = [r - ri, c - ci]
+      el += 1;
+    }
+
+    // Northeast
+    ri = 1;
+    ci = 1;
+    while (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] == 0) {
+      m[el] = [r - ri, c + ci];
+      el += 1;
+      ri += 1;
+      ci += 1;
+    }
+    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] < 7 && board[r - ri][c + ci] > 0) {
+      m[el] = [r - ri, c + ci]
+      el += 1;
+    }
+
+    // Southeast
+    ri = 1;
+    ci = 1;
+    while (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] == 0) {
+      m[el] = [r + ri, c + ci];
+      el += 1;
+      ri += 1;
+      ci += 1;
+    }
+    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] < 7 && board[r + ri][c + ci] > 0) {
+      m[el] = [r + ri, c + ci]
+      el += 1;
+    }
+
+    // Southwest
+    ri = 1;
+    ci = 1;
+    while (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] == 0) {
+      m[el] = [r + ri, c - ci];
+      el += 1;
+      ri += 1;
+      ci += 1;
+    }
+    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] < 7 && board[r + ri][c - ci] > 0) {
+      m[el] = [r + ri, c - ci]
+      el += 1;
+    }
+  // Black King
+  } else if (p == 6) {
     var ri = 1;
     var ci = 1;
 
