@@ -144,7 +144,6 @@ function draw() {
 
 
 function mini_max_root(depth) {
-  var value = -10000
   var best_move = -9999;
 
   var t_p = -1;
@@ -160,7 +159,7 @@ function mini_max_root(depth) {
         var temp_board = get_board_copy(board);
         temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
         temp_board[r][c] = 0
-        value = mini_max(depth - 1, temp_board, -100000, 100000, false);
+        var value = mini_max(depth - 1, temp_board, -100000, 100000, false);
         console.log(value);
 
 
