@@ -318,7 +318,7 @@ function computer_move() {
   //   }
   // }
 
-  var mtt = mini_max_root(3);
+  var mtt = mini_max_root(1);
   console.log(mtt);
 
   var best_piece = mtt[0];
