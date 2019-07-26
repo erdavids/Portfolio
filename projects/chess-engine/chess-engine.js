@@ -331,7 +331,7 @@ function computer_move() {
   //   }
   // }
 
-  var mtt = mini_max_root(1);
+  var mtt = mini_max_root(2);
   console.log(mtt);
 
   var best_piece = mtt[0];
