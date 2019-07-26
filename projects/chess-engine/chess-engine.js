@@ -68,7 +68,8 @@ function setup() {
     [10, 8, 9, 11, 12, 9, 8, 10]
   ]
 
-  var testBoard = JSON.parse(JSON.stringify(board));
+  //var testBoard = JSON.parse(JSON.stringify(board));
+  var testBoard = [...board];
   testBoard[0][0] = 15;
   console.log(board);
   console.log(testBoard);
