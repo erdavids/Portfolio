@@ -228,10 +228,6 @@ function computer_move() {
 
         if (board[r][c] == 2) {
           console.log("moving the knight...");
-          console.log(black_moves);
-          console.log(temp_evaluation);
-
-          console.log(temp_board)
         }
         if (temp_evaluation > best_position) {
           best_position = temp_evaluation;
@@ -932,7 +928,7 @@ function evaluate_board(b) {
   for (var r = 0; r < 8; r++) {
     for (var c = 0; c < 8; c++) {
       // Iterate through each piece
-      p = board[r][c];
+      p = b[r][c];
 
       // Evaluate with static value for now (need to consider position on board)
       if (p == 1) {
