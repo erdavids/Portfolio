@@ -68,6 +68,11 @@ function setup() {
     [10, 8, 9, 11, 12, 9, 8, 10]
   ]
 
+  var testBoard = board.slice();
+  testBoard[0][0] = 15;
+  console.log(board);
+  console.log(testBoard);
+
   selected = -1;
   selected_location = [-1, -1];
 
@@ -860,8 +865,10 @@ function evaluate_board(b) {
   var total_position = 0;
   for (var r = 0; r < 8; r++) {
     for (var c = 0; c < 8; c++) {
+      // Iterate through each piece
       p = board[r][c];
-      // Black Pawn
+
+      // Evaluate with static value for now (need to consider position on board)
       if (p == 1) {
         total_position += 10;
       } else if (p == 2 || p == 3) {
