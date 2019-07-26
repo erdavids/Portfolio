@@ -231,7 +231,6 @@ function mouseClicked() {
       selected_location[0] = grid_click[0]
       selected_location[1] = grid_click[1]
       moves = get_moves(piece, grid_click[0], grid_click[1])
-      console.log(moves);
     } else if (selected != -1) {
       if (valid_move(moves, grid_click)) {
 
