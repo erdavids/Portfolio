@@ -142,6 +142,88 @@ function draw() {
 }
 
 
+function mini_max_root(depth) {
+  var value = -10000
+  var best_move = -9999;
+
+  var move_to_take = [];
+
+  for (var r = 0; r < 8; r++) {
+    for (var c = 0; c < 8; c++) {
+      black_moves = get_black_moves(board[r][c], r, c);
+      for (var i = 0; i < black_moves.length; i++) {
+        var temp_board = get_board_copy(board);
+        temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
+        temp_board[r][c] = 0
+
+        value = mini_max(depth - 1, temp_board, -100000, 100000, false);
+
+        if (value > bestMove) {
+          bestMove = value;
+
+          return [board[r][c], r, c, black_moves[i][0], black_moves[i][1]];
+          // best_position = temp_evaluation;
+          // best_piece = board[r][c];
+          // best_r = r;
+          // best_c = c;
+          //
+          // new_r = black_moves[i][0];
+          // new_c = black_moves[i][1];
+        }
+      }
+    }
+  }
+}
+
+function mini_max(depth, b, alpha, beta, is_max) {
+  if (depth == 0) {
+    return evaluate_board(b);
+  }
+
+  // Maximizing player (Crooked Rook)
+  if (is_max) {
+    var best_move = -9999;
+    for (var r = 0; r < 8; r++) {
+      for (var c = 0; c < 8; c++) {
+        black_moves = get_black_moves(board[r][c], r, c);
+        for (var i = 0; i < black_moves.length; i++) {
+          var temp_board = get_board_copy(board);
+          temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
+          temp_board[r][c] = 0
+
+          best_move = mini_max(depth - 1, temp_board, alpha, beta, !is_max);
+          alpha = Math.max(alpha, best_move);
+          if (alpha >= beta) {
+            return best_move;
+          }
+        }
+      }
+    }
+  return best_move;
+  // Minimizing player (Human)
+  } else {
+    var best_move = 9999;
+    for (var r = 0; r < 8; r++) {
+      for (var c = 0; c < 8; c++) {
+        white_moves = get_moves(board[r][c], r, c);
+        for (var i = 0; i < white_moves.length; i++) {
+          var temp_board = get_board_copy(board);
+          temp_board[white_moves[i][0]][white_moves[i][1]] = temp_board[r][c]
+          temp_board[r][c] = 0
+
+          best_move = mini_max(depth - 1, temp_board, alpha, beta, !is_max);
+          beta = Math.min(beta, best_move);
+          if (alpha >= beta) {
+            return best_move;
+          }
+        }
+      }
+    }
+    return best_move;
+  }
+}
+
+
 // Control the state
 // move state?
 function mouseClicked() {
@@ -152,7 +234,7 @@ function mouseClicked() {
       selected = piece
       selected_location[0] = grid_click[0]
       selected_location[1] = grid_click[1]
-      moves = get_moves(piece, grid_click)
+      moves = get_moves(piece, grid_click[0], grid_click[1])
       console.log(moves);
     } else if (selected != -1) {
       if (valid_move(moves, grid_click)) {
@@ -204,43 +286,52 @@ function mouseClicked() {
 
 // The Cheating AI (The Crooked Rook!)
 function computer_move() {
-  let best_piece = -1;
-  let best_r = -1;
-  let best_c = -1;
+  // let best_piece = -1;
+  // let best_r = -1;
+  // let best_c = -1;
+  //
+  // let new_r = -1;
+  // let new_c = -1;
+  //
+  // let best_position = -2000;
+  // let temp_evaluation = 0;
+  //
+  // let temp_board;
 
-  let new_r = -1;
-  let new_c = -1;
+  // for (var r = 0; r < 8; r++) {
+  //   for (var c = 0; c < 8; c++) {
+  //     black_moves = get_black_moves(board[r][c], r, c);
+  //     for (var i = 0; i < black_moves.length; i++) {
+  //       temp_board = get_board_copy(board);
+  //       temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
+  //       temp_board[r][c] = 0
+  //
+  //       temp_evaluation = evaluate_board(temp_board);
+  //
+  //       if (board[r][c] == 2) {
+  //         console.log("moving the knight...");
+  //       }
+  //       if (temp_evaluation > best_position) {
+  //         best_position = temp_evaluation;
+  //         best_piece = board[r][c];
+  //         best_r = r;
+  //         best_c = c;
+  //
+  //         new_r = black_moves[i][0];
+  //         new_c = black_moves[i][1];
+  //       }
+  //     }
+  //   }
+  // }
 
-  let best_position = -2000;
-  let temp_evaluation = 0;
+  var mtt = mini_max_root(1);
+  console.log(mtt);
 
-  let temp_board;
-
-  for (var r = 0; r < 8; r++) {
-    for (var c = 0; c < 8; c++) {
-      black_moves = get_black_moves(board[r][c], r, c);
-      for (var i = 0; i < black_moves.length; i++) {
-        temp_board = get_board_copy(board);
-        temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
-        temp_board[r][c] = 0
-
-        temp_evaluation = evaluate_board(temp_board);
-
-        if (board[r][c] == 2) {
-          console.log("moving the knight...");
-        }
-        if (temp_evaluation > best_position) {
-          best_position = temp_evaluation;
-          best_piece = board[r][c];
-          best_r = r;
-          best_c = c;
-
-          new_r = black_moves[i][0];
-          new_c = black_moves[i][1];
-        }
-      }
-    }
-  }
+  var best_piece = mtt[0];
+  var best_r = mtt[1];
+  var best_c = mtt[2];
+  var new_r = mtt[3];
+  var new_c = mtt[4];
 
   board[new_r][new_c] = best_piece
   board[best_r][best_c] = 0
@@ -271,11 +362,9 @@ function computer_move() {
 }
 
 // Moves for White
-function get_moves(p, grid_click) {
+function get_moves(p, r, c) {
   var el = 0;
   var m = [];
-  var r = grid_click[0];
-  var c = grid_click[1];
 
   // White Pawn
   if (p == 7) {
