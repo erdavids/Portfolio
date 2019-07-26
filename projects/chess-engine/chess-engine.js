@@ -157,6 +157,7 @@ function mini_max_root(depth) {
     for (var c = 0; c < 8; c++) {
       black_moves = get_black_moves(board[r][c], r, c);
       for (var i = 0; i < black_moves.length; i++) {
+        console.log(black_moves.length);
         var temp_board = get_board_copy(board);
         temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
         temp_board[r][c] = 0
