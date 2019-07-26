@@ -204,8 +204,59 @@ function mouseClicked() {
 
 // The Cheating AI (The Crooked Rook!)
 function computer_move() {
-  black_moves = get_black_moves(2, 0, 1);
-  console.log(black_moves);
+  let best_piece = -1;
+  let best_r = -1;
+  let best_c = -1;
+
+  let new_r = -1;
+  let new_c = -1;
+  let best_position = -2000;
+
+  let temp_board;
+
+  for (var r = 0; r < 8; r++) {
+    for (var c = 0; c < 8; c++) {
+      black_moves = get_black_moves(board[r][c], r, c);
+      for (var i = 0; i < black_moves.length; i++) {
+        temp_board = get_board_copy(board);
+        temp_board[black_moves[0]][black_moves[1]] = temp_board[r][c]
+        temp_board[r][c] = 0
+
+        if (evaluate_board(temp_board) > best_position) {
+          best_piece = board[r][c];
+          best_r = r;
+          best_c = c;
+
+          new_r = black_moves[0];
+          new_c = black_moves[1];
+        }
+      }
+    }
+  }
+
+  board[new_r][new_c] = best_piece
+  board[best_r][best_c] = 0
+
+  // Cover the new location (capture piece)
+  var pix = grid_to_pixel(new_c, new_r)
+  if ((new_r % 2) == (new_c % 2)) {
+    fill(233, 227, 230);
+  } else {
+    fill(144, 162, 172)
+  }
+  rect(pix[0], pix[1], square_size, square_size)
+
+  // Draw the piece in it's new location
+  draw_piece_on_grid(piece_list[best_piece], new_r, new_c);
+
+  // Cover the previous location (Need to actually draw the right color)
+  var pix = grid_to_pixel(best_c, best_r)
+  if ((best_r % 2) == (best_c % 2)) {
+    fill(233, 227, 230);
+  } else {
+    fill(144, 162, 172)
+  }
+  rect(pix[0], pix[1], square_size, square_size)
 
   // Return to player move
   player_move = true;
