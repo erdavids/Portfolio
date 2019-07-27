@@ -172,8 +172,6 @@ function mini_max_root(depth) {
         temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
         temp_board[r][c] = 0
         var value = mini_max(depth - 1, temp_board, -100000, 100000, false);
-        console.log(value)
-
 
         if (value >= best_move) {
           best_move = value;
@@ -199,6 +197,8 @@ function mini_max_root(depth) {
 }
 
 function mini_max(depth, b, alpha, beta, is_max) {
+  console.log(alpha);
+  console.log(beta);
   position_count += 1;
   if (depth == 0) {
     return evaluate_board(b);
@@ -218,7 +218,6 @@ function mini_max(depth, b, alpha, beta, is_max) {
           best_move = Math.max(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
           alpha = Math.max(alpha, best_move);
           if (alpha > beta) {
-            console.log("Max alpha");
             return best_move;
           }
         }
@@ -239,7 +238,6 @@ function mini_max(depth, b, alpha, beta, is_max) {
           best_move = Math.min(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
           beta = Math.min(beta, best_move);
           if (alpha > beta) {
-            console.log("Min alpha");
             return best_move;
           }
         }
@@ -312,7 +310,6 @@ function computer_move() {
 
   position_count = 0;
   var mtt = mini_max_root(3);
-  console.log(mtt);
 
   var best_piece = mtt[0];
   var best_r = mtt[1];
