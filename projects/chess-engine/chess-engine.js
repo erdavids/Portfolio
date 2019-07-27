@@ -154,7 +154,7 @@ function mini_max_root(depth) {
 
   for (var r = 0; r < 8; r++) {
     for (var c = 0; c < 8; c++) {
-      var black_moves = get_black_moves(board[r][c], r, c);
+      var black_moves = get_black_moves(board, board[r][c], r, c);
       for (var i = 0; i < black_moves.length; i++) {
         var temp_board = get_board_copy(board);
         temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
@@ -196,7 +196,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
     var best_move = -9999;
     for (var r = 0; r < 8; r++) {
       for (var c = 0; c < 8; c++) {
-        var black_moves = get_black_moves(b[r][c], r, c);
+        var black_moves = get_black_moves(b, b[r][c], r, c);
         for (var i = 0; i < black_moves.length; i++) {
           var temp_board = get_board_copy(b);
           temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
@@ -217,7 +217,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
     var best_move = 9999;
     for (var r = 0; r < 8; r++) {
       for (var c = 0; c < 8; c++) {
-        var white_moves = get_moves(b[r][c], r, c);
+        var white_moves = get_moves(b, b[r][c], r, c);
         for (var i = 0; i < white_moves.length; i++) {
           var temp_board = get_board_copy(b);
           temp_board[white_moves[i][0]][white_moves[i][1]] = temp_board[r][c]
@@ -249,7 +249,7 @@ function mouseClicked() {
       selected = piece
       selected_location[0] = grid_click[0]
       selected_location[1] = grid_click[1]
-      moves = get_moves(piece, grid_click[0], grid_click[1])
+      moves = get_moves(board, piece, grid_click[0], grid_click[1])
     } else if (selected != -1) {
       if (valid_move(moves, grid_click)) {
 
@@ -375,28 +375,28 @@ function computer_move() {
 }
 
 // Moves for White
-function get_moves(p, r, c) {
+function get_moves(b, p, r, c) {
   var el = 0;
   var m = [];
 
   // White Pawn
   if (p == 7) {
     // Regular moves
-    if (board[r - 1][c] == 0) {
+    if (b[r - 1][c] == 0) {
       m[el] = [r - 1, c];
       el += 1;
     }
-    if (r == 6 && board[r - 2][c] == 0) {
+    if (r == 6 && b[r - 2][c] == 0) {
       m[el] = [r - 2, c]
       el += 1;
     }
 
     // Capturing
-    if (c > 0 && board[r - 1][c - 1] < 7 && board[r - 1][c - 1] > 0) {
+    if (c > 0 && b[r - 1][c - 1] < 7 && b[r - 1][c - 1] > 0) {
       m[el] = [r - 1, c - 1];
       el += 1;
     }
-    if (c < 7 && board[r - 1][c + 1] < 7 && board[r - 1][c + 1] > 0) {
+    if (c < 7 && b[r - 1][c + 1] < 7 && b[r - 1][c + 1] > 0) {
       m[el] = [r - 1, c + 1];
       el += 1;
     }
@@ -404,37 +404,37 @@ function get_moves(p, r, c) {
   // White Knight
   } else if (p == 8) {
     // Tall Moves
-    if (r > 1 && c > 0 && board[r - 2][c - 1] < 6) {
+    if (r > 1 && c > 0 && b[r - 2][c - 1] < 6) {
       m[el] = [r - 2, c - 1];
       el += 1;
     }
-    if (r > 1 && c < 7 && board[r - 2][c + 1] < 6) {
+    if (r > 1 && c < 7 && b[r - 2][c + 1] < 6) {
       m[el] = [r - 2, c + 1];
       el += 1;
     }
-    if (r < 6 && c < 7 && board[r + 2][c + 1] < 6) {
+    if (r < 6 && c < 7 && b[r + 2][c + 1] < 6) {
       m[el] = [r + 2, c + 1];
       el += 1;
     }
-    if (r < 6 && c > 0 && board[r + 2][c - 1] < 6) {
+    if (r < 6 && c > 0 && b[r + 2][c - 1] < 6) {
       m[el] = [r + 2, c - 1];
       el += 1;
     }
 
     //Wide Moves
-    if (r > 0 && c > 1 && board[r - 1][c - 2] < 6) {
+    if (r > 0 && c > 1 && b[r - 1][c - 2] < 6) {
       m[el] = [r - 1, c - 2];
       el += 1;
     }
-    if (r > 0 && c < 6 && board[r - 1][c + 2] < 6) {
+    if (r > 0 && c < 6 && b[r - 1][c + 2] < 6) {
       m[el] = [r - 1, c + 2];
       el += 1;
     }
-    if (r < 7 && c < 6 && board[r + 1][c + 2] < 6) {
+    if (r < 7 && c < 6 && b[r + 1][c + 2] < 6) {
       m[el] = [r + 1, c + 2];
       el += 1;
     }
-    if (r < 7 && c > 1 && board[r + 1][c - 2] < 6) {
+    if (r < 7 && c > 1 && b[r + 1][c - 2] < 6) {
       m[el] = [r + 1, c - 2];
       el += 1;
     }
@@ -442,48 +442,48 @@ function get_moves(p, r, c) {
   } else if (p == 10) {
     // Up
     var ri = 1;
-    while (r - ri >= 0 && board[r-ri][c] == 0) {
+    while (r - ri >= 0 && b[r-ri][c] == 0) {
       m[el] = [r - ri, c];
       el += 1;
       ri += 1;
     }
-    if (r - ri >= 0 && board[r - ri][c] < 7 && board[r - ri][c] > 0) {
+    if (r - ri >= 0 && b[r - ri][c] < 7 && b[r - ri][c] > 0) {
       m[el] = [r - ri, c];
       el += 1;
     }
 
     // Down
     ri = 1
-    while (r + ri <= 7 && board[r + ri][c] == 0) {
+    while (r + ri <= 7 && b[r + ri][c] == 0) {
       m[el] = [r + ri, c];
       el += 1;
       ri += 1;
     }
-    if (r + ri <= 7 && board[r + ri][c] < 7 && board[r + ri][c] > 0) {
+    if (r + ri <= 7 && b[r + ri][c] < 7 && b[r + ri][c] > 0) {
       m[el] = [r + ri, c];
       el += 1;
     }
 
     // Right
     var ci = 1
-    while (c + ci <= 7 && board[r][c + ci] == 0) {
+    while (c + ci <= 7 && b[r][c + ci] == 0) {
       m[el] = [r, c + ci];
       el += 1;
       ci += 1;
     }
-    if (c + ci <= 7 && board[r][c + ci] < 7 && board[r][c + ci] > 0) {
+    if (c + ci <= 7 && b[r][c + ci] < 7 && b[r][c + ci] > 0) {
       m[el] = [r, c + ci];
       el += 1;
     }
 
     // Left
     ci = 1
-    while (c - ci >= 0 && board[r][c - ci] == 0) {
+    while (c - ci >= 0 && b[r][c - ci] == 0) {
       m[el] = [r, c - ci];
       el += 1;
       ci += 1;
     }
-    if (c + ci >= 0 && board[r][c - ci] < 7 && board[r][c - ci] > 0) {
+    if (c + ci >= 0 && b[r][c - ci] < 7 && b[r][c - ci] > 0) {
       m[el] = [r, c - ci];
       el += 1;
     }
@@ -493,13 +493,13 @@ function get_moves(p, r, c) {
     var ci = 1;
 
     // Northwest
-    while (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] == 0) {
+    while (r - ri >= 0 && c - ci >= 0 && b[r - ri][c - ci] == 0) {
       m[el] = [r - ri, c - ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] < 7 && board[r - ri][c - ci] > 0) {
+    if (r - ri >= 0 && c - ci >= 0 && b[r - ri][c - ci] < 7 && b[r - ri][c - ci] > 0) {
       m[el] = [r - ri, c - ci]
       el += 1;
     }
@@ -507,13 +507,13 @@ function get_moves(p, r, c) {
     // Northeast
     ri = 1;
     ci = 1;
-    while (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] == 0) {
+    while (r - ri >= 0 && c + ci <= 7 && b[r - ri][c + ci] == 0) {
       m[el] = [r - ri, c + ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] < 7 && board[r - ri][c + ci] > 0) {
+    if (r - ri >= 0 && c + ci <= 7 && b[r - ri][c + ci] < 7 && b[r - ri][c + ci] > 0) {
       m[el] = [r - ri, c + ci]
       el += 1;
     }
@@ -521,13 +521,13 @@ function get_moves(p, r, c) {
     // Southeast
     ri = 1;
     ci = 1;
-    while (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] == 0) {
+    while (r + ri <= 7 && c + ci <= 7 && b[r + ri][c + ci] == 0) {
       m[el] = [r + ri, c + ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] < 7 && board[r + ri][c + ci] > 0) {
+    if (r + ri <= 7 && c + ci <= 7 && b[r + ri][c + ci] < 7 && b[r + ri][c + ci] > 0) {
       m[el] = [r + ri, c + ci]
       el += 1;
     }
@@ -535,13 +535,13 @@ function get_moves(p, r, c) {
     // Southwest
     ri = 1;
     ci = 1;
-    while (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] == 0) {
+    while (r + ri <= 7 && c - ci >= 0 && b[r + ri][c - ci] == 0) {
       m[el] = [r + ri, c - ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] < 7 && board[r + ri][c - ci] > 0) {
+    if (r + ri <= 7 && c - ci >= 0 && b[r + ri][c - ci] < 7 && b[r + ri][c - ci] > 0) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
@@ -549,48 +549,48 @@ function get_moves(p, r, c) {
   } else if (p == 11) {
     // Up
     var ri = 1;
-    while (r - ri >= 0 && board[r-ri][c] == 0) {
+    while (r - ri >= 0 && b[r-ri][c] == 0) {
       m[el] = [r - ri, c];
       el += 1;
       ri += 1;
     }
-    if (r - ri >= 0 && board[r - ri][c] < 7 && board[r - ri][c] > 0) {
+    if (r - ri >= 0 && b[r - ri][c] < 7 && b[r - ri][c] > 0) {
       m[el] = [r - ri, c];
       el += 1;
     }
 
     // Down
     ri = 1
-    while (r + ri <= 7 && board[r + ri][c] == 0) {
+    while (r + ri <= 7 && b[r + ri][c] == 0) {
       m[el] = [r + ri, c];
       el += 1;
       ri += 1;
     }
-    if (r + ri <= 7 && board[r + ri][c] < 7 && board[r + ri][c] > 0) {
+    if (r + ri <= 7 && b[r + ri][c] < 7 && b[r + ri][c] > 0) {
       m[el] = [r + ri, c];
       el += 1;
     }
 
     // Right
     var ci = 1
-    while (c + ci <= 7 && board[r][c + ci] == 0) {
+    while (c + ci <= 7 && b[r][c + ci] == 0) {
       m[el] = [r, c + ci];
       el += 1;
       ci += 1;
     }
-    if (c + ci <= 7 && board[r][c + ci] < 7 && board[r][c + ci] > 0) {
+    if (c + ci <= 7 && b[r][c + ci] < 7 && b[r][c + ci] > 0) {
       m[el] = [r, c + ci];
       el += 1;
     }
 
     // Left
     ci = 1
-    while (c - ci >= 0 && board[r][c - ci] == 0) {
+    while (c - ci >= 0 && b[r][c - ci] == 0) {
       m[el] = [r, c - ci];
       el += 1;
       ci += 1;
     }
-    if (c - ci >= 0 && board[r][c - ci] < 7 && board[r][c - ci] > 0) {
+    if (c - ci >= 0 && b[r][c - ci] < 7 && b[r][c - ci] > 0) {
       m[el] = [r, c - ci];
       el += 1;
     }
@@ -600,13 +600,13 @@ function get_moves(p, r, c) {
     ci = 1;
 
     // Northwest
-    while (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] == 0) {
+    while (r - ri >= 0 && c - ci >= 0 && b[r - ri][c - ci] == 0) {
       m[el] = [r - ri, c - ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] < 7 && board[r - ri][c - ci] > 0) {
+    if (r - ri >= 0 && c - ci >= 0 && b[r - ri][c - ci] < 7 && b[r - ri][c - ci] > 0) {
       m[el] = [r - ri, c - ci]
       el += 1;
     }
@@ -614,13 +614,13 @@ function get_moves(p, r, c) {
     // Northeast
     ri = 1;
     ci = 1;
-    while (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] == 0) {
+    while (r - ri >= 0 && c + ci <= 7 && b[r - ri][c + ci] == 0) {
       m[el] = [r - ri, c + ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] < 7 && board[r - ri][c + ci] > 0) {
+    if (r - ri >= 0 && c + ci <= 7 && b[r - ri][c + ci] < 7 && b[r - ri][c + ci] > 0) {
       m[el] = [r - ri, c + ci]
       el += 1;
     }
@@ -628,13 +628,13 @@ function get_moves(p, r, c) {
     // Southeast
     ri = 1;
     ci = 1;
-    while (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] == 0) {
+    while (r + ri <= 7 && c + ci <= 7 && b[r + ri][c + ci] == 0) {
       m[el] = [r + ri, c + ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] < 7 && board[r + ri][c + ci] > 0) {
+    if (r + ri <= 7 && c + ci <= 7 && b[r + ri][c + ci] < 7 && b[r + ri][c + ci] > 0) {
       m[el] = [r + ri, c + ci]
       el += 1;
     }
@@ -642,13 +642,13 @@ function get_moves(p, r, c) {
     // Southwest
     ri = 1;
     ci = 1;
-    while (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] == 0) {
+    while (r + ri <= 7 && c - ci >= 0 && b[r + ri][c - ci] == 0) {
       m[el] = [r + ri, c - ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] < 7 && board[r + ri][c - ci] > 0) {
+    if (r + ri <= 7 && c - ci >= 0 && b[r + ri][c - ci] < 7 && b[r + ri][c - ci] > 0) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
@@ -657,36 +657,36 @@ function get_moves(p, r, c) {
     var ri = 1;
     var ci = 1;
 
-    if (r - ri >= 0 && board[r - ri][c] < 7) {
+    if (r - ri >= 0 && b[r - ri][c] < 7) {
       m[el] = [r - ri, c];
       el += 1;
     }
-    if (r + ri <= 7 && board[r + ri][c] < 7) {
+    if (r + ri <= 7 && b[r + ri][c] < 7) {
       m[el] = [r + ri, c];
       el += 1;
     }
-    if (c + ci <= 7 && board[r][c + ci] < 7) {
+    if (c + ci <= 7 && b[r][c + ci] < 7) {
       m[el] = [r, c + ci];
       el += 1;
     }
-    if (c - ci >= 0 && board[r][c - ci] < 7) {
+    if (c - ci >= 0 && b[r][c - ci] < 7) {
       m[el] = [r, c - ci];
       el += 1;
     }
 
-    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] < 7) {
+    if (r - ri >= 0 && c - ci >= 0 && b[r - ri][c - ci] < 7) {
       m[el] = [r - ri, c - ci]
       el += 1;
     }
-    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] < 7) {
+    if (r - ri >= 0 && c + ci <= 7 && b[r - ri][c + ci] < 7) {
       m[el] = [r - ri, c + ci]
       el += 1;
     }
-    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] < 7) {
+    if (r + ri <= 7 && c + ci <= 7 && b[r + ri][c + ci] < 7) {
       m[el] = [r + ri, c + ci]
       el += 1;
     }
-    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] < 7) {
+    if (r + ri <= 7 && c - ci >= 0 && b[r + ri][c - ci] < 7) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
@@ -696,28 +696,28 @@ function get_moves(p, r, c) {
 }
 
 // Moves for Black
-function get_black_moves(p, r, c) {
+function get_black_moves(b, p, r, c) {
   var el = 0;
   var m = [];
 
   // Black Pawn
   if (p == 1) {
     // Regular moves
-    if (r + 1 < 7 && board[r + 1][c] == 0) {
+    if (r + 1 < 7 && b[r + 1][c] == 0) {
       m[el] = [r + 1, c];
       el += 1;
     }
-    if (r == 1 && board[r + 2][c] == 0) {
+    if (r == 1 && b[r + 2][c] == 0) {
       m[el] = [r + 2, c]
       el += 1;
     }
 
     // Capturing
-    if (c > 0 && board[r + 1][c - 1] > 6) {
+    if (c > 0 && b[r + 1][c - 1] > 6) {
       m[el] = [r + 1, c - 1];
       el += 1;
     }
-    if (c < 7 && board[r + 1][c + 1] > 6) {
+    if (c < 7 && b[r + 1][c + 1] > 6) {
       m[el] = [r + 1, c + 1];
       el += 1;
     }
@@ -725,37 +725,37 @@ function get_black_moves(p, r, c) {
   // Black Knight
   } else if (p == 2) {
     // Tall Moves
-    if (r > 1 && c > 0 && (board[r - 2][c - 1] > 6 || board[r - 2][c - 1] == 0)) {
+    if (r > 1 && c > 0 && (b[r - 2][c - 1] > 6 || b[r - 2][c - 1] == 0)) {
       m[el] = [r - 2, c - 1];
       el += 1;
     }
-    if (r > 1 && c < 7 && (board[r - 2][c + 1] > 6 || board[r - 2][c + 1] == 0)) {
+    if (r > 1 && c < 7 && (b[r - 2][c + 1] > 6 || b[r - 2][c + 1] == 0)) {
       m[el] = [r - 2, c + 1];
       el += 1;
     }
-    if (r < 6 && c < 7 && (board[r + 2][c + 1] > 6 || board[r + 2][c + 1] == 0)) {
+    if (r < 6 && c < 7 && (b[r + 2][c + 1] > 6 || b[r + 2][c + 1] == 0)) {
       m[el] = [r + 2, c + 1];
       el += 1;
     }
-    if (r < 6 && c > 0 && (board[r + 2][c - 1] > 6 || board[r + 2][c - 1] == 0)) {
+    if (r < 6 && c > 0 && (b[r + 2][c - 1] > 6 || b[r + 2][c - 1] == 0)) {
       m[el] = [r + 2, c - 1];
       el += 1;
     }
 
     //Wide Moves
-    if (r > 0 && c > 1 && (board[r - 1][c - 2] > 6 || board[r - 1][c - 2] == 0)) {
+    if (r > 0 && c > 1 && (b[r - 1][c - 2] > 6 || b[r - 1][c - 2] == 0)) {
       m[el] = [r - 1, c - 2];
       el += 1;
     }
-    if (r > 0 && c < 6 && (board[r - 1][c + 2] > 6 || board[r - 1][c + 2] == 0)) {
+    if (r > 0 && c < 6 && (b[r - 1][c + 2] > 6 || b[r - 1][c + 2] == 0)) {
       m[el] = [r - 1, c + 2];
       el += 1;
     }
-    if (r < 7 && c < 6 && (board[r + 1][c + 2] > 6 || board[r + 1][c + 2] == 0)) {
+    if (r < 7 && c < 6 && (b[r + 1][c + 2] > 6 || b[r + 1][c + 2] == 0)) {
       m[el] = [r + 1, c + 2];
       el += 1;
     }
-    if (r < 7 && c > 1 && (board[r + 1][c - 2] > 6 || board[r + 1][c - 2] == 0)) {
+    if (r < 7 && c > 1 && (b[r + 1][c - 2] > 6 || b[r + 1][c - 2] == 0)) {
       m[el] = [r + 1, c - 2];
       el += 1;
     }
@@ -763,48 +763,48 @@ function get_black_moves(p, r, c) {
   } else if (p == 4) {
     // Up
     var ri = 1;
-    while (r - ri >= 0 && board[r-ri][c] == 0) {
+    while (r - ri >= 0 && b[r-ri][c] == 0) {
       m[el] = [r - ri, c];
       el += 1;
       ri += 1;
     }
-    if (r - ri >= 0 && board[r - ri][c] > 6) {
+    if (r - ri >= 0 && b[r - ri][c] > 6) {
       m[el] = [r - ri, c];
       el += 1;
     }
 
     // Down
     ri = 1
-    while (r + ri <= 7 && board[r + ri][c] == 0) {
+    while (r + ri <= 7 && b[r + ri][c] == 0) {
       m[el] = [r + ri, c];
       el += 1;
       ri += 1;
     }
-    if (r + ri <= 7 && board[r + ri][c] > 6) {
+    if (r + ri <= 7 && b[r + ri][c] > 6) {
       m[el] = [r + ri, c];
       el += 1;
     }
 
     // Right
     var ci = 1
-    while (c + ci <= 7 && board[r][c + ci] == 0) {
+    while (c + ci <= 7 && b[r][c + ci] == 0) {
       m[el] = [r, c + ci];
       el += 1;
       ci += 1;
     }
-    if (c + ci <= 7 && board[r][c + ci] > 6) {
+    if (c + ci <= 7 && b[r][c + ci] > 6) {
       m[el] = [r, c + ci];
       el += 1;
     }
 
     // Left
     ci = 1
-    while (c - ci >= 0 && board[r][c - ci] == 0) {
+    while (c - ci >= 0 && b[r][c - ci] == 0) {
       m[el] = [r, c - ci];
       el += 1;
       ci += 1;
     }
-    if (c + ci >= 0 && board[r][c - ci] > 6) {
+    if (c + ci >= 0 && b[r][c - ci] > 6) {
       m[el] = [r, c - ci];
       el += 1;
     }
@@ -814,13 +814,13 @@ function get_black_moves(p, r, c) {
     var ci = 1;
 
     // Northwest
-    while (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] == 0) {
+    while (r - ri >= 0 && c - ci >= 0 && b[r - ri][c - ci] == 0) {
       m[el] = [r - ri, c - ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] > 6) {
+    if (r - ri >= 0 && c - ci >= 0 && b[r - ri][c - ci] > 6) {
       m[el] = [r - ri, c - ci]
       el += 1;
     }
@@ -828,13 +828,13 @@ function get_black_moves(p, r, c) {
     // Northeast
     ri = 1;
     ci = 1;
-    while (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] == 0) {
+    while (r - ri >= 0 && c + ci <= 7 && b[r - ri][c + ci] == 0) {
       m[el] = [r - ri, c + ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] > 6) {
+    if (r - ri >= 0 && c + ci <= 7 && b[r - ri][c + ci] > 6) {
       m[el] = [r - ri, c + ci]
       el += 1;
     }
@@ -842,13 +842,13 @@ function get_black_moves(p, r, c) {
     // Southeast
     ri = 1;
     ci = 1;
-    while (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] == 0) {
+    while (r + ri <= 7 && c + ci <= 7 && b[r + ri][c + ci] == 0) {
       m[el] = [r + ri, c + ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] > 6) {
+    if (r + ri <= 7 && c + ci <= 7 && b[r + ri][c + ci] > 6) {
       m[el] = [r + ri, c + ci]
       el += 1;
     }
@@ -856,13 +856,13 @@ function get_black_moves(p, r, c) {
     // Southwest
     ri = 1;
     ci = 1;
-    while (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] == 0) {
+    while (r + ri <= 7 && c - ci >= 0 && b[r + ri][c - ci] == 0) {
       m[el] = [r + ri, c - ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] > 6) {
+    if (r + ri <= 7 && c - ci >= 0 && b[r + ri][c - ci] > 6) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
@@ -870,48 +870,48 @@ function get_black_moves(p, r, c) {
   } else if (p == 5) {
     // Up
     var ri = 1;
-    while (r - ri >= 0 && board[r-ri][c] == 0) {
+    while (r - ri >= 0 && b[r-ri][c] == 0) {
       m[el] = [r - ri, c];
       el += 1;
       ri += 1;
     }
-    if (r - ri >= 0 && board[r - ri][c] > 6) {
+    if (r - ri >= 0 && b[r - ri][c] > 6) {
       m[el] = [r - ri, c];
       el += 1;
     }
 
     // Down
     ri = 1
-    while (r + ri <= 7 && board[r + ri][c] == 0) {
+    while (r + ri <= 7 && b[r + ri][c] == 0) {
       m[el] = [r + ri, c];
       el += 1;
       ri += 1;
     }
-    if (r + ri <= 7 && board[r + ri][c] > 6) {
+    if (r + ri <= 7 && b[r + ri][c] > 6) {
       m[el] = [r + ri, c];
       el += 1;
     }
 
     // Right
     var ci = 1
-    while (c + ci <= 7 && board[r][c + ci] == 0) {
+    while (c + ci <= 7 && b[r][c + ci] == 0) {
       m[el] = [r, c + ci];
       el += 1;
       ci += 1;
     }
-    if (c + ci <= 7 && board[r][c + ci] > 6) {
+    if (c + ci <= 7 && b[r][c + ci] > 6) {
       m[el] = [r, c + ci];
       el += 1;
     }
 
     // Left
     ci = 1
-    while (c - ci >= 0 && board[r][c - ci] == 0) {
+    while (c - ci >= 0 && b[r][c - ci] == 0) {
       m[el] = [r, c - ci];
       el += 1;
       ci += 1;
     }
-    if (c + ci >= 0 && board[r][c - ci] > 6) {
+    if (c + ci >= 0 && b[r][c - ci] > 6) {
       m[el] = [r, c - ci];
       el += 1;
     }
@@ -920,13 +920,13 @@ function get_black_moves(p, r, c) {
     ci = 1;
 
     // Northwest
-    while (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] == 0) {
+    while (r - ri >= 0 && c - ci >= 0 && b[r - ri][c - ci] == 0) {
       m[el] = [r - ri, c - ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r - ri >= 0 && c - ci >= 0 && board[r - ri][c - ci] > 6) {
+    if (r - ri >= 0 && c - ci >= 0 && b[r - ri][c - ci] > 6) {
       m[el] = [r - ri, c - ci]
       el += 1;
     }
@@ -934,13 +934,13 @@ function get_black_moves(p, r, c) {
     // Northeast
     ri = 1;
     ci = 1;
-    while (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] == 0) {
+    while (r - ri >= 0 && c + ci <= 7 && b[r - ri][c + ci] == 0) {
       m[el] = [r - ri, c + ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r - ri >= 0 && c + ci <= 7 && board[r - ri][c + ci] > 6) {
+    if (r - ri >= 0 && c + ci <= 7 && b[r - ri][c + ci] > 6) {
       m[el] = [r - ri, c + ci]
       el += 1;
     }
@@ -948,13 +948,13 @@ function get_black_moves(p, r, c) {
     // Southeast
     ri = 1;
     ci = 1;
-    while (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] == 0) {
+    while (r + ri <= 7 && c + ci <= 7 && b[r + ri][c + ci] == 0) {
       m[el] = [r + ri, c + ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r + ri <= 7 && c + ci <= 7 && board[r + ri][c + ci] > 6) {
+    if (r + ri <= 7 && c + ci <= 7 && b[r + ri][c + ci] > 6) {
       m[el] = [r + ri, c + ci]
       el += 1;
     }
@@ -962,13 +962,13 @@ function get_black_moves(p, r, c) {
     // Southwest
     ri = 1;
     ci = 1;
-    while (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] == 0) {
+    while (r + ri <= 7 && c - ci >= 0 && b[r + ri][c - ci] == 0) {
       m[el] = [r + ri, c - ci];
       el += 1;
       ri += 1;
       ci += 1;
     }
-    if (r + ri <= 7 && c - ci >= 0 && board[r + ri][c - ci] > 6) {
+    if (r + ri <= 7 && c - ci >= 0 && b[r + ri][c - ci] > 6) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
@@ -977,36 +977,36 @@ function get_black_moves(p, r, c) {
     var ri = 1;
     var ci = 1;
 
-    if (r - ri >= 0 && (board[r - ri][c] > 6 || board[r - ri][c] == 0)) {
+    if (r - ri >= 0 && (b[r - ri][c] > 6 || b[r - ri][c] == 0)) {
       m[el] = [r - ri, c];
       el += 1;
     }
-    if (r + ri <= 7 && (board[r + ri][c] > 6 || board[r + ri][c] == 0)) {
+    if (r + ri <= 7 && (b[r + ri][c] > 6 || b[r + ri][c] == 0)) {
       m[el] = [r + ri, c];
       el += 1;
     }
-    if (c + ci <= 7 && (board[r][c + ci] > 6 || board[r][c + ci] == 0)) {
+    if (c + ci <= 7 && (b[r][c + ci] > 6 || b[r][c + ci] == 0)) {
       m[el] = [r, c + ci];
       el += 1;
     }
-    if (c - ci >= 0 && (board[r][c - ci] > 6 || board[r][c - ci] == 0)) {
+    if (c - ci >= 0 && (b[r][c - ci] > 6 || b[r][c - ci] == 0)) {
       m[el] = [r, c - ci];
       el += 1;
     }
 
-    if (r - ri >= 0 && c - ci >= 0 && (board[r - ri][c - ci] > 6 || board[r - ri][c - ci] == 0)) {
+    if (r - ri >= 0 && c - ci >= 0 && (b[r - ri][c - ci] > 6 || b[r - ri][c - ci] == 0)) {
       m[el] = [r - ri, c - ci]
       el += 1;
     }
-    if (r - ri >= 0 && c + ci <= 7 && (board[r - ri][c + ci] > 6 || board[r - ri][c + ci] == 0)) {
+    if (r - ri >= 0 && c + ci <= 7 && (b[r - ri][c + ci] > 6 || b[r - ri][c + ci] == 0)) {
       m[el] = [r - ri, c + ci]
       el += 1;
     }
-    if (r + ri <= 7 && c + ci <= 7 && (board[r + ri][c + ci] > 6 || board[r + ri][c + ci] == 0)) {
+    if (r + ri <= 7 && c + ci <= 7 && (b[r + ri][c + ci] > 6 || b[r + ri][c + ci] == 0)) {
       m[el] = [r + ri, c + ci]
       el += 1;
     }
-    if (r + ri <= 7 && c - ci >= 0 && (board[r + ri][c - ci] > 6 || board[r + ri][c - ci] == 0)) {
+    if (r + ri <= 7 && c - ci >= 0 && (b[r + ri][c - ci] > 6 || b[r + ri][c - ci] == 0)) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
