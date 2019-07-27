@@ -13,6 +13,7 @@ let selected;
 let selected_location;
 
 let player_move;
+let computer_can_move;
 
 let move_counter;
 
@@ -140,6 +141,10 @@ function draw_initial_pieces() {
 }
 
 function draw() {
+  if (computer_can_move) {
+    computer_can_move = false;
+    computer_move();
+  }
 }
 
 
@@ -285,7 +290,7 @@ function mouseClicked() {
 
         // Computer's turn
         player_move = false;
-        computer_move();
+        computer_can_move = true;
       } else {
         selected = -1;
         selected_location[0] = -1
@@ -298,43 +303,6 @@ function mouseClicked() {
 
 // The Cheating AI (The Crooked Rook!)
 function computer_move() {
-  // let best_piece = -1;
-  // let best_r = -1;
-  // let best_c = -1;
-  //
-  // let new_r = -1;
-  // let new_c = -1;
-  //
-  // let best_position = -2000;
-  // let temp_evaluation = 0;
-  //
-  // let temp_board;
-
-  // for (var r = 0; r < 8; r++) {
-  //   for (var c = 0; c < 8; c++) {
-  //     black_moves = get_black_moves(board[r][c], r, c);
-  //     for (var i = 0; i < black_moves.length; i++) {
-  //       temp_board = get_board_copy(board);
-  //       temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
-  //       temp_board[r][c] = 0
-  //
-  //       temp_evaluation = evaluate_board(temp_board);
-  //
-  //       if (board[r][c] == 2) {
-  //         console.log("moving the knight...");
-  //       }
-  //       if (temp_evaluation > best_position) {
-  //         best_position = temp_evaluation;
-  //         best_piece = board[r][c];
-  //         best_r = r;
-  //         best_c = c;
-  //
-  //         new_r = black_moves[i][0];
-  //         new_c = black_moves[i][1];
-  //       }
-  //     }
-  //   }
-  // }
 
   position_count = 0;
   var mtt = mini_max_root(3);
