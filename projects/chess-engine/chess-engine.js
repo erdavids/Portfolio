@@ -215,7 +215,6 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
           temp_board[r][c] = 0
 
-
           best_move = Math.max(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
           alpha = Math.max(alpha, best_move);
           if (alpha > beta) {
@@ -237,7 +236,6 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[white_moves[i][0]][white_moves[i][1]] = temp_board[r][c]
           temp_board[r][c] = 0
 
-
           best_move = Math.min(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
           beta = Math.min(beta, best_move);
           if (alpha > beta) {
@@ -247,7 +245,6 @@ function mini_max(depth, b, alpha, beta, is_max) {
         }
       }
     }
-    console.log(best_move);
     return best_move;
   }
 }
