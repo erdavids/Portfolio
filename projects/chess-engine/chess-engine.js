@@ -173,7 +173,10 @@ function mini_max_root(depth, alpha, beta) {
         temp_board[r][c] = 0
 
         var value = mini_max(depth - 1, temp_board, alpha, beta, false);
+
+        // We must assign an alpha in the ROOT for proper pruning
         alpha = Math.max(value, alpha);
+
         if (value >= best_move) {
           best_move = value;
 
