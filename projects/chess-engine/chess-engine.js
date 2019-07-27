@@ -191,7 +191,7 @@ function mini_max_root(depth, alpha, beta) {
           // new_c = black_moves[i][1];
         }
 
-        alpha = Math.max(alpha, best_move);
+        alpha = Math.max(-10000, best_move);
       }
     }
   }
