@@ -14,6 +14,7 @@ let selected_location;
 
 let player_move;
 let computer_can_move;
+let computer_now_moves;
 
 let move_counter;
 
@@ -82,6 +83,8 @@ function setup() {
 
   state = 'neutral';
   player_move = true;
+  computer_can_move = false;
+  computer_now_moves = false;
   position_count = 0;
 }
 
@@ -141,9 +144,13 @@ function draw_initial_pieces() {
 }
 
 function draw() {
-  if (computer_can_move) {
+  if (computer_now_moves) {
     computer_can_move = false;
+    computer_now_moves = false;
     computer_move();
+  }
+  if (computer_can_move) {
+    computer_now_moves = true;
   }
 }
 
@@ -305,7 +312,7 @@ function mouseClicked() {
 function computer_move() {
 
   position_count = 0;
-  var mtt = mini_max_root(4);
+  var mtt = mini_max_root(3);
   console.log(mtt);
 
   var best_piece = mtt[0];
