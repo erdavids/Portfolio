@@ -172,6 +172,7 @@ function mini_max_root(depth) {
         temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
         temp_board[r][c] = 0
         var value = mini_max(depth - 1, temp_board, -100000, 100000, false);
+        console.log(value)
 
 
         if (value >= best_move) {
@@ -236,7 +237,6 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[white_moves[i][0]][white_moves[i][1]] = temp_board[r][c]
           temp_board[r][c] = 0
 
-          console.log(temp_board);
 
           best_move = Math.min(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
           beta = Math.min(beta, best_move);
