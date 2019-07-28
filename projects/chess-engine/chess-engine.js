@@ -311,12 +311,12 @@ function mini_max_root(depth, alpha, beta) {
 
         var value = 0;
 
-        // if (black_king_check(temp_board) == true) {
-        //   value = -9999;
-        // } else {
-        //   value = mini_max(depth - 1, temp_board, alpha, beta, false);
-        // }
-        var value = mini_max(depth - 1, temp_board, alpha, beta, false);
+        if (black_king_check(temp_board) == true) {
+          value = -9999;
+        } else {
+          value = mini_max(depth - 1, temp_board, alpha, beta, false);
+        }
+        // var value = mini_max(depth - 1, temp_board, alpha, beta, false);
 
         // We must assign an alpha in the ROOT for proper pruning
         alpha = Math.max(value, alpha);
