@@ -1284,5 +1284,3 @@ function evaluate_board(b) {
   }
   return total_position;
 }
-
-function white_pawn()
