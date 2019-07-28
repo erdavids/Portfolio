@@ -175,7 +175,13 @@ function mini_max_root(depth, alpha, beta) {
         temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
         temp_board[r][c] = 0
 
-        var value = mini_max(depth - 1, temp_board, alpha, beta, false);
+        var value = 0;
+
+        if (black_king_check(temp_board) == true) {
+          value = -9999;
+        } else {
+          value = mini_max(depth - 1, temp_board, alpha, beta, false);
+        }
 
         // We must assign an alpha in the ROOT for proper pruning
         alpha = Math.max(value, alpha);
@@ -234,7 +240,11 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
           temp_board[r][c] = 0
 
-          best_move = Math.max(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
+          if (black_king_check(temp_board) == true) {
+            best_move = -9999;
+          } else {
+            best_move = Math.max(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
+          }
           alpha = Math.max(alpha, best_move);
           if (alpha > beta) {
             return best_move;
@@ -254,7 +264,12 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[white_moves[i][0]][white_moves[i][1]] = temp_board[r][c]
           temp_board[r][c] = 0
 
-          best_move = Math.min(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
+          if (black_king_check(temp_board) == true) {
+            best_move = 9999;
+          } else {
+            best_move = Math.min(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
+          }
+          
           beta = Math.min(beta, best_move);
           if (alpha > beta) {
             return best_move;
@@ -396,6 +411,31 @@ function white_king_check(b) {
       var black_moves = get_black_moves(b, b[r][c], r, c);
       for (var j = 0; j < black_moves.length; j++) {
         if (black_moves[j][0] == white_king_location[0] && black_moves[j][1] == white_king_location[1]) {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+// Check for black king check in this board
+function black_king_check(b) {
+  var black_king_location = [-1, -1];
+  for (var r = 0; r < 8; r++) {
+    for (var c = 0; c < 8; c++) {
+      if (b[r][c] == 6) {
+        black_king_location[0] = r;
+        black_king_location[1] = c;
+      }
+    }
+  }
+
+  for (var r = 0; r < 8; r++) {
+    for (var c = 0; c < 8; c++) {
+      var white_moves = get_moves(b, b[r][c], r, c);
+      for (var j = 0; j < white_moves.length; j++) {
+        if (white_moves[j][0] == black_king_location[0] && white_moves[j][1] == black_king_location[1]) {
           return true;
         }
       }
