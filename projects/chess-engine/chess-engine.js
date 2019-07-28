@@ -16,6 +16,8 @@ let player_move;
 let computer_can_move;
 let computer_now_moves;
 
+let before_capture_count;
+
 let move_counter;
 
 function preload() {
@@ -86,6 +88,7 @@ function setup() {
   computer_can_move = false;
   computer_now_moves = false;
   position_count = 0;
+  before_capture_count = 0;
 }
 
 function draw_empty_board() {
@@ -203,9 +206,20 @@ function mini_max_root(depth, alpha, beta) {
 
 // Will eventually need to supplement this with Quiescent Search (Search a few levels deeper on higher activity paths)
 // How do I define higher activity?
+//      - Maybe track most recent evaluation remaining enemy pieces, do 1-2 more levels searching for captures
 function mini_max(depth, b, alpha, beta, is_max) {
   position_count += 1;
+
+  if (depth == 1) {
+    before_capture_count = get_player_pieces(b);
+  }
+
   if (depth == 0) {
+    if (get_player_pieces(b) < before_capture_count) {
+      console.log("Capture Occurred");
+      console.log(b)
+    }
+
     return evaluate_board(b);
   }
 
@@ -998,6 +1012,23 @@ function valid_move(moves, grid_click) {
       }
   }
   return false;
+}
+
+// Used to evaluate if there has been a capture
+function get_player_pieces(b) {
+  var p = 0;
+  var total_pieces = 0;
+  for (var r = 0; r < 8; r++) {
+    for (var c = 0; c < 8; c++) {
+      p = b[r][c];
+
+      if (p > 6) {
+        total_pieces += 1;
+      }
+    }
+  }
+
+  return total_pieces;
 }
 
 function evaluate_board(b) {
