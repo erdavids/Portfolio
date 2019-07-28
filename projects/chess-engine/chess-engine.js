@@ -394,7 +394,7 @@ function white_king_check(b) {
   for (var r = 0; r < 8; r++) {
     for (var c = 0; c < 8; t_c++) {
       var black_moves = get_black_moves(b, b[r][c], r, c);
-      for (var j = 0; j < moves.length; j++) {
+      for (var j = 0; j < black_moves.length; j++) {
         if (black_moves[j][0] == white_king_location[0] && black_moves[j][1] == white_king_location[1]) {
           return true;
         }
