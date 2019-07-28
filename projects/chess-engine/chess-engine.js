@@ -200,6 +200,9 @@ function mini_max_root(depth, alpha, beta) {
   return [t_p, t_r, t_c, t_nr, t_nc];
 }
 
+
+// Will eventually need to supplement this with Quiescent Search (Search a few levels deeper on higher activity paths)
+// How do I define higher activity?
 function mini_max(depth, b, alpha, beta, is_max) {
   position_count += 1;
   if (depth == 0) {
