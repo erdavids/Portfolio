@@ -234,7 +234,7 @@ function draw_empty_board() {
         fill(233, 227, 230);
         square_color = 1;
       } else {
-        fill(79, 164, 165)
+        fill(144, 162, 172)
         square_color = 0;
       }
       rect(r, c, square_size, square_size);
@@ -456,7 +456,7 @@ function mouseClicked() {
           if ((grid_click[0] % 2) == (grid_click[1] % 2)) {
             fill(233, 227, 230);
           } else {
-            fill(79, 164, 165)
+            fill(144, 162, 172)
           }
           rect(pix[0], pix[1], square_size, square_size)
 
@@ -468,7 +468,7 @@ function mouseClicked() {
           if ((selected_location[0] % 2) == (selected_location[1] % 2)) {
             fill(233, 227, 230);
           } else {
-            fill(79, 164, 165)
+            fill(144, 162, 172)
           }
           rect(pix[0], pix[1], square_size, square_size)
 
