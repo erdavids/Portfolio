@@ -492,7 +492,7 @@ function mouseClicked() {
 function computer_move() {
 
   position_count = 0;
-  var mtt = mini_max_root(3, -10000, 10000);
+  var mtt = mini_max_root(5, -10000, 10000);
 
   var best_piece = mtt[0];
   var best_r = mtt[1];
