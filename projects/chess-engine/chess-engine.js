@@ -328,39 +328,49 @@ function mouseClicked() {
     } else if (selected != -1) {
       if (valid_move(moves, grid_click)) {
 
-        // Update the board for the next moves
-        board[grid_click[0]][grid_click[1]] = selected
-        board[selected_location[0]][selected_location[1]] = 0
+        // Make sure we aren't putting king in check
+        var temp_board = get_board_copy(b);
+        temp_board[moves[i][0]][moves[i][1]] = temp_board[r][c]
+        temp_board[r][c] = 0
 
-        // Cover the new location (capture piece)
-        var pix = grid_to_pixel(grid_click[1], grid_click[0])
-        if ((grid_click[0] % 2) == (grid_click[1] % 2)) {
-          fill(233, 227, 230);
+        if (white_king_check(temp_board) == false) {
+
+          // Update the board for the next moves
+          board[grid_click[0]][grid_click[1]] = selected
+          board[selected_location[0]][selected_location[1]] = 0
+
+          // Cover the new location (capture piece)
+          var pix = grid_to_pixel(grid_click[1], grid_click[0])
+          if ((grid_click[0] % 2) == (grid_click[1] % 2)) {
+            fill(233, 227, 230);
+          } else {
+            fill(144, 162, 172)
+          }
+          rect(pix[0], pix[1], square_size, square_size)
+
+          // Draw the piece in it's new location
+          draw_piece_on_grid(piece_list[selected], grid_click[0], grid_click[1]);
+
+          // Cover the previous location (Need to actually draw the right color)
+          var pix = grid_to_pixel(selected_location[1], selected_location[0])
+          if ((selected_location[0] % 2) == (selected_location[1] % 2)) {
+            fill(233, 227, 230);
+          } else {
+            fill(144, 162, 172)
+          }
+          rect(pix[0], pix[1], square_size, square_size)
+
+          // Undo selection after successful move
+          selected = -1
+          selected_location[0] = -1
+          selected_location[1] = -1
+
+          // Computer's turn
+          player_move = false;
+          computer_can_move = true;
         } else {
-          fill(144, 162, 172)
+          console.log("White king would be in check!");
         }
-        rect(pix[0], pix[1], square_size, square_size)
-
-        // Draw the piece in it's new location
-        draw_piece_on_grid(piece_list[selected], grid_click[0], grid_click[1]);
-
-        // Cover the previous location (Need to actually draw the right color)
-        var pix = grid_to_pixel(selected_location[1], selected_location[0])
-        if ((selected_location[0] % 2) == (selected_location[1] % 2)) {
-          fill(233, 227, 230);
-        } else {
-          fill(144, 162, 172)
-        }
-        rect(pix[0], pix[1], square_size, square_size)
-
-        // Undo selection after successful move
-        selected = -1
-        selected_location[0] = -1
-        selected_location[1] = -1
-
-        // Computer's turn
-        player_move = false;
-        computer_can_move = true;
       } else {
         selected = -1;
         selected_location[0] = -1
@@ -409,6 +419,31 @@ function computer_move() {
 
   // Return to player move
   player_move = true;
+}
+
+// Check for white king check in this board
+function white_king_check(b) {
+  var white_king_location = [-1, -1];
+  for (var r = 0; r < 8; r++) {
+    for (var c = 0; c < 8; c++) {
+      if (b[r][c] == 12) {
+        white_king_location[0] = r;
+        white_king_location[1] = c;
+      }
+    }
+  }
+
+  for (var r = 0; r < 8; r++) {
+    for (var c = 0; c < 8; t_c++) {
+      var black_moves = get_black_moves(b, b[r][c], r, c);
+      for (var j = 0; j < moves.length; j++) {
+        if (black_moves[j][0] == white_king_location[0] && black_moves[j][1] == white_king_location[1]) {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
 }
 
 // Moves for White
