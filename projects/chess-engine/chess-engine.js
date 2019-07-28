@@ -210,16 +210,16 @@ function mini_max_root(depth, alpha, beta) {
 function mini_max(depth, b, alpha, beta, is_max) {
   position_count += 1;
 
-  if (depth == 1) {
-    before_capture_count = get_player_pieces(b);
-  }
+  // if (depth == 1) {
+  //   before_capture_count = get_player_pieces(b);
+  // }
 
   if (depth == 0) {
-    if (get_player_pieces(b) < before_capture_count) {
-      console.log("Capture Occurred");
-      console.log(b)
-    }
-
+    // if (get_player_pieces(b) < before_capture_count) {
+    //   quiet_search(depth, b, alpha, beta)
+    // } else {
+    //   return evaluate_board(b);
+    // }
     return evaluate_board(b);
   }
 
@@ -264,6 +264,11 @@ function mini_max(depth, b, alpha, beta, is_max) {
     }
     return best_move;
   }
+}
+
+// Probably a shallow Q-Search
+function quiet_search(depth, b, alpha, beta) {
+  return nothing;
 }
 
 
