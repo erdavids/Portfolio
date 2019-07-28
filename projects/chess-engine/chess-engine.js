@@ -402,12 +402,12 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[white_moves[i][0]][white_moves[i][1]] = temp_board[r][c]
           temp_board[r][c] = 0
 
-          // if (black_king_check(temp_board) == true) {
-          //   best_move = 9999;
-          // } else {
-          //   best_move = Math.min(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
-          // }
-          best_move = Math.min(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
+          if (black_king_check(temp_board) == true) {
+            best_move = 9999;
+          } else {
+            best_move = Math.min(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
+          }
+          // best_move = Math.min(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
 
           beta = Math.min(beta, best_move);
           if (alpha > beta) {
