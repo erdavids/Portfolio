@@ -175,6 +175,20 @@ function mini_max_root(depth, alpha, beta) {
         temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
         temp_board[r][c] = 0
 
+        // The black king has 'moved'
+        if (board[r][c] == 6) {
+          for (var t_r = 0; t_r < 8; t_r++) {
+            for (var t_c = 0; t_c < 8; t_c++) {
+                var white_moves = get_moves(temp_board, temp_board[t_r][t_c], t_r, t_c);
+                for (var j = 0; j < white_moves.length; j++) {
+                  if (white_moves[j][0] == black_moves[i][0] && white_moves[j][1] == black_moves[i][1]) {
+                    return -9999;
+                  }
+                }
+              }
+            }
+        }
+
         var value = mini_max(depth - 1, temp_board, alpha, beta, false);
 
         // We must assign an alpha in the ROOT for proper pruning
@@ -1006,6 +1020,7 @@ function get_black_moves(b, p, r, c) {
       el += 1;
     }
   }
+
 
   return m;
 }
