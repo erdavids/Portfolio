@@ -287,9 +287,9 @@ function mouseClicked() {
       if (valid_move(moves, grid_click)) {
 
         // Make sure we aren't putting king in check
-        var temp_board = get_board_copy(b);
-        temp_board[moves[i][0]][moves[i][1]] = temp_board[r][c]
-        temp_board[r][c] = 0
+        var temp_board = get_board_copy(board);
+        temp_board[grid_click[0]][grid_click[1]] = selected;
+        temp_board[selected_location[0]][selected_location[1]] = 0;
 
         if (white_king_check(temp_board) == false) {
 
