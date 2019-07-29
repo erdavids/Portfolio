@@ -484,6 +484,15 @@ function mouseClicked() {
 
           // Computer's turn
           player_move = false;
+
+          if (black_king_check(board) == true) {
+            if (black_king_checkmate(board) == true) {
+              document.getElementById("status").textContent = "The game is over and you have WON";
+              console.log("Game over - White wins");
+              return;
+            }
+          }
+
           computer_can_move = true;
           document.getElementById("status").textContent = "The Crooked Rook is thinking...";
 
