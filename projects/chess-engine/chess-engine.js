@@ -20,6 +20,10 @@ let before_capture_count;
 
 let move_counter;
 
+let crooked;
+
+
+
 var white_pawn_eval_early = [
   [  0,   0,   0,   0,   0,   0,   0,   0],
   [-50, -50, -50, -50, -50, -50, -50, -50],
@@ -169,21 +173,23 @@ function preload() {
   wR = loadImage('../projects/chess-engine/chess-images/wR.png');
 }
 
+// Uses the reactive square size to draw squares in the right place
 function grid_to_pixel(r, c) {
   return [r*square_size, c*square_size];
 }
 
+// Uses the p5 image function to draw
 function draw_piece_on_grid(piece, r, c) {
   var pix = grid_to_pixel(r, c);
   image(piece, pix[1], pix[0], square_size, square_size);
 }
 
+// Have to convert to the row/column format
 function grid_clicked() {
   return [int(mouseY / square_size), int(mouseX / square_size)];
 }
 
 function setup() {
-  // Move the canvas so it’s inside our <div id="sketch-holder">.
 
   var canvasDiv = document.getElementById('sketchdiv')
   var width = canvasDiv.offsetWidth
@@ -192,11 +198,13 @@ function setup() {
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
 
+  // Hopefully adjusts to screen size
   square_size = width/8
 
   // Used for drawing identical selected piece
   piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
 
+  // Initial board
   board = [
     [4, 2, 3, 5, 6, 3, 2, 4],
     [1, 1, 1, 1, 1, 1, 1, 1],
@@ -208,21 +216,27 @@ function setup() {
     [10, 8, 9, 11, 12, 9, 8, 10]
   ]
 
-  var testBoard = get_board_copy(board);
-  testBoard[0][1] = 15
-
   selected = -1;
   selected_location = [-1, -1];
 
+
+  //
   draw_empty_board();
   draw_initial_pieces();
 
-  state = 'neutral';
   player_move = true;
+
+  // Annoying setup, but necessary for now with p5.js drawing
   computer_can_move = false;
   computer_now_moves = false;
+
+  // Positions evaluated by mini_max
   position_count = 0;
+
+  // Counting enemy pieces
   before_capture_count = 0;
+
+  //
 }
 
 function draw_empty_board() {
@@ -252,6 +266,7 @@ function get_board_copy(b) {
   return JSON.parse(JSON.stringify(b));
 }
 
+// Hardcoded for now
 function draw_initial_pieces() {
   // Black pieces
   draw_piece_on_grid(bR, 0, 0);
@@ -280,6 +295,7 @@ function draw_initial_pieces() {
   }
 }
 
+// p5 method that occurs every frame
 function draw() {
   if (computer_now_moves) {
     computer_can_move = false;
@@ -292,6 +308,7 @@ function draw() {
 }
 
 
+// The meat of the computer's brain
 function mini_max_root(depth, alpha, beta) {
   var best_move = -9999;
 
@@ -329,13 +346,6 @@ function mini_max_root(depth, alpha, beta) {
           t_c = c;
           t_nr = black_moves[i][0];
           t_nc = black_moves[i][1];
-          // best_position = temp_evaluation;
-          // best_piece = board[r][c];
-          // best_r = r;
-          // best_c = c;
-          //
-          // new_r = black_moves[i][0];
-          // new_c = black_moves[i][1];
         }
       }
     }
@@ -350,10 +360,6 @@ function mini_max_root(depth, alpha, beta) {
 //      - Maybe track most recent evaluation remaining enemy pieces, do 1-2 more levels searching for captures
 function mini_max(depth, b, alpha, beta, is_max) {
   position_count += 1;
-
-  // if (depth == 1) {
-  //   before_capture_count = get_player_pieces(b);
-  // }
 
   if (depth == 0) {
     // if (get_player_pieces(b) < before_capture_count) {
@@ -422,12 +428,11 @@ function mini_max(depth, b, alpha, beta, is_max) {
 
 // Probably a shallow Q-Search
 function quiet_search(depth, b, alpha, beta) {
-  return nothing;
+  return false;
 }
 
 
-// Control the state
-// move state?
+// Converts mouse clicks to potential player moves
 function mouseClicked() {
   var grid_click = grid_clicked(mouseX, mouseY);
   if (player_move && grid_click[0] < 8 && grid_click[0] >= 0 && grid_click[1] < 8 && grid_click[1] >= 0) {
@@ -531,6 +536,11 @@ function computer_move() {
 
   // Return to player move
   player_move = true;
+  if (white_king_check(board) == true) {
+    if (white_king_checkmate(board) == true) {
+      console.log("Game over - Black wins");
+    }
+  }
 }
 
 // Check for white king check in this board
@@ -557,6 +567,37 @@ function white_king_check(b) {
   }
   return false;
 }
+
+// Check for white king checkmate
+function white_king_checkmate(b) {
+  var white_king_location = [-1, -1];
+  for (var r = 0; r < 8; r++) {
+    for (var c = 0; c < 8; c++) {
+      if (b[r][c] == 12) {
+        white_king_location[0] = r;
+        white_king_location[1] = c;
+      }
+    }
+  }
+
+  var checkmate = true;
+  for (var r = 0; r < 8; r++) {
+    for (var c = 0; c < 8; c++) {
+      var white_moves = get_moves(b, b[r][c], r, c);
+      for (var j = 0; j < white_moves.length; j++) {
+        var temp_board = get_board_copy(b);
+        temp_board[white_moves[i][0]][white_moves[i][1]] = temp_board[r][c]
+        temp_board[r][c] = 0
+
+        if (white_king_check(temp_board) == false) {
+          checkmate = false;
+        }
+      }
+    }
+  }
+  return checkmate;
+}
+
 
 // Check for black king check in this board
 function black_king_check(b) {
