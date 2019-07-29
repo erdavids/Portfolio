@@ -476,7 +476,7 @@ function mouseClicked() {
         if (white_king_check(temp_board) == false) {
 
           // Update player stats
-          var captured_piece = temp_board[grid_click[0]][grid_click[1]];
+          var captured_piece = board[grid_click[0]][grid_click[1]];
           console.log(captured_piece);
 
           // Update the board for the next moves
