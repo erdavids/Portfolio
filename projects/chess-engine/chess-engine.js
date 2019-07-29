@@ -1388,5 +1388,6 @@ function evaluate_board(b) {
 
 function command() {
   var x = document.getElementById("player_command").value;
+  document.getElementById('player_command').value = "";
   console.log(x);
 }
