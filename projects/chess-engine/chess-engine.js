@@ -570,16 +570,6 @@ function white_king_check(b) {
 
 // Check for white king checkmate
 function white_king_checkmate(b) {
-  var white_king_location = [-1, -1];
-  for (var r = 0; r < 8; r++) {
-    for (var c = 0; c < 8; c++) {
-      if (b[r][c] == 12) {
-        white_king_location[0] = r;
-        white_king_location[1] = c;
-      }
-    }
-  }
-
   var checkmate = true;
   for (var r = 0; r < 8; r++) {
     for (var c = 0; c < 8; c++) {
@@ -622,6 +612,26 @@ function black_king_check(b) {
     }
   }
   return false;
+}
+
+// Check for black king checkmate
+function black_king_checkmate(b) {
+  var checkmate = true;
+  for (var r = 0; r < 8; r++) {
+    for (var c = 0; c < 8; c++) {
+      var black_moves = get_black_moves(b, b[r][c], r, c);
+      for (var j = 0; j < black_moves.length; j++) {
+        var temp_board = get_board_copy(b);
+        temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
+        temp_board[r][c] = 0
+
+        if (black_king_check(temp_board) == false) {
+          checkmate = false;
+        }
+      }
+    }
+  }
+  return checkmate;
 }
 
 // Moves for White
