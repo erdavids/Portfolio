@@ -582,7 +582,7 @@ function computer_move() {
 
   // Return to player move
   player_move = true;
-  document.getElementById("status").textContent = "It is your turn. &#9818;";
+  document.getElementById("status").textContent = "It is your turn. &#9824;";
 
 
 }
