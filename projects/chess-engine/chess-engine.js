@@ -1,27 +1,51 @@
+////////////////////////////
+// The Crooked Rook
+//    A chess engine created by Eric Davidson
+//
+// Primary Searching:
+//  - Minimax with Alpha/Beta pruning
+////////////////////////////
 
-let r, g, b;
+// Will be used to reference the piece images
 let bB, bR, bK, bN, bP, bQ, wB, wK, wN, wP, wQ, wR;
+
+// Adapts to screen size
 let square_size;
+
+// Stores the image references for pieces
 let piece_list;
 
+// 8x8 array of arrays representing the board
 let board;
 
+// Will be used for player and computer move
 let moves;
 let black_moves;
 
+// Tracks the players input
 let selected;
 let selected_location;
 
+// Booleans for controlling game flow
 let player_move;
 let computer_can_move;
 let computer_now_moves;
 
+// Used for checking captures
 let before_capture_count;
 
-let move_counter;
 
+// Used to determine if the engine should cheat
 let crooked;
 
+// Qualifying factors for castling
+let white_king_moved;
+let black_king_moved;
+
+let white_rook_left_moved;
+let white_rook_right_moved;
+let black_rook_left_moved;
+let black_rook_right_moved;
 
 
 var white_pawn_eval_early = [
@@ -216,11 +240,11 @@ function setup() {
     [10, 8, 9, 11, 12, 9, 8, 10]
   ]
 
+  // Probably a better way to do this part
   selected = -1;
   selected_location = [-1, -1];
 
-
-  //
+  // Starts off the visuals
   draw_empty_board();
   draw_initial_pieces();
 
@@ -236,7 +260,6 @@ function setup() {
   // Counting enemy pieces
   before_capture_count = 0;
 
-  //
 }
 
 function draw_empty_board() {
@@ -452,6 +475,10 @@ function mouseClicked() {
 
         if (white_king_check(temp_board) == false) {
 
+          // Update player stats
+          var captured_piece = temp_board[grid_click[0]][grid_click[1]];
+          console.log(captured_piece);
+
           // Update the board for the next moves
           board[grid_click[0]][grid_click[1]] = selected
           board[selected_location[0]][selected_location[1]] = 0
@@ -555,7 +582,7 @@ function computer_move() {
 
   // Return to player move
   player_move = true;
-  document.getElementById("status").textContent = "It is your turn.";
+  document.getElementById("status").textContent = "It is your turn. &#9818;";
 
 
 }
