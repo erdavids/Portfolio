@@ -102,7 +102,7 @@ var white_rook_eval_early = [
 ];
 
 var black_rook_eval_early = [
-  [  0,   0,   0,   5,   5,   0,   0,   0],
+  [  0,   0,   5,  10,  10,   5,   0,   0],
   [ -5,   0,   0,   0,   0,   0,   0,  -5],
   [ -5,   0,   0,   0,   0,   0,   0,  -5],
   [ -5,   0,   0,   0,   0,   0,   0,  -5],
@@ -310,7 +310,7 @@ function draw() {
 
 // The meat of the computer's brain
 function mini_max_root(depth, alpha, beta) {
-  var best_move = -9999;
+  var best_move = -99999;
 
   var t_p = -1;
   var t_r = -1;
@@ -329,7 +329,7 @@ function mini_max_root(depth, alpha, beta) {
         var value = 0;
 
         if (black_king_check(temp_board) == true) {
-          value = -9999;
+          value = -99999;
         } else {
           value = mini_max(depth - 1, temp_board, alpha, beta, false);
         }
@@ -372,7 +372,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
 
   // Maximizing player (Crooked Rook)
   if (is_max) {
-    var best_move = -9999;
+    var best_move = -99999;
     for (var r = 0; r < 8; r++) {
       for (var c = 0; c < 8; c++) {
         var black_moves = get_black_moves(b, b[r][c], r, c);
@@ -382,7 +382,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[r][c] = 0
 
           // if (black_king_check(temp_board) == true) {
-          //   best_move = -9999;
+          //   best_move = -99999;
           // } else {
           //   best_move = Math.max(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
           // }
@@ -399,7 +399,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
   return best_move;
   // Minimizing player (Human)
   } else {
-    var best_move = 9999;
+    var best_move = 99999;
     for (var r = 0; r < 8; r++) {
       for (var c = 0; c < 8; c++) {
         var white_moves = get_moves(b, b[r][c], r, c);
@@ -409,7 +409,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[r][c] = 0
 
           // if (white_king_check(temp_board) == true) {
-          //   best_move = 9999;
+          //   best_move = 99999;
           // } else {
           //   best_move = Math.min(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
           // }
