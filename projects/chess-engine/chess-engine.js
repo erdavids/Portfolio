@@ -1386,7 +1386,7 @@ function evaluate_board(b) {
 }
 
 
-function myFunction() {
+function command() {
   var x = document.getElementById("player_command").value;
   console.log(x);
 }
