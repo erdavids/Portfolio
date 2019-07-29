@@ -538,6 +538,7 @@ function computer_move() {
   player_move = true;
   if (white_king_check(board) == true) {
     if (white_king_checkmate(board) == true) {
+      document.getElementById("status").textContent = "The game is over and you have LOST";
       console.log("Game over - Black wins");
     }
   }
