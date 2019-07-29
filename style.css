@@ -28,9 +28,11 @@ div ul {
   background-color: #4fa4a5;
   border: none;
   color: white;
+  padding: 2px 4px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
 }
