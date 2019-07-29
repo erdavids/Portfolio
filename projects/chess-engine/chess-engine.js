@@ -576,7 +576,7 @@ function white_king_checkmate(b) {
       var white_moves = get_moves(b, b[r][c], r, c);
       for (var j = 0; j < white_moves.length; j++) {
         var temp_board = get_board_copy(b);
-        temp_board[white_moves[i][0]][white_moves[i][1]] = temp_board[r][c]
+        temp_board[white_moves[j][0]][white_moves[j][1]] = temp_board[r][c]
         temp_board[r][c] = 0
 
         if (white_king_check(temp_board) == false) {
