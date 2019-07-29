@@ -381,12 +381,12 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
           temp_board[r][c] = 0
 
-          // if (black_king_check(temp_board) == true) {
-          //   best_move = -9999;
-          // } else {
-          //   best_move = Math.max(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
-          // }
-          best_move = Math.max(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
+          if (black_king_check(temp_board) == true) {
+            best_move = -9999;
+          } else {
+            best_move = Math.max(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
+          }
+          // best_move = Math.max(best_move, mini_max(depth - 1, temp_board, alpha, beta, !is_max));
 
 
           alpha = Math.max(alpha, best_move);
@@ -504,7 +504,7 @@ function mouseClicked() {
 function computer_move() {
 
   position_count = 0;
-  var mtt = mini_max_root(2, -10000, 10000);
+  var mtt = mini_max_root(5, -10000, 10000);
 
   var best_piece = mtt[0];
   var best_r = mtt[1];
