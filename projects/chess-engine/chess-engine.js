@@ -1384,3 +1384,9 @@ function evaluate_board(b) {
   }
   return total_position;
 }
+
+
+function myFunction() {
+  var x = document.getElementById("player_command").value;
+  console.log(x);
+}
