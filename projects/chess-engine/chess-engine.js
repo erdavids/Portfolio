@@ -364,7 +364,7 @@ function draw() {
 
 // The meat of the computer's brain
 function mini_max_root(depth, alpha, beta) {
-  var best_move = -99999;
+  var best_move = -100000;
 
   var t_p = -1;
   var t_r = -1;
@@ -390,7 +390,7 @@ function mini_max_root(depth, alpha, beta) {
         var value = 0;
 
         if (black_king_check(temp_board) == true) {
-          value = -99999;
+          value = -100000;
         } else {
           value = mini_max(depth - 1, temp_board, alpha, beta, false);
         }
@@ -434,7 +434,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
 
   // Maximizing player (Crooked Rook)
   if (is_max) {
-    var best_move = -99999;
+    var best_move = -100000;
     for (var r = 0; r < 8; r++) {
       for (var c = 0; c < 8; c++) {
         var black_moves = get_black_moves(b, b[r][c], r, c);
@@ -466,7 +466,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
   return best_move;
   // Minimizing player (Human)
   } else {
-    var best_move = 99999;
+    var best_move = 100000;
     for (var r = 0; r < 8; r++) {
       for (var c = 0; c < 8; c++) {
         var white_moves = get_moves(b, b[r][c], r, c);
@@ -601,7 +601,8 @@ function computer_move() {
   var mtt = mini_max_root(difficulty, -100000, 100000);
   var d2 = new Date().getTime();
 
-  console.log("Time for move: " + str(d2 - d));
+  // Log the number of seconds
+  console.log("Time for move: " + str((d2 - d)/1000);
 
   var best_piece = mtt[0];
   var best_r = mtt[1];
