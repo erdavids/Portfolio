@@ -47,6 +47,8 @@ let white_rook_right_moved;
 let black_rook_left_moved;
 let black_rook_right_moved;
 
+let difficulty;
+
 
 var white_pawn_eval_early = [
   [  0,   0,   0,   0,   0,   0,   0,   0],
@@ -259,6 +261,8 @@ function setup() {
 
   // Counting enemy pieces
   before_capture_count = 0;
+
+  difficulty = 5;
 
 }
 
@@ -540,7 +544,7 @@ function mouseClicked() {
 function computer_move() {
 
   position_count = 0;
-  var mtt = mini_max_root(5, -10000, 10000);
+  var mtt = mini_max_root(difficulty, -100000, 100000);
 
   var best_piece = mtt[0];
   var best_r = mtt[1];
@@ -1387,7 +1391,9 @@ function evaluate_board(b) {
 
 
 function command() {
-  var x = document.getElementById("player_command").value;
-  document.getElementById('player_command').value = "";
+  var cmd = document.getElementById("player_command").value;
+  if (cmd == '1') {
+    difficulty = 1;
+  }
   console.log(x);
 }
