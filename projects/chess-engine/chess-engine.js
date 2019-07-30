@@ -273,7 +273,12 @@ function setup() {
   // Counting enemy pieces
   before_capture_count = 0;
 
+  // Usually between 1 and 5
   difficulty = 5;
+
+  // Cheating (Can be turned off)
+  crooked = true;
+  root_cheat = false;
 
 }
 
@@ -369,7 +374,9 @@ function mini_max_root(depth, alpha, beta) {
 
   for (var r = 0; r < 8; r++) {
     for (var c = 0; c < 8; c++) {
+      root_cheat = true;
       var black_moves = get_black_moves(board, board[r][c], r, c);
+      root_cheat = false;
       for (var i = 0; i < black_moves.length; i++) {
         var temp_board = get_board_copy(board);
         temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
@@ -1124,6 +1131,15 @@ function get_black_moves(b, p, r, c) {
     if (r < 7 && c > 1 && (b[r + 1][c - 2] > 6 || b[r + 1][c - 2] == 0)) {
       m[el] = [r + 1, c - 2];
       el += 1;
+    }
+
+    // Cheating moves
+    if (crooked == true && root_cheat == true && random(1) < .05) {
+      // Straight up
+      if (r > 1 && (b[r - 2][c] > 6 || b[r - 2][c] == 0)) {
+        m[el] = [r - 2, c];
+        el += 1;
+      }
     }
   // Black Rook
   } else if (p == 4) {
