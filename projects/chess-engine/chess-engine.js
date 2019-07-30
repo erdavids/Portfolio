@@ -517,6 +517,7 @@ function mouseClicked() {
           player_move = false;
 
           if (black_king_check(board) == true) {
+            console.log("He should be able to move");
             if (black_king_checkmate(board) == true) {
               document.getElementById("status").textContent = "You have WON";
               console.log("Game over - White wins");
