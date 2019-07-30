@@ -676,7 +676,7 @@ function black_king_checkmate(b) {
       var black_moves = get_black_moves(b, b[r][c], r, c);
       for (var j = 0; j < black_moves.length; j++) {
         var temp_board = get_board_copy(b);
-        temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
+        temp_board[black_moves[j][0]][black_moves[j][1]] = temp_board[r][c]
         temp_board[r][c] = 0
 
         if (black_king_check(temp_board) == false) {
