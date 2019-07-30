@@ -1021,13 +1021,9 @@ function get_moves(b, p, r, c) {
     // This will be fairly hardcoded unfortunately
     // I don't know if I will be able to check for threats to these squares
     if (white_king_moved == false && white_rook_left_moved == false && white_king_check(b) == false) {
-      if (b[7][1] == 0 && b[7][2] == 0) {
-        b[7][0] = 0;
-        b[7][1] = 0;
-        b[7][2] = 12;
-        b[7][3] = 10;
-        b[7][4] = 0;
-
+      if (b[7][1] == 0 && b[7][2] == 0 && b[7][3]) {
+        ml[el] = [7, 2];
+        el+= 1;
       }
     }
 
