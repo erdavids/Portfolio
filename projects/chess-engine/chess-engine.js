@@ -337,8 +337,8 @@ function redraw_entire_board() {
   draw_empty_board();
   for (var r = 0; r < 8; r++) {
     for (var c = 0; c < 8; c++) {
-      if (b[r][c] != 0) {
-        draw_piece_on_grid(piece_list[b[r][c]], r, c)
+      if (board[r][c] != 0) {
+        draw_piece_on_grid(piece_list[board[r][c]], r, c)
       }
     }
   }
@@ -1467,10 +1467,10 @@ function command() {
   } else if (cmd == '4 8 15 16 23 42' || cmd == '4, 8, 15, 16, 23, 42' || cmd == '4815162342') {
     for (var r = 0; r < 8; r++) {
       for (var c = 0; c < 8; c++) {
-        p = b[r][c];
+        p = board[r][c];
         if (p > 6 && p != 12) {
           // Turn all the player's pieces to queens
-          b[r][c] = 11;
+          board[r][c] = 11;
           redraw_entire_board();
         }
       }
