@@ -712,37 +712,37 @@ function get_moves(b, p, r, c) {
   // White Knight
   } else if (p == 8) {
     // Tall Moves
-    if (r > 1 && c > 0 && b[r - 2][c - 1] < 6) {
+    if (r > 1 && c > 0 && b[r - 2][c - 1] < 7) {
       m[el] = [r - 2, c - 1];
       el += 1;
     }
-    if (r > 1 && c < 7 && b[r - 2][c + 1] < 6) {
+    if (r > 1 && c < 7 && b[r - 2][c + 1] < 7) {
       m[el] = [r - 2, c + 1];
       el += 1;
     }
-    if (r < 6 && c < 7 && b[r + 2][c + 1] < 6) {
+    if (r < 6 && c < 7 && b[r + 2][c + 1] < 7) {
       m[el] = [r + 2, c + 1];
       el += 1;
     }
-    if (r < 6 && c > 0 && b[r + 2][c - 1] < 6) {
+    if (r < 6 && c > 0 && b[r + 2][c - 1] < 7) {
       m[el] = [r + 2, c - 1];
       el += 1;
     }
 
     //Wide Moves
-    if (r > 0 && c > 1 && b[r - 1][c - 2] < 6) {
+    if (r > 0 && c > 1 && b[r - 1][c - 2] < 7) {
       m[el] = [r - 1, c - 2];
       el += 1;
     }
-    if (r > 0 && c < 6 && b[r - 1][c + 2] < 6) {
+    if (r > 0 && c < 6 && b[r - 1][c + 2] < 7) {
       m[el] = [r - 1, c + 2];
       el += 1;
     }
-    if (r < 7 && c < 6 && b[r + 1][c + 2] < 6) {
+    if (r < 7 && c < 6 && b[r + 1][c + 2] < 7) {
       m[el] = [r + 1, c + 2];
       el += 1;
     }
-    if (r < 7 && c > 1 && b[r + 1][c - 2] < 6) {
+    if (r < 7 && c > 1 && b[r + 1][c - 2] < 7) {
       m[el] = [r + 1, c - 2];
       el += 1;
     }
