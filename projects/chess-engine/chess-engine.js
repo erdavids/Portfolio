@@ -518,17 +518,17 @@ function mouseClicked() {
 
           if (black_king_check(board) == true) {
             if (black_king_checkmate(board) == true) {
-              document.getElementById("status").textContent = "Game State: You have WON";
+              document.getElementById("status").textContent = "You have WON";
               console.log("Game over - White wins");
               return;
             }
           }
 
           computer_can_move = true;
-          document.getElementById("status").textContent = "Game State: The Crooked Rook is thinking...";
+          document.getElementById("status").textContent = "The Crooked Rook is thinking...";
 
         } else {
-          document.getElementById("status").textContent = "Game State: You can't put your king in check.";
+          document.getElementById("status").textContent = "You can't put your king in check.";
         }
       } else {
         selected = -1;
@@ -578,7 +578,7 @@ function computer_move() {
 
   if (white_king_check(board) == true) {
     if (white_king_checkmate(board) == true) {
-      document.getElementById("status").textContent = "Game State: You have LOST";
+      document.getElementById("status").textContent = "You have LOST";
       console.log("Game over - Black wins");
       return;
     }
@@ -586,7 +586,7 @@ function computer_move() {
 
   // Return to player move
   player_move = true;
-  document.getElementById("status").textContent = "Game State: It is your turn.";
+  document.getElementById("status").textContent = "It is your turn.";
 
 
 }
@@ -1392,8 +1392,23 @@ function evaluate_board(b) {
 
 function command() {
   var cmd = document.getElementById("player_command").value;
-  if (cmd == '1') {
+  if (cmd == 'difficulty 1') {
     difficulty = 1;
+  } else if (cmd == 'difficulty 2') {
+    difficulty = 2;
+  } else if (cmd == 'difficulty 3') {
+    difficulty = 3;
+  } else if (cmd == 'difficulty 4') {
+    difficulty = 4;
+  } else if (cmd == 'difficulty 5') {
+    difficulty = 5;
+  } else if (cmd == 'cheating on') {
+    crooked = true;
+  } else if (cmd == 'cheating off') {
+    crooked = false;
   }
+
+
+  document.getElementById("player_command").value = "";
   console.log(x);
 }
