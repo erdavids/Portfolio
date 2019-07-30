@@ -455,7 +455,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[r][c] = 0
 
           // Upgrade pawn to queen
-          if (temp_board[white_moves[i][0]][white_moves[i][1]] == 1 && white_moves[i][0] == 0) {
+          if (temp_board[white_moves[i][0]][white_moves[i][1]] == 7 && white_moves[i][0] == 0) {
             temp_board[white_moves[i][0]][white_moves[i][1]] = 11
           }
 
@@ -726,7 +726,7 @@ function get_moves(b, p, r, c) {
   // White Pawn
   if (p == 7) {
     // Regular moves
-    if (b[r - 1][c] == 0) {
+    if (r > 0 && b[r - 1][c] == 0) {
       m[el] = [r - 1, c];
       el += 1;
     }
@@ -736,11 +736,11 @@ function get_moves(b, p, r, c) {
     }
 
     // Capturing
-    if (c > 0 && b[r - 1][c - 1] < 7 && b[r - 1][c - 1] > 0) {
+    if (c > 0 && r > 0 && b[r - 1][c - 1] < 7 && b[r - 1][c - 1] > 0) {
       m[el] = [r - 1, c - 1];
       el += 1;
     }
-    if (c < 7 && b[r - 1][c + 1] < 7 && b[r - 1][c + 1] > 0) {
+    if (c < 7 && r > 0 && b[r - 1][c + 1] < 7 && b[r - 1][c + 1] > 0) {
       m[el] = [r - 1, c + 1];
       el += 1;
     }
@@ -1047,7 +1047,7 @@ function get_black_moves(b, p, r, c) {
   // Black Pawn
   if (p == 1) {
     // Regular moves
-    if (r + 1 < 7 && b[r + 1][c] == 0) {
+    if (r < 7 && b[r + 1][c] == 0) {
       m[el] = [r + 1, c];
       el += 1;
     }
@@ -1057,11 +1057,11 @@ function get_black_moves(b, p, r, c) {
     }
 
     // Capturing
-    if (c > 0 && b[r + 1][c - 1] > 6) {
+    if (c > 0 && r < 7 && b[r + 1][c - 1] > 6) {
       m[el] = [r + 1, c - 1];
       el += 1;
     }
-    if (c < 7 && b[r + 1][c + 1] > 6) {
+    if (c < 7 && r < 7 && b[r + 1][c + 1] > 6) {
       m[el] = [r + 1, c + 1];
       el += 1;
     }
