@@ -602,7 +602,7 @@ function computer_move() {
   var d2 = new Date().getTime();
 
   // Log the number of seconds
-  console.log("Time for move: " + str((d2 - d)/1000);
+  console.log("Time for move: " + str((d2 - d)/1000));
 
   var best_piece = mtt[0];
   var best_r = mtt[1];
