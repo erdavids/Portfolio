@@ -39,6 +39,7 @@ let before_capture_count;
 let crooked;
 
 // Qualifying factors for castling
+let castling;
 let white_king_moved;
 let black_king_moved;
 
@@ -257,6 +258,7 @@ function setup() {
   computer_now_moves = false;
 
   // Castling conditions all start as false
+  castling = false;
   white_king_moved = false;
   black_king_moved = false;
 
@@ -394,6 +396,7 @@ function mini_max_root(depth, alpha, beta) {
   console.log(position_count);
   return [t_p, t_r, t_c, t_nr, t_nc];
 }
+
 
 
 // Will eventually need to supplement this with Quiescent Search (Search a few levels deeper on higher activity paths)
@@ -1008,24 +1011,6 @@ function get_moves(b, p, r, c) {
 } else if (p == 12) {
     var ri = 1;
     var ci = 1;
-
-    // castling
-    // let white_king_moved;
-    // let black_king_moved;
-    //
-    // let white_rook_left_moved;
-    // let white_rook_right_moved;
-    // let black_rook_left_moved;
-    // let black_rook_right_moved;
-
-    // This will be fairly hardcoded unfortunately
-    // I don't know if I will be able to check for threats to these squares
-    if (white_king_moved == false && white_rook_left_moved == false && white_king_check(b) == false) {
-      if (b[7][1] == 0 && b[7][2] == 0 && b[7][3]) {
-        ml[el] = [7, 2];
-        el+= 1;
-      }
-    }
 
     if (r - ri >= 0 && b[r - ri][c] < 7) {
       m[el] = [r - ri, c];
