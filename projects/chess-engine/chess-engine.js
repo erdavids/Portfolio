@@ -362,7 +362,7 @@ function mini_max_root(depth, alpha, beta) {
         temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
         temp_board[r][c] = 0
 
-        // Upgrade pawn to queen
+        // Upgrade pawn to queen (for evaluation)
         if (temp_board[black_moves[i][0]][black_moves[i][1]] == 1 && black_moves[i][0] == 7) {
           temp_board[black_moves[i][0]][black_moves[i][1]] = 5
         }
@@ -422,7 +422,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
           temp_board[r][c] = 0
 
-          // Upgrade pawn to queen
+          // Upgrade pawn to queen (for evaluation)
           if (temp_board[black_moves[i][0]][black_moves[i][1]] == 1 && black_moves[i][0] == 7) {
             temp_board[black_moves[i][0]][black_moves[i][1]] = 5
           }
@@ -454,7 +454,7 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[white_moves[i][0]][white_moves[i][1]] = temp_board[r][c]
           temp_board[r][c] = 0
 
-          // Upgrade pawn to queen
+          // Upgrade pawn to queen (for evaluation)
           if (temp_board[white_moves[i][0]][white_moves[i][1]] == 7 && white_moves[i][0] == 0) {
             temp_board[white_moves[i][0]][white_moves[i][1]] = 11
           }
@@ -1008,6 +1008,26 @@ function get_moves(b, p, r, c) {
 } else if (p == 12) {
     var ri = 1;
     var ci = 1;
+
+    // castling
+    let white_king_moved;
+    let black_king_moved;
+
+    let white_rook_left_moved;
+    let white_rook_right_moved;
+    let black_rook_left_moved;
+    let black_rook_right_moved;
+
+    // This will be fairly hardcoded unfortunately
+    // I don't know if I will be able to check for threats to these squares
+    if (white_king_moved == false && white_rook_left_moved == false && white_king_check(b) == false {
+      if (b[7][1] == 0 && b[7][2] == 0) {
+        b[7][0] = 0;
+        b[7][1] = 12;
+        b[7][2] = 10;
+        b[7][3] = 0;
+      }
+    }
 
     if (r - ri >= 0 && b[r - ri][c] < 7) {
       m[el] = [r - ri, c];
