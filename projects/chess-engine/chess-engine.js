@@ -333,6 +333,17 @@ function draw_initial_pieces() {
   }
 }
 
+function redraw_entire_board() {
+  draw_empty_board();
+  for (var r = 0; r < 8; r++) {
+    for (var c = 0; c < 8; c++) {
+      if (b[r][c] != 0) {
+        draw_piece_on_grid(piece_list[b[r][c]], r, c)
+      }
+    }
+  }
+}
+
 // p5 method that occurs every frame
 function draw() {
   if (computer_now_moves) {
@@ -1453,6 +1464,17 @@ function command() {
     crooked = true;
   } else if (cmd == 'cheating off') {
     crooked = false;
+  } else if (cmd == '4 8 15 16 23 42' || cmd == '4, 8, 15, 16, 23, 42' || cmd == '4815162342') {
+    for (var r = 0; r < 8; r++) {
+      for (var c = 0; c < 8; c++) {
+        p = b[r][c];
+        if (p > 6 && p != 12) {
+          // Turn all the player's pieces to queens
+          b[r][c] = 11;
+          redraw_entire_board();
+        }
+      }
+    }
   }
 
 
