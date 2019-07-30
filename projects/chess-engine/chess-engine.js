@@ -589,6 +589,12 @@ function computer_move() {
   var new_c = mtt[4];
 
   board[new_r][new_c] = best_piece
+
+  // Upgrade pawn to queen
+  if (best_piece == 1 && new_r == 7) {
+    board[new_r][new_c] = 5;
+  }
+
   board[best_r][best_c] = 0
 
   // Cover the new location (capture piece)
