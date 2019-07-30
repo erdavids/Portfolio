@@ -1479,5 +1479,4 @@ function command() {
 
 
   document.getElementById("player_command").value = "";
-  console.log(x);
 }
