@@ -588,12 +588,14 @@ function computer_move() {
   var new_r = mtt[3];
   var new_c = mtt[4];
 
-  board[new_r][new_c] = best_piece
 
   // Upgrade pawn to queen
+  console.log("Best Piece");
+  console.log(best_piece);
   if (best_piece == 1 && new_r == 7) {
-    board[new_r][new_c] = 5;
+    best_piece = 5;
   }
+  board[new_r][new_c] = best_piece
 
   board[best_r][best_c] = 0
 
