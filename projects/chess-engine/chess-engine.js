@@ -1493,7 +1493,5 @@ function command() {
       }
     }
   }
-
-
   document.getElementById("player_command").value = "";
 }
