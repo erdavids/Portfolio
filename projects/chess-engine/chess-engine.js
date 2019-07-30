@@ -256,6 +256,15 @@ function setup() {
   computer_can_move = false;
   computer_now_moves = false;
 
+  // Castling conditions all start as false
+  white_king_moved = false;
+  black_king_moved = false;
+
+  white_rook_left_moved = false;
+  white_rook_right_moved = false;
+  black_rook_left_moved = false;
+  black_rook_right_moved = false;
+
   // Positions evaluated by mini_max
   position_count = 0;
 
@@ -353,6 +362,11 @@ function mini_max_root(depth, alpha, beta) {
         temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
         temp_board[r][c] = 0
 
+        // Upgrade pawn to queen
+        if (temp_board[black_moves[i][0]][black_moves[i][1]] == 1 && black_moves[i][0] == 7) {
+          temp_board[black_moves[i][0]][black_moves[i][1]] = 5
+        }
+
         var value = 0;
 
         // if (black_king_check(temp_board) == true) {
@@ -408,6 +422,11 @@ function mini_max(depth, b, alpha, beta, is_max) {
           temp_board[black_moves[i][0]][black_moves[i][1]] = temp_board[r][c]
           temp_board[r][c] = 0
 
+          // Upgrade pawn to queen
+          if (temp_board[black_moves[i][0]][black_moves[i][1]] == 1 && black_moves[i][0] == 7) {
+            temp_board[black_moves[i][0]][black_moves[i][1]] = 5
+          }
+
           // if (black_king_check(temp_board) == true) {
           //   best_move = -99999;
           // } else {
@@ -434,6 +453,11 @@ function mini_max(depth, b, alpha, beta, is_max) {
           var temp_board = get_board_copy(b);
           temp_board[white_moves[i][0]][white_moves[i][1]] = temp_board[r][c]
           temp_board[r][c] = 0
+
+          // Upgrade pawn to queen
+          if (temp_board[white_moves[i][0]][white_moves[i][1]] == 1 && white_moves[i][0] == 0) {
+            temp_board[white_moves[i][0]][white_moves[i][1]] = 11
+          }
 
           // if (white_king_check(temp_board) == true) {
           //   best_move = 99999;
@@ -485,6 +509,12 @@ function mouseClicked() {
 
           // Update the board for the next moves
           board[grid_click[0]][grid_click[1]] = selected
+
+          // Upgrade pawn to queen
+          if (selected == 7 && grid_click[0] == 0) {
+            board[grid_click[0]][grid_click[1]] = 11
+          }
+
           board[selected_location[0]][selected_location[1]] = 0
 
           // Cover the new location (capture piece)
