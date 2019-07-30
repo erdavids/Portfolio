@@ -273,7 +273,7 @@ function setup() {
   // Counting enemy pieces
   before_capture_count = 0;
 
-  difficulty = 4;
+  difficulty = 5;
 
 }
 
