@@ -544,7 +544,12 @@ function mouseClicked() {
 function computer_move() {
 
   position_count = 0;
+
+  var d = new Date().getTime();
   var mtt = mini_max_root(difficulty, -100000, 100000);
+  var d2 = new Date().getTime();
+
+  console.log("Time for move: " + str(d2 - d));
 
   var best_piece = mtt[0];
   var best_r = mtt[1];
