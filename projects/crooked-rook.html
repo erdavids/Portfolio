@@ -66,14 +66,8 @@
           <p>Here is an example of a <span class="color-text">piece-square table</span> for the <span class="color-text">white pawns</span>.</p>
 
           <div style="text-align:center">
-            <p>[  0,   0,   0,   0,   0,   0,   0,   0]</p>
-            <p>[-50, -50, -50, -50, -50, -50, -50, -50]</p>
-            <p>[-10, -10, -20, -30, -30, -20, -10, -10]</p>
-            <p>[ -5,  -5, -10, -25, -25, -10,  -5,  -5]</p>
-            <p>[  0,   0,   0, -20, -20,   0,   0,   0]</p>
-            <p>[ -5,   5,  10,   0,   0,  10,   5,  -5]</p>
-            <p>[ -5, -10, -10,  20,  20, -10, -10,  -5]</p>
-            <p>[  0,   0,   0,   0,   0,   0,   0,   0]</p>
+            <img src="/projects/chess-engine/chess-images/pawn-table.png"
+          </div>
 
 
           <p>Taking the position evaluation functions into account, when it becomes the <span class="color-text">AI's turn</span>, it loops through each available move, attempting to <span class="color-text">maximize</span> it's position by moving pieces to better squares or by capturing. If the desired <span class="color-text">depth</span> of evaluation is greater than zero, then for every move the AI can make, it will also loop through each available move for the <span class="color-text">human player</span>. If the depth permits, then the next stage is to evaluate each of the possible moves the AI could make in response.</p>
