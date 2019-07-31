@@ -601,6 +601,7 @@ function computer_move() {
   var mtt = mini_max_root(difficulty, -100000, 100000);
   var d2 = new Date().getTime();
 
+  console.log("difficulty: " + str(difficulty))
   // Log the number of seconds
   console.log("Time for move: " + str((d2 - d)/1000));
 
@@ -1482,6 +1483,7 @@ function set_difficulty_four() {
 
 function set_difficulty_five() {
   difficulty = 5;
+  console.log("Difficulty changed to 5");
 }
 
 function toggle_cheating() {
@@ -1494,10 +1496,6 @@ function toggle_cheating() {
   }
 
 
-}
-
-function set_difficulty_five() {
-  difficutly = 5;
 }
 
 function reset_game() {
