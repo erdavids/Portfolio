@@ -11,6 +11,7 @@
 
 // Will be used to reference the piece images
 let bB, bR, bK, bN, bP, bQ, wB, wK, wN, wP, wQ, wR;
+let lbB, lbR, lbK, lbN, lbP, lbQ, lwB, lwK, lwN, lwP, lwQ, lwR;
 
 // Adapts to screen size
 let square_size;
@@ -201,44 +202,30 @@ function preload() {
   wP = loadImage('../projects/chess-engine/piece_sets/kosal/wP.svg');
   wQ = loadImage('../projects/chess-engine/piece_sets/kosal/wQ.svg');
   wR = loadImage('../projects/chess-engine/piece_sets/kosal/wR.svg');
+
+  lbB = loadImage('../projects/chess-engine/piece_sets/letter/bB.svg');
+  lbR = loadImage('../projects/chess-engine/piece_sets/letter/bR.svg');
+  lbK = loadImage('../projects/chess-engine/piece_sets/letter/bK.svg');
+  lbN = loadImage('../projects/chess-engine/piece_sets/letter/bN.svg');
+  lbP = loadImage('../projects/chess-engine/piece_sets/letter/bP.svg');
+  lbQ = loadImage('../projects/chess-engine/piece_sets/letter/bQ.svg');
+  lwB = loadImage('../projects/chess-engine/piece_sets/letter/wB.svg');
+  lwK = loadImage('../projects/chess-engine/piece_sets/letter/wK.svg');
+  lwN = loadImage('../projects/chess-engine/piece_sets/letter/wN.svg');
+  lwP = loadImage('../projects/chess-engine/piece_sets/letter/wP.svg');
+  lwQ = loadImage('../projects/chess-engine/piece_sets/letter/wQ.svg');
+  lwR = loadImage('../projects/chess-engine/piece_sets/letter/wR.svg');
 }
 
 // Pieces created by Philatype (Retrieved from lichess open source github)
 function change_pieces_to_kosal() {
-  bB = loadImage('../projects/chess-engine/piece_sets/kosal/bB.svg');
-  bR = loadImage('../projects/chess-engine/piece_sets/kosal/bR.svg');
-  bK = loadImage('../projects/chess-engine/piece_sets/kosal/bK.svg');
-  bN = loadImage('../projects/chess-engine/piece_sets/kosal/bN.svg');
-  bP = loadImage('../projects/chess-engine/piece_sets/kosal/bP.svg');
-  bQ = loadImage('../projects/chess-engine/piece_sets/kosal/bQ.svg');
-  wB = loadImage('../projects/chess-engine/piece_sets/kosal/wB.svg');
-  wK = loadImage('../projects/chess-engine/piece_sets/kosal/wK.svg');
-  wN = loadImage('../projects/chess-engine/piece_sets/kosal/wN.svg');
-  wP = loadImage('../projects/chess-engine/piece_sets/kosal/wP.svg');
-  wQ = loadImage('../projects/chess-engine/piece_sets/kosal/wQ.svg');
-  wR = loadImage('../projects/chess-engine/piece_sets/kosal/wR.svg');
-
   piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
-
   redraw_entire_board();
 }
 
 // Pieces created by usolando (Retrieved from lichess open source github)
 function change_pieces_to_letter() {
-  bB = loadImage('../projects/chess-engine/piece_sets/letter/bB.svg');
-  bR = loadImage('../projects/chess-engine/piece_sets/letter/bR.svg');
-  bK = loadImage('../projects/chess-engine/piece_sets/letter/bK.svg');
-  bN = loadImage('../projects/chess-engine/piece_sets/letter/bN.svg');
-  bP = loadImage('../projects/chess-engine/piece_sets/letter/bP.svg');
-  bQ = loadImage('../projects/chess-engine/piece_sets/letter/bQ.svg');
-  wB = loadImage('../projects/chess-engine/piece_sets/letter/wB.svg');
-  wK = loadImage('../projects/chess-engine/piece_sets/letter/wK.svg');
-  wN = loadImage('../projects/chess-engine/piece_sets/letter/wN.svg');
-  wP = loadImage('../projects/chess-engine/piece_sets/letter/wP.svg');
-  wQ = loadImage('../projects/chess-engine/piece_sets/letter/wQ.svg');
-  wR = loadImage('../projects/chess-engine/piece_sets/letter/wR.svg');
-
-  piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
+  piece_list = [lbP, lbP, lbN, lbB, lbR, lbQ, lbK, lwP, lwN, lwB, lwR, lwQ, lwK];
 
   redraw_entire_board();
 
