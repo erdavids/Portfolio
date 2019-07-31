@@ -203,6 +203,24 @@ function preload() {
   wR = loadImage('../projects/chess-engine/piece_sets/kosal/wR.svg');
 }
 
+// Pieces created by Philatype (Retrieved from lichess open source github)
+function change_pieces_to_kosal() {
+  bB = loadImage('../projects/chess-engine/piece_sets/kosal/bB.svg');
+  bR = loadImage('../projects/chess-engine/piece_sets/kosal/bR.svg');
+  bK = loadImage('../projects/chess-engine/piece_sets/kosal/bK.svg');
+  bN = loadImage('../projects/chess-engine/piece_sets/kosal/bN.svg');
+  bP = loadImage('../projects/chess-engine/piece_sets/kosal/bP.svg');
+  bQ = loadImage('../projects/chess-engine/piece_sets/kosal/bQ.svg');
+  wB = loadImage('../projects/chess-engine/piece_sets/kosal/wB.svg');
+  wK = loadImage('../projects/chess-engine/piece_sets/kosal/wK.svg');
+  wN = loadImage('../projects/chess-engine/piece_sets/kosal/wN.svg');
+  wP = loadImage('../projects/chess-engine/piece_sets/kosal/wP.svg');
+  wQ = loadImage('../projects/chess-engine/piece_sets/kosal/wQ.svg');
+  wR = loadImage('../projects/chess-engine/piece_sets/kosal/wR.svg');
+
+  redraw_entire_board();
+}
+
 // Uses the reactive square size to draw squares in the right place
 function grid_to_pixel(r, c) {
   return [r*square_size, c*square_size];
