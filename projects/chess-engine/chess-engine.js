@@ -464,7 +464,7 @@ function mini_max_root(depth, alpha, beta) {
       }
     }
   }
-  console.log(position_count);
+  console.log("Positions evaluated: " + str(position_count));
   return [t_p, t_r, t_c, t_nr, t_nc];
 }
 
@@ -579,7 +579,7 @@ function mouseClicked() {
 
           // Update player stats
           var captured_piece = board[grid_click[0]][grid_click[1]];
-          console.log(captured_piece);
+          console.log("Piece Taken: " + str(captured_piece));
 
           // Update the board for the next moves
           board[grid_click[0]][grid_click[1]] = selected
@@ -621,7 +621,6 @@ function mouseClicked() {
           player_move = false;
 
           if (black_king_check(board) == true) {
-            console.log("He should be able to move");
             if (black_king_checkmate(board) == true) {
               document.getElementById("status").textContent = "Checkmate - WHITE wins";
               console.log("Game over - White wins");
@@ -654,7 +653,6 @@ function computer_move() {
   var mtt = mini_max_root(difficulty, -100000, 100000);
   var d2 = new Date().getTime();
 
-  console.log("difficulty: " + str(difficulty))
   // Log the number of seconds
   console.log("Time for move: " + str((d2 - d)/1000));
 
@@ -664,10 +662,6 @@ function computer_move() {
   var new_r = mtt[3];
   var new_c = mtt[4];
 
-
-  // Upgrade pawn to queen
-  console.log("Best Piece");
-  console.log(best_piece);
   if (best_piece == 1 && new_r == 7) {
     best_piece = 5;
   }
@@ -1520,23 +1514,31 @@ function evaluate_board(b) {
 
 function set_difficulty_one() {
   difficulty = 1;
+  log_difficulty_change(1);
 }
 
 function set_difficulty_two() {
   difficulty = 2;
+  log_difficulty_change(2);
 }
 
 function set_difficulty_three() {
   difficulty = 3;
+  log_difficulty_change(3);
 }
 
 function set_difficulty_four() {
   difficulty = 4;
+  log_difficulty_change(4);
 }
 
 function set_difficulty_five() {
   difficulty = 5;
-  console.log("Difficulty changed to 5");
+  log_difficulty_change(5);
+}
+
+function log_difficulty_change(diff) {
+  console.log("Difficulty changed to " + str(diff));
 }
 
 function toggle_cheating() {
