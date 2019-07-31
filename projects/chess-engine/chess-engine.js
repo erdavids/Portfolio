@@ -1487,7 +1487,7 @@ function set_difficulty_five() {
 function toggle_cheating() {
   if (crooked == false) {
     crooked = true;
-    document.getElementById("player_command").style.backgroundColor = #131313;
+    document.getElementById("cheating-btn").style.backgroundColor = #131313;
   } else {
     crooked = false;
   }
