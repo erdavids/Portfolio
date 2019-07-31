@@ -1487,8 +1487,9 @@ function set_difficulty_five() {
 function toggle_cheating() {
   if (crooked == false) {
     crooked = true;
-    document.getElementById("cheating-btn").style.backgroundColor = '#131313';
+    document.getElementById("cheating-btn").style.backgroundColor = '#303030';
   } else {
+    document.getElementById("cheating-btn").style.backgroundColor = '#CAA67A';
     crooked = false;
   }
 
