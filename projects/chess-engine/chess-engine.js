@@ -194,7 +194,7 @@ function preload() {
   bQ = loadImage('../projects/chess-engine/chess-images/bQ.png');
   wB = loadImage('../projects/chess-engine/chess-images/wB.png');
   wK = loadImage('../projects/chess-engine/chess-images/wK.png');
-  wN = loadImage('../projects/chess-engine/chess-images/wN.png');
+  wN = loadImage('../projects/chess-engine/california-images/wN.svg');
   wP = loadImage('../projects/chess-engine/chess-images/wP.png');
   wQ = loadImage('../projects/chess-engine/chess-images/wQ.png');
   wR = loadImage('../projects/chess-engine/chess-images/wR.png');
