@@ -1481,6 +1481,21 @@ function set_difficulty_four() {
 }
 
 function set_difficulty_five() {
+  difficulty = 5;
+}
+
+function toggle_cheating() {
+  if (crooked == false) {
+    crooked = true;
+    document.getElementById("player_command").style.backgroundColor = #131313;
+  } else {
+    crooked = false;
+  }
+
+
+}
+
+function set_difficulty_five() {
   difficutly = 5;
 }
 
