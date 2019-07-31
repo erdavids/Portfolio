@@ -1492,6 +1492,8 @@ function command() {
         }
       }
     }
+  } else if (cmd == 'reset') {
+    setup();
   }
   document.getElementById("player_command").value = "";
 }
