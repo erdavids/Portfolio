@@ -236,6 +236,8 @@ function change_pieces_to_letter() {
   wQ = loadImage('../projects/chess-engine/piece_sets/letter/wQ.svg');
   wR = loadImage('../projects/chess-engine/piece_sets/letter/wR.svg');
 
+  piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
+
   redraw_entire_board();
 
   console.log("Changed pieces to letter");
