@@ -218,6 +218,8 @@ function change_pieces_to_kosal() {
   wQ = loadImage('../projects/chess-engine/piece_sets/kosal/wQ.svg');
   wR = loadImage('../projects/chess-engine/piece_sets/kosal/wR.svg');
 
+  piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
+
   redraw_entire_board();
 }
 
@@ -258,6 +260,8 @@ function change_pieces_to_chessnut() {
   wP = loadImage('../projects/chess-engine/piece_sets/chessnut/wP.svg');
   wQ = loadImage('../projects/chess-engine/piece_sets/chessnut/wQ.svg');
   wR = loadImage('../projects/chess-engine/piece_sets/chessnut/wR.svg');
+
+  piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
 
   redraw_entire_board();
 }
