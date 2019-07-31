@@ -347,7 +347,7 @@ function draw_empty_board() {
   var square_color = 0
   for (let r = 0; r < height; r += square_size) {
     for (let c = 0; c < width; c += square_size) {
-      if ((grid_click[0] % 2) == (grid_click[1] % 2)) {
+      if ((r % 2) == (c % 2)) {
         fill(233, 227, 230);
       } else {
         fill(dark_r, dark_g, dark_b)
