@@ -36,6 +36,7 @@ div ul {
   font-size: 18px;
   margin: 4px 2px;
   cursor: pointer;
+  outline: none;
 }
 
 .bottom_border {
