@@ -33,7 +33,7 @@
           <p>I also own a <span class="color-text">Small Business</span> with exactly one employee. My current focus is developing <span class="color-text">Mobile Apps</span> and my first release was a minimalist stitch counter for the crocheting and knitting community. I have proudly watched as it quickly passed my goal of <span class="color-text">1,000 Downloads</span>.</p>
           <p>When I take the time to focus on my hobbies, I'll probably still be on the computer either creating <span class="color-text">Generative Artwork</span> or uploading programming tutorials to YouTube.</p>
 
-
+          <button class="button" onclick="dark_mode()">Dark Mode</button>
           <div class="nav_bar">
               <ul>
                   <li class="nav_bar_element"><a href="https://github.com/erdavids"><ion-icon name="logo-octocat"></ion-icon></a></li>
@@ -70,6 +70,10 @@
 
 
         <script>
+
+          function dark_mode() {
+            document.body.style.backgroundColor = '#303030';
+          }
 
           var myArray = ['#d47564', '#CAA67A', '#4fa4a5'];
 
