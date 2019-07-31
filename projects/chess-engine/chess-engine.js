@@ -237,6 +237,8 @@ function change_pieces_to_letter() {
   wR = loadImage('../projects/chess-engine/piece_sets/letter/wR.svg');
 
   redraw_entire_board();
+
+  console.log("Changed pieces to letter");
 }
 
 // Pieces created by Alexis Luengas (Retrieved from lichess open source github)
