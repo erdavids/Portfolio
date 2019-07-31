@@ -240,6 +240,7 @@ function change_pieces_to_letter() {
 
   redraw_entire_board();
 
+  console.log(bQ);
   console.log("Changed pieces to letter");
 }
 
