@@ -4,6 +4,9 @@
 //
 // Primary Searching:
 //  - Minimax with Alpha/Beta pruning
+//
+//
+// Piece imagery from: https://github.com/veloce/lichobile
 ////////////////////////////
 
 // Will be used to reference the piece images
@@ -186,18 +189,18 @@ var black_king_eval_early = [
 
 
 function preload() {
-  bB = loadImage('../projects/chess-engine/chess-images/bB.png');
-  bR = loadImage('../projects/chess-engine/chess-images/bR.png');
-  bK = loadImage('../projects/chess-engine/chess-images/bK.png');
-  bN = loadImage('../projects/chess-engine/chess-images/bN.png');
-  bP = loadImage('../projects/chess-engine/chess-images/bP.png');
-  bQ = loadImage('../projects/chess-engine/chess-images/bQ.png');
-  wB = loadImage('../projects/chess-engine/chess-images/wB.png');
-  wK = loadImage('../projects/chess-engine/chess-images/wK.png');
-  wN = loadImage('../projects/chess-engine/california-images/wN.svg');
-  wP = loadImage('../projects/chess-engine/chess-images/wP.png');
-  wQ = loadImage('../projects/chess-engine/chess-images/wQ.png');
-  wR = loadImage('../projects/chess-engine/chess-images/wR.png');
+  bB = loadImage('../projects/chess-engine/piece_sets/kosal/bB.svg');
+  bR = loadImage('../projects/chess-engine/piece_sets/kosal/bR.svg');
+  bK = loadImage('../projects/chess-engine/piece_sets/kosal/bK.svg');
+  bN = loadImage('../projects/chess-engine/piece_sets/kosal/bN.svg');
+  bP = loadImage('../projects/chess-engine/piece_sets/kosal/bP.svg');
+  bQ = loadImage('../projects/chess-engine/piece_sets/kosal/bQ.svg');
+  wB = loadImage('../projects/chess-engine/piece_sets/kosal/wB.svg');
+  wK = loadImage('../projects/chess-engine/piece_sets/kosal/wK.svg');
+  wN = loadImage('../projects/chess-engine/piece_sets/kosal/wN.svg');
+  wP = loadImage('../projects/chess-engine/piece_sets/kosal/wP.svg');
+  wQ = loadImage('../projects/chess-engine/piece_sets/kosal/wQ.svg');
+  wR = loadImage('../projects/chess-engine/piece_sets/kosal/wR.svg');
 }
 
 // Uses the reactive square size to draw squares in the right place
