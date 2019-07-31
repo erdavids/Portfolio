@@ -230,18 +230,6 @@ function preload() {
   lwQ = loadImage('../projects/chess-engine/piece_sets/letter/wQ.svg');
   lwR = loadImage('../projects/chess-engine/piece_sets/letter/wR.svg');
 
-  rbB = loadImage('../projects/chess-engine/piece_sets/fantasy/bB.svg');
-  rbR = loadImage('../projects/chess-engine/piece_sets/fantasy/bR.svg');
-  rbK = loadImage('../projects/chess-engine/piece_sets/fantasy/bK.svg');
-  rbN = loadImage('../projects/chess-engine/piece_sets/fantasy/bN.svg');
-  rbP = loadImage('../projects/chess-engine/piece_sets/fantasy/bP.svg');
-  rbQ = loadImage('../projects/chess-engine/piece_sets/fantasy/bQ.svg');
-  rwB = loadImage('../projects/chess-engine/piece_sets/fantasy/wB.svg');
-  rwK = loadImage('../projects/chess-engine/piece_sets/fantasy/wK.svg');
-  rwN = loadImage('../projects/chess-engine/piece_sets/fantasy/wN.svg');
-  rwP = loadImage('../projects/chess-engine/piece_sets/fantasy/wP.svg');
-  rwQ = loadImage('../projects/chess-engine/piece_sets/fantasy/wQ.svg');
-  rwR = loadImage('../projects/chess-engine/piece_sets/fantasy/wR.svg');
 }
 
 // Pieces created by Philatype (Retrieved from lichess open source github)
@@ -259,12 +247,6 @@ function change_pieces_to_alpha() {
 // Pieces created by usolando (Retrieved from lichess open source github)
 function change_pieces_to_letter() {
   piece_list = [lbP, lbP, lbN, lbB, lbR, lbQ, lbK, lwP, lwN, lwB, lwR, lwQ, lwK];
-  redraw_entire_board();
-}
-
-// Pieces created by Maurizio Monge (Retrieved from lichess open source github)
-function change_pieces_to_fantasy() {
-  piece_list = [rbP, rbP, rbN, rbB, rbR, rbQ, rbK, rwP, rwN, rwB, rwR, rwQ, rwK];
   redraw_entire_board();
 }
 
