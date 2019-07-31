@@ -12,6 +12,7 @@
 // Will be used to reference the piece images
 let bB, bR, bK, bN, bP, bQ, wB, wK, wN, wP, wQ, wR;
 let lbB, lbR, lbK, lbN, lbP, lbQ, lwB, lwK, lwN, lwP, lwQ, lwR;
+let abP, abN, abB, abR, abQ, abK, awP, awN, awB, awR, awQ, awK;
 
 // Adapts to screen size
 let square_size;
@@ -203,6 +204,19 @@ function preload() {
   wQ = loadImage('../projects/chess-engine/piece_sets/kosal/wQ.svg');
   wR = loadImage('../projects/chess-engine/piece_sets/kosal/wR.svg');
 
+  abB = loadImage('../projects/chess-engine/piece_sets/alpha/bB.svg');
+  abR = loadImage('../projects/chess-engine/piece_sets/alpha/bR.svg');
+  abK = loadImage('../projects/chess-engine/piece_sets/alpha/bK.svg');
+  abN = loadImage('../projects/chess-engine/piece_sets/alpha/bN.svg');
+  abP = loadImage('../projects/chess-engine/piece_sets/alpha/bP.svg');
+  abQ = loadImage('../projects/chess-engine/piece_sets/alpha/bQ.svg');
+  awB = loadImage('../projects/chess-engine/piece_sets/alpha/wB.svg');
+  awK = loadImage('../projects/chess-engine/piece_sets/alpha/wK.svg');
+  awN = loadImage('../projects/chess-engine/piece_sets/alpha/wN.svg');
+  awP = loadImage('../projects/chess-engine/piece_sets/alpha/wP.svg');
+  awQ = loadImage('../projects/chess-engine/piece_sets/alpha/wQ.svg');
+  awR = loadImage('../projects/chess-engine/piece_sets/alpha/wR.svg');
+
   lbB = loadImage('../projects/chess-engine/piece_sets/letter/bB.svg');
   lbR = loadImage('../projects/chess-engine/piece_sets/letter/bR.svg');
   lbK = loadImage('../projects/chess-engine/piece_sets/letter/bK.svg');
@@ -215,6 +229,19 @@ function preload() {
   lwP = loadImage('../projects/chess-engine/piece_sets/letter/wP.svg');
   lwQ = loadImage('../projects/chess-engine/piece_sets/letter/wQ.svg');
   lwR = loadImage('../projects/chess-engine/piece_sets/letter/wR.svg');
+
+  rbB = loadImage('../projects/chess-engine/piece_sets/fantasy/bB.svg');
+  rbR = loadImage('../projects/chess-engine/piece_sets/fantasy/bR.svg');
+  rbK = loadImage('../projects/chess-engine/piece_sets/fantasy/bK.svg');
+  rbN = loadImage('../projects/chess-engine/piece_sets/fantasy/bN.svg');
+  rbP = loadImage('../projects/chess-engine/piece_sets/fantasy/bP.svg');
+  rbQ = loadImage('../projects/chess-engine/piece_sets/fantasy/bQ.svg');
+  rwB = loadImage('../projects/chess-engine/piece_sets/fantasy/wB.svg');
+  rwK = loadImage('../projects/chess-engine/piece_sets/fantasy/wK.svg');
+  rwN = loadImage('../projects/chess-engine/piece_sets/fantasy/wN.svg');
+  rwP = loadImage('../projects/chess-engine/piece_sets/fantasy/wP.svg');
+  rwQ = loadImage('../projects/chess-engine/piece_sets/fantasy/wQ.svg');
+  rwR = loadImage('../projects/chess-engine/piece_sets/fantasy/wR.svg');
 }
 
 // Pieces created by Philatype (Retrieved from lichess open source github)
@@ -223,17 +250,25 @@ function change_pieces_to_kosal() {
   redraw_entire_board();
 }
 
+// Pieces created by Eric Bentzen (Free for non commmercial use)
+function change_pieces_to_alpha() {
+  piece_list = [abP, abP, abN, abB, abR, abQ, abK, awP, awN, awB, awR, awQ, awK];
+  redraw_entire_board();
+}
+
 // Pieces created by usolando (Retrieved from lichess open source github)
 function change_pieces_to_letter() {
   piece_list = [lbP, lbP, lbN, lbB, lbR, lbQ, lbK, lwP, lwN, lwB, lwR, lwQ, lwK];
-
   redraw_entire_board();
-
-  console.log(bQ);
-  console.log("Changed pieces to letter");
 }
 
-// Pieces created by Alexis Luengas (Retrieved from lichess open source github)
+// Pieces created by Maurizio Monge (Retrieved from lichess open source github)
+function change_pieces_to_fantasy() {
+  piece_list = [rbP, rbP, rbN, rbB, rbR, rbQ, rbK, rwP, rwN, rwB, rwR, rwQ, rwK];
+  redraw_entire_board();
+}
+
+// Pieces created by - (Retrieved from lichess open source github)
 function change_pieces_to_chessnut() {
   bB = loadImage('../projects/chess-engine/piece_sets/chessnut/bB.svg');
   bR = loadImage('../projects/chess-engine/piece_sets/chessnut/bR.svg');
