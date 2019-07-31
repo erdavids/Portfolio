@@ -1465,6 +1465,7 @@ function evaluate_board(b) {
 }
 
 
+
 function command() {
   var cmd = document.getElementById("player_command").value;
   if (cmd == 'difficulty 1') {
