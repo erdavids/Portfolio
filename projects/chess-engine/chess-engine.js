@@ -18,7 +18,7 @@ let abP, abN, abB, abR, abQ, abK, awP, awN, awB, awR, awQ, awK;
 let square_size;
 
 // Stores the image references for pieces
-let piece_list =;
+let piece_list;
 
 // 8x8 array of arrays representing the board
 let board;
