@@ -221,6 +221,42 @@ function change_pieces_to_kosal() {
   redraw_entire_board();
 }
 
+// Pieces created by usolando (Retrieved from lichess open source github)
+function change_pieces_to_letter() {
+  bB = loadImage('../projects/chess-engine/piece_sets/letter/bB.svg');
+  bR = loadImage('../projects/chess-engine/piece_sets/letter/bR.svg');
+  bK = loadImage('../projects/chess-engine/piece_sets/letter/bK.svg');
+  bN = loadImage('../projects/chess-engine/piece_sets/letter/bN.svg');
+  bP = loadImage('../projects/chess-engine/piece_sets/letter/bP.svg');
+  bQ = loadImage('../projects/chess-engine/piece_sets/letter/bQ.svg');
+  wB = loadImage('../projects/chess-engine/piece_sets/letter/wB.svg');
+  wK = loadImage('../projects/chess-engine/piece_sets/letter/wK.svg');
+  wN = loadImage('../projects/chess-engine/piece_sets/letter/wN.svg');
+  wP = loadImage('../projects/chess-engine/piece_sets/letter/wP.svg');
+  wQ = loadImage('../projects/chess-engine/piece_sets/letter/wQ.svg');
+  wR = loadImage('../projects/chess-engine/piece_sets/letter/wR.svg');
+
+  redraw_entire_board();
+}
+
+// Pieces created by Alexis Luengas (Retrieved from lichess open source github)
+function change_pieces_to_chessnut() {
+  bB = loadImage('../projects/chess-engine/piece_sets/chessnut/bB.svg');
+  bR = loadImage('../projects/chess-engine/piece_sets/chessnut/bR.svg');
+  bK = loadImage('../projects/chess-engine/piece_sets/chessnut/bK.svg');
+  bN = loadImage('../projects/chess-engine/piece_sets/chessnut/bN.svg');
+  bP = loadImage('../projects/chess-engine/piece_sets/chessnut/bP.svg');
+  bQ = loadImage('../projects/chess-engine/piece_sets/chessnut/bQ.svg');
+  wB = loadImage('../projects/chess-engine/piece_sets/chessnut/wB.svg');
+  wK = loadImage('../projects/chess-engine/piece_sets/chessnut/wK.svg');
+  wN = loadImage('../projects/chess-engine/piece_sets/chessnut/wN.svg');
+  wP = loadImage('../projects/chess-engine/piece_sets/chessnut/wP.svg');
+  wQ = loadImage('../projects/chess-engine/piece_sets/chessnut/wQ.svg');
+  wR = loadImage('../projects/chess-engine/piece_sets/chessnut/wR.svg');
+
+  redraw_entire_board();
+}
+
 // Uses the reactive square size to draw squares in the right place
 function grid_to_pixel(r, c) {
   return [r*square_size, c*square_size];
