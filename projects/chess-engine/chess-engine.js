@@ -570,17 +570,17 @@ function mouseClicked() {
           if (black_king_check(board) == true) {
             console.log("He should be able to move");
             if (black_king_checkmate(board) == true) {
-              document.getElementById("status").textContent = "You have WON";
+              document.getElementById("status").textContent = "Checkmate - WHITE wins";
               console.log("Game over - White wins");
               return;
             }
           }
 
           computer_can_move = true;
-          document.getElementById("status").textContent = "The Crooked Rook is thinking...";
+          document.getElementById("status").textContent = "BLACK to move";
 
         } else {
-          document.getElementById("status").textContent = "You can't put your king in check.";
+          document.getElementById("status").textContent = "Your move cannot leave the king in check";
         }
       } else {
         selected = -1;
@@ -644,7 +644,7 @@ function computer_move() {
 
   if (white_king_check(board) == true) {
     if (white_king_checkmate(board) == true) {
-      document.getElementById("status").textContent = "You have LOST";
+      document.getElementById("status").textContent = "Checkmate - BLACK wins";
       console.log("Game over - Black wins");
       return;
     }
@@ -652,7 +652,7 @@ function computer_move() {
 
   // Return to player move
   player_move = true;
-  document.getElementById("status").textContent = "It is your turn.";
+  document.getElementById("status").textContent = "WHITE to move";
 
 
 }
