@@ -18,7 +18,7 @@ let abP, abN, abB, abR, abQ, abK, awP, awN, awB, awR, awQ, awK;
 let square_size;
 
 // Stores the image references for pieces
-let piece_list;
+let piece_list =;
 
 // 8x8 array of arrays representing the board
 let board;
@@ -230,6 +230,8 @@ function preload() {
   lwQ = loadImage('../projects/chess-engine/piece_sets/letter/wQ.svg');
   lwR = loadImage('../projects/chess-engine/piece_sets/letter/wR.svg');
 
+  piece_list = [abP, abP, abN, abB, abR, abQ, abK, awP, awN, awB, awR, awQ, awK];
+
 }
 
 // Pieces created by Philatype (Retrieved from lichess open source github)
@@ -250,25 +252,6 @@ function change_pieces_to_letter() {
   redraw_entire_board();
 }
 
-// Pieces created by - (Retrieved from lichess open source github)
-function change_pieces_to_chessnut() {
-  bB = loadImage('../projects/chess-engine/piece_sets/chessnut/bB.svg');
-  bR = loadImage('../projects/chess-engine/piece_sets/chessnut/bR.svg');
-  bK = loadImage('../projects/chess-engine/piece_sets/chessnut/bK.svg');
-  bN = loadImage('../projects/chess-engine/piece_sets/chessnut/bN.svg');
-  bP = loadImage('../projects/chess-engine/piece_sets/chessnut/bP.svg');
-  bQ = loadImage('../projects/chess-engine/piece_sets/chessnut/bQ.svg');
-  wB = loadImage('../projects/chess-engine/piece_sets/chessnut/wB.svg');
-  wK = loadImage('../projects/chess-engine/piece_sets/chessnut/wK.svg');
-  wN = loadImage('../projects/chess-engine/piece_sets/chessnut/wN.svg');
-  wP = loadImage('../projects/chess-engine/piece_sets/chessnut/wP.svg');
-  wQ = loadImage('../projects/chess-engine/piece_sets/chessnut/wQ.svg');
-  wR = loadImage('../projects/chess-engine/piece_sets/chessnut/wR.svg');
-
-  piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
-
-  redraw_entire_board();
-}
 
 // Uses the reactive square size to draw squares in the right place
 function grid_to_pixel(r, c) {
@@ -299,7 +282,7 @@ function setup() {
   square_size = width/8
 
   // Used for drawing identical selected piece
-  piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
+  //piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
 
   // Initial board
   board = [
