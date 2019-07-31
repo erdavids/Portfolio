@@ -230,7 +230,7 @@ function preload() {
   lwQ = loadImage('../projects/chess-engine/piece_sets/letter/wQ.svg');
   lwR = loadImage('../projects/chess-engine/piece_sets/letter/wR.svg');
 
-  piece_list = [abP, abP, abN, abB, abR, abQ, abK, awP, awN, awB, awR, awQ, awK];
+  piece_list = [bP, bP, bN, bB, bR, bQ, bK, wP, wN, wB, wR, wQ, wK];
 
 }
 
@@ -301,8 +301,9 @@ function setup() {
   selected_location = [-1, -1];
 
   // Starts off the visuals
-  draw_empty_board();
-  draw_initial_pieces();
+  redraw_entire_board();
+  //draw_empty_board();
+  //draw_initial_pieces();
 
   player_move = true;
 
