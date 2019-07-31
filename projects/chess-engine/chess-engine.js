@@ -1464,7 +1464,29 @@ function evaluate_board(b) {
   return total_position;
 }
 
+function set_difficulty_one() {
+  difficulty = 1;
+}
 
+function set_difficulty_two() {
+  difficulty = 2;
+}
+
+function set_difficulty_three() {
+  difficulty = 3;
+}
+
+function set_difficulty_four() {
+  difficulty = 4;
+}
+
+function set_difficulty_five() {
+  difficutly = 5;
+}
+
+function reset_game() {
+  setup();
+}
 
 function command() {
   var cmd = document.getElementById("player_command").value;
