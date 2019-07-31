@@ -53,7 +53,13 @@ let white_rook_right_moved;
 let black_rook_left_moved;
 let black_rook_right_moved;
 
+// Can be changed by the player
 let difficulty;
+
+// Initial dark square colors
+let dark_r = 144;
+let dark_g = 162;
+let dark_b = 172;
 
 
 var white_pawn_eval_early = [
@@ -341,19 +347,12 @@ function draw_empty_board() {
   var square_color = 0
   for (let r = 0; r < height; r += square_size) {
     for (let c = 0; c < width; c += square_size) {
-      if (square_color == 0) {
+      if ((grid_click[0] % 2) == (grid_click[1] % 2)) {
         fill(233, 227, 230);
-        square_color = 1;
       } else {
-        fill(144, 162, 172)
-        square_color = 0;
+        fill(dark_r, dark_g, dark_b)
       }
-      rect(r, c, square_size, square_size);
-    }
-    if (square_color == 1) {
-      square_color = 0;
-    } else {
-      square_color = 1;
+      rect(r, c, square_size, square_size)
     }
   }
 }
@@ -597,7 +596,7 @@ function mouseClicked() {
           if ((grid_click[0] % 2) == (grid_click[1] % 2)) {
             fill(233, 227, 230);
           } else {
-            fill(144, 162, 172)
+            fill(dark_r, dark_g, dark_b)
           }
           rect(pix[0], pix[1], square_size, square_size)
 
@@ -609,7 +608,7 @@ function mouseClicked() {
           if ((selected_location[0] % 2) == (selected_location[1] % 2)) {
             fill(233, 227, 230);
           } else {
-            fill(144, 162, 172)
+            fill(dark_r, dark_g, dark_b)
           }
           rect(pix[0], pix[1], square_size, square_size)
 
@@ -681,7 +680,7 @@ function computer_move() {
   if ((new_r % 2) == (new_c % 2)) {
     fill(233, 227, 230);
   } else {
-    fill(144, 162, 172)
+    fill(dark_r, dark_g, dark_b)
   }
   rect(pix[0], pix[1], square_size, square_size)
 
@@ -693,7 +692,7 @@ function computer_move() {
   if ((best_r % 2) == (best_c % 2)) {
     fill(233, 227, 230);
   } else {
-    fill(144, 162, 172)
+    fill(dark_r, dark_g, dark_b)
   }
   rect(pix[0], pix[1], square_size, square_size)
 
@@ -1554,6 +1553,14 @@ function toggle_cheating() {
 
 function reset_game() {
   setup();
+}
+
+function random_board_color() {
+  dark_r = int(random(255));
+  dark_g = int(random(255));
+  dark_b = int(random(255));
+
+  redraw_entire_board();
 }
 
 function command() {
