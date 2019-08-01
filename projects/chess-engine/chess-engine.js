@@ -41,7 +41,7 @@ let before_capture_count;
 
 
 // Used to determine if the engine should cheat
-let crooked;
+let crooked = true;
 
 // Qualifying factors for castling
 let castling;
@@ -54,7 +54,7 @@ let black_rook_left_moved;
 let black_rook_right_moved;
 
 // Can be changed by the player
-let difficulty;
+let difficulty = 5;
 
 // Initial dark square colors
 let dark_r = 144;
@@ -334,10 +334,10 @@ function setup() {
   before_capture_count = 0;
 
   // Usually between 1 and 5
-  difficulty = 5;
+  //difficulty = 5;
 
   // Cheating (Can be turned off)
-  crooked = true;
+  //crooked = true;
   root_cheat = false;
 
 }
