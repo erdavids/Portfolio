@@ -1192,9 +1192,15 @@ function get_black_moves(b, p, r, c) {
     }
 
     // Cheating moves
-    if (crooked == true && root_cheat == true && random(1) < .05) {
+    if (crooked == true && root_cheat == true && random(1) < .2) {
       // Straight up
       if (r > 1 && (b[r - 2][c] > 6 || b[r - 2][c] == 0)) {
+        m[el] = [r - 2, c];
+        el += 1;
+      }
+
+      // Straight Down
+      if (r < 7 && (b[r + 2][c] > 6 || b[r + 2][c] == 0)) {
         m[el] = [r - 2, c];
         el += 1;
       }
