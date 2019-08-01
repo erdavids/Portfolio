@@ -340,6 +340,8 @@ function setup() {
   //crooked = true;
   root_cheat = false;
 
+  strokeWeight(2);
+
 
   // Set other difficulties to gray
   document.getElementById("diff-one").style.backgroundColor = '#D3D3D3';
@@ -355,7 +357,7 @@ function draw_empty_board() {
   for (let r = 0; r < height; r += square_size) {
     for (let c = 0; c < width; c += square_size) {
       if ((r/square_size % 2) == (c/square_size % 2)) {
-        fill(233, 227, 230);
+        fill(245, 245, 245);
       } else {
         fill(dark_r, dark_g, dark_b)
       }
@@ -601,7 +603,7 @@ function mouseClicked() {
           // Cover the new location (capture piece)
           var pix = grid_to_pixel(grid_click[1], grid_click[0])
           if ((grid_click[0] % 2) == (grid_click[1] % 2)) {
-            fill(233, 227, 230);
+            fill(245, 245, 245);
           } else {
             fill(dark_r, dark_g, dark_b)
           }
@@ -613,7 +615,7 @@ function mouseClicked() {
           // Cover the previous location (Need to actually draw the right color)
           var pix = grid_to_pixel(selected_location[1], selected_location[0])
           if ((selected_location[0] % 2) == (selected_location[1] % 2)) {
-            fill(233, 227, 230);
+            fill(245, 245, 245);
           } else {
             fill(dark_r, dark_g, dark_b)
           }
@@ -679,7 +681,7 @@ function computer_move() {
   // Cover the new location (capture piece)
   var pix = grid_to_pixel(new_c, new_r)
   if ((new_r % 2) == (new_c % 2)) {
-    fill(233, 227, 230);
+    fill(245, 245, 245);
   } else {
     fill(dark_r, dark_g, dark_b)
   }
@@ -691,7 +693,7 @@ function computer_move() {
   // Cover the previous location (Need to actually draw the right color)
   var pix = grid_to_pixel(best_c, best_r)
   if ((best_r % 2) == (best_c % 2)) {
-    fill(233, 227, 230);
+    fill(245, 245, 245);
   } else {
     fill(dark_r, dark_g, dark_b)
   }
