@@ -595,6 +595,7 @@ function mouseClicked() {
 
           // Upgrade pawn to queen
           if (selected == 7 && grid_click[0] == 0) {
+            console.log("upgrade")
             board[grid_click[0]][grid_click[1]] = 11
           }
 
