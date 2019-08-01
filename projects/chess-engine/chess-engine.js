@@ -1201,7 +1201,7 @@ function get_black_moves(b, p, r, c) {
     //
     //   // Straight Down
     //   if (r < 7 && (b[r + 2][c] > 6 || b[r + 2][c] == 0)) {
-    //     m[el] = [r - 2, c];
+    //     m[el] = [r + 2, c];
     //     el += 1;
     //   }
     // }
