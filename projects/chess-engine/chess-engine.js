@@ -601,16 +601,16 @@ function mouseClicked() {
           var captured_piece = board[grid_click[0]][grid_click[1]];
           console.log("Piece Taken: " + str(captured_piece));
 
-          // Update the board for the next moves
-          board[grid_click[0]][grid_click[1]] = selected
-
-          // Upgrade pawn to queen
           console.log("row")
           console.log(grid_click[0])
           if (selected == 7 && grid_click[0] == 0) {
             console.log("upgrade")
-            board[grid_click[0]][grid_click[1]] = 11
+            selected = 11
           }
+
+          // Update the board for the next moves
+          board[grid_click[0]][grid_click[1]] = selected
+
 
           board[selected_location[0]][selected_location[1]] = 0
 
