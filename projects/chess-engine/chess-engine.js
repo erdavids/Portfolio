@@ -306,6 +306,7 @@ function setup() {
   selected = -1;
   selected_location = [-1, -1];
 
+  strokeWeight(2);
   // Starts off the visuals
   redraw_entire_board();
   //draw_empty_board();
@@ -340,7 +341,6 @@ function setup() {
   //crooked = true;
   root_cheat = false;
 
-  strokeWeight(2);
 
 
   // Set other difficulties to gray
