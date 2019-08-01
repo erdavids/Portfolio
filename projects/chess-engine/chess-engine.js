@@ -1515,26 +1515,56 @@ function evaluate_board(b) {
 function set_difficulty_one() {
   difficulty = 1;
   log_difficulty_change(1);
+
+  document.getElementById("diff-one").style.backgroundColor = '#4fa4a5';
+  document.getElementById("diff-two").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-three").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-four").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-five").style.backgroundColor = '#D3D3D3';
 }
 
 function set_difficulty_two() {
   difficulty = 2;
   log_difficulty_change(2);
+
+  document.getElementById("diff-one").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-two").style.backgroundColor = '#4fa4a5';
+  document.getElementById("diff-three").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-four").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-five").style.backgroundColor = '#D3D3D3';
 }
 
 function set_difficulty_three() {
   difficulty = 3;
   log_difficulty_change(3);
+
+  document.getElementById("diff-one").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-two").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-three").style.backgroundColor = '#4fa4a5';
+  document.getElementById("diff-four").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-five").style.backgroundColor = '#D3D3D3';
 }
 
 function set_difficulty_four() {
   difficulty = 4;
   log_difficulty_change(4);
+
+  document.getElementById("diff-one").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-two").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-three").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-four").style.backgroundColor = '#4fa4a5';
+  document.getElementById("diff-five").style.backgroundColor = '#D3D3D3';
 }
 
 function set_difficulty_five() {
   difficulty = 5;
   log_difficulty_change(5);
+
+  document.getElementById("diff-one").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-two").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-three").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-four").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-five").style.backgroundColor = '#4fa4a5';
 }
 
 function log_difficulty_change(diff) {
