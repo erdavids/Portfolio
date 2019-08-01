@@ -54,7 +54,7 @@ let black_rook_left_moved;
 let black_rook_right_moved;
 
 // Can be changed by the player
-let difficulty = 5;
+let difficulty;
 
 // Initial dark square colors
 let dark_r = 144;
@@ -334,11 +334,18 @@ function setup() {
   before_capture_count = 0;
 
   // Usually between 1 and 5
-  //difficulty = 5;
+  difficulty = 5;
 
   // Cheating (Can be turned off)
   //crooked = true;
   root_cheat = false;
+
+
+  // Set other difficulties to gray
+  document.getElementById("diff-one").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-two").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-three").style.backgroundColor = '#D3D3D3';
+  document.getElementById("diff-four").style.backgroundColor = '#D3D3D3';
 
 }
 
