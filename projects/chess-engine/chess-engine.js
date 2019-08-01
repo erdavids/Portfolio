@@ -1418,25 +1418,6 @@ function get_black_moves(b, p, r, c) {
       m[el] = [r + ri, c - ci]
       el += 1;
     }
-
-    if (crooked == true && root_cheat == true && random(1) < .2) {
-      if (r > 1 && c > 0 && (b[r - 2][c - 1] > 6 || b[r - 2][c - 1] == 0)) {
-        m[el] = [r - 2, c - 1];
-        el += 1;
-      }
-      if (r > 1 && c < 7 && (b[r - 2][c + 1] > 6 || b[r - 2][c + 1] == 0)) {
-        m[el] = [r - 2, c + 1];
-        el += 1;
-      }
-      if (r < 6 && c < 7 && (b[r + 2][c + 1] > 6 || b[r + 2][c + 1] == 0)) {
-        m[el] = [r + 2, c + 1];
-        el += 1;
-      }
-      if (r < 6 && c > 0 && (b[r + 2][c - 1] > 6 || b[r + 2][c - 1] == 0)) {
-        m[el] = [r + 2, c - 1];
-        el += 1;
-      }
-    }
   // Black King
   } else if (p == 6) {
     var ri = 1;
