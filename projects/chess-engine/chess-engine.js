@@ -1138,7 +1138,7 @@ function get_black_moves(b, p, r, c) {
       m[el] = [r + 1, c];
       el += 1;
     }
-    if (r == 1 && && b[r+1][c] && b[r + 2][c] == 0) {
+    if (r == 1 && b[r+1][c] && b[r + 2][c] == 0) {
       m[el] = [r + 2, c]
       el += 1;
     }
