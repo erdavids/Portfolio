@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <script src="/prism.js"></script>
+        <link rel="stylesheet" href="/prism.css">
+    </head>
+    <body>
+        <h1 class="name_text"><a href="https://www.erdavids.com" class="color-text">Eric Davidson</a></h1>
+        <div class="nav_bar bottom_border">
+            <ul>
+                <li class="nav_bar_element"><a href="/projects">Projects</a></li>
+                <li class="nav_bar_element"><a href="/blog">Blog</a></li>
+                <li class="nav_bar_element"><a href="/art">Art</a></li>
+                <li class="nav_bar_element"><a href="/more">More</a></li>
+            </ul>
+        </div>
+
+        <div class="project_block">
+          <h2>Circle Shadows</h2>
+
+          <p>These are the results of me playing around with some code I developed for <a href="https://www.youtube.com/watch?v=Kg6YIDZ-JpY" target="_blank">this tutorial</a>. Each of these images is a simple combination of circles with <span class="color-text">varying opacity</span> that are all <span class="color-text">casting shadows</span>. The output gives me a sense of <span class="color-text">carnival lights</span>, all mixing together. I don't know if that makes sense, but I hope you like it too!</p>
+
+          <p>See More: <a href="https://github.com/erdavids/Circle-Shadows" target="_blank">GitHub</a>
+
+          <div class="row_2">
+              <div class="column_2">
+                <a href="../Images/Circle-Shadows/rb-1.png"><img src="../Images/Circle-Shadows/rb-1.png" width="100%"/></a>
+              </div>
+              <div class="column_2">
+                <a href="../Images/Circle-Shadows/gb-1.png"><img src="../Images/Circle-Shadows/gb-1.png" width="100%"/></a>
+              </div>
+              <div class="column_2">
+                <a href="../Images/Circle-Shadows/bb-1.png"><img src="../Images/Circle-Shadows/bb-1.png" width="100%"/></a>
+              </div>
+          </div>
+
+          <div class="row_2">
+              <div class="column_2">
+                <a href="../Images/Circle-Shadows/rbb-1.png"><img src="../Images/Circle-Shadows/rbb-1.png" width="100%"/></a>
+              </div>
+              <div class="column_2">
+                <a href="../Images/Circle-Shadows/rgb-1.png"><img src="../Images/Circle-Shadows/rgb-1.png" width="100%"/></a>
+              </div>
+              <div class="column_2">
+                <a href="../Images/Circle-Shadows/bgb-1.png"><img src="../Images/Circle-Shadows/bgb-1.png" width="100%"/></a>
+              </div>
+          </div>
+
+        </div>
+
+        <div class="project_block">
+          <div class="row_3">
+              <div class="column_6">
+                  <a href="../Images/Oblong/Oblong-1-367.png"><img src="../Images/Oblong/Oblong-1-367.png" style="width:100%"/></a>
+              </div>
+          </div>
+          <h3>If you're interested in this project, you can actually purchase your own <a href="https://ko-fi.com/thebuffed/commissions" target="_blank">unique digital prints</a> from <a href="https://ko-fi.com/thebuffed/commissions" target="_blank">this link</a>. Here's some other cool projects you might like...</h3>
+          <div class="row_3">
+            <div class="column_3">
+              <p style="padding-left:25px"><a href="../art/blind-mountain" target="_blank">> Blind Mountain</a></p>
+            </div>
+            <div class="column_3">
+          </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 4em;"></div>
+
+        <div class="project_block">
+          <div class="nav_bar">
+              <ul>
+                  <li class="nav_bar_element"><a href="https://github.com/erdavids"><ion-icon name="logo-octocat"></ion-icon></a></li>
+                  <li class="nav_bar_element"><a href="https://www.linkedin.com/in/eric-davidson-70b615ab/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                  <li class="nav_bar_element"><a href="https://twitter.com/TheBuffED"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                  <li class="nav_bar_element"><a href="https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ?view_as=subscriber"><ion-icon name="logo-youtube"></ion-icon></a></li>
+              </ul>
+          </div>
+          <div class="nav_bar">
+            <ul>
+              <li class="nav_bar_element"><script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee', '#4fa4a5', 'A0A6YGXL');kofiwidget2.draw();</script></li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 4em;"></div>
+
+        <script>
+
+          var myArray = ['#d47564', '#CAA67A', '#4fa4a5'];
+
+          var elements = document.getElementsByClassName("color-text");
+          var c = ''
+          var last_c = ''
+          for(var i=0; i<elements.length; i++) {
+              c = myArray[Math.floor(Math.random() * myArray.length)];
+              while (c == last_c) {
+                c = myArray[Math.floor(Math.random() * myArray.length)];
+              }
+              elements[i].style.color = c;
+          }
+
+          var links = document.getElementsByTagName("a");
+          for(var i=0;i<links.length;i++)
+          {
+              if(links[i].href)
+              {
+                  links[i].style.color = myArray[Math.floor(Math.random() * myArray.length)];
+              }
+          }
+        </script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    </body>
+</html>
