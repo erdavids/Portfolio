@@ -1,5 +1,5 @@
 let grid_height = 30
-let grid_width = 30
+let grid_width = 60
 
 let block_size = 10
 let block_height = 3
@@ -51,7 +51,6 @@ function setup() {
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
 
-  strokeWeight(1)
 
   start_block_x = width/2 - grid_height/2 * block_size + grid_width/2 * block_size
   start_block_y = height/2 - grid_height/2 * block_size/2 - grid_width/2 * block_size/2 + (int(noise(0, 0) * noise_multiplier) / noise_dampener * block_height/2)
@@ -61,9 +60,8 @@ function setup() {
 
         cubes = parseInt(noise(x * noise_scale, y * noise_scale) * noise_multiplier) / noise_dampener
 
-        for (let c = 0; c < cubes; c ++) {
-            draw_block((start_block_x + x*block_size) - y*block_size, (start_block_y + x*(block_size/2)) + y*(block_size/2) - int(c)*(block_height), c)
-        }
+        draw_block((start_block_x + x*block_size) - y*block_size, (start_block_y + x*(block_size/2)) + y*(block_size/2) - int(cubes)*(block_height), cubes)
+
     }
 }
 }
