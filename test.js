@@ -58,14 +58,9 @@ function setup() {
   rect(10, 10, 10, 10)
 
   frameRate(20);
-  init();
 }
 
 // function draw() {
 
 // }
 
-// reset board when mouse is pressed
-function mousePressed() {
-  init();
-}
