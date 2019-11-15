@@ -56,6 +56,8 @@ function setup() {
 }
 
 function draw() {
+  background(0)
+
   start_block_x = width/2 - grid_height/2 * block_size + grid_width/2 * block_size
   start_block_y = height/2 - grid_height/2 * block_size/2 - grid_width/2 * block_size/2 + (int(noise(0, 0) * noise_multiplier) / noise_dampener * block_height/2)
 
