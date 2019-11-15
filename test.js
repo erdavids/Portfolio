@@ -54,7 +54,8 @@ function setup() {
   g = random(255);
   b = random(255);
 
-  draw_block(30, 30)
+  draw_block(width/2, height/2)
+  rect(10, 10, 10, 10)
 
   frameRate(20);
   init();
