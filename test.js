@@ -13,7 +13,7 @@ let color_value = Math.random(360)
 
 p5.disableFriendlyErrors = true;
 
-let crazy = false
+let crazy = true
 
 function draw_block(x, y) {
     
