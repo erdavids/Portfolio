@@ -9,7 +9,7 @@ let noise_scale = .05
 let noise_multiplier = 100
 let noise_dampener = 1
 
-let color_value = random(360)
+let color_value = Math.random(360)
 
 p5.disableFriendlyErrors = true;
 
