@@ -51,7 +51,7 @@ function setup() {
   var width = canvasDiv.offsetWidth
   var height = 800
 
-  colorMode(HSB, 360, 100, 100, 100);
+  colorMode(HSB, 360, 100, 100);
 
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
@@ -62,9 +62,10 @@ function setup() {
 }
 
 function draw() {
-  fill(color_value, 100, 100)
+  fill(color_value, 65, 65)
   color_value += 1 
   color_value = color_value % 360
+  
   background(255)
 
   start_block_x = width/2 - grid_height/2 * block_size + grid_width/2 * block_size
