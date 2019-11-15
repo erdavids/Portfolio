@@ -1,3 +1,5 @@
+import { loadOptions } from "@babel/core"
+
 let grid_height = 30
 let grid_width = 30
 
@@ -11,6 +13,8 @@ let noise_dampener = 1
 let color_value = 0
 
 p5.disableFriendlyErrors = true;
+
+crazy == false
 
 function draw_block(x, y) {
     
@@ -61,6 +65,8 @@ function setup() {
 
   strokeWeight(1)
   stroke(0)
+
+  noLoop()
 }
 
 function draw() {
@@ -85,7 +91,13 @@ function draw() {
     }
 }
 
-// function draw() {
+function mousePressed() {
+    crazy = !crazy;
 
-// }
+    if (crazy == false) {
+        noLoop()
+    } else {
+        loop()
+    }
+}
 
