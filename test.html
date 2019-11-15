@@ -1,43 +1,77 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138963802-1"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <script src="/prism.js"></script>
+        <link rel="stylesheet" href="/prism.css">
 
-        <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8d7586204f74683a9d24dc447/17eb59f014f48f8438ee970f1.js");</script>
-       
-       <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-138963802-1');
-        </script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.js"></script>
         <script src="game-of-life/game-of-life.js"></script>
-
-        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <div class="project_block">
-          <div class="row_2">
-            <div class="column_6">
-              <div id="sketchdiv" style="min-height: 1px;">
-              </div>
-            </div>
+        <h1 class="name_text"><a href="https://www.erdavids.com" class="color-text">Eric Davidson</a></h1>
+        <div class="nav_bar bottom_border">
+            <ul>
+                <li class="nav_bar_element"><a href="/projects">Projects</a></li>
+                <li class="nav_bar_element"><a href="/blog">Blog</a></li>
+                <li class="nav_bar_element"><a href="/art">Art</a></li>
+                <li class="nav_bar_element"><a href="/more">More</a></li>
+            </ul>
         </div>
 
+        <div class="project_block">
+          <h2>Game of Life</h2>
 
+          <p>Arguably one of the <span class="color-text">coolest things ever</span>, the <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> is a simple set of rules that determine life and death. Each iteration, the cells are evaluated according to the amount of neighboring cells. Depending on the number, the cells can either die from loneliness, reproduce, remain in stasis, or die from overpopulation.</p>
 
+          <div class="row_2">
+              <div class="column_6">
+                <div id="sketchdiv" style="min-height: 1px;">
+                </div>
+              </div>
+          </div>
+      </div>
 
+        <div class="project_block">
+          <div class="row_3">
+              <div class="column_6">
+                  <a href="../Images/Oblong/Oblong-1-367.png"><img src="../Images/Oblong/Oblong-1-367.png" style="width:100%"/></a>
+              </div>
+          </div>
+          <h3>If you're interested in this project, you can actually purchase your own <a href="https://ko-fi.com/thebuffed/commissions" target="_blank">unique digital prints</a> from <a href="https://ko-fi.com/thebuffed/commissions" target="_blank">this link</a>. Here's some other cool projects you might like...</h3>
+          <div class="row_3">
+            <div class="column_3">
+              <p style="padding-left:25px"><a href="../art/letter-home" target="_blank">> Letter Home</a></p>
+          </div>
+            <div class="column_3">
+          </div>
+          </div>
+
+        </div>
+
+        <div style="margin-bottom: 4em;"></div>
+
+        <div class="project_block">
+          <div class="nav_bar">
+              <ul>
+                  <li class="nav_bar_element"><a href="https://github.com/erdavids"><ion-icon name="logo-octocat"></ion-icon></a></li>
+                  <li class="nav_bar_element"><a href="https://www.linkedin.com/in/eric-davidson-70b615ab/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                  <li class="nav_bar_element"><a href="https://twitter.com/TheBuffED"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                  <li class="nav_bar_element"><a href="https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ?view_as=subscriber"><ion-icon name="logo-youtube"></ion-icon></a></li>
+              </ul>
+          </div>
+          <div class="nav_bar">
+            <ul>
+              <li class="nav_bar_element"><script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee', '#4fa4a5', 'A0A6YGXL');kofiwidget2.draw();</script></li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 4em;"></div>
 
         <script>
-
-          function dark_mode() {
-            document.body.style.backgroundColor = '#303030';
-            document.body.style.color = "#ffffff"
-          }
 
           var myArray = ['#d47564', '#CAA67A', '#4fa4a5'];
 
@@ -60,47 +94,6 @@
                   links[i].style.color = myArray[Math.floor(Math.random() * myArray.length)];
               }
           }
-
-          // Parsing the big boi (Testing rss update)
-          var url= 'https://github.com/erdavids.atom';
-          $.ajax({
-            type: 'GET',
-            cache: false,
-            url: "https://api.rss2json.com/v1/api.json?rss_url=" + url,
-            dataType: 'json',
-            success: function(data) {
-            // Get the 3 most recent commits (Last test)
-              var el = document.createElement( 'html' );
-              console.log(data)
-
-              el.innerHTML = data.items[0].description;
-          		var l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
-              document.getElementById("commit-1").href = data.items[0].link.trim()
-              document.getElementById("commit-1").textContent = "> " + l.trim();
-
-              el.innerHTML = data.items[1].description;
-          		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
-              document.getElementById("commit-2").href = data.items[0].link.trim()
-              document.getElementById("commit-2").textContent = "> " + l.trim();
-
-              el.innerHTML = data.items[2].description;
-          		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
-              document.getElementById("commit-3").href = data.items[0].link.trim()
-              document.getElementById("commit-3").textContent = "> " + l.trim();
-
-              el.innerHTML = data.items[3].description;
-          		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
-              document.getElementById("commit-4").href = data.items[0].link.trim()
-              document.getElementById("commit-4").textContent = "> " + l.trim();
-
-              el.innerHTML = data.items[4].description;
-          		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
-              document.getElementById("commit-5").href = data.items[0].link.trim()
-              document.getElementById("commit-5").textContent = "> " + l.trim();
-
-              console.log(l.trim())
-            }
-          });
         </script>
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     </body>
