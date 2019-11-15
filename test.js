@@ -1,5 +1,5 @@
-let grid_height = 20
-let grid_width = 20
+let grid_height = 50
+let grid_width = 30
 
 let block_size = 10
 let block_height = 3
