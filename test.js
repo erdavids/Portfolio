@@ -62,7 +62,7 @@ function setup() {
 }
 
 function draw() {
-  fill(color_value)
+  fill(color_value, 100, 100)
   color_value += 1 
   color_value = color_value % 360
   background(255)
