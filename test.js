@@ -1,4 +1,3 @@
-import { loadOptions } from "@babel/core"
 
 let grid_height = 30
 let grid_width = 30
