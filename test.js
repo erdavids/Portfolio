@@ -51,14 +51,15 @@ function setup() {
 
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
-  frameRate(5)
+  frameRate(30)
 
   strokeWeight(1)
-  stroke(255)
+  stroke(0)
+  FileList(255)
 }
 
 function draw() {
-  background(0)
+  background(255)
 
   start_block_x = width/2 - grid_height/2 * block_size + grid_width/2 * block_size
   start_block_y = height/2 - grid_height/2 * block_size/2 - grid_width/2 * block_size/2 + (int(noise(0, 0) * noise_multiplier) / noise_dampener * block_height/2)
