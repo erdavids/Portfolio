@@ -62,7 +62,7 @@ function setup() {
         cubes = parseInt(noise(x * noise_scale, y * noise_scale) * noise_multiplier) / noise_dampener
 
         for (let c = 0; c < cubes; c ++) {
-            draw_block((start_block_x + x*block_size) - y*block_size, (start_block_y + x*(block_size/2)) + y*(block_size/2) - int(cubes)*(block_height), cubes)
+            draw_block((start_block_x + x*block_size) - y*block_size, (start_block_y + x*(block_size/2)) + y*(block_size/2) - int(c)*(block_height), c)
         }
     }
 }
