@@ -8,6 +8,8 @@ let noise_scale = .05
 let noise_multiplier = 100
 let noise_dampener = 1
 
+let color_value = 0
+
 
 
 function draw_block(x, y) {
@@ -49,6 +51,8 @@ function setup() {
   var width = canvasDiv.offsetWidth
   var height = 800
 
+  colorMode(HSB, 360, 100, 100, 100);
+
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
   frameRate(20)
@@ -58,6 +62,9 @@ function setup() {
 }
 
 function draw() {
+  fill(color_value)
+  color_value += 1 
+  color_value = color_value % 360
   background(255)
 
   start_block_x = width/2 - grid_height/2 * block_size + grid_width/2 * block_size
