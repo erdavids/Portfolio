@@ -8,6 +8,8 @@ let noise_scale = .05
 let noise_multiplier = 100
 let noise_dampener = 1
 
+let g = 1
+
 
 function draw_block(x, y) {
     
@@ -50,20 +52,23 @@ function setup() {
 
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
+  frameRate(5)
+}
 
-
+function draw() {
   start_block_x = width/2 - grid_height/2 * block_size + grid_width/2 * block_size
   start_block_y = height/2 - grid_height/2 * block_size/2 - grid_width/2 * block_size/2 + (int(noise(0, 0) * noise_multiplier) / noise_dampener * block_height/2)
+
 
   for ( let x = 0; x < grid_height; x++) {
     for ( let y = 0; y < grid_width; y++) {
 
-        cubes = parseInt(noise(x * noise_scale, y * noise_scale) * noise_multiplier) / noise_dampener
+        cubes = parseInt(noise((x + framecount) * noise_scale, y * noise_scale) * noise_multiplier) / noise_dampener
 
         draw_block((start_block_x + x*block_size) - y*block_size, (start_block_y + x*(block_size/2)) + y*(block_size/2) - int(cubes)*(block_height), cubes)
 
+        }
     }
-}
 }
 
 // function draw() {
