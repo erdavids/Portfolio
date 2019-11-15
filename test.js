@@ -61,19 +61,9 @@ function setup() {
   init();
 }
 
-function draw() {
-  background(255);
-  generate();
-  for ( let i = 0; i < columns;i++) {
-    for ( let j = 0; j < rows;j++) {
-      if ((board[i][j] == 1)) fill(0);
-      else fill(r, g, b);
-      stroke(0);
-      rect(i * w, j * w, w-1, w-1);
-    }
-  }
+// function draw() {
 
-}
+// }
 
 // reset board when mouse is pressed
 function mousePressed() {
