@@ -8,7 +8,6 @@ let noise_scale = .05
 let noise_multiplier = 100
 let noise_dampener = 1
 
-let g = 1
 
 
 function draw_block(x, y) {
@@ -53,6 +52,9 @@ function setup() {
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
   frameRate(5)
+
+  strokeWeight(1)
+  stroke(255)
 }
 
 function draw() {
