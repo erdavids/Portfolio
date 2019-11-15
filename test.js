@@ -55,7 +55,6 @@ function setup() {
 
   strokeWeight(1)
   stroke(0)
-  FileList(255)
 }
 
 function draw() {
