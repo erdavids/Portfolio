@@ -1,7 +1,7 @@
 let grid_height = 20
 let grid_width = 20
 
-let block_size = 18
+let block_size = 15
 let block_height = 4
 
 let noise_scale = .05
@@ -57,7 +57,7 @@ function setup() {
 
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
-  frameRate(10)
+  frameRate(20)
 
   strokeWeight(1)
   stroke(0)
