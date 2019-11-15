@@ -10,7 +10,7 @@ let noise_dampener = 1
 
 let color_value = 0
 
-
+p5.disableFriendlyErrors = true;
 
 function draw_block(x, y) {
     
