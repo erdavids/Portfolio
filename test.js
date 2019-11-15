@@ -8,8 +8,9 @@ let r, g, b;
 let block_size = 20
 let block_height = 10
 
-function draw_block(x, y):
-    beginShape();
+function draw_block(x, y) {
+    
+    beginShape()
         
     // Top Face
     vertex(x - block_size, y)
@@ -38,6 +39,8 @@ function draw_block(x, y):
     vertex(x, y + block_height + block_size/2)
     vertex(x + block_size, y + block_height)
     endShape(CLOSE)
+
+}
 
 function setup() {
   var canvasDiv = document.getElementById('sketchdiv')
