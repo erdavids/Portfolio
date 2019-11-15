@@ -1,8 +1,8 @@
 let grid_height = 20
 let grid_width = 20
 
-let block_size = 10
-let block_height = 3
+let block_size = 20
+let block_height = 6
 
 let noise_scale = .05
 let noise_multiplier = 100
