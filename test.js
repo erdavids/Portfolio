@@ -1,4 +1,4 @@
-let grid_height = 50
+let grid_height = 30
 let grid_width = 30
 
 let block_size = 10
