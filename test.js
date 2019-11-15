@@ -1,12 +1,13 @@
-let w;
-let columns;
-let rows;
-let board;
-let next;
-let r, g, b;
+let grid_height = 30
+let grid_width = 30
 
-let block_size = 20
-let block_height = 10
+let block_size = 10
+let block_height = 3
+
+let noise_scale = .05
+let noise_multiplier = 100
+let noise_dampener = 1
+
 
 function draw_block(x, y) {
     
@@ -54,10 +55,18 @@ function setup() {
   g = random(255);
   b = random(255);
 
-  draw_block(width/2, height/2)
-  rect(10, 10, 10, 10)
+  start_block_x = width/2 - grid_height/2 * block_size + grid_width/2 * block_size
+  start_block_y = height/2 - grid_height/2 * block_size/2 - grid_width/2 * block_size/2 + (int(noise(0, 0) * noise_multiplier) / noise_dampener * block_height/2)
 
-  frameRate(20);
+  for ( let x = 0; x < grid_height; x++) {
+    for ( let y = 0; y < grid_width; y++) {
+
+        cubes = parseInt(noise(x * noise_scale, y * noise_scale) * noise_multiplier) / noise_dampener
+
+        draw_block((start_block_x + x*block_size) - y*block_size, (start_block_y + x*(block_size/2)) + y*(block_size/2) - int(cubes)*(block_height), cubes)
+
+    }
+}
 }
 
 // function draw() {
