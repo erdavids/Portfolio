@@ -62,6 +62,8 @@ function setup() {
   cnv.parent('sketchdiv');
   frameRate(30)
 
+  input = createInput('type your name')
+
   strokeWeight(1)
   stroke(0)
 }
