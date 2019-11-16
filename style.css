@@ -64,11 +64,11 @@ h1, h2, h3, h4 {
 }
 
 icons {
-  text-align: center;
+  text-align: right;
 }
 
 ion-icon {
-  font-size: 15px;
+  font-size: 32px;
   display: inline-block;
 }
 
@@ -102,7 +102,7 @@ ul {
 }
 
 li {
-    float: left;
+    float: right;
 }
 
 li a {

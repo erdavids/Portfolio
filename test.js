@@ -64,8 +64,6 @@ function setup() {
 
   strokeWeight(1)
   stroke(0)
-
-  noLoop()
 }
 
 function draw() {
