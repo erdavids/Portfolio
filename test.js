@@ -52,7 +52,7 @@ function draw_block(x, y) {
 function setup() {
   var canvasDiv = document.getElementById('sketchdiv')
   var width = canvasDiv.offsetWidth
-  var height = 800
+  var height = 600
 
   pixelDensity(2)
 
