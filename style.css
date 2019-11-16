@@ -110,6 +110,15 @@ li a {
   text-decoration: none;
 }
 
+input[type=number] {
+    border: 1px solid black;
+    width: 10px;
+}
+
+input:focus {
+    outline:none
+}
+
 li a:hover:not(.active) {
     text-decoration: none;
 }
