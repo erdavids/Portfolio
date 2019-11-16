@@ -69,7 +69,7 @@ ion-icon {
 }
 
 p {
-    margin-left: 5px;
+    margin-left: 0px;
     margin-right: 1%;
     font-family: 'Poppins';
 }
@@ -110,7 +110,7 @@ li a {
   text-decoration: none;
 }
 
-input[type=number] {
+input {
     border: 1px solid black;
     width: 10px;
 }
