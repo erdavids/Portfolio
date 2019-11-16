@@ -13,15 +13,11 @@ body
 
 .nav_bar {
     position: relative;
-    text-align: center;
+    text-align: right;
 }
 
 div {
 
-}
-
-div ul {
-    display: inline-block;
 }
 
 .button {
@@ -68,7 +64,7 @@ icons {
 }
 
 ion-icon {
-  font-size: 16px;
+  font-size: 25px;
   display: inline-block;
 }
 
@@ -95,25 +91,27 @@ li + li {
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 li {
-    float: right;
+  float: right;
 }
 
 li a {
-    display: block;
-    color: black;
-    padding: 0px 16px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  text-decoration: none;
 }
 
 li a:hover:not(.active) {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .active {
