@@ -90,15 +90,23 @@ function draw() {
 
 function keyPressed() {
         if (keyCode === LEFT_ARROW) {
-          grid_height -= 1
+            if (grid_height > 1) {
+                grid_height -= 1
+            }
         } else if (keyCode === RIGHT_ARROW) {
-          grid_height += 1
-        } else if (keyCode === DOWN_ARROW) {
-            grid_width -= 1
-        } else if (keyCode === UP_ARROW) {
             grid_height += 1
-        } else if (keyCode === 's') {
-            photo.save('photo', 'png');
+        } else if (keyCode === DOWN_ARROW) {
+            if (grid_width > 1) {
+                grid_width -= 1
+            }
+        } else if (keyCode === UP_ARROW) {
+            grid_width += 1
         }
 }
+
+function keyTyped() {
+    if (key === 's') {
+      photo.save('terrain', 'png');
+    }
+  }
 
