@@ -88,12 +88,9 @@ function draw() {
 }
 
 function mousePressed() {
-    crazy = !crazy;
-
-    if (crazy == false) {
-        noLoop()
-    } else {
-        loop()
+    if (mouseX > 200) {
+        grid_width = mouseX/parseFloat(windowWidth)
+        grid_height = mouseY/parseFloat(windowHeight)
     }
 }
 
