@@ -87,6 +87,18 @@ function draw() {
     }
 }
 
-function mousePressed() {
+
+function keyPressed() {
+        if (keyCode === LEFT_ARROW) {
+          grid_height -= 1
+        } else if (keyCode === RIGHT_ARROW) {
+          grid_height += 1
+        } else if (keyCode === DOWN_ARROW) {
+            grid_width -= 1
+        } else if (keyCode === UP_ARROW) {
+            grid_height += 1
+        } else if (keyCode === 's') {
+            photo.save('photo', 'png');
+        }
 }
 
