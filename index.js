@@ -89,8 +89,8 @@ function draw() {
 
 function mousePressed() {
     if (mouseX > 200) {
-        grid_width = mouseX/parseFloat(windowWidth)
-        grid_height = mouseY/parseFloat(windowHeight)
+        grid_width = mouseX/(windowWidth * 1.0)
+        grid_height = mouseY/(windowHeight * 1.0)
     }
 }
 
