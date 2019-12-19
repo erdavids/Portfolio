@@ -47,5 +47,7 @@ hl.push(document.getElementById(h))
 
 // Run after determining time and compliment
 hl.forEach((item, index)=>{
-   item.style.color = highlight_color
+    if (item != null) {
+        item.style.color = highlight_color
+    }
 });
