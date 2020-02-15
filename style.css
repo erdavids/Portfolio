@@ -56,7 +56,7 @@ div {
 h1, h2, h3, h4 {
     font-weight: bold;
     font-family: 'Poppins';
-    margin-left: 5px;
+    margin-left: 0px;
 }
 
 icons {
@@ -176,8 +176,8 @@ a:visited { text-decoration: none; color: black;}
 
 .column_3 {
     float: left;
-    width: 50%;
-    padding:5px;
+    width: 75%;
+    padding:50px;
 }
 
 .column_4 {
@@ -227,4 +227,10 @@ a:visited { text-decoration: none; color: black;}
     content: "";
     clear: both;
     display: table;
+}
+
+img {
+  border-radius: 50%;
+  width: 100%;
+  height: 
 }
