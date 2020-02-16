@@ -12,8 +12,15 @@ body
 }
 
 .nav_bar {
-    position: relative;
-    text-align: right;
+    text-align: left;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 div {
@@ -84,7 +91,7 @@ li + li {
 }
 
 .name_text {
-    text-align: center;
+    text-align: left;
     margin: auto;
     font-family: 'Poppins';
     font-size: 40px;
@@ -97,8 +104,10 @@ ul {
   overflow: hidden;
 }
 
+ul { display:table; margin:0;}
+
 li {
-  float: right;
+  float: left;
 }
 
 li a {
@@ -177,12 +186,12 @@ a:visited { text-decoration: none; color: black;}
 .column_3 {
     float: left;
     width: 75%;
-    padding:50px;
+    padding: 5px;
 }
 
 .column_4 {
     float: left;
-    width: 66.67%
+    width: 66.67%;
     padding: 5px;
 }
 
