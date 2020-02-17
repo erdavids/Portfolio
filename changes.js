@@ -1,6 +1,6 @@
 
 $.get("side-bar.html", function(data){
-    $("#side-placeholder").replaceWith(data);
+    $("/#side-placeholder").replaceWith(data);
 });
 
 function dark_mode() {
