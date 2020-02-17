@@ -24,17 +24,14 @@
           <div class="name_text"><a href="https://www.erdavids.com">Eric Davidson</a></div>
           <div class="row_5">
             <div class="column_1_4">
-
+              <div id="side-placeholder">Should be replaced</div>
+<!-- 
               <p>Links</p>
               <p style="padding-left:25px"><a href="https://github.com/erdavids">> GitHub</a></p>
               <p style="padding-left:25px"><a href="https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ?view_as=subscriber">> YouTube</a></p>
               <p style="padding-left:25px"><a href="https://www.linkedin.com/in/eric-davidson-70b615ab/">> LinkedIn</a></p>
               <p>Projects</p>
-              <p style="padding-left:25px"><a href="https://github.com/erdavids/Generative-Art">> Generative Art</a></p>
-              <p>Recent Github Commits</p>
-              <p style="padding-left:25px"><a id="commit-1" href="" target="_blank"></a></p>
-              <p style="padding-left:25px"><a id="commit-2" href="" target="_blank"></a></p>
-              <p style="padding-left:25px"><a id="commit-3" href="" target="_blank"></a></p>
+              <p style="padding-left:25px"><a href="https://github.com/erdavids/Generative-Art">> Generative Art</a></p> -->
             </div>
             <div class="column_3">
                <p>I'm a <span class="color-text">Software Engineer</span> currently working at <span class="color-text">Chick-fil-A</span> in Atlanta, GA. In my current role on the <span class="color-text">Quality Engineering</span> team, I help design and maintain automation frameworks for CI/CD pipelines. I'm passionate about solving difficult problems and I get to do that everyday.</p>
@@ -52,6 +49,10 @@
 
 
         <script>
+
+          $.get("side-bar.html", function(data){
+              $("#side-placeholder").replaceWith(data);
+          });
 
           function dark_mode() {
             document.body.style.backgroundColor = '#303030';
@@ -80,47 +81,8 @@
               }
           }
 
-          // Parsing the big boi (Testing rss update)
-          var url= 'https://github.com/erdavids.atom';
-          $.ajax({
-            type: 'GET',
-            cache: false,
-            url: "https://api.rss2json.com/v1/api.json?rss_url=" + url,
-            dataType: 'json',
-            success: function(data) {
-            // Get the 3 most recent commits (Last test)
-              var el = document.createElement( 'html' );
-              console.log(data)
 
-              el.innerHTML = data.items[0].description;
-          		var l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
-              document.getElementById("commit-1").href = data.items[0].link.trim()
-              document.getElementById("commit-1").textContent = "> " + l.trim();
 
-              el.innerHTML = data.items[1].description;
-          		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
-              document.getElementById("commit-2").href = data.items[0].link.trim()
-              document.getElementById("commit-2").textContent = "> " + l.trim();
-
-              el.innerHTML = data.items[2].description;
-          		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
-              document.getElementById("commit-3").href = data.items[0].link.trim()
-              document.getElementById("commit-3").textContent = "> " + l.trim();
-
-              el.innerHTML = data.items[3].description;
-          		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
-              document.getElementById("commit-4").href = data.items[0].link.trim()
-              document.getElementById("commit-4").textContent = "> " + l.trim();
-
-              el.innerHTML = data.items[4].description;
-          		l = el.getElementsByTagName( 'blockquote' )[0].innerHTML;
-              document.getElementById("commit-5").href = data.items[0].link.trim()
-              document.getElementById("commit-5").textContent = "> " + l.trim();
-
-              console.log(l.trim())
-            }
-          });
         </script>
-        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     </body>
 </html>
