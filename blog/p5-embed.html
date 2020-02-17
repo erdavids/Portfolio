@@ -13,115 +13,51 @@
 
           gtag('config', 'UA-138963802-1');
         </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="/style.css">
-        <script src="/prism.js"></script>
-        <link rel="stylesheet" href="/prism.css">
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.js"></script>
-        <script src="p5-test/p5-example.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <h1 class="name_text"><a href="https://www.erdavids.com" class="color-text">Eric Davidson</a></h1>
-        <div class="nav_bar bottom_border">
-            <ul>
-                <li class="nav_bar_element"><a href="/projects">Projects</a></li>
-                <li class="nav_bar_element"><a href="/blog">Blog</a></li>
-                <li class="nav_bar_element"><a href="/art">Art</a></li>
-                <li class="nav_bar_element"><a href="/more">More</a></li>
-            </ul>
-        </div>
+
 
         <div class="project_block">
-          <h2>How to Embed p5.js Sketches into your Personal Site</h2>
 
-          <p>Using <span class="color-text">p5.js</span> is an incredible way to add color and personality to your website. When I started working with p5, I was able to learn quickly thanks to their <a href="https://p5js.org/examples/" target="_blank">amazing examples</a>, but it took a while for me to intergrate the sketches properly into a page. <a href="https://github.com/processing/p5.js/wiki/Positioning-your-canvas" target="_blank">This guide</a> was helpful for positioning, but did not tell me much about properly <span class="color-text">sizing my canvas</span>.</p>
+          <div class="name_text"><a href="https://www.erdavids.com">Eric Davidson</a></div>
+          <div class="row_5">
+            <div class="column_1_4">
+              <div id="side-placeholder"></div>
+            </div>
 
-          <p>In the end, I wanted my p5 sketch to <span class="color-text">scale automatically</span> to the width of <span class="color-text">whatever div</span> I attached it to.
+            <!-- This is where the magic happens, everything else should be template -->
+            <div class="column_3">
+                <h2>How to Embed p5.js Sketches into your Personal Site</h2>
 
-          <div class="row_2">
-              <div class="column_6">
-                <div id="sketchdiv" style="min-height: 1px;">
+                <p>Using <span class="color-text">p5.js</span> is an incredible way to add color and personality to your website. When I started working with p5, I was able to learn quickly thanks to their <a href="https://p5js.org/examples/" target="_blank">amazing examples</a>, but it took a while for me to intergrate the sketches properly into a page. <a href="https://github.com/processing/p5.js/wiki/Positioning-your-canvas" target="_blank">This guide</a> was helpful for positioning, but did not tell me much about properly <span class="color-text">sizing my canvas</span>.</p>
+      
+                <p>In the end, I wanted my p5 sketch to <span class="color-text">scale automatically</span> to the width of <span class="color-text">whatever div</span> I attached it to.
+      
+                <div class="row_2">
+                    <div class="column_6">
+                      <div id="sketchdiv" style="min-height: 1px;">
+                      </div>
+                    </div>
                 </div>
-              </div>
+      
+                <p>You can see that the sketch <span class="color-text">fits nicely</span> into the article like any other element. In order to make this happen, I created a p5 canvas and then attached it to a div with id <span class="color-text">sketchdiv</span>. Here's the HTML and Javascript code that made all of this happen:</p>
+      
+                <script src="https://gist.github.com/erdavids/e61cb0054f3bda36421ac8d1de2b83b3.js"></script>
+      
+                <script src="https://gist.github.com/erdavids/7f5bb94edcf7f77e147d544d7a032c3f.js"></script>
+      
+                <p>The most important line of code is <span class="color-text">cnv.parent('sketchdiv');</span>. Regardless of how you decide to approach the size of the sketch, this line will allow you to decide where the p5 result will be placed.</p>
+      
+                <p>If you want to learn more about p5.js, you can download it <a href="https://p5js.org/download" target="_blank">here</a>.
+      
+            </div>
           </div>
 
-          <p>You can see that the sketch <span class="color-text">fits nicely</span> into the article like any other element. In order to make this happen, I created a p5 canvas and then attached it to a div with id <span class="color-text">sketchdiv</span>. Here's the HTML and Javascript code that made all of this happen:</p>
-
-          <script src="https://gist.github.com/erdavids/e61cb0054f3bda36421ac8d1de2b83b3.js"></script>
-
-          <script src="https://gist.github.com/erdavids/7f5bb94edcf7f77e147d544d7a032c3f.js"></script>
-
-          <p>The most important line of code is <span class="color-text">cnv.parent('sketchdiv');</span>. Regardless of how you decide to approach the size of the sketch, this line will allow you to decide where the p5 result will be placed.</p>
-
-          <p>If you want to learn more about p5.js, you can download it <a href="https://p5js.org/download" target="_blank">here</a>.
-
-
-
-      </div>
-
-        <div class="project_block">
-          <div class="row_3">
-              <div class="column_6">
-                  <a href="../Images/Oblong/Oblong-1-367.png"><img src="../Images/Oblong/Oblong-1-367.png" style="width:100%"/></a>
-              </div>
-          </div>
-          <h3>Thanks for reading! If you want to stay updated, consider <a href="https://mailchi.mp/d01300094a83/erdavids" target="_blank">subscribing</a>. In the meantime, check out these other cool articles.</h3>
-          <div class="row_3">
-            <div class="column_3">
-              <p style="padding-left:25px"><a href="https://dev.to/thebuffed/how-to-create-generative-art-in-less-than-100-lines-of-code-1k9m">> How to Create Generative Art in Less than 100 Lines of Code</a></p>
-          </div>
-            <div class="column_3">
-          </div>
-          </div>
 
         </div>
 
-        <div style="margin-bottom: 4em;"></div>
-
-        <div class="project_block">
-          <div class="nav_bar">
-              <ul>
-                  <li class="nav_bar_element"><a href="https://github.com/erdavids"><ion-icon name="logo-octocat"></ion-icon></a></li>
-                  <li class="nav_bar_element"><a href="https://www.linkedin.com/in/eric-davidson-70b615ab/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-                  <li class="nav_bar_element"><a href="https://twitter.com/TheBuffED"><ion-icon name="logo-twitter"></ion-icon></a></li>
-                  <li class="nav_bar_element"><a href="https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ?view_as=subscriber"><ion-icon name="logo-youtube"></ion-icon></a></li>
-              </ul>
-          </div>
-          <div class="nav_bar">
-            <ul>
-              <li class="nav_bar_element"><script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee', '#4fa4a5', 'A0A6YGXL');kofiwidget2.draw();</script></li>
-            </ul>
-          </div>
-        </div>
-
-        <div style="margin-bottom: 4em;"></div>
-
-        <script>
-
-          var myArray = ['#d47564', '#CAA67A', '#4fa4a5'];
-
-          var elements = document.getElementsByClassName("color-text");
-          var c = ''
-          var last_c = ''
-          for(var i=0; i<elements.length; i++) {
-              c = myArray[Math.floor(Math.random() * myArray.length)];
-              while (c == last_c) {
-                c = myArray[Math.floor(Math.random() * myArray.length)];
-              }
-              elements[i].style.color = c;
-          }
-
-          var links = document.getElementsByTagName("a");
-          for(var i=0;i<links.length;i++)
-          {
-              if(links[i].href)
-              {
-                  links[i].style.color = myArray[Math.floor(Math.random() * myArray.length)];
-              }
-          }
-        </script>
-        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script src="changes.js"></script>
     </body>
 </html>

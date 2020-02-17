@@ -1,148 +1,22 @@
+          <h2>How to Embed p5.js Sketches into your Personal Site</h2>
 
+          <p>Using <span class="color-text">p5.js</span> is an incredible way to add color and personality to your website. When I started working with p5, I was able to learn quickly thanks to their <a href="https://p5js.org/examples/" target="_blank">amazing examples</a>, but it took a while for me to intergrate the sketches properly into a page. <a href="https://github.com/processing/p5.js/wiki/Positioning-your-canvas" target="_blank">This guide</a> was helpful for positioning, but did not tell me much about properly <span class="color-text">sizing my canvas</span>.</p>
 
-# 4 Images
-                <div class="row_5">
-                    <div class="column_1_4">
-                        <a href="Images/Islands/i-1.png"><img src="Images/Islands/i-1.png" width="100%"/></a>
-                    </div>
-                    <div class="column_1_4">
-                        <a href="Images/Islands/i-2.png"><img src="Images/Islands/i-2.png" width="100%"/></a>
-                    </div>
-                    <div class="column_1_4">
-                        <a href="Images/Islands/i-3.png"><img src="Images/Islands/i-3.png" width="100%"/></a>
-                    </div>
-                    <div class="column_1_4">
-                        <a href="Images/Islands/i-4.png"><img src="Images/Islands/i-4.png" width="100%"/></a>
-                    </div>
+          <p>In the end, I wanted my p5 sketch to <span class="color-text">scale automatically</span> to the width of <span class="color-text">whatever div</span> I attached it to.
+
+          <div class="row_2">
+              <div class="column_6">
+                <div id="sketchdiv" style="min-height: 1px;">
                 </div>
-
-
-
-# 3 Images
-                <div class="row_2">
-                    <div class="column_2">
-                        <a href="Images/Example-9x9-15-1500.jpg"><img src="Images/Example-9x9-15-1500.jpg" width="100%"/></a>
-                    </div>
-                    <div class="column_2">
-                        <a href="Images/Example-7x7-30-1500.jpg"><img src="Images/Example-7x7-30-1500.jpg" width="100%"/></a>
-                    </div>
-                    <div class="column_2">
-                        <a href="Images/Example-43x43-6-1900.jpg"><img src="Images/Example-43x43-6-1900.jpg" width="100%"/></a>
-                    </div>
-                </div>
-
-
-
- # 2 Images
-        <div class="row_3">
-            <div class="column_3">
-              <a href="Images/Oblong/Oblong-32-176.png"><img src="Images/Oblong/Oblong-32-176.png" style="width:100%"/></a>
-              <a href="Images/Oblong/Oblong-8-241.png"><img src="Images/Oblong/Oblong-8-241.png" style="width:100%"/></a>
+              </div>
           </div>
-            <div class="column_3">
-                <a href="Images/SpaceInvader/Invader-1.jpg"><img src="Images/SpaceInvader/Invader-1.jpg" style="width:100%"/></a>
-                <a href="Images/Planets/Planet-2.png"><img src="Images/Planets/Planet-2.png" style="width:100%"/></a>
-          </div>
-        </div>
 
+          <p>You can see that the sketch <span class="color-text">fits nicely</span> into the article like any other element. In order to make this happen, I created a p5 canvas and then attached it to a div with id <span class="color-text">sketchdiv</span>. Here's the HTML and Javascript code that made all of this happen:</p>
 
+          <script src="https://gist.github.com/erdavids/e61cb0054f3bda36421ac8d1de2b83b3.js"></script>
 
-let w;
-let columns;
-let rows;
-let board;
-let next;
-let r, g, b;
+          <script src="https://gist.github.com/erdavids/7f5bb94edcf7f77e147d544d7a032c3f.js"></script>
 
-function setup() {
-  var canvasDiv = document.getElementById('sketchdiv')
-  var width = canvasDiv.offsetWidth
-  var height = 800
+          <p>The most important line of code is <span class="color-text">cnv.parent('sketchdiv');</span>. Regardless of how you decide to approach the size of the sketch, this line will allow you to decide where the p5 result will be placed.</p>
 
-  var cnv = createCanvas(width, height);
-  cnv.parent('sketchdiv');
-
-  r = random(255);
-  g = random(255);
-  b = random(255);
-
-  w = 20;
-  // Calculate columns and rows
-  columns = floor(width / w);
-  rows = floor(height / w);
-  // Wacky way to make a 2D array is JS
-  board = new Array(columns);
-  for (let i = 0; i < columns; i++) {
-    board[i] = new Array(rows);
-  }
-  // Going to use multiple 2D arrays and swap them
-  next = new Array(columns);
-  for (i = 0; i < columns; i++) {
-    next[i] = new Array(rows);
-  }
-  frameRate(20);
-  init();
-}
-
-function draw() {
-  background(255);
-  generate();
-  for ( let i = 0; i < columns;i++) {
-    for ( let j = 0; j < rows;j++) {
-      if ((board[i][j] == 1)) fill(0);
-      else fill(r, g, b);
-      stroke(0);
-      rect(i * w, j * w, w-1, w-1);
-    }
-  }
-
-}
-
-// reset board when mouse is pressed
-function mousePressed() {
-  init();
-}
-
-// Fill board randomly
-function init() {
-  for (let i = 0; i < columns; i++) {
-    for (let j = 0; j < rows; j++) {
-      // Lining the edges with 0s
-      if (i == 0 || j == 0 || i == columns-1 || j == rows-1) board[i][j] = 0;
-      // Filling the rest randomly
-      else board[i][j] = floor(random(2));
-      next[i][j] = 0;
-    }
-  }
-}
-
-// The process of creating the new generation
-function generate() {
-
-  // Loop through every spot in our 2D array and check spots neighbors
-  for (let x = 1; x < columns - 1; x++) {
-    for (let y = 1; y < rows - 1; y++) {
-      // Add up all the states in a 3x3 surrounding grid
-      let neighbors = 0;
-      for (let i = -1; i <= 1; i++) {
-        for (let j = -1; j <= 1; j++) {
-          neighbors += board[x+i][y+j];
-        }
-      }
-
-      // A little trick to subtract the current cell's state since
-      // we added it in the above loop
-      neighbors -= board[x][y];
-      // Rules of Life
-      if      ((board[x][y] == 1) && (neighbors <  2)) next[x][y] = 0;           // Loneliness
-      else if ((board[x][y] == 1) && (neighbors >  3)) next[x][y] = 0;           // Overpopulation
-      else if ((board[x][y] == 0) && (neighbors == 3)) next[x][y] = 1;           // Reproduction
-      else                                             next[x][y] = board[x][y]; // Stasis
-    }
-  }
-
-  // Swap!
-  let temp = board;
-  board = next;
-  next = temp;
-}
+          <p>If you want to learn more about p5.js, you can download it <a href="https://p5js.org/download" target="_blank">here</a>.
