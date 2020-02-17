@@ -25,13 +25,6 @@
           <div class="row_5">
             <div class="column_1_4">
               <div id="side-placeholder"></div>
-<!-- 
-              <p>Links</p>
-              <p style="padding-left:25px"><a href="https://github.com/erdavids">> GitHub</a></p>
-              <p style="padding-left:25px"><a href="https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ?view_as=subscriber">> YouTube</a></p>
-              <p style="padding-left:25px"><a href="https://www.linkedin.com/in/eric-davidson-70b615ab/">> LinkedIn</a></p>
-              <p>Projects</p>
-              <p style="padding-left:25px"><a href="https://github.com/erdavids/Generative-Art">> Generative Art</a></p> -->
             </div>
             <div class="column_3">
                <p>I'm a <span class="color-text">Software Engineer</span> currently working at <span class="color-text">Chick-fil-A</span> in Atlanta, GA. In my current role on the <span class="color-text">Quality Engineering</span> team, I help design and maintain automation frameworks for CI/CD pipelines. I'm passionate about solving difficult problems and I get to do that everyday.</p>
@@ -44,45 +37,6 @@
 
         </div>
 
-
-
-
-
-        <script>
-
-          $.get("side-bar.html", function(data){
-              $("#side-placeholder").replaceWith(data);
-          });
-
-          function dark_mode() {
-            document.body.style.backgroundColor = '#303030';
-            document.body.style.color = "#ffffff"
-          }
-
-          var myArray = ['#d47564', '#CAA67A', '#4fa4a5'];
-
-          var elements = document.getElementsByClassName("color-text");
-          var c = ''
-          var last_c = ''
-          for(var i=0; i<elements.length; i++) {
-              c = myArray[Math.floor(Math.random() * myArray.length)];
-              while (c == last_c) {
-                c = myArray[Math.floor(Math.random() * myArray.length)];
-              }
-              elements[i].style.color = c;
-          }
-
-          var links = document.getElementsByTagName("a");
-          for(var i=0;i<links.length;i++)
-          {
-              if(links[i].href)
-              {
-                  links[i].style.color = myArray[Math.floor(Math.random() * myArray.length)];
-              }
-          }
-
-
-
-        </script>
+        <script src="changes.js"></script>
     </body>
 </html>
