@@ -8,6 +8,8 @@ function setup() {
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
 
+  console.log("The sketch is setting up")
+
   background(206, 200, 176);
 }
 
