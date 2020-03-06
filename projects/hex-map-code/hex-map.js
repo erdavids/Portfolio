@@ -1,5 +1,6 @@
 p5.disableFriendlyErrors = true;
 
+import * as dat from 'dat.gui';
 
 
 var FizzyText = function() {
@@ -10,7 +11,7 @@ var FizzyText = function() {
   
   window.onload = function() {
     var text = new FizzyText();
-    var gui = new dat.GUI();
+    const gui = new dat.GUI();
     gui.add(text, 'message');
     gui.add(text, 'speed', -5, 5);
     gui.add(text, 'displayOutline');
