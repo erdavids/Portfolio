@@ -2,6 +2,7 @@ p5.disableFriendlyErrors = true;
 
 const opts = {
   // Generation Details
+  height: 1200,
   tile_size: 10,
   outline: true,
   outline_width: 1,
@@ -38,6 +39,7 @@ window.onload = function() {
   var gui = new dat.GUI({width:300});
   // gui.remember(opts)
   var general = gui.addFolder('Generation Details')
+  general.add(opts, 'height', 500, 2000).onChange(setup);
   general.add(opts, 'outline').onChange(setup);
   general.addColor(opts, 'outline_color').onChange(setup);
   general.add(opts, 'tile_size', 2, 20).onChange(setup);
@@ -79,14 +81,14 @@ function randomize() {
 }
 
 function save() {
-  photo.save('photo', 'png');
+  save('photo.png');
 }
 
 function setup()
 {
   var canvasDiv = document.getElementById('sketchdiv');
   var width = canvasDiv.offsetWidth;
-  var height = 1200;
+  var height = opts.height;
 
   pixelDensity(2);
   
