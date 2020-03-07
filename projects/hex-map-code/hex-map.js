@@ -1,21 +1,86 @@
 p5.disableFriendlyErrors = true;
 
-import * as dat from 'dat.gui';
-
-
-var FizzyText = function() {
-    this.message = 'dat.gui';
-    this.speed = 0.8;
-    this.displayOutline = false;
-  };
+const opts = {
+  // Generation Details
+  tile_size: 10,
+  outline: true,
+  outline_width: 1,
+  noise_mod: 1,
+  noise_scale: .01,
+  noise_max: 120,
+  island_size: .55,
   
-  window.onload = function() {
-    var text = new FizzyText();
-    const gui = new dat.GUI();
-    gui.add(text, 'message');
-    gui.add(text, 'speed', -5, 5);
-    gui.add(text, 'displayOutline');
-  };
+  // Initial Colors
+  dark_water: [120, 120, 225], // RGB array
+  light_water: [150, 150, 255],
+  sand: [237, 201, 175],
+  grass: [207, 241, 135],
+  forest: [167, 201, 135],
+  rocks: [170, 170, 170],
+  snow: [255, 255, 255],
+  outline_color: [0, 0, 0],
+  
+  // Initial Height Ranges
+  snow_height: .9,
+  rocks_height:.7,
+  forest_height:.6,
+  grass_height: .5, 
+  sand_height: .4,
+  light_water_height: .3,
+  dark_water_height: .2,
+  
+  // Additional Functions
+  randomize: () => randomize(),
+  save: () => save()
+};
+
+window.onload = function() {
+  var gui = new dat.GUI();
+  // gui.remember(opts)
+  var general = gui.addFolder('Generation Details')
+  general.add(opts, 'outline').onChange(setup);
+  general.addColor(opts, 'outline_color').onChange(setup);
+  general.add(opts, 'tile_size', 2, 20).onChange(setup);
+  
+  general.add(opts, 'outline_width', 1, 5).onChange(setup);
+  
+  general.add(opts, 'island_size', 0, 2).onChange(setup);
+  general.add(opts, 'noise_scale', 0, .04).onChange(setup);
+  general.add(opts, 'noise_mod', 1, 3).onChange(setup);
+  
+  var colors = gui.addFolder('Biome Colors');
+  colors.addColor(opts, 'snow').onChange(setup)
+  colors.addColor(opts, 'rocks').onChange(setup)
+  colors.addColor(opts, 'forest').onChange(setup)
+  colors.addColor(opts, 'grass').onChange(setup)
+  colors.addColor(opts, 'sand').onChange(setup)
+  colors.addColor(opts, 'light_water').onChange(setup)
+  colors.addColor(opts, 'dark_water').onChange(setup)
+ 
+
+  var heights = gui.addFolder('Height Ranges');
+  heights.add(opts, 'snow_height', 0, 1).onChange(setup)
+  heights.add(opts, 'rocks_height', 0, 1).onChange(setup)
+  heights.add(opts, 'forest_height', 0, 1).onChange(setup)
+  heights.add(opts, 'grass_height', 0, 1).onChange(setup)
+  heights.add(opts, 'sand_height', 0, 1).onChange(setup)
+  heights.add(opts, 'light_water_height', 0, 1).onChange(setup)
+  heights.add(opts, 'dark_water_height', 0, 1).onChange(setup)
+
+  gui.add(opts, "randomize").name("Randomize");
+  gui.add(opts, "save").name("Save");
+
+ 
+};
+
+function randomize() {
+  noiseSeed()
+  setup()
+}
+
+function save() {
+  photo.save('photo', 'png');
+}
 
 function setup()
 {
@@ -27,13 +92,14 @@ function setup()
   
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
-  frameRate(30);
+  
+  background(255)
   strokeWeight(1);
   stroke(0);
   
   draw_hexagon(30, 30, 30, 3);
   
-  var hexagon_size = 10
+  var hexagon_size = opts.tile_size
   
   // var map_height = 8
   // var map_width = 7
@@ -57,8 +123,17 @@ function setup()
         x = (hexagon_size * 1.5) + j * (hexagon_size * 3)
       }
       
-      let noiseScale = .01
-      let noiseVal = noise(x*noiseScale, y*noiseScale);
+      // Calculate initial noise value
+      let noiseVal = noise((x / opts.noise_mod)*opts.noise_scale, (y / opts.noise_mod)*opts.noise_scale);
+      
+      
+      // Adjust for distance if desired
+      let dist = sqrt(pow((x - width/2), 2) + pow((y - height/2), 2))
+      let grad = dist / (opts.island_size * min(width, height))
+      
+      noiseVal -= pow(grad, 3)
+      noiseVal = max(noiseVal, 0)
+      
       hex_map[i].push([x, y, noiseVal])
     }
   }
@@ -75,23 +150,31 @@ function setup()
 
 function draw_hexagon(x, y, side, n, h) {
     let v = int(n * 255.0)
-    
-    fill(255)
-    if (v < 30) {
-      fill(120, 120, 225); 
-    } else if(v < 60) {
-      fill(150, 150, 255);
-    } else if (v < 90) {
-      fill(237, 201, 175);
-    } else if (v < 120) {
-      fill(207, 241, 135)
-    } else if (v < 150) {
-      fill(167, 201, 135)
-    } else if (v < 170) {
-      fill(170, 170, 170)
+    let c;
+    if (v < opts.dark_water_height * 255) {
+      c = opts.dark_water;
+    } else if(v < opts.light_water_height * 255) {
+      c = opts.light_water;
+    } else if (v < opts.sand_height * 255) {
+      c = opts.sand;
+    } else if (v < opts.grass_height * 255) {
+      c = opts.grass
+    } else if (v < opts.forest_height * 255) {
+      c = opts.forest;
+    } else if (v < opts.rocks_height * 255) {
+      c = opts.rocks;
+    } else {
+      c = opts.snow;
     }
+  
+    fill(c)
     
-    
+    strokeWeight(opts.outline_width);
+    if (opts.outline) {
+      stroke(opts.outline_color);
+    } else {
+      stroke(c)
+    }
     
     beginShape()
     vertex(x + side * sin(PI/2), y + side * cos(PI/2) - h)
