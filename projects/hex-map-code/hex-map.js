@@ -35,7 +35,7 @@ const opts = {
 };
 
 window.onload = function() {
-  var gui = new dat.GUI();
+  var gui = new dat.GUI({width:300});
   // gui.remember(opts)
   var general = gui.addFolder('Generation Details')
   general.add(opts, 'outline').onChange(setup);
