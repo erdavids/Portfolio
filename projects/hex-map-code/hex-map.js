@@ -8,7 +8,7 @@ const opts = {
   noise_mod: 1,
   noise_scale: .01,
   noise_max: 120,
-  island_size: .55,
+  island_size: .62,
   
   // Initial Colors
   dark_water: [120, 120, 225], // RGB array
@@ -22,12 +22,12 @@ const opts = {
   
   // Initial Height Ranges
   snow_height: .9,
-  rocks_height:.7,
-  forest_height:.6,
-  grass_height: .5, 
-  sand_height: .4,
-  light_water_height: .3,
-  dark_water_height: .2,
+  rocks_height:.6,
+  forest_height:.49,
+  grass_height: .36, 
+  sand_height: .26,
+  light_water_height: .23,
+  dark_water_height: .13,
   
   // Additional Functions
   randomize: () => randomize(),
