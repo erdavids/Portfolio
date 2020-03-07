@@ -18,7 +18,7 @@ const opts = {
   forest: [167, 201, 135],
   rocks: [170, 170, 170],
   snow: [255, 255, 255],
-  outline_color: [0, 0, 0],
+  outline_color: '#918585',
   
   // Initial Height Ranges
   snow_height: .9,
