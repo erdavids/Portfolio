@@ -39,9 +39,8 @@ window.onload = function() {
   var gui = new dat.GUI({width:300});
   // gui.remember(opts)
   var general = gui.addFolder('Generation Details')
+  general.open()
   general.add(opts, 'height', 500, 2000).onChange(setup);
-  general.add(opts, 'outline').onChange(setup);
-  general.addColor(opts, 'outline_color').onChange(setup);
   general.add(opts, 'tile_size', 2, 20).onChange(setup);
   
   general.add(opts, 'outline_width', 1, 5).onChange(setup);
@@ -49,8 +48,11 @@ window.onload = function() {
   general.add(opts, 'island_size', 0, 2).onChange(setup);
   general.add(opts, 'noise_scale', 0, .04).onChange(setup);
   general.add(opts, 'noise_mod', 1, 3).onChange(setup);
+  general.addColor(opts, 'outline_color').onChange(setup);
+  general.add(opts, 'outline').onChange(setup);
   
   var colors = gui.addFolder('Biome Colors');
+  colors.open()
   colors.addColor(opts, 'snow').onChange(setup)
   colors.addColor(opts, 'rocks').onChange(setup)
   colors.addColor(opts, 'forest').onChange(setup)
@@ -61,6 +63,7 @@ window.onload = function() {
  
 
   var heights = gui.addFolder('Height Ranges');
+  heights.open()
   heights.add(opts, 'snow_height', 0, 1).onChange(setup)
   heights.add(opts, 'rocks_height', 0, 1).onChange(setup)
   heights.add(opts, 'forest_height', 0, 1).onChange(setup)
