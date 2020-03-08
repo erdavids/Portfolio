@@ -5,6 +5,7 @@
 // Primary Searching:
 //  - Minimax with Alpha/Beta pruning
 //
+// Play here: https://www.erdavids.com/projects/crooked-rook
 //
 // Piece imagery from: https://github.com/veloce/lichobile
 ////////////////////////////
