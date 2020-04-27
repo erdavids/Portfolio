@@ -1,9 +1,28 @@
 p5.disableFriendlyErrors = true;
 
+const opts = {
+  // Generation Details
+  iterations: 4,
+  length: 300,
+  ang: 25,
+  
+  // Additional Functions
+  randomize: () => randomize(),
+  save: () => save(),
+  create: () => createPlant(),
+};
+
+window.onload = function() {
+  var gui = new dat.GUI({width:300});
+  // gui.remember(opts)
+  gui.add(opts, 'iterations', 1, 7).step(1).onChange(setup);
+
+};
+
 var angle;
 var axiom = "F"
 var sentence = axiom
-var len = 300;
+var len = opts.length;
 
 var rules = []
 rules[0] = {
@@ -16,26 +35,9 @@ rules[1] = {
     b: 'G[+F]G[-F]S'
 };
 
-const opts = {
-  // Generation Details
-  height: 1200,
-  
-  // Additional Functions
-  randomize: () => randomize(),
-  save: () => save()
-};
-
-window.onload = function() {
-  var gui = new dat.GUI({width:300});
-  // gui.remember(opts)
-  var general = gui.addFolder('Generation Details')
-  general.add(opts, 'height', 500, 2000).onChange(setup);
-
-};
-
 function randomize() {
   noiseSeed()
-  setup()
+  createPlant()
 }
 
 function save() {
@@ -63,7 +65,6 @@ function generate() {
     }
   }
   sentence = nextSentence;
-  createP(sentence);
   
   turtle();
 }
@@ -75,7 +76,7 @@ function turtle() {
   
   fill(182, 187, 183)
   noStroke()
-  circle(width/2, height/2, 400)
+  circle(width/2, height/2, 500)
   
  
   resetMatrix();
@@ -117,7 +118,7 @@ function setup()
 
   pixelDensity(2);
   
-  angle = radians(25);
+  angle = radians(opts.angle);
   
   var cnv = createCanvas(width, height);
   cnv.parent('sketchdiv');
@@ -125,7 +126,14 @@ function setup()
   strokeWeight(1);
   background(211, 206, 194);
   
-  var button = createButton("generate");
-  button.mousePressed(generate)
+  len = opts.length
+  sentence = axiom
+  createPlant();
   
+}
+
+function createPlant() {
+  for (var i = 0; i < int(opts.iterations); i++) {
+    generate();
+  }
 }
