@@ -16,7 +16,8 @@ window.onload = function() {
   var gui = new dat.GUI({width:300});
   // gui.remember(opts)
   gui.add(opts, 'iterations', 1, 7).step(1).onChange(setup);
-  gui.add(opts, 'save')
+  gui.add(opts, 'randomize')
+  gui.add(opts, 'save');
 
 };
 
