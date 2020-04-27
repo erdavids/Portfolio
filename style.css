@@ -46,6 +46,12 @@ div {
     border-bottom: 1px solid silver;
 }
 
+.home-art-display { 
+    float: left; 
+    width: 50%;
+    height: 50vw;
+}
+
 .project_block {
     width: 70%;
     margin: auto;
