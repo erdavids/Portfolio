@@ -39,11 +39,11 @@ rules[1] = {
 
 function randomize() {
   noiseSeed()
-  createPlant()
+  setup()
 }
 
 function save() {
-  save('photo.png');
+  save('generated-plant.png');
 }
 
 function generate() {
