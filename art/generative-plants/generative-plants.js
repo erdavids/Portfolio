@@ -75,7 +75,7 @@ function turtle() {
   
   fill(182, 187, 183)
   noStroke()
-  circle(width/2, height * .75, 500)
+  circle(width/2, height/2, 400)
   
  
   resetMatrix();
@@ -112,8 +112,8 @@ function turtle() {
 function setup()
 {
   var canvasDiv = document.getElementById('sketchdiv');
-  var width = canvasDiv.offsetWidth;
-  var height = opts.height;
+  var width = 1200;
+  var height = 800;
 
   pixelDensity(2);
   
