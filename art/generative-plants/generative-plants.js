@@ -39,7 +39,7 @@ rules[1] = {
 
 function randomize() {
   noiseSeed()
-  createPlant()
+  setup()
 }
 
 function save() {
