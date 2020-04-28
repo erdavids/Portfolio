@@ -29,7 +29,7 @@ var len = opts.length;
 var rules = []
 rules[0] = {
     a: 'F',
-    b: 'Go[-F]S[+G+F][+F]S[-G-F]*'
+    b: 'Go[-F]S[+G+F*][+F]S[-G-F*]'
 };
 
 rules[1] = {
@@ -39,14 +39,14 @@ rules[1] = {
 
 function randomize() {
   noiseSeed()
-  setup()
+  createPlant()
 }
 
 function save() {
-  save('generated-plant.png');
+  save('photo.png');
 }
 
-function generate() {
+function generate(iter) {
   var nextSentence = "";
   
   len *= 0.5;
@@ -68,11 +68,11 @@ function generate() {
   }
   sentence = nextSentence;
   
-  turtle();
+  turtle(iter);
 }
 
 
-function turtle() {
+function turtle(iter) {
   
   background(211, 206, 194);
   
@@ -80,7 +80,7 @@ function turtle() {
   noStroke()
   circle(width/2, height/2, 500)
   
- 
+  stroke(0, 100)
   resetMatrix();
   translate(width / 2, height);
   for (var i = 0; i < sentence.length; i++) {
@@ -103,8 +103,9 @@ function turtle() {
       translate(0, -len/4);
     } else if (current == '*') {
       noFill()
-      if (random(1) < .5) {
-        circle(0, 0, 10)
+      if (random(1) < .4) {
+        fill(200, 100, 100, random(50, 255))
+        circle(0, 0, random(4, 13))
       }
     }
   }
@@ -136,6 +137,6 @@ function setup()
 
 function createPlant() {
   for (var i = 0; i < int(opts.iterations); i++) {
-    generate();
+    generate(i);
   }
 }
