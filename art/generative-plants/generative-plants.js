@@ -78,7 +78,11 @@ function turtle(iter) {
   
   fill(182, 187, 183)
   noStroke()
-  circle(width/2, height/2, 500)
+  // pushMatrix()
+  translate(width/2, height/2)
+  rotate(random(PI))
+  rect(-200, -200, 400, 400)
+  // popMatrix()
   
   stroke(0, 100)
   resetMatrix();
