@@ -2,7 +2,7 @@ p5.disableFriendlyErrors = true;
 
 const opts = {
   // Generation Details
-  iterations: 4,
+  iterations: 5,
   length: 300,
   ang: 25,
   
@@ -49,7 +49,7 @@ function save() {
 function generate(iter) {
   var nextSentence = "";
   
-  len *= 0.5;
+  len *= random(0.48, 0.52);
  
   for (var i = 0; i < sentence.length; i++) {
     var current = sentence.charAt(i);
@@ -76,7 +76,7 @@ function turtle(iter) {
   
   background(211, 206, 194);
   
-  fill(182, 187, 183)
+  fill(172, 187, 173, 200)
   noStroke()
   // pushMatrix()
   translate(width/2, height/2)
@@ -87,10 +87,12 @@ function turtle(iter) {
   stroke(0, 100)
   resetMatrix();
   translate(width / 2, height);
+  
+  var circle_calls = 0
   for (var i = 0; i < sentence.length; i++) {
     var current = sentence.charAt(i);
     if (current == 'F' || current == 'G') {
-      stroke(0, 100);
+      stroke(0, random(100, 200));
       line(0, 0, 0, -len)
       translate(0, -len);
     } else if (current == '+') {
@@ -107,8 +109,9 @@ function turtle(iter) {
       translate(0, -len/4);
     } else if (current == '*') {
       noFill()
-      if (random(1) < .4) {
-        fill(200, 100, 100, random(50, 255))
+      circle_calls += 1
+      if (circle_calls > 50 && random(1) < .4) {
+        fill(random(180, 210), random(100, 140), 100, random(255, 255))
         circle(0, 0, random(4, 13))
       }
     }
@@ -121,7 +124,7 @@ function setup()
 {
   var canvasDiv = document.getElementById('sketchdiv');
   var width = 1200;
-  var height = 700;
+  var height = 800;
 
   pixelDensity(2);
   
