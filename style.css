@@ -54,8 +54,10 @@ div {
 }
 
 .project_block {
-    width: 70%;
-    margin: auto;
+    float: right;
+    width: 50%;
+    height: 50vw;
+    padding: 15px;
 }
 
 .project_images {
@@ -240,5 +242,4 @@ a:visited { text-decoration: none; color: black;}
     content: "";
     clear: both;
     display: table;
-    margin-top: 0px;
 }
