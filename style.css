@@ -251,7 +251,7 @@ a:visited { text-decoration: none; color: black;}
     width: 25%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   /* For mobile phones: */
   [class*="col"] {
     width: 100%;
@@ -259,11 +259,9 @@ a:visited { text-decoration: none; color: black;}
   
   [class*="project"] {
     width: 100%;
-    border: 1px solid blue;
   }
   
   [class*="home-art"] {
-    border: 1px solid red;
     display: block;
     margin-left: auto;
     margin-right: auto;
