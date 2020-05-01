@@ -50,6 +50,7 @@ div {
     float: left; 
     width: 50%;
     height: 50vw;
+    padding: 15px;
 }
 
 .project_block {
@@ -82,8 +83,6 @@ ion-icon {
 }
 
 p {
-    margin-left: 0px;
-    margin-right: 1%;
     font-family: 'Poppins';
 }
 
@@ -98,7 +97,8 @@ li + li {
 
 .name_text {
     font-family: 'Poppins';
-    font-size: 40px;
+    font-size: 24px;
+    padding: 20px;
 }
 
 ul {
@@ -145,6 +145,7 @@ li a:hover:not(.active) {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 a:visited { text-decoration: none; color: black;}
@@ -172,7 +173,6 @@ a:visited { text-decoration: none; color: black;}
 .column_1_5 {
     float: left;
     width: 20%;
-    padding: 5px;
 }
 
 .column_1_4 {
@@ -240,4 +240,5 @@ a:visited { text-decoration: none; color: black;}
     content: "";
     clear: both;
     display: table;
+    margin-top: 0px;
 }
