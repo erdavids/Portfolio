@@ -259,9 +259,11 @@ a:visited { text-decoration: none; color: black;}
   
   [class*="project"] {
     width: 100%;
+    border: 1px solid blue;
   }
   
   [class*="home-art"] {
+    border: 1px solid red;
     display: block;
     margin-left: auto;
     margin-right: auto;
