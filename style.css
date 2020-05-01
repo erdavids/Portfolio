@@ -100,7 +100,7 @@ li + li {
 .name_text {
     font-family: 'Poppins';
     font-size: 24px;
-    padding: 20px;
+    margin-top:20px;
 }
 
 ul {
