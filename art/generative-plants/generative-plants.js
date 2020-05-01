@@ -2,10 +2,13 @@ p5.disableFriendlyErrors = true;
 
 const opts = {
   // Generation Details
+  Width: 1200,
+  Height: 800,
   Iterations: 5,
   Length: 300,
   Angle: 25,
   Angle_Drift: 5,
+  Line_Width: 1,
   rule0a: 'F',
   rule0b: 'Go[-F]S[+G+F*][+F]S[-G-F*]',
   rule1a: 'G',
@@ -16,6 +19,10 @@ const opts = {
   Red_Drift: 20,
   Green_Drift: 20,
   Blue_Drift: 20,
+  Line_Color: [0, 0, 0],
+  Line_Width: 1,
+  Line_Opacity: 150,
+  Opacity_Drift: 50,
   
   // Additional Functions
   Generate: () => randomize(),
@@ -25,21 +32,30 @@ const opts = {
 
 window.onload = function() {
   var gui = new dat.GUI({width:300});
-  // gui.remember(opts)
-  gui.add(opts, 'Iterations', 1, 7).step(1).onChange(setup);
-  gui.add(opts, 'Length').onChange(updateRules);
-  gui.add(opts, 'Angle').onChange(updateRules);
-  gui.add(opts, 'Angle_Drift').onChange(updateRules);
-  gui.add(opts, 'rule0a').onChange(updateRules);
-  gui.add(opts, 'rule0b').onChange(updateRules);
-  gui.add(opts, 'rule1a').onChange(updateRules);
-  gui.add(opts, 'rule1b').onChange(updateRules);
-  gui.addColor(opts, 'Background')
-  gui.addColor(opts, 'Shape')
-  gui.addColor(opts, 'Fruit')
-  gui.add(opts, 'Red_Drift');
-  gui.add(opts, 'Green_Drift');
-  gui.add(opts, 'Blue_Drift');
+  var img = gui.addFolder('Image Settings');
+  img.add(opts, 'Width', 300, 1400).step(1).onChange(setup);
+  img.add(opts, 'Height', 300, 1400).step(1).onChange(setup);
+  
+  var gen = gui.addFolder('Generation Settings')
+  gen.add(opts, 'Iterations', 1, 10).step(1).onChange(setup);
+  gen.add(opts, 'Length').onChange(updateRules);
+  gen.add(opts, 'Angle').onChange(updateRules);
+  gen.add(opts, 'Angle_Drift').onChange(updateRules);
+  gen.add(opts, 'rule0a').onChange(updateRules);
+  gen.add(opts, 'rule0b').onChange(updateRules);
+  gen.add(opts, 'rule1a').onChange(updateRules);
+  gen.add(opts, 'rule1b').onChange(updateRules);
+  var col = gui.addFolder("Color Settings")
+  col.addColor(opts, 'Background')
+  col.addColor(opts, 'Shape')
+  col.addColor(opts, 'Fruit')
+  col.add(opts, 'Red_Drift');
+  col.add(opts, 'Green_Drift');
+  col.add(opts, 'Blue_Drift');
+  col.addColor(opts, 'Line_Color')
+  col.add(opts, 'Line_Width', 1, 5).step(1);
+  col.add(opts, 'Line_Opacity', 0, 255).step(1);
+  col.add(opts, 'Opacity_Drift').step(1);
   gui.add(opts, 'Generate');
   gui.add(opts, 'Save');
                                
@@ -132,7 +148,7 @@ function turtle(iter) {
   for (var i = 0; i < sentence.length; i++) {
     var current = sentence.charAt(i);
     if (current == 'F' || current == 'G') {
-      stroke(0, random(100, 200));
+      stroke(opts.Line_Color, opts.Line_Opacity + random(-opts.Opacity_Drift, opts.Opacity_Drift));
       line(0, 0, 0, -len)
       translate(0, -len);
     } else if (current == '+') {
@@ -163,8 +179,8 @@ function turtle(iter) {
 function setup()
 {
   var canvasDiv = document.getElementById('sketchdiv');
-  var width = 1200;
-  var height = 800;
+  var width = opts.Width;
+  var height = opts.Height;
 
   pixelDensity(2);
   
@@ -176,7 +192,7 @@ function setup()
  
   
   
-  strokeWeight(1);
+  strokeWeight(opts.Line_Width);
   background(211, 206, 194);
   
   sentence = axiom
