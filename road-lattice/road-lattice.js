@@ -31,12 +31,12 @@ const opts = {
   
   };
   
-  function GitHub() {
+  function github() {
       window.open('https://www.erdavids.com/road-lattice/')
   }
 
-  function GitHub() {
-    window.open('https://www.erdavids.com/road-lattice/')
+  function youtube() {
+    window.open('https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ?view_as=subscriber')
 }
 
   function randomize() {
