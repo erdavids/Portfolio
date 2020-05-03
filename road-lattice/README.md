@@ -10,9 +10,5 @@ Other links:
 
 All of these projects are available with the intention that other people will enjoy and learn from them. 
 
-<<<<<<< HEAD
+<p align="center"><img src="images/ex-1.png"></p>
 <p align="center"><img src="images/ex-3.png"></p>
-<p align="center"><img src="images/ex-1.png"></p>
-=======
-<p align="center"><img src="images/ex-1.png"></p>
->>>>>>> 79e3970914d87b38aee6be2ec6c1e889a6a43276
