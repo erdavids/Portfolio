@@ -9,6 +9,8 @@ const opts = {
     Line_Width: 2,
     
     // // Additional Functions
+    GitHub: () => github(),
+    YouTube: () => youtube(),
     Generate: () => randomize(),
     Save: () => save(),
     create: () => createPlant(),
@@ -22,10 +24,21 @@ const opts = {
     gui.add(opts, 'Line_Width')
     gui.add(opts, 'Generate');
     gui.add(opts, 'Save');
+    var made = gui.addFolder('Made by Eric Davidson')
+    made.add(opts, 'GitHub')
+    made.add(opts, 'YouTube')
                                  
   
   };
   
+  function GitHub() {
+      window.open('https://www.erdavids.com/road-lattice/')
+  }
+
+  function GitHub() {
+    window.open('https://www.erdavids.com/road-lattice/')
+}
+
   function randomize() {
     setup();
   }
