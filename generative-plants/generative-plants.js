@@ -25,6 +25,8 @@ const opts = {
   Opacity_Drift: 50,
   
   // Additional Functions
+  GitHub: () => github(),
+  YouTube: () => youtube(),
   Generate: () => randomize(),
   Save: () => save(),
   create: () => createPlant(),
@@ -58,10 +60,21 @@ window.onload = function() {
   col.add(opts, 'Opacity_Drift').step(1);
   gui.add(opts, 'Generate');
   gui.add(opts, 'Save');
+
+  var made = gui.addFolder('Made by Eric Davidson')
+  made.add(opts, 'GitHub')
+  made.add(opts, 'YouTube')
                                
 
 };
 
+function github() {
+    window.open('https://github.com/erdavids/Portfolio/tree/master/road-lattice')
+}
+
+function youtube() {
+  window.open('https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ?view_as=subscriber')
+}
 var ang;
 var axiom = "F"
 var sentence = axiom
