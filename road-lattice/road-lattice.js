@@ -32,11 +32,11 @@ const opts = {
   };
   
   function github() {
-      window.open('https://www.erdavids.com/road-lattice/')
+      window.open('https://github.com/erdavids/Portfolio/tree/master/road-lattice')
   }
 
   function youtube() {
-    window.open('https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ?view_as=subscriber')
+    window.open('https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ')
 }
 
   function randomize() {

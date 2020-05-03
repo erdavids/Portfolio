@@ -89,7 +89,7 @@ function github() {
 }
 
 function youtube() {
-  window.open('https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ?view_as=subscriber')
+  window.open('https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ')
 }
 
 function randomize() {
