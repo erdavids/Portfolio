@@ -31,6 +31,8 @@ const opts = {
   dark_water_height: .13,
   
   // Additional Functions
+  GitHub: () => github(),
+  YouTube: () => youtube(),
   randomize: () => randomize(),
   save: () => save()
 };
@@ -75,8 +77,20 @@ window.onload = function() {
   gui.add(opts, "randomize").name("Randomize");
   gui.add(opts, "save").name("Save");
 
- 
+  var made = gui.addFolder('Made by Eric Davidson')
+  made.add(opts, 'GitHub')
+  made.add(opts, 'YouTube')
+                               
+
 };
+
+function github() {
+    window.open('https://github.com/erdavids/Portfolio/tree/master/road-lattice')
+}
+
+function youtube() {
+  window.open('https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ?view_as=subscriber')
+}
 
 function randomize() {
   noiseSeed()
