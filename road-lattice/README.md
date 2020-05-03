@@ -10,4 +10,5 @@ Other links:
 
 All of these projects are available with the intention that other people will enjoy and learn from them. 
 
+<p align="center"><img src="images/ex-3.png"></p>
 <p align="center"><img src="images/ex-1.png"></p>
