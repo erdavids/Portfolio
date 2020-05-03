@@ -1,6 +1,6 @@
 # Road Lattice
 
-I wanted to work on a simple multi-leveled random walk grid thing, so I made this. Try playing around with some of the settings and see how it changes.
+I wanted to work on a simple multi-leveled random walk grid thing, so I made this. Try playing around with the settings to generate some really cool results.
 
 - [Interactive Tool](https://www.erdavids.com/road-lattice/)
 
