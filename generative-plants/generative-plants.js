@@ -69,7 +69,7 @@ window.onload = function() {
 };
 
 function github() {
-    window.open('https://github.com/erdavids/Portfolio/tree/master/road-lattice')
+    window.open('https://github.com/erdavids/Portfolio/tree/master/generative-plants')
 }
 
 function youtube() {
