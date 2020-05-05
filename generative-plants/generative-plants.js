@@ -6,6 +6,8 @@ const opts = {
   Height: 800,
   Iterations: 5,
   Length: 300,
+  Length_Change: .5,
+  Length_Drift: .05,
   Angle: 25,
   Angle_Drift: 5,
   Line_Width: 1,
@@ -41,6 +43,8 @@ window.onload = function() {
   var gen = gui.addFolder('Generation Settings')
   gen.add(opts, 'Iterations', 1, 10).step(1).onChange(setup);
   gen.add(opts, 'Length').onChange(updateRules);
+  gen.add(opts, 'Length_Change', 0, 1).step(.05)
+  gen.add(opts, 'Length_Drift', 0, 1).step(.05)
   gen.add(opts, 'Angle').onChange(updateRules);
   gen.add(opts, 'Angle_Drift').onChange(updateRules);
   gen.add(opts, 'rule0a').onChange(updateRules);
@@ -75,6 +79,7 @@ function github() {
 function youtube() {
   window.open('https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ')
 }
+
 var ang;
 var axiom = "F"
 var sentence = axiom
@@ -118,7 +123,7 @@ function updateRules() {
 function generate(iter) {
   var nextSentence = "";
   
-  len *= random(0.48, 0.52);
+  len *= opts.Length_Change * random(-opts.Length_Drift, opts.Length_Drift)
  
   for (var i = 0; i < sentence.length; i++) {
     var current = sentence.charAt(i);
