@@ -123,7 +123,7 @@ function updateRules() {
 function generate(iter) {
   var nextSentence = "";
   
-  len *= opts.Length_Change * random(-opts.Length_Drift, opts.Length_Drift)
+  len *= opts.Length_Change + random(-opts.Length_Drift, opts.Length_Drift)
  
   for (var i = 0; i < sentence.length; i++) {
     var current = sentence.charAt(i);
