@@ -1,8 +1,8 @@
-# Road Lattice
+# Walker Blocks
 
-I wanted to work on a simple multi-leveled random walk grid thing, so I made this. Try playing around with the settings to generate some really cool results.
+Not the greatest thing in the world, just a bunch of random walks taking place in a grid. The walkers fill out the blocks to show the pattern, and it results in a neat marble-like texture
 
-- [Interactive Tool](https://www.erdavids.com/road-lattice/)
+- [Interactive Tool](https://www.erdavids.com/walker-blocks/)
 
 Other links:
 - [More Generative Art](https://github.com/erdavids/Generative-Art)
@@ -12,5 +12,4 @@ All of these projects are available with the intention that other people will en
 
 ## Examples:
 
-<p align="center"><img src="images/ex-1.png"></p>
-<p align="center"><img src="images/ex-3.png"></p>
+<p align="center"><img src="images/git.png"></p>
