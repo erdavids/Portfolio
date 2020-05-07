@@ -85,7 +85,7 @@ window.onload = function() {
 };
 
 function github() {
-    window.open('https://github.com/erdavids/Portfolio/tree/master/road-lattice')
+    window.open('https://github.com/erdavids/Portfolio/tree/master/hex-map')
 }
 
 function youtube() {

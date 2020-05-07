@@ -60,7 +60,7 @@ window.onload = function() {
 };
 
 function github() {
-    window.open('https://github.com/erdavids/Portfolio/tree/master/generative-plants')
+    window.open('https://github.com/erdavids/Portfolio/tree/master/generative-orbit')
 }
 
 function youtube() {
