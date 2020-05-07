@@ -166,7 +166,7 @@ function turtle(iter) {
   for (var i = 0; i < sentence.length; i++) {
     var current = sentence.charAt(i);
     if (current == 'F' || current == 'G') {
-      stroke(opts.Line_Color, opts.Line_Opacity + random(-opts.Opacity_Drift, opts.Opacity_Drift));
+      stroke(opts.Line_Color[0], opts.Line_Color[1], opts.Line_Color[2], opts.Line_Opacity + random(-opts.Opacity_Drift, opts.Opacity_Drift));
       line(0, 0, 0, -len)
       translate(0, -len);
     } else if (current == '+') {
