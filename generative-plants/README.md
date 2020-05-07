@@ -3,6 +3,7 @@
 I've become really interested in l-systems and wanted to make something that allowed people to play around with different rulesets.
 
 - [Interactive Tool](https://www.erdavids.com/generative-plants/)
+- [Demo](https://www.youtube.com/watch?v=1eNHrRe4Sqk)
 
 Other links:
 - [More Generative Art](https://github.com/erdavids/Generative-Art)
