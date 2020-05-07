@@ -11,7 +11,7 @@ var stars = []
 const opts = {
     // Generation Details
     Width: 1500,
-    Height: 1200,
+    Height: 1400,
     Planets: 10,
     Distance: 110,
     Sun: 200,
