@@ -12,4 +12,4 @@ All of these projects are available with the intention that other people will en
 
 ## Examples:
 
-<p align="center"><img src="images/git-2.png"></p>
+<p align="center"><img src="images/git.png"></p>

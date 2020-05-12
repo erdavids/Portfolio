@@ -27,7 +27,8 @@ const opts = {
   YouTube: () => youtube(),
   randomize: () => randomize(),
   redra: () => redra(),
-  save: () => save()
+  save: () => save(),
+  Patreon: () => patreon(),
 };
 
 window.onload = function () {
@@ -62,16 +63,22 @@ window.onload = function () {
   var made = gui.addFolder("Made by Eric Davidson");
   made.add(opts, "GitHub");
   made.add(opts, "YouTube");
+  made.add(opts, "Patreon");
 };
 
 function github() {
-  window.open("https://github.com/erdavids/Portfolio/tree/master/hex-map");
+  window.open("https://github.com/erdavids/Portfolio/tree/master/constellation-tool");
 }
 
 function youtube() {
   
   window.open("https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ");
 }
+
+function patreon() {
+  
+    window.open("https://www.patreon.com/thebuffed");
+  }
 
 function redra() {
   background(opts.Background);
