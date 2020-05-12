@@ -55,7 +55,7 @@ window.onload = function () {
   controls.add(opts, "Next").name("Next Constellation");
   controls.add(opts, "Undo").name("Undo")
   controls.add(opts, "redra").name("Redraw")  
-  controls.add(opts, "randomize").name("Randomize");
+  controls.add(opts, "randomize").name("Generate");
   controls.add(opts, "save").name("Save Image");
 
   var made = gui.addFolder("Made by Eric Davidson");
