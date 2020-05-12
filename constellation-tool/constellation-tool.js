@@ -35,7 +35,6 @@ window.onload = function () {
   var gui = new dat.GUI({ width: 400 });
   // gui.remember(opts)
   var general = gui.addFolder("Generation Details");
-  general.open();
   general.add(opts, "Width", 500, 1500);
   general.add(opts, "Height", 700, 1600);
   general.add(opts, "Star_Count", 2000, 30000);
@@ -45,7 +44,6 @@ window.onload = function () {
   general.add(opts, "Border_Angle", 1, 90)
 
   var col = gui.addFolder("Constellation Details");
-  col.open();
   col.addColor(opts, "Background").onChange(redra);
   col.addColor(opts, "Map").onChange(redra);
   col.addColor(opts, "Star").onChange(redra);
