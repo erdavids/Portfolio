@@ -28,6 +28,7 @@ const opts = {
     YouTube: () => youtube(),
     Generate: () => randomize(),
     Save: () => save(),
+    Patreon: () => patreon(),
 };
 
 window.onload = function() {
@@ -52,6 +53,7 @@ window.onload = function() {
   var made = gui.addFolder('Made by Eric Davidson')
   made.add(opts, 'GitHub')
   made.add(opts, 'YouTube')
+  made.add(opts, "Patreon");
   
   gui.add(opts, 'Generate');
   gui.add(opts, 'Save');
@@ -66,6 +68,11 @@ function github() {
 function youtube() {
   window.open('https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ')
 }
+
+function patreon() {
+  
+    window.open("https://www.patreon.com/thebuffed");
+  }
 
 function randomize() {
   randomSeed(random(10000))
