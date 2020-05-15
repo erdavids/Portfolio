@@ -1,4 +1,4 @@
-# Generative Orbit
+# Generative Orbit / [Tutorial](https://www.youtube.com/watch?v=jeocE6bLczE)
 
 Another attempt at a cool looking solar system generation, this time with some low saturation colors and simple star packing within the largest orbit.
 
