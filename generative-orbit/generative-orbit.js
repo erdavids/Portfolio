@@ -21,6 +21,7 @@ const opts = {
     Brightness: 100,
     Star_Brightness: 70,
     Star_Drift: 20,
+    Star_Size: 2,
     
   
   
@@ -42,6 +43,7 @@ window.onload = function() {
   gen.add(opts, 'Distance')
   gen.add(opts, 'Sun')
   gen.add(opts, 'Stars')
+  gen.add(opts, 'Star_Size')
   
   var col = gui.addFolder('Color Settings')
   col.add(opts, 'Hue_Change', 0, 360)
@@ -147,7 +149,7 @@ function setup() {
     noStroke()
     for (var j = 0; j < stars.length; j++) {
         fill(120, 0, opts.Star_Brightness + random(-opts.Star_Drift, opts.Star_Drift))
-        circle(stars[j][0], stars[j][1], 2)
+        circle(stars[j][0], stars[j][1], opts.Star_Size)
     }
 
     translate(opts.Width / 2, opts.Height / 2)
