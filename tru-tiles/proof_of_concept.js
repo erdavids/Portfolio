@@ -70,7 +70,7 @@ function update_level_text() {
 }
 
 function update_rotation_text(rotation_amount) {
-    document.getElementById("rotation_text").innerHTML = "Rotate " + (rotation_amount) + " Degrees";
+    document.getElementById("rotation_text").innerHTML = "Rotate " + (rotation_amount) + " Degrees Clockwise";
 }
 
 
