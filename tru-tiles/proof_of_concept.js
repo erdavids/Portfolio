@@ -635,7 +635,7 @@ function create_original_shape() {
         var canvasDiv = document.getElementById('sketchdiv');
 
         var width = canvasDiv.offsetWidth;
-        var height = 600;
+        var height = 800;
 
         var cnv = createCanvas(width, height);
         cnv.parent('sketchdiv');
