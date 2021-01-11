@@ -8,264 +8,26 @@
 
 body
 {
+    background: #262833;
     font-family: 'Poppins';
     padding: 20px;
 }
 
-.nav_bar {
-    text-align: left;
-}
-
-.topnav-centered a {
-  float: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-div {
-
-}
-
-.button {
-  background-color: #4fa4a5;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  padding: 5px 12px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  margin: 4px 2px;
-  cursor: pointer;
-  outline: none;
-}
-
-.bottom_border {
-    border-bottom: 1px solid silver;
-}
-
-.home-art-display { 
-    float: left; 
-    width: 50%;
-    height: 50vw;
-    padding: 15px;
-}
-
-.project_block {
-    float: left;
-    width: 50%;
-    height: 50vw;
-    padding: 15px;
-}
-
-.project_images {
-    text-align:center;
-}
-
-.color-text {
-
-}
-
-
-h1, h2, h3, h4 {
-    font-weight: bold;
-    font-family: 'Poppins';
-    margin-left: 0px;
-}
-
-icons {
-  text-align: right;
-}
-
-ion-icon {
-  font-size: 25px;
-  display: inline-block;
-}
-
-p {
-    font-family: 'Poppins';
-}
-
-.nav_bar_element {
-    font-size: 20px;
-
-}
-
-li + li {
-    margin-left: 10px;
-}
-
-.name_text {
-    font-family: 'Poppins';
-    font-size: 24px;
-    margin-top:20px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-ul { display:table; margin:0;}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  text-align: center;
-  font-size: 16px;
-  padding: 0px;
-  text-decoration: none;
-}
-
-input {
-    border: 1px solid black;
-    width: 10px;
-}
-
-input:focus {
-    outline:none
-}
-
-li a:hover:not(.active) {
-    text-decoration: none;
-}
-
-.active {
-    background-color: #4CAF50;
-}
-
-.project_links {
-    text-decoration: none;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:visited { text-decoration: none; color: black;}
-
-.nopadding {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-/*-- Trying to make a custom grid system -- */
-/* Create two equal columns that floats next to each other */
-
-.column_1 {
-    float: left;
-    width: 16.67%;
-    padding: 5px;
-}
-
-.column_1_5 {
-    float: left;
-    width: 20%;
-}
-
-.column_1_4 {
-    float: left;
-    width: 25%;
-}
-
-.column_2  {
-    float: left;
-    width: 33.3%;
-    padding: 5px;
-}
-
-.column_3 {
-    float: left;
-    width: 75%;
-    padding: 5px;
-}
-
-.column_4 {
-    float: left;
-    width: 66.67%;
-    padding: 5px;
-}
-
-.column_6 {
-    float: left;
-    width: 100%;
-    padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row_1::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.row_1_5::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.row_2::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.row_3::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.row_4::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.row_5::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    font-size: 24px;
-}
 
 #left-side {
+    width: 50%;
+    float: left;
+    background: #262833;
+  
+}
+.right-side {
     width: 50%;
     height: 100%;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     background: green;
     color: #01ffA0;
-}
-#right-side {
-    width: 50%;
-    float: right;
-    background: #0130A0;
 }
 
 
@@ -279,12 +41,8 @@ a:visited { text-decoration: none; color: black;}
     width: 100%;
   }
   
-  [class*="home-art"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 100%;
+  [class*="right-side"] {
+    width: 0;
   }
 }
 
