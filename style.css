@@ -253,6 +253,21 @@ a:visited { text-decoration: none; color: black;}
     font-size: 24px;
 }
 
+#left-side {
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: green;
+    color: #01ffA0;
+}
+#right-side {
+    width: 50%;
+    float: right;
+    background: #0130A0;
+}
+
 
 @media (max-width: 900px) {
   /* For mobile phones: */
