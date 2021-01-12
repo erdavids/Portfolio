@@ -29,6 +29,10 @@ const opts = {
 
 const pane = new Tweakpane();
 
+const pane = new Tweakpane({
+    container: document.getElementById('grab-me'),
+  });
+
 pane.addInput(opts, "grid_height", {
   min: 1,
   max: 100,
