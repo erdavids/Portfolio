@@ -70,8 +70,6 @@ pane.addInput(opts, 'x_offset', {
 });
 
 
-
-pane.addInput(opts, 'background');
 pane.addInput(opts, 'cube');
 
 
