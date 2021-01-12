@@ -1,694 +1,481 @@
-// GLOBAL VARIABLES 
+p5.disableFriendlyErrors = true;
 
-var start_time;
-var timing = false;
-var time_left
-let orig = []
-let solution = []
-
-// All possible tile types
-let possible_tiles = [-1, 0, 1, 2, 3, 4]
-var solved_levels
-let level_data = [
-  [2, 30, 1,2],
-  [2, 20, 3,3],
-  [2, 15, 4,4],
-  [3, 40, 3,4],
-  [3, 40, 4,6],
-  [3, 35, 6,7],
-  [3, 40, 8,9]
+const opts = {
+    // Generation Details
+    Grid_Size: 50,
+    Shading: 3,
+    Background: [255, 255, 255],
+    Steps: 900,
+    Line_Width: 2,
     
-]
+    // // Additional Functions
+    GitHub: () => github(),
+    YouTube: () => youtube(),
+    Generate: () => randomize(),
+    Save: () => save(),
+    create: () => createPlant(),
+  };
+  
+  window.onload = function() {
+    var gui = new dat.GUI({width:300});
+    gui.add(opts, 'Grid_Size', 3, 200).step(1)
+    gui.add(opts, 'Shading', 0, 20).step(1)
+    gui.add(opts, 'Steps')
+    gui.add(opts, 'Line_Width')
+    gui.add(opts, 'Generate');
+    gui.add(opts, 'Save');
+    var made = gui.addFolder('Made by Eric Davidson')
+    made.add(opts, 'GitHub')
+    made.add(opts, 'YouTube')
+                                 
+  
+  };
+  
+  function github() {
+      window.open('https://github.com/erdavids/Portfolio/tree/master/road-lattice')
+  }
 
-var total_time = level_data[0][1]
-// Solid tiles (all white, all black)
-let solid_tiles = [-1, 0]
-
-// Number of rows/columns
-var grid_size = level_data[0][0]
-
-// Number of tiles
-var min_tiles = level_data[0][2]
-var max_tiles = level_data[0][3]
-
-var block_size
-var block_space
-var width_pad
-var originY
-var originX
-var block_y
-
-var location_x
-var location_y
-
-// Size of the individual cells
-var cell_size
-var cs
-
-// drag 
-var drag_count = 0
-let press_ind = false
-let clear_ind_click = false
-
-var center_tile_x, center_tile_y;
-var offsetX, offsetY;
-var drag
-var double_click = false
-var w = 1;
-var solved
-var next_level = document.getElementById("next_level");
-var restart_level = document.getElementById("restart_level");
-var start_game = document.getElementById("start_page");
-var run
-
-
-
-
-function update_level_text() {
-
-    document.getElementById("level_text").innerHTML = "Level " + (solved_levels + 1);
+  function youtube() {
+    window.open('https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ')
 }
 
-function update_rotation_text(rotation_amount) {
-    document.getElementById("rotation_text").innerHTML = "Rotate " + (rotation_amount) + " Degrees Clockwise";
-}
-
-
-
-function check_solution() {
-    var solved = true
-    for (i = 0; i < grid_size; i++) {
-        for (j = 0; j < grid_size; j++) {
-            if (player_grid[i][j] != solution[i][j]) {
-                solved = false
-                //console.log(solved)
-            }
-        }
-    }
-    if(solved == true){
-        
-        solved_text()
-    }
-
-    //console.log(solution)
-    //console.log(player_grid)
-
-}
-
-function solved_text(){
-    next_level.style.visibility = "visible";
-    run = false
+  function randomize() {
+    setup();
+  }
+  
+  function save() {
+    save('photo.png');
+  }
+  
+  // Number of quads
+  w = 900
+  h = 900
+  
+  var grid_x
+  var grid_y
+  
+  var sep_x
+  var sep_y
+  
+  var bottom_grid
+  var top_grid
+  
+  var current_grid
+  
+  function setup()
+  {
+    var canvasDiv = document.getElementById('sketchdiv');
+    var width = w
+    var height = h;
     
-}
-
-function startGame(){
+    grid_x = opts.Grid_Size
+    grid_y = opts.Grid_Size
     
-        grid_size = level_data[solved_levels][0]
-        clear_grid()
-        setup()
-        update_level_text()
-        start_game.style.visibility = "hidden";
-        start_timing()
+    var grid_x_pixels = .9 * w
+    var grid_y_pixels = .9 * h
+  
+    sep_x = float(grid_x_pixels) / (grid_x - 1)
+    sep_y = float(grid_y_pixels) / (grid_y - 1)
     
+    pixelDensity(2);
     
-}
-
-function nextLevel() {
-
-        
-        solved_levels += 1
-        grid_size = level_data[solved_levels][0]
-        clear_grid()
-        setup()
-        update_level_text()
-        next_level.style.visibility = "hidden";
-        loop()
-        start_timing()
-
-
-}
-
-function time_up(){
-    
-        restart_level.style.visibility = "visible";
-        run = false
-    
-    
-}
-
-function restartLevel(){
-        grid_size = level_data[solved_levels][0]
-        clear_grid()
-        setup()
-        update_level_text()
-        restart_level.style.visibility = "hidden";
-        start_timing()
-    
-}
-
-    // Draw the tiles based on the contents of the orig list
-    // s - shape to draw, x, y - origin of block, cs - cell size t - tile type
-    function draw_shape(s, x, y, cs) {
-
-        fill(0)
-        for (i = 0; i < grid_size; i++) {
-            for (j = 0; j < grid_size; j++) {
-                switch (s[j][i]) {
-                    // Solid black
-                    case -1:
-                        rect(x + cs * i, y + cs * j, cs, cs)
-                        break;
-                        // Flipped from 3
-                    case 1:
-                        triangle(x + cs * i, y + cs * j, x + cs * i + cs, y + cs * j, x + cs * i, y + cs * j + cs)
-                        break;
-                    case 2:
-                        triangle(x + cs * i, y + cs * j, x + cs * i + cs, y + cs * j, x + cs * i + cs, y + cs * j + cs)
-                        break;
-                        // Flipped from 1
-                    case 3:
-                        triangle(x + cs * i + cs, y + cs * j, x + cs * i + cs, y + cs * j + cs, x + cs * i, y + cs * j + cs)
-                        break;
-                    case 4:
-                        triangle(x + cs * i, y + cs * j, x + cs * i + cs, y + cs * j + cs, x + cs * i, y + cs * j + cs)
-                        break;
-
-                    default:
-                        //console.log("Still worked")
-                        break;
-                }
-            }
-        }
-    }
-
-    // Crawls through the orig list to assign tile values
-
-function create_original_shape() {
-    // Fill out the 2D list with 0 values (blank tiles)
-    orig = []
-    for (i = 0; i < grid_size; i++) {
-        orig.push([])
-        for (j = 0; j < grid_size; j++) {
-            orig[i].push(0)
-
-            }
-        }
-
-        // Create Top Left (will be used for bottom right)
-        for (i = 0; i < grid_size; i++) {
-            for (j = 0; j < grid_size - i - 1; j++) {
-                orig[i][j] = possible_tiles[Math.floor(Math.random() * possible_tiles.length)];
-            }
-        }
-
-        // Create middle line with only solid black or white tiles
-        i = 0
-        for (j = grid_size - 1; j >= 0; j--) {
-            orig[i][j] = solid_tiles[Math.floor(Math.random() * solid_tiles.length)];
-
-            i++;
-        }
-
-        // Tricky, assign tiles to bottom right based on top left, flip when necessary for symmetry
-        for (i = 0; i < grid_size; i++) {
-            for (j = 0; j < grid_size - i - 1; j++) {
-                shape = orig[j][i]
-                if (shape == 1 || shape == 3) {
-                    shape = (shape + 2) % 4
-                }
-                orig[grid_size - 1 - i][grid_size - 1 - j] = shape
-            }
-        }
-    
-    // Check for non-solid grid
-    let valid = false
-    let valid_num_tiles = false
-    let num_tiles = 0
-    min_tiles = level_data[solved_levels][2]
-    max_tiles = level_data[solved_levels][3]
-    
-    for (i = 0; i < grid_size; i++) {
-        for (j = 0; j < grid_size; j++) {
-            
-            if( orig[j][i]!= 0){
-                num_tiles = num_tiles + 1
-                
-            }
-            if (orig[j][i] != 0 && orig[j][i] != -1) {
-                
-                valid = true
-            }
-        }
-    }
-    //console.log(orig)
-    console.log(num_tiles)
-    if(num_tiles >= min_tiles && num_tiles <= max_tiles){
-                    valid_num_tiles = true
-    }
-                
-    if (!valid || !valid_num_tiles) {
-        create_original_shape()
-    }
-}
-
-
-    // Pass in the grid list - l
-    function rotate_grid_ninety_degrees(l) {
-
-        // Copy original by value
-        o = l.slice()
-        r = []
-
-        // Fill every spot of the solution with 0 (blank tiles)
-        for (i = 0; i < grid_size; i++) {
-            r.push([])
-            for (j = 0; j < grid_size; j++) {
-                r[i].push(0)
-
-            }
-        }
-
-
-        // Grab the 
-        for (i = 0; i < grid_size; i++) {
-            for (j = 0; j < grid_size; j++) {
-                v = o[grid_size - j - 1][i]
-
-                if (v > 0) {
-                    v += 1
-
-                    if (v > 4) {
-                        v %= 4
-                    }
-                }
-
-                r[i][j] = v
-
-
-            }
-        }
-
-        return r
-
-    }
-
-
-    function createBase() {
-
-
-        var block_x = (width_pad + block_size + block_space);
-
-        // Origin for goal grid
-        var goal_grid_x = width_pad
-        var goal_grid_y = 50
-
-
-
-        /////////////////
-        // Original Shape
-        /////////////////
-
-        noFill()
-        stroke(0)
-
-        square(goal_grid_x, goal_grid_y, block_size);
-        //Draw original grid
-        for (i = 1; i < grid_size; i++) {
-            beginShape()
-            vertex(goal_grid_x + cell_size * i, block_y);
-            vertex(goal_grid_x + cell_size * i, block_y + block_size);
-            endShape(CLOSE)
-
-            beginShape()
-            vertex(goal_grid_x, block_y + cell_size * i);
-            vertex(goal_grid_x + block_size, block_y + cell_size * i);
-            endShape(CLOSE)
-        }
-
-
-
-        // Fill the orig list with tile values
-
-        // Draw all the tiles in the orig list
-        draw_shape(orig, goal_grid_x, goal_grid_y, cell_size)
-
-
-        //////////////
-        // Player Grid
-        //////////////
-        noFill()
-
-        square(block_x, block_y, block_size);
-
-        //Draw goal grid
-        for (i = 1; i < grid_size; i++) {
-            beginShape()
-            vertex(block_x + cell_size * i, block_y);
-            vertex(block_x + cell_size * i, block_y + block_size);
-            endShape(CLOSE)
-
-            beginShape()
-            vertex(block_x, block_y + cell_size * i);
-            vertex(block_x + block_size, block_y + cell_size * i);
-            endShape(CLOSE)
-        }
-
-
-
-        noStroke();
-        drawTile(w, center_tile_x, center_tile_y)
-
-    }
-
-
-    function clear_grid() {
-        player_grid = []
-        for (i = 0; i < grid_size; i++) {
-            player_grid.push([])
-            for (j = 0; j < grid_size; j++) {
-                player_grid[i][j] = 0
-
-            }
-        }
-    }
-
-
-    //////////////
-    // Rotate Tile
-    //////////////
-
-    function rotateTile(w) {
-        if(run == true){
-        loop()
-        fill(255);
-        noStroke();
-        square(center_tile_x, center_tile_y, cs);
-        drawTile(w, center_tile_x, center_tile_y)
-        }
-        
-
-    }
-
-    function mousePressed() {
-        if (mouseX >= center_tile_x && mouseX < center_tile_x + cs && mouseY >= center_tile_y && mouseY < center_tile_y + cs) {
-            drag = true
-            drag_count++
-            offsetx = center_tile_x - mouseX
-            offsety = center_tile_y - mouseY
-
-
-        }
-
-    }
-
-
-    function mouseClicked() {
-        press_ind = true
-        clear_ind_click = true
-
-
-        if (mouseX >= center_tile_x && mouseX < center_tile_x + cs && mouseY >= center_tile_y && mouseY < center_tile_y + cs) {
-            w++
-            console.log(w)
-            if (w == 0) {
-                w = 1
-            }
-            if (w > 4) {
-                w = -1
-            }
-        }
-
-        rotateTile(w)
-
-    }
-
-    //////////////
-    // Drag Tile 
-    //////////////
-
-
-
-    function draw() {
-
-       if(run == true){
-           if (timing) {
-            update_time()
-        }
-        background(255);
-
-
-        fill(0, 255, 255, 200);
-        createBase();
-        fill_grid();
-        conVerter();
-
-
-
-        player();
-
-        let drop_x
-        let drop_y
-        if (drag == true) {
-
-            drop_x = mouseX + offsetx
-            drop_y = mouseY + offsety
-
-        }
-        drawTile(w, drop_x, drop_y);
-             
-       } 
-    }
-
-
-
-    
+    var cnv = createCanvas(w, h);
+    cnv.parent('sketchdiv');
    
     
-
-
-
-    var dropX = 0;
-    var dropY = 0;
-
-    function mouseReleased() {
-
-        drag = false;
-
-        dropX = mouseX
-        dropY = mouseY
-        if (mouseX < originX | mouseY < originY | mouseX > originX + cs * grid_size | mouseY > originX + cs * grid_size) {
-            drag_count = 0
+    background(255, 255, 255);
+    stroke(0)
+    strokeWeight(opts.Line_Width)
+    
+    bottom_grid = []
+    top_grid = []
+    
+    for (var i = 0; i < grid_x; i++) {
+        bottom_grid.push([])
+        top_grid.push([])
+        for (var j = 0; j < grid_y; j++) {
+          bottom_grid[i].push(0)
+          top_grid[i].push(0)
         }
     }
-
-
-    let player_grid = []
-    for (i = 0; i < grid_size; i++) {
-        player_grid.push([])
-        for (j = 0; j < grid_size; j++) {
-            player_grid[i][j] = 0
-
-        }
+  
+    
+    
+    // Random Walk Algorithm Test
+    walk_x = int(random(2, grid_x - 2))
+    while(walk_x%2 != 0) walk_x = int(random(2, grid_x - 2))
+    walk_y = int(random(2, grid_x - 2))
+    while(walk_y%2 != 0) walk_y = int(random(2, grid_x - 2))
+    
+    let last_x = 0
+    let last_y = 0
+    
+    let x_dir = 0
+    let y_dir = 0
+    
+    current_grid = 'bottom'
+    // Bottom GRID
+    for (var j = 0; j < opts.Steps; j++) {
+      // Exit Condition - Closed loop
+      bottom_grid[walk_y + y_dir][walk_x + x_dir] = 1
+      bottom_grid[walk_y + y_dir * 2][walk_x + x_dir * 2] = 1
+      
+      walk_y += y_dir * 2
+      walk_x += x_dir * 2
+      
+      x_dir = grid_x * 2
+      y_dir = grid_y * 2
+      
+      // Find a new direction
+      while (walk_x + x_dir * 2 >= grid_x || walk_y + y_dir * 2 >= grid_y || walk_x + x_dir * 2 < 0 || walk_y + y_dir * 2 < 0 || (x_dir == last_x && y_dir == last_y)) {
+         if (random(1) < .5) {
+            x_dir = random([-1, 1])
+            y_dir = 0
+          } else {
+            y_dir = random([-1, 1])
+            x_dir = 0
+          }
+     
+      }
+      
+      last_x = -x_dir
+      last_y = -y_dir
     }
-
-
-    function fill_grid() {
-
-
-        if (drag == false && press_ind == true && drag_count > 0) {
-
-            for (i = 0; i < (grid_size); i++) {
-
-                for (j = 0; j < grid_size; j++) {
-                    if (mouseX > originX + cs * i && mouseX < originX + cs * (i + 1) &&
-                        mouseY > originY + cs * j && mouseY < originY + cs * (j + 1)) {
-                        player_grid[j][i] = w
-                        check_solution()
-                        press_ind = false
-
-                    }
-                }
+    
+    var current_x = w/2.0 - grid_x_pixels/2.0
+    var current_y = h/2.0 - grid_y_pixels/2.0
+    for (var i = 0; i < grid_x; i++) {
+        for (var j = 0; j < grid_y; j++) {
+          
+          push()
+          translate(current_x, current_y)
+          
+          // rect(0 - sep_x/2, 0 - sep_y/2, sep_x, sep_y)
+          noFill();
+          
+          let UP = Boolean(j > 0 && bottom_grid[j - 1][i]) 
+          let DOWN = Boolean(j < grid_y - 1 && bottom_grid[j + 1][i] == 1)
+          let RIGHT = Boolean(i < grid_x - 1 && bottom_grid[j][i + 1] == 1)
+          let LEFT = Boolean(i > 0 && bottom_grid[j][i - 1] == 1)
+          
+         
+          
+          if (bottom_grid[j][i] == 1) {
+            if (DOWN && UP && !RIGHT && !LEFT) {
+              draw_tile(-2)
             }
-        }
-        if (double_click == true) {
-            player_grid[location_y][location_x] = 0
-            double_click = false
-        }
-        return player_grid
-
-    }
-
-
-
-
-
-    function conVerter() {
-
-
-        for (i = 0; i < (grid_size); i++) {
-
-            for (j = 0; j < grid_size; j++) {
-                if (mouseX > originX + cs * i && mouseX < originX + cs * (i + 1) &&
-                    mouseY > originY + cs * j && mouseY < originY + cs * (j + 1)) {
-                    location_x = i
-                    location_y = j
-
-
-                }
+            
+            if (RIGHT && LEFT && !UP && !DOWN) {
+              draw_tile(-1)
             }
+            
+            if (LEFT && UP && !RIGHT && !DOWN) {
+              draw_tile(4)
+            }
+            if (RIGHT && UP && !DOWN && !LEFT) {
+              draw_tile(1)
+            }
+            if (RIGHT && DOWN && !UP && !LEFT) {
+              draw_tile(2)
+            }
+            if (LEFT && DOWN && !UP && !RIGHT) {
+              draw_tile(3)
+            }
+            // Right, Up, Down
+            if (RIGHT && UP && DOWN && !LEFT) {
+              draw_tile(6)
+            }
+            if (RIGHT && DOWN && LEFT && !UP) {
+              draw_tile(7)
+            }
+            if (LEFT && DOWN && UP && !RIGHT) {
+              draw_tile(8)
+            }
+            if (LEFT && !DOWN && UP && RIGHT) {
+              draw_tile(9)
+            }
+            if (LEFT && DOWN && UP && RIGHT) {
+              draw_tile(10)
+            }
+            if (!LEFT && !DOWN && !UP && RIGHT) {
+              draw_tile(11)
+            }
+            if (DOWN && !RIGHT && !LEFT && !UP) {
+              draw_tile(12)
+            }
+            if (LEFT && !RIGHT && !DOWN && !UP) {
+              draw_tile(13)
+            }
+            if (UP && !DOWN && !RIGHT && !LEFT) {
+              draw_tile(14)
+            }
+          }
+          
+          pop()
+          current_y += sep_y
         }
-
+        current_y = h/2.0 - grid_y_pixels/2.0
+        current_x += sep_x
     }
-
-
-    function doubleClicked(event) {
-
-
-        if (mouseX > originX + cs * location_x && mouseX < originX + cs * (location_x + 1) &&
-            mouseY > originY + cs * location_y && mouseY < originY + cs * (location_y + 1)) {
-            double_click = true
-
-
-        }
-        return player_grid
-
+   
+    walk_x = int(random(2, grid_x - 2))
+    while(walk_x%2 != 1) walk_x = int(random(2, grid_x - 2))
+    walk_y = int(random(2, grid_x - 2))
+    while(walk_y%2 != 1) walk_y = int(random(2, grid_x - 2))
+    
+    last_x = 0
+    last_y = 0
+    
+    x_dir = 0
+    y_dir = 0
+    
+    current_grid = 'top'
+    // TOP GRID
+    for (var j = 0; j < opts.Steps; j++) {
+      // Exit Condition - Closed loop
+      top_grid[walk_y + y_dir][walk_x + x_dir] = 1
+      top_grid[walk_y + y_dir * 2][walk_x + x_dir * 2] = 1
+      
+      walk_y += y_dir * 2
+      walk_x += x_dir * 2
+      
+      x_dir = grid_x * 2
+      y_dir = grid_y * 2
+      
+      while (walk_x + x_dir * 2 >= grid_x || walk_y + y_dir * 2 >= grid_y || walk_x + x_dir * 2 < 0 || walk_y + y_dir * 2 < 0 || (x_dir == last_x && y_dir == last_y)) {
+         if (random(1) < .5) {
+            x_dir = random([-1, 1])
+            y_dir = 0
+          } else {
+            y_dir = random([-1, 1])
+            x_dir = 0
+          }
+     
+      }
+      
+      last_x = -x_dir
+      last_y = -y_dir
     }
-
-    function player() {
-
-        draw_shape(player_grid, originX, originY, cs)
-
-
+    
+  var current_x = w/2.0 - grid_x_pixels/2.0
+  var current_y = h/2.0 - grid_y_pixels/2.0
+  for (var i = 0; i < grid_x; i++) {
+    for (var j = 0; j < grid_y; j++) {
+          
+          push()
+          translate(current_x, current_y)
+          
+          noFill();
+          
+          let UP = Boolean(j > 0 && top_grid[j - 1][i]) 
+          let DOWN = Boolean(j < grid_y - 1 && top_grid[j + 1][i] == 1)
+          let RIGHT = Boolean(i < grid_x - 1 && top_grid[j][i + 1] == 1)
+          let LEFT = Boolean(i > 0 && top_grid[j][i - 1] == 1)
+          
+          let OTHER = Boolean(bottom_grid[j][i] == 1)
+          
+          if (top_grid[j][i] == 1) {
+            if (DOWN && UP && !RIGHT && !LEFT) {
+              draw_tile(-2)
+              
+              if (OTHER && random(1) < .5) {
+                draw_tile(-1)
+              }
+            }
+            
+            if (RIGHT && LEFT && !UP && !DOWN) {
+              draw_tile(-1)
+            }
+            
+            if (LEFT && UP && !RIGHT && !DOWN) {
+              draw_tile(4)
+            }
+            if (RIGHT && UP && !DOWN && !LEFT) {
+              draw_tile(1)
+            }
+            if (RIGHT && DOWN && !UP && !LEFT) {
+              draw_tile(2)
+            }
+            if (LEFT && DOWN && !UP && !RIGHT) {
+              draw_tile(3)
+            }
+            // Right, Up, Down
+            if (RIGHT && UP && DOWN && !LEFT) {
+              draw_tile(6)
+            }
+            if (RIGHT && DOWN && LEFT && !UP) {
+              draw_tile(7)
+            }
+            if (LEFT && DOWN && UP && !RIGHT) {
+              draw_tile(8)
+            }
+            if (LEFT && !DOWN && UP && RIGHT) {
+              draw_tile(9)
+            }
+            if (LEFT && DOWN && UP && RIGHT) {
+              draw_tile(10)
+            }
+            if (RIGHT && !DOWN && !LEFT && !UP) {
+              draw_tile(11)
+            }
+            if (DOWN && !RIGHT && !LEFT && !UP) {
+              draw_tile(12)
+            }
+            if (LEFT && !RIGHT && !DOWN && !UP) {
+              draw_tile(13)
+            }
+            if (UP && !DOWN && !RIGHT && !LEFT) {
+              draw_tile(14)
+            }
+          }
+          
+          pop()
+          current_y += sep_y
+        }
+        current_y = h/2.0 - grid_y_pixels/2.0
+        current_x += sep_x
     }
-    //////////////
-    // Draw Tile 
-    //////////////
-
-    function drawTile(tile_type, x, y) {
-        fill(0)
-        noStroke()
-        switch (tile_type) {
-            // Solid black
-            case -1:
-                rect(x, y, cs, cs)
-                break;
-                // Flipped from 3
-            case 1:
-                triangle(x, y, x + cs, y, x, y + cs)
-                break;
-            case 2:
-                triangle(x, y, x + cs, y, x + cs, y + cs)
-                break;
-                // Flipped from 1
-            case 3:
-                triangle(x + cs, y, x + cs, y + cs, x, y + cs)
-                break;
-            case 4:
-                triangle(x, y, x, y + cs, x + cs, y + cs)
-                break;
-
-            default:
-                //console.log("Still worked")
-                break;
-        }
+  
+  
+  }
+  
+  function draw_tile(tile_type) {
+    if (tile_type == 1) {
+      for (var j = 0; j < opts.Shading; j++) {
+       arc(sep_x/2, -sep_y/2, sep_x * 1.5, sep_y * 1.5 + j, HALF_PI, PI);
+      }
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(sep_x/2, -sep_y/2, sep_x * .5 - j, sep_y * .5, HALF_PI, PI);
+      }
+      
+      
+      
+    } else if (tile_type == 2) {
+     
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(sep_x/2, sep_y/2, sep_x * .5 - j, sep_y * .5 - j, PI, TWO_PI - HALF_PI);
+      }
+      arc(sep_x/2, sep_y/2, sep_x * 1.5, sep_y * 1.5, PI, TWO_PI - HALF_PI);
+      
+      
+    } else if (tile_type == 3) {
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(-sep_x/2, sep_y/2, sep_x * .5, sep_y * .5 - j, TWO_PI - HALF_PI, TWO_PI);
+      }
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(-sep_x/2, sep_y/2, sep_x * 1.5 + j, sep_y * 1.5, TWO_PI - HALF_PI, TWO_PI);
+      }
+      
+      
+    } else if (tile_type == 4) {
+      arc(-sep_x/2, -sep_y/2, sep_x * .5, sep_y * .5, TWO_PI, HALF_PI);
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(-sep_x/2, -sep_y/2, sep_x * 1.5 + j, sep_y * 1.5 + j, TWO_PI, HALF_PI);
+      }
+      
+      
+    } else if (tile_type == 5) {
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(sep_x/2, -sep_y/2, sep_x * .5 - j, sep_y * .5, HALF_PI, PI);
+      }
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(sep_x/2, sep_y/2, sep_x * .5 - j, sep_y * .5 - j, PI, TWO_PI - HALF_PI);
+      }
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(-sep_x/2, sep_y/2, sep_x * .5, sep_y * .5 - j, TWO_PI - HALF_PI, TWO_PI);
+      }
+      arc(-sep_x/2, -sep_y/2, sep_x * .5, sep_y * .5, TWO_PI, HALF_PI);
+      
+      // RIGHT UP DOWN
+    } else if (tile_type == 6) {
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(sep_x/2, -sep_y/2, sep_x * .5 - j, sep_y * .5, HALF_PI, PI);
+      }
+          for (var j = 0; j < opts.Shading; j++) {
+        arc(sep_x/2, sep_y/2, sep_x * .5 - j, sep_y * .5 - j, PI, TWO_PI - HALF_PI);
+      }
+      line(-sep_x * .25, -sep_y/2, -sep_x * .25, sep_y/2)
+      
+      // RIGHT DOWN LEFT
+    } else if (tile_type == 7) {
+      line(-sep_x/2, -sep_y * .25, sep_x/2, -sep_y * .25)
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(sep_x/2, sep_y/2, sep_x * .5 - j, sep_y * .5 - j, PI, TWO_PI - HALF_PI);
+      }
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(-sep_x/2, sep_y/2, sep_x * .5, sep_y * .5 - j, TWO_PI - HALF_PI, TWO_PI);
+      }
+      
+      // LEFT DOWN UP
+    } else if (tile_type == 8) {
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(-sep_x/2, sep_y/2, sep_x * .5, sep_y * .5 - j, TWO_PI - HALF_PI, TWO_PI);
+      }
+      arc(-sep_x/2, -sep_y/2, sep_x * .5, sep_y * .5, TWO_PI, HALF_PI);
+  
+      
+      
+      for (var j = 0; j < opts.Shading/2; j++) {
+        line(sep_x * .25 + j, -sep_y/2, sep_x * .25 + j, sep_y/2)
+      }
+      // LEFT UP RIGHT
+    } else if (tile_type == 9) {
+      arc(-sep_x/2, -sep_y/2, sep_x * .5, sep_y * .5, TWO_PI, HALF_PI);
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(sep_x/2, -sep_y/2, sep_x * .5 - j, sep_y * .5, HALF_PI, PI);
+      }
+      
+      for (var j = 0; j < opts.Shading/2; j++) {
+        line(-sep_x/2, sep_y * .25 + j, sep_x/2, sep_y * .25 + j)
+      }
+      // LEFT RIGHT
+      
+    } else if (tile_type == 10) {
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(sep_x/2, -sep_y/2, sep_x * .5 - j, sep_y * .5, HALF_PI, PI);
+      }
+      arc(-sep_x/2, -sep_y/2, sep_x * .5, sep_y * .5, TWO_PI, HALF_PI);
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(sep_x/2, sep_y/2, sep_x * .5 - j, sep_y * .5 - j, PI, TWO_PI - HALF_PI);
+      }
+      for (var j = 0; j < opts.Shading; j++) {
+        arc(-sep_x/2, sep_y/2, sep_x * .5, sep_y * .5 - j, TWO_PI - HALF_PI, TWO_PI);
+      }
+    } else if (tile_type == 11) {
+      line(sep_x/2, -sep_y * .25, sep_x/2, sep_y * .25)
+    } else if (tile_type == 12) {
+      line(-sep_x * .25, sep_y/2, sep_x * .25, sep_y/2)
+    } else if (tile_type == 13) {
+      for (var j = 0; j < opts.Shading/2; j++) {
+         line(-sep_x/2 - j, -sep_y * .25, -sep_x/2 - j, sep_y * .25)
+      }
+    } else if (tile_type == 14) {
+      for (var j = 0; j < opts.Shading/2; j++) {
+         line(-sep_x * .25, -sep_y/2 - j, sep_x * .25, -sep_y/2 - j)
+      }
+    } else if (tile_type == -1) {
+      fill(opts.Background)
+      noStroke()
+      rect(-sep_x/2, -sep_y * .25, sep_x, sep_y * .5)
+      stroke(0)
+      noFill()
+      line(-sep_x/2, -sep_y * .25, sep_x/2, -sep_y * .25)
+      for (var j = 0; j < opts.Shading/2; j++) {
+        line(-sep_x/2, sep_y * .25 + j, sep_x/2, sep_y * .25 + j)
+      }
+      
+      
+      
+    } else if (tile_type == -2) {
+      fill(opts.Background)
+      noStroke()
+      rect(-sep_x * .25, -sep_y/2, sep_x * .5, sep_y)
+      stroke(0)
+      noFill()
+      for (var j = 0; j < opts.Shading/2; j++) {
+        line(sep_x * .25 + j, -sep_y/2, sep_x * .25 + j, sep_y/2)
+      }
+      line(-sep_x * .25, -sep_y/2, -sep_x * .25, sep_y/2)
     }
-
-    function start_timing() {
-        startTime = new Date();
-        timing = true;
-    };
-
-    function update_time() {
-        endTime = new Date();
-        var timeDiff = Math.round((endTime - startTime) / 1000);
-        total_time = level_data[solved_levels][1]
-
-        time_left =  total_time - timeDiff
-
-        var min = Math.floor(time_left / 60)
-        var sec = Math.floor(time_left % 60)
-
-        // This is where we would stop the game or call another function
-        if (time_left < 0) {
-            timing = false
-            time_up()
-            return
-        }
-
-        if (sec < 10) {
-            sec = "0" + sec
-
-        }
-
-
-        if (min == 0 && sec < 10) {
-            document.getElementById("timer_button").style.color = "red"
-
-        }
-
-
-        document.getElementById("timer_button").value = String(min) + ":" + String(sec);
-    }
-
-
-    function setup() {
-        var canvasDiv = document.getElementById('sketchdiv');
-
-        var width = canvasDiv.offsetWidth;
-        var height = 1000;
-
-        var cnv = createCanvas(width, height);
-        cnv.parent('sketchdiv');
-
-        block_space = width / 5;
-        block_size = width / 3;
-        width_pad = (width - ((block_size * 2) + block_space)) / 2;
-        originY = 50;
-        originX = (width_pad + block_size + block_space);
-        block_y = 50;
-
-        orig = []
-
-        solution = []
-
-        drawn_shapes = false
-
-        if (solved_levels == null) {
-
-            solved_levels = 0
-        }
-
-        grid_size = level_data[solved_levels][0]
-
-        
-
-        cell_size = block_size / grid_size
-        cs = cell_size
-        run =true
-
-        center_tile_x = (width / 2) - cs / 2;
-        center_tile_y = (block_size / 2) + block_y - (cs / 2);
-
-
-        pixelDensity(2);
-
-        frameRate(30);
-        strokeWeight(1);
-        stroke(0);
-        background(255);
-        create_original_shape();
-        // Creates and stores the solution grid by converting original
-        var rotation_amount = Math.floor(Math.random() * Math.floor(3));
-        solution = rotate_grid_ninety_degrees(orig);
-        
-        for (j = 0; j < rotation_amount; j++) {
-            solution = rotate_grid_ninety_degrees(solution);
-        }
-        
-        update_rotation_text(90 + 90 * rotation_amount);
-        
-        createBase();
-
-        drawn_shapes = true
-
-    }
+  }
+  
