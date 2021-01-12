@@ -1,116 +1,113 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138963802-1"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-        <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8d7586204f74683a9d24dc447/17eb59f014f48f8438ee970f1.js");</script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138963802-1"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-          gtag('config', 'UA-138963802-1');
-        </script>
+  <script id="mcjs">
+    ! function(c, h, i, m, p) {
+      m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
+    }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/8d7586204f74683a9d24dc447/17eb59f014f48f8438ee970f1.js");
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-        <link rel="stylesheet" type="text/css" href="style.css">
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-138963802-1');
+  </script>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-      
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/tweakpane@1.5.7/dist/tweakpane.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-		<div class="left-side">
-      <p class="main-text">Hi, I'm Eric and I'm writing<br> a book about <span style="padding-left: 6px; position:absolute" id="text"></span></p>
-      
-      <p>I'm not a published author though. Yet.</p>
-      <p>Right now I'm a software engineer with 7+ years of experience. I've used all kinds of technologies, but recently I've been learning React and spending more time in AWS.</p>
-      
-      <p>I love making things and do that in a lot of different areas.</p>
+<body>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
 
-	   </div>
-	</div>
+  <script>
+    console.log(window.screen.width)
+    if (window.screen.width > 1000) {
+      document.write(
+        '<script src="https://cdn.jsdelivr.net/npm/tweakpane@1.5.7/dist/tweakpane.min.js"><\/script>')
+    };
+  </script>
 
-	<div id="grab-me" class="right-side">
- 		<div class = "canvas">
-			<div  id = "sketchdiv"></div>
-		   </div>
-	</div>
-     
+  <div class="left-side">
+    <p class="main-text">Hi, I'm Eric and I'm writing<br> a book about <span style="padding-left: 6px; position:absolute" id="text"></span></p>
 
-      <script src="proof_of_concept.js"></script>
-      <script>// List of sentences
-var _CONTENT = [ 
-	"Other Worlds", "Swordfighting", "Beautiful Magic"
-];
+    <p>I'm not a published author though. Yet.</p>
+    <p>Right now I'm a software engineer with 7+ years of experience. I've used all kinds of technologies, but recently I've been learning React and spending more time in AWS.</p>
 
-// Current sentence being processed
-var _PART = 0;
+    <p>I love making things and do that in a lot of different areas.</p>
 
-// Character number of the current sentence being processed 
-var _PART_INDEX = 0;
+  </div>
+  </div>
 
-// Holds the handle returned from setInterval
-var _INTERVAL_VAL;
+  <div id="grab-me" class="right-side">
+    <div class="canvas">
+      <div style="display:none;" id="sketchdiv"></div>
+    </div>
+  </div>
 
-// Element that holds the text
-var _ELEMENT = document.querySelector("#text");
+  <script>
+    // List of sentences
+    var _CONTENT = [
+      "Other Worlds", "Swordfighting", "Beautiful Magic"
+    ];
+    // Current sentence being processed
+    var _PART = 0;
+    // Character number of the current sentence being processed 
+    var _PART_INDEX = 0;
+    // Holds the handle returned from setInterval
+    var _INTERVAL_VAL;
+    // Element that holds the text
+    var _ELEMENT = document.querySelector("#text");
+    // Implements typing effect
+    function Type() {
+      // Get substring with 1 characater added
+      var text = _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+      _ELEMENT.innerHTML = text;
+      _PART_INDEX++;
+      // If full sentence has been displayed then start to delete the sentence after some time
+      if (text === _CONTENT[_PART]) {
+        // Hide the cursor
+        clearInterval(_INTERVAL_VAL);
+        setTimeout(function() {
+          _INTERVAL_VAL = setInterval(Delete, 50);
+        }, 1000);
+      }
+    }
+    // Implements deleting effect
+    function Delete() {
+      // Get substring with 1 characater deleted
+      var text = _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+      _ELEMENT.innerHTML = text;
+      _PART_INDEX--;
+      // If sentence has been deleted then start to display the next sentence
+      if (text === '') {
+        clearInterval(_INTERVAL_VAL);
+        // If current sentence was last then display the first one, else move to the next
+        if (_PART == (_CONTENT.length - 1))
+          _PART = 0;
+        else
+          _PART++;
+        _PART_INDEX = 0;
+        // Start to display the next sentence after some time
+        setTimeout(function() {
+          _INTERVAL_VAL = setInterval(Type, 100);
+        }, 200);
+      }
+    }
+    // Start the typing effect on load
+    _INTERVAL_VAL = setInterval(Type, 100);
+  </script>
 
-// Implements typing effect
-function Type() { 
-	// Get substring with 1 characater added
-	var text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
-	_ELEMENT.innerHTML = text;
-	_PART_INDEX++;
+</body>
 
-	// If full sentence has been displayed then start to delete the sentence after some time
-	if(text === _CONTENT[_PART]) {
-		// Hide the cursor
-
-		clearInterval(_INTERVAL_VAL);
-		setTimeout(function() {
-			_INTERVAL_VAL = setInterval(Delete, 50);
-		}, 1000);
-	}
-}
-
-// Implements deleting effect
-function Delete() {
-	// Get substring with 1 characater deleted
-	var text =  _CONTENT[_PART].substring(0, _PART_INDEX - 1);
-	_ELEMENT.innerHTML = text;
-	_PART_INDEX--;
-
-	// If sentence has been deleted then start to display the next sentence
-	if(text === '') {
-		clearInterval(_INTERVAL_VAL);
-
-		// If current sentence was last then display the first one, else move to the next
-		if(_PART == (_CONTENT.length - 1))
-			_PART = 0;
-		else
-			_PART++;
-		
-		_PART_INDEX = 0;
-
-		// Start to display the next sentence after some time
-		setTimeout(function() {
-			_INTERVAL_VAL = setInterval(Type, 100);
-		}, 200);
-	}
-}
-
-// Start the typing effect on load
-_INTERVAL_VAL = setInterval(Type, 100);
-      </script>
-
-
-
-    </body>
 </html>
-
