@@ -10,11 +10,12 @@ body
 {
     background: #262833;
     font-family: 'Poppins';
-    padding: 20px;
+    padding: 90px;
+    color: white;
 }
 
 
-#left-side {
+.left-side {
     width: 50%;
     float: left;
     background: #262833;
@@ -29,6 +30,19 @@ body
     background: green;
     color: #01ffA0;
 }
+
+.left-text {
+    width: 50%;
+    float: left;
+}
+
+
+.main-text {
+  color: white;
+  font-size: 36px;
+}
+
+
 
 
 @media (max-width: 900px) {
@@ -46,9 +60,6 @@ body
   }
 }
 
-p {
-  font-size: 22px;
-}
 
 #container {
 	text-align: center;
