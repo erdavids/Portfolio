@@ -9,7 +9,6 @@
 body
 {
     font-family: 'Poppins';
-    padding: 5%;
     color: white;
     background: #262833;
 }
@@ -32,7 +31,6 @@ body
   background: #262833;
   
   text-align: center;
-  padding-top: 100px;
   
 }
 

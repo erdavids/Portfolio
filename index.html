@@ -21,7 +21,8 @@
     <body>
       
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/tweakpane@1.5.7/dist/tweakpane.min.js"></script>
+
 
 		<div class="left-side">
       <p class="main-text">Hi, I'm Eric and I'm writing<br> a book about <span style="padding-left: 6px; position:absolute" id="text"></span></p>
@@ -35,14 +36,14 @@
 	   </div>
 	</div>
 
-	<div class="right-side">
+	<div id="grab-me" class="right-side">
  		<div class = "canvas">
-			<div id = "sketchdiv"></div>
+			<div  id = "sketchdiv"></div>
 		   </div>
 	</div>
      
 
-	<script src="proof_of_concept.js"></script>
+      
       <script>// List of sentences
 var _CONTENT = [ 
 	"Other Worlds", "Swordfighting", "Beautiful Magic"
