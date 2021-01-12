@@ -9,7 +9,7 @@
 body
 {
     font-family: 'Poppins';
-    padding: 70px;
+    padding: 5%;
     color: white;
     background: #262833;
 }
@@ -19,6 +19,7 @@ body
     width: 50%;
     float: left;
     background: #262833;
+    padding: 5%;
 }
 .right-side {
     width: 50%;
@@ -31,7 +32,6 @@ body
   background: #262833;
   
   text-align: center;
-  
   padding-top: 100px;
   
 }
@@ -49,7 +49,6 @@ body
 
 p {
   font-size: 20px;
-  padding-right: 20px;
 }
 
 h2 {
@@ -58,17 +57,11 @@ h2 {
 
 @media (max-width: 900px) {
   /* For mobile phones: */
-  [class*="col"] {
-    width: 50%;
-  }
-  
-  [class*="project"] {
-    width: 100%;
-  }
   
   [class*="right-side"] {
-    width: 0;
+    display: none;
   }
+ 
 }
 
 
