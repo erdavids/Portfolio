@@ -28,13 +28,14 @@
 
 <body>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
 
   <script>
     console.log(window.screen.width)
     if (window.screen.width > 1000) {
       document.write(
-        '<script src="https://cdn.jsdelivr.net/npm/tweakpane@1.5.7/dist/tweakpane.min.js"><\/script>')
+		'<script src="https://cdn.jsdelivr.net/npm/tweakpane@1.5.7/dist/tweakpane.min.js"><\/script>' + 
+			'<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"><\/script>' +
+				'<script src="proof_of_concept.js"><\/script>')
     };
   </script>
 
@@ -51,7 +52,7 @@
 
   <div id="grab-me" class="right-side">
     <div class="canvas">
-      <div style="display:none;" id="sketchdiv"></div>
+      <div id="sketchdiv"></div>
     </div>
   </div>
 
