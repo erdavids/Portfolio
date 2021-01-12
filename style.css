@@ -1,44 +1,39 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins);
 
 * {
-    box-sizing: border-box;
-    font-family: 'Poppins';
+  box-sizing: border-box;
+  font-family: "Poppins";
 }
 
-
-body
-{
-    font-family: 'Poppins';
-    color: white;
-    background: #262833;
+body {
+  font-family: "Poppins";
+  color: white;
+  background: #262833;
 }
-
 
 .left-side {
-    width: 50%;
-    float: left;
-    background: #262833;
-    padding: 5%;
+  width: 50%;
+  float: left;
+  background: #262833;
+  padding: 5%;
 }
 .right-side {
-    width: 50%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background: gray;
-    color: #01ffA0;
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: gray;
+  color: #01ffa0;
   background: #262833;
-  
+
   text-align: center;
-  
 }
 
 .left-text {
-    width: 50%;
-    float: left;
+  width: 50%;
+  float: left;
 }
-
 
 .main-text {
   color: white;
@@ -50,36 +45,46 @@ p {
 }
 
 h2 {
-  color: #5598DE
+  color: #5598de;
 }
 
 @media (max-width: 900px) {
   /* For mobile phones: */
+
+  p {
+    font-size: 15px;
+  }
+  
+  [class*="main-text"] {
+    font-size: 24px;
+  }
   
   [class*="right-side"] {
     display: none;
   }
- 
+  
+  [class*="left-side"] {
+    width: 100%;
+  }
 }
 
-
 #container {
-	text-align: center;
+  text-align: center;
 }
 
 #text {
-	display: inline-block;
-	vertical-align: middle;
-	color: #5598DE;
-	letter-spacing: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  color: #5598de;
+  letter-spacing: 2px;
 }
 
-
 @keyframes blink {
-	from, to { 
-		background-color: transparent 
-	}
-	50% { 
-		background-color: #5598DE; 
-	}
+  from,
+  to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #5598de;
+  }
 }
