@@ -8,10 +8,10 @@
 
 body
 {
-    background: #262833;
     font-family: 'Poppins';
-    padding: 90px;
+    padding: 70px;
     color: white;
+    background: #262833;
 }
 
 
@@ -19,7 +19,6 @@ body
     width: 50%;
     float: left;
     background: #262833;
-  
 }
 .right-side {
     width: 50%;
@@ -27,8 +26,9 @@ body
     position: fixed;
     top: 0;
     right: 0;
-    background: green;
+    background: gray;
     color: #01ffA0;
+  
 }
 
 .left-text {
@@ -42,8 +42,14 @@ body
   font-size: 36px;
 }
 
+p {
+  font-size: 20px;
+  padding-right: 20px;
+}
 
-
+h2 {
+  color: #5598DE
+}
 
 @media (max-width: 900px) {
   /* For mobile phones: */
@@ -68,7 +74,7 @@ body
 #text {
 	display: inline-block;
 	vertical-align: middle;
-	color: orange;
+	color: #5598DE;
 	letter-spacing: 2px;
 }
 
@@ -78,6 +84,6 @@ body
 		background-color: transparent 
 	}
 	50% { 
-		background-color: orange; 
+		background-color: #5598DE; 
 	}
 }
