@@ -27,10 +27,10 @@ const opts = {
   create: () => createPlant()
 };
 
-
-const pane = new Tweakpane({
-    container: document.getElementById('grab-me'),
-  });
+const pane = new Tweakpane();
+// const pane = new Tweakpane({
+//     container: document.getElementById('grab-me'),
+//   });
 
 pane.addInput(opts, "grid_height", {
   min: 1,
