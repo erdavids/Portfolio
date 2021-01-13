@@ -40,7 +40,7 @@ body {
   font-size: 36px;
 }
 
-p {
+p, li {
   font-size: 20px;
 }
 
@@ -48,10 +48,15 @@ h2 {
   color: #5598de;
 }
 
+a {
+    color: orange;
+    text-decoration: none;
+}
+
 @media (max-width: 900px) {
   /* For mobile phones: */
 
-  p {
+  p, li {
     font-size: 15px;
   }
   
