@@ -53,6 +53,10 @@ a {
     text-decoration: none;
 }
 
+  .tp-dfwv {
+    position: fixed;
+  }
+
 @media (max-width: 900px) {
   /* For mobile phones: */
 
