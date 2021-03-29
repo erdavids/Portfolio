@@ -53,11 +53,20 @@ a {
     text-decoration: none;
 }
 
+  .tp-dfwv {
+    position: fixed;
+  }
+
 @media (max-width: 900px) {
   /* For mobile phones: */
 
   p, li {
     font-size: 15px;
+  }
+  
+    
+  .tp-dfwv {
+    display: none;
   }
   
   [class*="main-text"] {
