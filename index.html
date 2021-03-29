@@ -1,124 +1,37 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+title: Home
+---
 
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138963802-1"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
-  <script id="mcjs">
-    ! function(c, h, i, m, p) {
-      m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
-    }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/8d7586204f74683a9d24dc447/17eb59f014f48f8438ee970f1.js");
-  </script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+    <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-138963802-1');
-  </script>
-
-  <link rel="stylesheet" type="text/css" href="style.css">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-
-	<script src="https://cdn.jsdelivr.net/npm/tweakpane@1.5.7/dist/tweakpane.min.js"></script> 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
-
-  <div class="left-side">
-    <p class="main-text">Hi, I'm Eric and I'm writing<br> a book about <span style="padding-left: 6px; position:absolute" id="text"></span></p>
-
-    <p>I'm not a published author though. Yet.</p>
-    <p>Right now I'm a software engineer with 7+ years of experience. I've used all kinds of technologies, but recently I've been learning React and spending more time in AWS.</p>
-
-    <p>I love making things and do that in a lot of different areas.</p>
-
-    <h2>Game Development / YouTube</h2>
-    <p>I'm <a href="https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ">building an audience</a> as I work on my game Population Undefined. I love solving problems and even more I love teaching others what I learned along the way.</p>
-    <p>Check out <a href="https://www.youtube.com/watch?v=HXaPGRkg_hY">one of my favorite videos here</a>.</p>
-
-    <h2>Mobile App Development</h2>
-    <p>Some of the apps I've made have been games, but not all of them. I made a <a href="https://play.google.com/store/apps/details?id=com.buffed.stitch">crocheting stitch counter</a> that has gained quite a following, and recently I created a <a href="https://play.google.com/store/apps/details?id=org.godotengine.orbitmeditation">minimalist meditation app</a> that I'm hoping to build an audience for.</p>
-
-    <h2>Generative Art</h2>
-    <p>I create <a href="https://github.com/erdavids/generative-art">generative art</a> with Python and JavaScript. If you're on desktop, you can see an example to the right!
-
-    <h2>Other Random Stuff</h2>
-    <p>A few other things I love talking about...</p>
-    <ul>
-      <li>I am working on getting better at chess, <a href="https://lichess.org/@/TheBuffED">send me a challenge</a>!
-
-    </ul>
-
+    {{ post.content }}
   </div>
-  </div>
+  {% endfor %}
+</div>
 
-  <div id="grab-me" class="right-side">
-    <div class="canvas">
-      <div id="sketchdiv"></div>
-    </div>
-  </div>
-
-  <script src="proof_of_concept.js"></script>
-  <script>
-    // List of sentences
-    var _CONTENT = [
-      "Other Worlds", "Swordfighting", "Beautiful Magic"
-    ];
-    // Current sentence being processed
-    var _PART = 0;
-    // Character number of the current sentence being processed 
-    var _PART_INDEX = 0;
-    // Holds the handle returned from setInterval
-    var _INTERVAL_VAL;
-    // Element that holds the text
-    var _ELEMENT = document.querySelector("#text");
-    // Implements typing effect
-    function Type() {
-      // Get substring with 1 characater added
-      var text = _CONTENT[_PART].substring(0, _PART_INDEX + 1);
-      _ELEMENT.innerHTML = text;
-      _PART_INDEX++;
-      // If full sentence has been displayed then start to delete the sentence after some time
-      if (text === _CONTENT[_PART]) {
-        // Hide the cursor
-        clearInterval(_INTERVAL_VAL);
-        setTimeout(function() {
-          _INTERVAL_VAL = setInterval(Delete, 50);
-        }, 1000);
-      }
-    }
-    // Implements deleting effect
-    function Delete() {
-      // Get substring with 1 characater deleted
-      var text = _CONTENT[_PART].substring(0, _PART_INDEX - 1);
-      _ELEMENT.innerHTML = text;
-      _PART_INDEX--;
-      // If sentence has been deleted then start to display the next sentence
-      if (text === '') {
-        clearInterval(_INTERVAL_VAL);
-        // If current sentence was last then display the first one, else move to the next
-        if (_PART == (_CONTENT.length - 1))
-          _PART = 0;
-        else
-          _PART++;
-        _PART_INDEX = 0;
-        // Start to display the next sentence after some time
-        setTimeout(function() {
-          _INTERVAL_VAL = setInterval(Type, 100);
-        }, 200);
-      }
-    }
-    // Start the typing effect on load
-    _INTERVAL_VAL = setInterval(Type, 100);
-  </script>
-
-</body>
-
-</html>
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
