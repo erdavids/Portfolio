@@ -30,9 +30,10 @@
  *
  * Update the foundational and global aspects of the page.
  */
+ @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 @media (min-width: 48em) {
@@ -80,7 +81,7 @@ html {
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "Arial", serif;
+  font-family: "Lato", serif;
   font-size: 3.25rem;
 }
 
