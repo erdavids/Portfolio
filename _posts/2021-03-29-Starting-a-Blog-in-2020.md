@@ -7,7 +7,7 @@ tags: blogging starting belief possibility
 
 I wish I had started something like this years ago, but for the wrong reasons.
 
-Somewhere in my head, there's a belief always there, hiding from me, that says if I had started much earlier, then I might <strong>currently</strong> be enjoying the success that others have. With a blog for example, I'm imagining thousands of daily readers and published collections sitting on the shelf, all available to me if I had only started sooner. 
+Somewhere in my head, there's a belief always there, hiding from me, that says if I had started much earlier, then I might currently be enjoying the success that others have. With a blog for example, I'm imagining thousands of daily readers and published collections sitting on the shelf, all available to me if I had only started sooner. 
 
 Not only is this not true (it could be, but doubtful), it's a dangerous mentality that could easily block me from ever starting or pursuing anything at all. Starting something now does not mean I have less energy available to give it than if I had started sooner. Furthermore, it's a disservice to myself to only focus on the things that I have yet to start and ignore the things I have already done.
 
