@@ -10,7 +10,7 @@ relative_permalinks: false
 title:            Eric Davidson
 tagline:          'A software engineer'
 description:      "A software engineer, writer, and game developer that won't stop making things"
-url:              http://www.erdavids.com
+url:              https://www.erdavids.com
 baseurl:          /
 
 
