@@ -8,7 +8,7 @@ relative_permalinks: false
 
 # Setup
 title:            Eric Davidson
-tagline:          'A Jekyll theme'
+tagline:          'A software engineer'
 description:      "A software engineer, writer, and game developer that won't stop making things"
 url:              http://www.erdavids.com
 baseurl:          /
