@@ -22,6 +22,14 @@ paginate:         5
 github:
   repo:           https://github.com/erdavids/portfolio
   gen-art:        https://github.com/erdavids/Generative-Art
+
+projects:
+  hex-map:            https://erdavids.com/hex-map
+  youtube:        https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ
+  games:          https://thebuffed.itch.io/
+  crochet-app:    https://play.google.com/store/apps/details?id=com.buffed.stitch&hl=en_US&gl=US
+
+
 plugins:
   - jekyll-gist
   - jekyll-paginate

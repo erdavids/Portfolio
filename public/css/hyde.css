@@ -83,7 +83,7 @@ html {
   color: #836367;
   margin-top: 0;
   font-family: "Lato", serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 
@@ -97,7 +97,7 @@ html {
 }
 
 .sidebar-nav-section{
-  color:#565563;
+  color:rgba(255,255,255,.5);
 }
 
 
