@@ -21,6 +21,7 @@ paginate:         5
 
 github:
   repo:           https://github.com/erdavids/portfolio
+  gen-art:        https://github.com/erdavids/Generative-Art
 plugins:
   - jekyll-gist
   - jekyll-paginate

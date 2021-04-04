@@ -7,7 +7,7 @@ tags: work
 
 We have the ability to create things because the work must be done.
 
-You have the ability to work on your goals because the work must be done.
+You have an obligation to work on your goals because the work must be done.
 
 You will be able to write the next page of your book because the work must be done.
 

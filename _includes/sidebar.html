@@ -1,3 +1,4 @@
+<script src="../generative-plants.js"></script>
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
@@ -8,6 +9,9 @@
       </h1>
       <p class="lead">{{ site.description }}</p>
     </div>
+
+
+    <div id = "sketchdiv"></div>
 
     <nav class="sidebar-nav">
       <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.url }}">Home</a>
@@ -26,6 +30,9 @@
         {% endif %}
       {% endfor %}
 
+    </br>
+      <span class="sidebar-nav-section">Projects</span>
+      <a class="sidebar-nav-item" href="{{ site.github.gen-art }}">Generative Art</a>
       <a class="sidebar-nav-item" href="{{ site.github.repo }}">Website Repo</a>
     </nav>
 
