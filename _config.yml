@@ -29,6 +29,8 @@ projects:
   games:          https://thebuffed.itch.io/
   crochet-app:    https://play.google.com/store/apps/details?id=com.buffed.stitch&hl=en_US&gl=US
 
+twitter:
+  username: thebuffed
 
 plugins:
   - jekyll-gist
