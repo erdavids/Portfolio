@@ -398,7 +398,7 @@ tbody tr:nth-child(odd) th {
 .pagination-item {
   display: block;
   padding: 1rem;
-  border: 1px solid #eee;
+  border: 1px solid #54565D;
 }
 .pagination-item:first-child {
   margin-bottom: -1px;
