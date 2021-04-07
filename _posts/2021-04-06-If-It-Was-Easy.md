@@ -3,9 +3,10 @@ layout: post
 title: If It Was Easy
 description: You've heard people say, "If it was easy, everyone would do it". That's not true.
 tags: blog
+image: /preview.png
 ---
 
-I hate it when people say "If it was easy, everyone would do it."
+It bothers me when people say, "If it was easy, everyone would do it."
 
 I understand the merit, but it's just wrong. More people would do it, sure, but not everyone.
 

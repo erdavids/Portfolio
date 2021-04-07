@@ -16,7 +16,7 @@ baseurl:          /
 author:
   name: Eric Davidson
   twitter: thebuffed
-  image: preview.png
+  image: /preview.png
 twitter:
   username: thebuffed
   card: summary_large_image
