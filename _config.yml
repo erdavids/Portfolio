@@ -9,9 +9,22 @@ relative_permalinks: false
 # Setup
 title:            Eric Davidson
 tagline:          'A software engineer'
-description:      "A software engineer, writer, and game developer that won't stop making things"
+description:      "A software engineer that writes a lot about making things"
 url:              https://www.erdavids.com
 baseurl:          /
+
+author:
+  name: Eric Davidson
+  twitter: thebuffed
+  image: preview.png
+twitter:
+  username: thebuffed
+  card: summary_large_image
+
+social:
+  name: Eric Davidson
+  links:
+    - https://twitter.com/thebuffed
 
 
 
@@ -28,9 +41,6 @@ projects:
   youtube:        https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ
   games:          https://thebuffed.itch.io/
   crochet-app:    https://play.google.com/store/apps/details?id=com.buffed.stitch&hl=en_US&gl=US
-
-twitter:
-  username: thebuffed
 
 plugins:
   - jekyll-gist
