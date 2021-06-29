@@ -12,7 +12,7 @@ tagline:          'A software engineer'
 description:      "A software engineer that writes a lot about making things"
 url:              https://www.erdavids.com
 baseurl:          /
-main_image:       ./preview.png
+main_image:       https://www.erdavids.com/preview.png
 
 author:
   name: Eric Davidson
