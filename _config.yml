@@ -12,11 +12,12 @@ tagline:          'A software engineer'
 description:      "A software engineer that writes a lot about making things"
 url:              https://www.erdavids.com
 baseurl:          /
+main_image:       /preview.png
 
 author:
   name: Eric Davidson
   twitter: thebuffed
-  image: /preview.png
+  
 twitter:
   username: thebuffed
   card: summary_large_image
