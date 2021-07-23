@@ -1,0 +1,76 @@
+.header {
+    vertical-align: middle;
+    padding: 20px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.eric-image {
+    width: 40px;
+    vertical-align: middle;
+}
+
+.page-logo-title {
+    font-size: 1.25rem;
+}
+
+.login-top-link {
+    cursor: pointer;
+    color: #E03857;
+    float: right;
+    vertical-align: middle;
+    font-size: 1.25rem;
+}
+
+.hidden-button {
+    color: #484848;
+    background-color: white;
+    /* background-color: #f1e8e3; */
+    border-radius: 8px;
+    border: none;
+    height: 50px;
+    width: fit-content;
+    padding: 0px 20px;
+    cursor: pointer;
+    margin-bottom: .8rem;
+}
+
+.hidden-button:hover {
+    color: black;
+}
+
+li {
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #484848
+}
+
+@media (max-width: 720px) {
+    .header {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .hidden-button {
+        color: #484848;
+        background-color: #f1e8e3;
+        border-radius: 8px;
+        /* border: none; */
+        height: 40px;
+        width: fit-content;
+        padding: 0px 10px;
+        margin-bottom: 1rem;
+        font-size: .6rem;
+    }
+
+    li {
+        font-size: .6rem;
+    }
+}
