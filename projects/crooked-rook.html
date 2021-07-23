@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.js"></script>
+        <script src="chess-engine/chess-engine.js"></script>
+
+        <meta charset='utf-8'>
+    </head>
+    <body>
+                  <div style="  width: 50%;margin: 0 auto;">
+                    <div class="project_block">
+                      <div style="text-align:center">
+                        <button id="status" class="button" onclick="change_all_colors">WHITE to move</button>
+                      </div>
+                      <div class="row_2">
+                        <div class="column_6">
+                          <div id="sketchdiv" style="min-height: 1px;">
+                          </div>
+                        </div>
+                      </div>
+                      <div style="text-align:center">
+                        <button id="diff-one"   class="button" onclick="set_difficulty_one()">1</button>
+                        <button id="diff-two"   class="button" onclick="set_difficulty_two()">2</button>
+                        <button id="diff-three" class="button" onclick="set_difficulty_three()">3</button>
+                        <button id="diff-four"  class="button" onclick="set_difficulty_four()">4</button>
+                        <button id="diff-five"  class="button" onclick="set_difficulty_five()">5</button>
+                        |
+                        <button id="cheating-btn" class="button" onclick="toggle_cheating()">Cheating</button>
+                        |
+                        <button class="button" onclick="reset_game()">Reset</button>
+                        <br>
+                        <button class="button" onclick="change_pieces_to_alpha()">Alpha</button>
+                        <button class="button" onclick="change_pieces_to_kosal()">Kosal</button>
+                        <button class="button" onclick="change_pieces_to_letter()">Letter</button>
+        
+                      </div>
+        
+                    </div>
+                  </div>
+
+
+
+        <script src="../changes.js"></script>
+        <script src="p5-test/p5-example.js"></script>
+    </body>
+</html>

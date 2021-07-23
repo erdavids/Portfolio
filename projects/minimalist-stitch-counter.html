@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <script src="/prism.js"></script>
+        <link rel="stylesheet" href="/prism.css">
+    </head>
+    <body>
+        <h1 class="name_text"><a href="https://www.erdavids.com" class="color-text">Eric Davidson</a></h1>
+        <div class="nav_bar bottom_border">
+            <ul>
+                <li class="nav_bar_element"><a href="/apps">Apps</a></li>
+                <li class="nav_bar_element"><a href="/blog">Blog</a></li>
+                <li class="nav_bar_element"><a href="/art">Art</a></li>
+                <li class="nav_bar_element"><a href="/more">More</a></li>
+            </ul>
+        </div>
+
+        <div class="project_block">
+          <h2>Minimalist Stitch Counter</h2>
+
+          <p>When I initially got into <span class="color-text">crocheting</span>, I learned so much from an incredible community and I wanted to find a way to <span class="color-text">contribute</span>. I noticed that a lot of people online used <span class="color-text">stitch counters</span> to track their projects but I couldn't find a version that matched my <span class="color-text">expectations of simplicity</span>. I decided to just <span class="color-text">make it myself</span>.</p>
+          <p style="padding-left:25px"><a href="../art/letter-home" target="_blank">> Download on Google Play</a></p>
+          <p>You can also check out the code in <a href="https://github.com/erdavids/Minimalist-Stitch-Counter" target="_blank">this repository</a>. The app was build in <a href="https://godotengine.org/" target="_blank">Godot</a>, an open source game engine.</p>
+          <p>One of the most important differences with <span class="color-text">my app</span> is that the user never loses the ability to <span class="color-text">increment their count</span>. It was <span class="color-text">incredibly fun</span> to figure out a way to pack all the functionality I wanted into a <span class="color-text">single page</span>. Users can change between 9 color schemes, save up to 8 projects, and track progress with either individual stitches or rows.</p>
+          <p>I am actively working on an <span class="color-text">iOS version</span>.</p>
+          <div class="row_5">
+              <div class="column_1_4">
+                  <a href="/Images/StitchCounter/blue_framed.png"><img src="/Images/StitchCounter/blue_framed.png" width="100%"/></a>
+              </div>
+              <div class="column_1_4">
+                  <a href="/Images/StitchCounter/orange_framed.png"><img src="/Images/StitchCounter/orange_framed.png" width="100%"/></a>
+              </div>
+              <div class="column_1_4">
+                  <a href="/Images/StitchCounter/murky_framed.png"><img src="/Images/StitchCounter/murky_framed.png" width="100%"/></a>
+              </div>
+              <div class="column_1_4">
+                  <a href="/Images/StitchCounter/gray_framed.png"><img src="/Images/StitchCounter/gray_framed.png" width="100%"/></a>
+              </div>
+          </div>
+
+
+
+        <div class="project_block">
+          <div class="row_3">
+              <div class="column_6">
+                  <a href="../Images/Oblong/Oblong-1-367.png"><img src="../Images/Oblong/Oblong-1-367.png" style="width:100%"/></a>
+              </div>
+          </div>
+          <h3>Thank you for checking out the app! If you want to stay updated, consider <a href="https://mailchi.mp/d01300094a83/erdavids" target="_blank">subscribing</a> to my newsletter.</h3>
+        </div>
+
+        <div style="margin-bottom: 4em;"></div>
+
+        <div class="project_block">
+          <div class="nav_bar">
+              <ul>
+                  <li class="nav_bar_element"><a href="https://github.com/erdavids"><ion-icon name="logo-octocat"></ion-icon></a></li>
+                  <li class="nav_bar_element"><a href="https://www.linkedin.com/in/eric-davidson-70b615ab/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                  <li class="nav_bar_element"><a href="https://twitter.com/TheBuffED"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                  <li class="nav_bar_element"><a href="https://www.youtube.com/channel/UCUrmX3SvpPerq-KAfGBrgGQ?view_as=subscriber"><ion-icon name="logo-youtube"></ion-icon></a></li>
+              </ul>
+          </div>
+          <div class="nav_bar">
+            <ul>
+              <li class="nav_bar_element"><script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee', '#4fa4a5', 'A0A6YGXL');kofiwidget2.draw();</script></li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 4em;"></div>
+
+        <script>
+
+          var myArray = ['#d47564', '#CAA67A', '#4fa4a5'];
+
+          var elements = document.getElementsByClassName("color-text");
+          var c = ''
+          var last_c = ''
+          for(var i=0; i<elements.length; i++) {
+              c = myArray[Math.floor(Math.random() * myArray.length)];
+              while (c == last_c) {
+                c = myArray[Math.floor(Math.random() * myArray.length)];
+              }
+              elements[i].style.color = c;
+          }
+
+          var links = document.getElementsByTagName("a");
+          for(var i=0;i<links.length;i++)
+          {
+              if(links[i].href)
+              {
+                  links[i].style.color = myArray[Math.floor(Math.random() * myArray.length)];
+              }
+          }
+        </script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    </body>
+</html>

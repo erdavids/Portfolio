@@ -1,0 +1,49 @@
+<! DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="style.css">
+   
+    
+  </head>
+  <body>
+  <div class = "game_block">
+    <div class = "nav_bar">
+    </div>
+    <div style="text-align:center">
+      <p  id = "credit_text";> A game prototype created by Elizabeth Easter and Eric Davidson</p>
+     </div>
+    <div style="text-align:center;">
+    <input type="button" id="timer_button" value="Start Timer" onclick="start_timing();">
+    <input type="button" id="timer_button" value="Clear Grid" onclick="clear_grid();">
+    
+    </div>
+    <div style="text-align:center">
+     <p  id = "level_text";> Level 1 </p>
+    </div>
+    <div style="text-align:center">
+     <p  id = "rotation_text";> Rotate 90 Degrees Clockwise</p>
+    </div>
+
+    <div class = "canvas">
+      <div id = "sketchdiv"></div>
+     </div>
+    <div id = "next_level" style = "visibility : hidden;">
+        <h1> Solved!</h1>
+        <button onclick = "nextLevel()" class = "button">Next Level</button>
+      </div>
+    <div id = "restart_level" style = "visibility : hidden;">
+        <h1> Out of time!</h1>
+        <button onclick = "restartLevel()" class = "button">Retry</button>
+      </div>
+      <div id = "start_page" style = "visibility : visible;">
+        <h1> TruTiles</h1>
+        <button onclick = "startGame()" class = "button">Begin</button>
+      </div>
+   </div>
+   <script src="proof_of_concept.js"></script>
+   <script src="resources/p5.min.js"></script>
+   </body>
+     
+</html>
