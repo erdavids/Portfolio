@@ -15,9 +15,7 @@
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
-  "component---src-pages-blog-js": preferDefault(__webpack_require__(/*! ./src/pages/blog.js */ "./src/pages/blog.js")),
-  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")),
-  "component---src-pages-markdown-remark-frontmatter-slug-js": preferDefault(__webpack_require__(/*! ./src/pages/{MarkdownRemark.frontmatter__slug}.js */ "./src/pages/{MarkdownRemark.frontmatter__slug}.js"))
+  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js"))
   }
 
 
@@ -6516,72 +6514,6 @@ exports.onRenderBody = onRenderBody;
 
 /***/ }),
 
-/***/ "./src/components/blogLinks.js":
-/*!*************************************!*\
-  !*** ./src/components/blogLinks.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
-/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/header */ "./src/components/header.js");
-/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/style.css */ "./src/styles/style.css");
-/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_style_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/blogListStyles.css */ "./src/styles/blogListStyles.css");
-/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _styles_headerStyles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/headerStyles.css */ "./src/styles/headerStyles.css");
-/* harmony import */ var _styles_headerStyles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_headerStyles_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_post_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/post-link */ "./src/components/post-link.js");
-/* harmony import */ var _components_post_full__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/post-full */ "./src/components/post-full.js");
-/* harmony import */ var react_toggle__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-toggle */ "./node_modules/react-toggle/dist/component/index.js");
-
-
-
-
-
-
-
-
-
-
-
-
-const BlogLinks = ({
-  data: {
-    allMarkdownRemark: {
-      edges
-    }
-  }
-}) => {
-  const Posts = edges.filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-  .map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_link__WEBPACK_IMPORTED_MODULE_6__.default, {
-    class: "post-link",
-    key: edge.node.id,
-    post: edge.node
-  }));
-  const FullPosts = edges.filter(edge => !!edge.node.frontmatter.date).map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_full__WEBPACK_IMPORTED_MODULE_7__.default, {
-    class: "post-link-full",
-    key: edge.node.id,
-    post: edge.node
-  }));
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    class: "content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Thoughts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    class: "blog-list"
-  }, Posts))));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BlogLinks);
-const pageQuery = "458311063";
-
-/***/ }),
-
 /***/ "./src/components/header.js":
 /*!**********************************!*\
   !*** ./src/components/header.js ***!
@@ -6622,10 +6554,6 @@ const Header = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     class: "page-logo-title"
   }, "Eric Davidson"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__.Link, {
-    to: "/"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    class: "hidden-button login-top-link"
-  }, "Projects")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__.Link, {
     to: "/blog"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     class: "hidden-button login-top-link"
@@ -6770,60 +6698,6 @@ const NotFoundPage = () => {
 
 /***/ }),
 
-/***/ "./src/pages/blog.js":
-/*!***************************!*\
-  !*** ./src/pages/blog.js ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/header */ "./src/components/header.js");
-/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/blogListStyles.css */ "./src/styles/blogListStyles.css");
-/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_post_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/post-link */ "./src/components/post-link.js");
-/* harmony import */ var _components_post_full__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/post-full */ "./src/components/post-full.js");
-
-
-
-
-
-
-const IndexPage = ({
-  data: {
-    allMarkdownRemark: {
-      edges
-    }
-  }
-}) => {
-  const Posts = edges.filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-  .map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_link__WEBPACK_IMPORTED_MODULE_3__.default, {
-    class: "post-link",
-    key: edge.node.id,
-    post: edge.node
-  }));
-  const FullPosts = edges.filter(edge => !!edge.node.frontmatter.date).map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_full__WEBPACK_IMPORTED_MODULE_4__.default, {
-    class: "post-link-full",
-    key: edge.node.id,
-    post: edge.node
-  }));
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    class: "content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Thoughts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    class: "blog-list"
-  }, Posts))));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
-const pageQuery = "458311063";
-
-/***/ }),
-
 /***/ "./src/pages/index.js":
 /*!****************************!*\
   !*** ./src/pages/index.js ***!
@@ -6900,140 +6774,101 @@ const IndexPage = ({
     class: "description"
   }, "Hey, I'm a software engineer. In my spare time I work on turning ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://qyll.dev"
-  }, "Qyll"), " into a useful tool for writers."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-    class: "description"
-  }, "All the images you see below were created with code! Take a look at my ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "Qyll"), " into a useful tool for writers. All the images you see below were created with code! Take a look at my ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://github.com/erdavids/generative-art"
   }, "GitHub"), " for more examples, and email me at thebuffed [at] gmail [dot] com if you're interested in purchasing."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/Site-8856.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/1151041253.json */ "./.cache/caches/gatsby-plugin-image/1151041253.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Offset Quads"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$149.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Error Unknown"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$79.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/4888.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/3064968800.json */ "./.cache/caches/gatsby-plugin-image/3064968800.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Around the Corner"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$99.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Around the Corner"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$79.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/97568.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/3870760072.json */ "./.cache/caches/gatsby-plugin-image/3870760072.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Falling Chaos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$99.00"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Falling Chaos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$129.00"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/4446.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/2583689060.json */ "./.cache/caches/gatsby-plugin-image/2583689060.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Offset Quads"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$149.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Above and Below"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$149.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/Abstract-thin.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/4265922334.json */ "./.cache/caches/gatsby-plugin-image/4265922334.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Error Unknown"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$99.00"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Threads"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$129.00"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/offset-1.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/3890465389.json */ "./.cache/caches/gatsby-plugin-image/3890465389.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Offset Quads"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$149.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Offset Quads"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$99.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/circle_five.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/2564865347.json */ "./.cache/caches/gatsby-plugin-image/2564865347.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "The Fifth Circle"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$99.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "The Fifth Circle"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$79.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/paths-1.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/2644297871.json */ "./.cache/caches/gatsby-plugin-image/2644297871.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Error Unknown"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$99.00"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Paths"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$79.00"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/city-1.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/816729489.json */ "./.cache/caches/gatsby-plugin-image/816729489.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Offset Quads"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$149.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Binary Waterfall"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$79.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/fire-waves.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/1788400437.json */ "./.cache/caches/gatsby-plugin-image/1788400437.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Error Unknown"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$99.00"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Fire and Waves"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$249.00"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/mondrian-1.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/2322999486.json */ "./.cache/caches/gatsby-plugin-image/2322999486.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Offset Quads"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$149.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Mondrian Tiles"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$59.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/0-5-60.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/2829887329.json */ "./.cache/caches/gatsby-plugin-image/2829887329.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Mondrian Tiles"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$99.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Bricks"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$79.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_9__.StaticImage, {
+    class: "artImage",
     src: "../images/lines-trippy-1.png",
     __imageData: __webpack_require__(/*! ./.cache/caches/gatsby-plugin-image/1921331541.json */ "./.cache/caches/gatsby-plugin-image/1921331541.json")
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "The Birds"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$99.00")))));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Trippy Growth"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$79.00")))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
 const pageQuery = "458311063";
-
-/***/ }),
-
-/***/ "./src/pages/{MarkdownRemark.frontmatter__slug}.js":
-/*!*********************************************************!*\
-  !*** ./src/pages/{MarkdownRemark.frontmatter__slug}.js ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Template)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/header */ "./src/components/header.js");
-/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/blogListStyles.css */ "./src/styles/blogListStyles.css");
-/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_blogLinks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/blogLinks */ "./src/components/blogLinks.js");
-
-
-
-
-function Template({
-  data // this prop will be injected by the GraphQL query below.
-
-}) {
-  const {
-    markdownRemark
-  } = data; // data.markdownRemark holds your post data
-
-  const {
-    frontmatter,
-    html
-  } = markdownRemark;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    class: "post-link-full-title"
-  }, frontmatter.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "blog-post-content",
-    dangerouslySetInnerHTML: {
-      __html: html
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    class: "post-link-full-date"
-  }, frontmatter.date)));
-}
-const pageQuery = "441251969";
 
 /***/ }),
 
