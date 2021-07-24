@@ -14,6 +14,7 @@ import Toggle from "react-toggle"
 
 import errorUnknown from "../images/Site-8856.png"
 import aroundTheCorner from "../images/4888.png"
+import fallingChaos from "../images/97568.png"
 
 const IndexPage = ({
       data: {
@@ -55,7 +56,7 @@ const IndexPage = ({
                     <figcaption>$79.00</figcaption>
                 </figure>
                 <figure>
-                    <div class="flex-col"><img class="artImage" src="../images/97568.png" /></div>
+                    <div class="flex-col"><img class="artImage" src={fallingChaos} /></div>
                     <figcaption>Falling Chaos</figcaption>
                     <figcaption>$129.00</figcaption>
                 </figure>

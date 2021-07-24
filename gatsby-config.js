@@ -10,7 +10,6 @@ module.exports = {
         trackingId: "UA-138963802-1",
       },
     },
-    "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-nodejs",
     {
@@ -22,14 +21,5 @@ module.exports = {
     },
     "gatsby-transformer-remark",
     "gatsby-plugin-catch-links",
-    "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images"
-    },
   ],
 };

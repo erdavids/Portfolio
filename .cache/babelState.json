@@ -7,12 +7,6 @@
           "options": {}
         },
         {
-          "name": "/Users/thebuffed/Documents/Portfolio/node_modules/gatsby-plugin-image/dist/babel-plugin-parse-static-images.js",
-          "options": {
-            "cacheDir": "/Users/thebuffed/Documents/Portfolio/.cache/caches/gatsby-plugin-image"
-          }
-        },
-        {
           "name": "/Users/thebuffed/Documents/Portfolio/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
@@ -46,12 +40,6 @@
         {
           "name": "babel-plugin-lodash",
           "options": {}
-        },
-        {
-          "name": "/Users/thebuffed/Documents/Portfolio/node_modules/gatsby-plugin-image/dist/babel-plugin-parse-static-images.js",
-          "options": {
-            "cacheDir": "/Users/thebuffed/Documents/Portfolio/.cache/caches/gatsby-plugin-image"
-          }
         },
         {
           "name": "/Users/thebuffed/Documents/Portfolio/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
@@ -89,12 +77,6 @@
           "options": {}
         },
         {
-          "name": "/Users/thebuffed/Documents/Portfolio/node_modules/gatsby-plugin-image/dist/babel-plugin-parse-static-images.js",
-          "options": {
-            "cacheDir": "/Users/thebuffed/Documents/Portfolio/.cache/caches/gatsby-plugin-image"
-          }
-        },
-        {
           "name": "/Users/thebuffed/Documents/Portfolio/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
@@ -128,12 +110,6 @@
         {
           "name": "babel-plugin-lodash",
           "options": {}
-        },
-        {
-          "name": "/Users/thebuffed/Documents/Portfolio/node_modules/gatsby-plugin-image/dist/babel-plugin-parse-static-images.js",
-          "options": {
-            "cacheDir": "/Users/thebuffed/Documents/Portfolio/.cache/caches/gatsby-plugin-image"
-          }
         },
         {
           "name": "/Users/thebuffed/Documents/Portfolio/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",

@@ -1,6 +1,9 @@
 {
   "paths": [
     {
+      "path": "/dev-404-page/"
+    },
+    {
       "path": "/404/"
     },
     {
@@ -16,10 +19,10 @@
       "path": "/blog/starting-a-blog-in-2021/"
     },
     {
-      "path": "/blog/the-work-must-be-done/"
+      "path": "/blog/100-tasks/"
     },
     {
-      "path": "/blog/100-tasks/"
+      "path": "/blog/the-work-must-be-done/"
     },
     {
       "path": "/blog/surprising-art/"
@@ -34,28 +37,28 @@
       "path": "/blog/respect-your-ideas/"
     },
     {
-      "path": "/blog/stop-apologizing/"
-    },
-    {
-      "path": "/blog/the-boring-parts/"
-    },
-    {
       "path": "/blog/if-it-was-easy/"
+    },
+    {
+      "path": "/blog/stop-apologizing/"
     },
     {
       "path": "/blog/consistency/"
     },
     {
-      "path": "/blog/stop-reading-bad-books/"
+      "path": "/blog/the-boring-parts/"
     },
     {
       "path": "/blog/effort/"
     },
     {
-      "path": "/blog/vision/"
+      "path": "/blog/stop-reading-bad-books/"
     },
     {
       "path": "/blog/sustainable-daily-progress/"
+    },
+    {
+      "path": "/blog/vision/"
     },
     {
       "path": "/blog/edges-of-the-map/"
@@ -65,9 +68,6 @@
     },
     {
       "path": "/blog/july-retro-2021/"
-    },
-    {
-      "path": "/dev-404-page/"
     }
   ],
   "redirects": [],

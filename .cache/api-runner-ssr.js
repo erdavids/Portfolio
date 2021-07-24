@@ -3,10 +3,6 @@ var plugins = [{
       plugin: require('/Users/thebuffed/Documents/Portfolio/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
       options: {"plugins":[],"trackingId":"UA-138963802-1","head":false,"anonymize":false,"respectDNT":false,"exclude":[],"pageTransitionDelay":0,"enableWebVitalsTracking":false},
     },{
-      name: 'gatsby-plugin-image',
-      plugin: require('/Users/thebuffed/Documents/Portfolio/node_modules/gatsby-plugin-image/gatsby-ssr'),
-      options: {"plugins":[]},
-    },{
       name: 'gatsby-plugin-react-helmet',
       plugin: require('/Users/thebuffed/Documents/Portfolio/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
