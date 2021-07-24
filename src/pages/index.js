@@ -15,6 +15,16 @@ import Toggle from "react-toggle"
 import errorUnknown from "../images/Site-8856.png"
 import aroundTheCorner from "../images/4888.png"
 import fallingChaos from "../images/97568.png"
+import aboveAndBelow from "../images/4446.png"
+import abstractThin from "../images/Abstract-thin.png"
+import offset from "../images/offset-1.png"
+import circleFive from "../images/circle_five.png"
+import paths from "../images/paths-1.png"
+import city from "../images/city-1.png"
+import fireAndWaves from "../images/fire-waves.png"
+import mondrian from "../images/mondrian-1.png"
+import bricks from "../images/0-5-60.png"
+import trippy from "../images/lines-trippy-1.png"
 
 const IndexPage = ({
       data: {
@@ -64,12 +74,12 @@ const IndexPage = ({
 
                 <div class="flex-grid-container">
                 <figure>
-                    <div class="flex-col"><img class="artImage" src="../images/4446.png" /></div>
+                    <div class="flex-col"><img class="artImage" src={aboveAndBelow} /></div>
                     <figcaption>Above and Below</figcaption>
                     <figcaption>$149.00</figcaption>
                 </figure>
                 <figure>
-                    <div class="flex-col"><img class="artImage" src="../images/Abstract-thin.png" /></div>
+                    <div class="flex-col"><img class="artImage" src={abstractThin} /></div>
                     <figcaption>Threads</figcaption>
                     <figcaption>$129.00</figcaption>
                 </figure>
@@ -77,17 +87,17 @@ const IndexPage = ({
 
                 <div class="flex-grid-container">
                 <figure>
-                    <div class="flex-col"><img class="artImage" src="../images/offset-1.png" /></div>
+                    <div class="flex-col"><img class="artImage" src={offset} /></div>
                     <figcaption>Offset Quads</figcaption>
                     <figcaption>$99.00</figcaption>
                 </figure>
                 <figure>
-                    <div class="flex-col"><img class="artImage" src="../images/circle_five.png" /></div>
+                    <div class="flex-col"><img class="artImage" src={circleFive} /></div>
                     <figcaption>The Fifth Circle</figcaption>
                     <figcaption>$79.00</figcaption>
                 </figure>
                 <figure>
-                    <div class="flex-col"><img class="artImage" src="../images/paths-1.png" /></div>
+                    <div class="flex-col"><img class="artImage" src={paths} /></div>
                     <figcaption>Paths</figcaption>
                     <figcaption>$79.00</figcaption>
                 </figure>
@@ -95,12 +105,12 @@ const IndexPage = ({
 
                 <div class="flex-grid-container">
                 <figure>
-                    <div class="flex-col"><img class="artImage" src="../images/city-1.png" /></div>
+                    <div class="flex-col"><img class="artImage" src={city} /></div>
                     <figcaption>Binary Waterfall</figcaption>
                     <figcaption>$79.00</figcaption>
                 </figure>
                 <figure>
-                    <div class="flex-col"><img class="artImage" src="../images/fire-waves.png" /></div>
+                    <div class="flex-col"><img class="artImage" src={fireAndWaves} /></div>
                     <figcaption>Fire and Waves</figcaption>
                     <figcaption>$249.00</figcaption>
                 </figure>
@@ -108,17 +118,17 @@ const IndexPage = ({
 
                 <div class="flex-grid-container">
                 <figure>
-                    <div class="flex-col"><img class="artImage" src="../images/mondrian-1.png" /></div>
+                    <div class="flex-col"><img class="artImage" src={mondrian} /></div>
                     <figcaption>Mondrian Tiles</figcaption>
                     <figcaption>$59.00</figcaption>
                 </figure>
                 <figure>
-                    <div class="flex-col"><img class="artImage" src="../images/0-5-60.png" /></div>
+                    <div class="flex-col"><img class="artImage" src={bricks} /></div>
                     <figcaption>Bricks</figcaption>
                     <figcaption>$79.00</figcaption>
                 </figure>
                 <figure>
-                    <div class="flex-col"><img class="artImage" src="../images/lines-trippy-1.png" /></div>
+                    <div class="flex-col"><img class="artImage" src={trippy} /></div>
                     <figcaption>Trippy Growth</figcaption>
                     <figcaption>$79.00</figcaption>
                 </figure>

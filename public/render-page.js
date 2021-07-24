@@ -4226,6 +4226,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_Site_8856_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../images/Site-8856.png */ "./src/images/Site-8856.png");
 /* harmony import */ var _images_4888_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../images/4888.png */ "./src/images/4888.png");
 /* harmony import */ var _images_97568_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../images/97568.png */ "./src/images/97568.png");
+/* harmony import */ var _images_4446_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../images/4446.png */ "./src/images/4446.png");
+/* harmony import */ var _images_Abstract_thin_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../images/Abstract-thin.png */ "./src/images/Abstract-thin.png");
+/* harmony import */ var _images_offset_1_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../images/offset-1.png */ "./src/images/offset-1.png");
+/* harmony import */ var _images_circle_five_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../images/circle_five.png */ "./src/images/circle_five.png");
+/* harmony import */ var _images_paths_1_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../images/paths-1.png */ "./src/images/paths-1.png");
+/* harmony import */ var _images_city_1_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../images/city-1.png */ "./src/images/city-1.png");
+/* harmony import */ var _images_fire_waves_png__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../images/fire-waves.png */ "./src/images/fire-waves.png");
+/* harmony import */ var _images_mondrian_1_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../images/mondrian-1.png */ "./src/images/mondrian-1.png");
+/* harmony import */ var _images_0_5_60_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../images/0-5-60.png */ "./src/images/0-5-60.png");
+/* harmony import */ var _images_lines_trippy_1_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../images/lines-trippy-1.png */ "./src/images/lines-trippy-1.png");
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4304,58 +4324,58 @@ const IndexPage = ({
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     class: "artImage",
-    src: "../images/4446.png"
+    src: _images_4446_png__WEBPACK_IMPORTED_MODULE_12__.default
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Above and Below"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$149.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     class: "artImage",
-    src: "../images/Abstract-thin.png"
+    src: _images_Abstract_thin_png__WEBPACK_IMPORTED_MODULE_13__.default
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Threads"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$129.00"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     class: "artImage",
-    src: "../images/offset-1.png"
+    src: _images_offset_1_png__WEBPACK_IMPORTED_MODULE_14__.default
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Offset Quads"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$99.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     class: "artImage",
-    src: "../images/circle_five.png"
+    src: _images_circle_five_png__WEBPACK_IMPORTED_MODULE_15__.default
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "The Fifth Circle"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$79.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     class: "artImage",
-    src: "../images/paths-1.png"
+    src: _images_paths_1_png__WEBPACK_IMPORTED_MODULE_16__.default
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Paths"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$79.00"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     class: "artImage",
-    src: "../images/city-1.png"
+    src: _images_city_1_png__WEBPACK_IMPORTED_MODULE_17__.default
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Binary Waterfall"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$79.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     class: "artImage",
-    src: "../images/fire-waves.png"
+    src: _images_fire_waves_png__WEBPACK_IMPORTED_MODULE_18__.default
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Fire and Waves"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$249.00"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     class: "artImage",
-    src: "../images/mondrian-1.png"
+    src: _images_mondrian_1_png__WEBPACK_IMPORTED_MODULE_19__.default
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Mondrian Tiles"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$59.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     class: "artImage",
-    src: "../images/0-5-60.png"
+    src: _images_0_5_60_png__WEBPACK_IMPORTED_MODULE_20__.default
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Bricks"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$79.00")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     class: "artImage",
-    src: "../images/lines-trippy-1.png"
+    src: _images_lines_trippy_1_png__WEBPACK_IMPORTED_MODULE_21__.default
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "Trippy Growth"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figcaption", null, "$79.00")))));
 };
 
@@ -15307,6 +15327,36 @@ module.exports = str => encodeURIComponent(str).replace(/[!'()*]/g, x => `%${x.c
 
 /***/ }),
 
+/***/ "./src/images/0-5-60.png":
+/*!*******************************!*\
+  !*** ./src/images/0-5-60.png ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/0-5-60-39fe331360bbf6b077a2775af0b2ffd0.png");
+
+/***/ }),
+
+/***/ "./src/images/4446.png":
+/*!*****************************!*\
+  !*** ./src/images/4446.png ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/4446-4e59df2f2fd4886b5529c50f79e7765a.png");
+
+/***/ }),
+
 /***/ "./src/images/4888.png":
 /*!*****************************!*\
   !*** ./src/images/4888.png ***!
@@ -15337,6 +15387,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/images/Abstract-thin.png":
+/*!**************************************!*\
+  !*** ./src/images/Abstract-thin.png ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/Abstract-thin-bb318c48d51d4242f65f5c573104c27d.png");
+
+/***/ }),
+
 /***/ "./src/images/Site-8856.png":
 /*!**********************************!*\
   !*** ./src/images/Site-8856.png ***!
@@ -15349,6 +15414,111 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/Site-8856-5d12908763783f4c9065a83845548645.png");
+
+/***/ }),
+
+/***/ "./src/images/circle_five.png":
+/*!************************************!*\
+  !*** ./src/images/circle_five.png ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/circle_five-67a411ea38c24c7872855b34b0e4fdcc.png");
+
+/***/ }),
+
+/***/ "./src/images/city-1.png":
+/*!*******************************!*\
+  !*** ./src/images/city-1.png ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/city-1-49638259f0ca7db057cbc9c986b13cc3.png");
+
+/***/ }),
+
+/***/ "./src/images/fire-waves.png":
+/*!***********************************!*\
+  !*** ./src/images/fire-waves.png ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/fire-waves-bf861a89dfa4ce7c7dc3a5fc20d1bbf8.png");
+
+/***/ }),
+
+/***/ "./src/images/lines-trippy-1.png":
+/*!***************************************!*\
+  !*** ./src/images/lines-trippy-1.png ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/lines-trippy-1-bc28f1495c748b6787ffbf7d92cd4bd4.png");
+
+/***/ }),
+
+/***/ "./src/images/mondrian-1.png":
+/*!***********************************!*\
+  !*** ./src/images/mondrian-1.png ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/mondrian-1-fdf034253a7aee5f655f373941460312.png");
+
+/***/ }),
+
+/***/ "./src/images/offset-1.png":
+/*!*********************************!*\
+  !*** ./src/images/offset-1.png ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/offset-1-2ada0f40d596dd9680621197378f1514.png");
+
+/***/ }),
+
+/***/ "./src/images/paths-1.png":
+/*!********************************!*\
+  !*** ./src/images/paths-1.png ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/paths-1-1de5ff78fe0f878817a55392f6d8e54f.png");
 
 /***/ }),
 
