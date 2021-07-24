@@ -12,7 +12,6 @@ module.exports = {
     },
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sharp",
     "gatsby-plugin-nodejs",
     {
       resolve: "gatsby-source-filesystem",
