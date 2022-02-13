@@ -1,8 +1,9 @@
 .header {
-    vertical-align: middle;
+    /* vertical-align: middle; */
     padding: 20px;
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
+    line-height:100px;
 }
 
 .eric-image {
@@ -11,7 +12,8 @@
 }
 
 .page-logo-title {
-    font-size: 1.25rem;
+    font-size: 2.5rem;
+    vertical-align: middle;
 }
 
 .login-top-link {
@@ -56,6 +58,16 @@ a {
     .header {
         width: 95%;
         padding: 10px;
+    }
+
+    .page-logo-title {
+        font-size: 1.25rem;
+    }
+    
+    .login-top-link {
+        cursor: pointer;
+        color: #E03857;
+        font-size: 1rem;
     }
 
     .hidden-button {

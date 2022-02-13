@@ -12,6 +12,22 @@ module.exports = {
     },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-nodejs",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          "gatsby-remark-relative-images",
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+
+            },
+          },
+        ],
+
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -19,7 +35,12 @@ module.exports = {
         path: "./src/markdown-pages",
       },
     },
-    "gatsby-transformer-remark",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: './src/images',
+      },
+    },
     "gatsby-plugin-catch-links",
   ],
 };

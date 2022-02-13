@@ -10,6 +10,9 @@
       "path": "/404.html"
     },
     {
+      "path": "/about/"
+    },
+    {
       "path": "/blog/"
     },
     {
@@ -22,13 +25,10 @@
       "path": "/blog/the-work-must-be-done/"
     },
     {
-      "path": "/blog/100-tasks/"
+      "path": "/blog/surprising-art/"
     },
     {
       "path": "/blog/dig-deeper/"
-    },
-    {
-      "path": "/blog/surprising-art/"
     },
     {
       "path": "/blog/1000-times/"
@@ -37,13 +37,13 @@
       "path": "/blog/stop-apologizing/"
     },
     {
+      "path": "/blog/the-boring-parts/"
+    },
+    {
       "path": "/blog/respect-your-ideas/"
     },
     {
       "path": "/blog/if-it-was-easy/"
-    },
-    {
-      "path": "/blog/the-boring-parts/"
     },
     {
       "path": "/blog/consistency/"
@@ -55,13 +55,16 @@
       "path": "/blog/effort/"
     },
     {
+      "path": "/blog/edges-of-the-map/"
+    },
+    {
       "path": "/blog/vision/"
     },
     {
       "path": "/blog/sustainable-daily-progress/"
     },
     {
-      "path": "/blog/edges-of-the-map/"
+      "path": "/blog/building-masonry/"
     },
     {
       "path": "/blog/year-so-far/"

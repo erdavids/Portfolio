@@ -11,35 +11,54 @@ const IndexPage = ({
   },
 }) => {
   const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .filter(edge => edge.node.frontmatter.thought) // You can filter your posts based on some criteria
     .map(edge => <PostLink class="post-link" key={edge.node.id} post={edge.node} />)
 
     const FullPosts = edges
-    .filter(edge => !!edge.node.frontmatter.date)
+    .filter(edge => !!edge.node.frontmatter.date )
     .map(edge => <PostFull class="post-link-full" key={edge.node.id} post={edge.node} />)
 
+    const ArtPosts = edges
+    .filter(edge => !!edge.node.frontmatter.date && edge.node.frontmatter.art)
+    .map(edge => <PostLink class="post-link" key={edge.node.id} post={edge.node} />)
 
     return (
         <>
             <Header />
             <div class="content">
 
-                <div>
+                {/* <div>
                     <h1>Thoughts</h1>
                     <div class="blog-list">{Posts}</div>
-                </div>
+                </div> */}
                 {/* <div class='some-page-wrapper'>
                   <div class='row'>
-                    <div class='column'>
-                      <div class="blog-list">{FullPosts[0]}</div>
-                    </div>
                     <div class='column'>
                       <h1>Thoughts</h1>
                       <div class="blog-list">{Posts}</div>
                     </div>
+                    <div class='column'>
+                      <h1>Art</h1>
+                      <div class="blog-list">{ArtPosts}</div>
+                    </div>
                   </div>
                 </div> */}
-            </div>
+                  <div class="flex-grid-container">
+                    <div class="flex-col">
+                      <div class="blog-col">
+                        <h1>Thoughts</h1>
+                        <div>{Posts}</div>
+                      </div>
+                    </div>
+                    <div class="flex-col">
+                      <div class="blog-col">
+                        <h1>Art</h1>
+                        <div>{ArtPosts}</div>
+                      </div>
+
+                    </div>
+                  </div>
+              </div>
         </>
     )
 
@@ -61,6 +80,7 @@ export const pageQuery = graphql`
             slug
             title
             thought
+            art
             article
           }
         }

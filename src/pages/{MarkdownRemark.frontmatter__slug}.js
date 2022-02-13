@@ -32,6 +32,7 @@ export const pageQuery = graphql`
         slug
         title
         thought
+        art
         article
       }
     }

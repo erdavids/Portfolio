@@ -10,12 +10,6 @@ const debug = require(`debug`)(`gatsby:gatsby-plugin-sharp`);
 
 const duotone = require(`./duotone`);
 
-const imagemin = require(`imagemin`);
-
-const imageminMozjpeg = require(`imagemin-mozjpeg`);
-
-const imageminPngquant = require(`imagemin-pngquant`);
-
 const {
   healOptions
 } = require(`./plugin-options`);
@@ -73,13 +67,14 @@ sharp.concurrency(1);
  * @param {Transform[]} transforms
  */
 
-exports.processFile = (file, transforms, options = {}) => {
+exports.processFile = async (file, transforms, options = {}) => {
   let pipeline;
 
   try {
-    pipeline = !options.failOnError ? sharp(file, {
+    const inputBuffer = await fs.readFile(file);
+    pipeline = !options.failOnError ? sharp(inputBuffer, {
       failOnError: false
-    }) : sharp(file); // Keep Metadata
+    }) : sharp(inputBuffer); // Keep Metadata
 
     if (!options.stripMetadata) {
       pipeline = pipeline.withMetadata();
@@ -88,7 +83,7 @@ exports.processFile = (file, transforms, options = {}) => {
     throw new SharpError(`Failed to load image ${file} into sharp.`, err);
   }
 
-  return transforms.map(async transform => {
+  return Promise.all(transforms.map(async transform => {
     try {
       const {
         outputPath,
@@ -130,6 +125,7 @@ exports.processFile = (file, transforms, options = {}) => {
       }).png({
         compressionLevel: transformArgs.pngCompressionLevel,
         adaptiveFiltering: false,
+        quality: transformArgs.pngQuality || transformArgs.quality,
         force: transformArgs.toFormat === `png`
       }).webp({
         quality: transformArgs.webpQuality || transformArgs.quality,
@@ -140,16 +136,12 @@ exports.processFile = (file, transforms, options = {}) => {
       }).avif({
         quality: transformArgs.quality,
         force: transformArgs.toFormat === `avif`
-      }); // jpeg
-
-      if (!options.useMozJpeg) {
-        clonedPipeline = clonedPipeline.jpeg({
-          quality: transformArgs.jpegQuality || transformArgs.quality,
-          progressive: transformArgs.jpegProgressive,
-          force: transformArgs.toFormat === `jpg`
-        });
-      } // grayscale
-
+      }).jpeg({
+        mozjpeg: options.useMozJpeg,
+        quality: transformArgs.jpegQuality || transformArgs.quality,
+        progressive: transformArgs.jpegProgressive,
+        force: transformArgs.toFormat === `jpg`
+      }); // grayscale
 
       if (transformArgs.grayscale) {
         clonedPipeline = clonedPipeline.grayscale();
@@ -163,26 +155,11 @@ exports.processFile = (file, transforms, options = {}) => {
 
       if (transformArgs.duotone) {
         clonedPipeline = await duotone(transformArgs.duotone, transformArgs.toFormat, clonedPipeline);
-      } // lets decide how we want to save this transform
-
-
-      if (transformArgs.toFormat === `png`) {
-        await compressPng(clonedPipeline, outputPath, {
-          pngQuality: transformArgs.pngQuality,
-          quality: transformArgs.quality,
-          pngCompressionSpeed: transformArgs.compressionSpeed,
-          stripMetadata: options.stripMetadata
-        });
-        return transform;
-      }
-
-      if (options.useMozJpeg && transformArgs.toFormat === `jpg`) {
-        await compressJpg(clonedPipeline, outputPath, transformArgs);
-        return transform;
       }
 
       try {
-        await clonedPipeline.toFile(outputPath);
+        const buffer = await clonedPipeline.toBuffer();
+        await fs.writeFile(outputPath, buffer);
       } catch (err) {
         throw new Error(`Failed to write ${file} into ${outputPath}. (${err.message})`);
       }
@@ -196,25 +173,8 @@ exports.processFile = (file, transforms, options = {}) => {
     }
 
     return transform;
-  });
+  }));
 };
-
-const compressPng = (pipeline, outputPath, options) => pipeline.toBuffer().then(sharpBuffer => imagemin.buffer(sharpBuffer, {
-  plugins: [imageminPngquant({
-    quality: [(options.pngQuality || options.quality) / 100, Math.min(((options.pngQuality || options.quality) + 25) / 100, 1)],
-    // e.g. [0.4, 0.65]
-    speed: options.pngCompressionSpeed ? options.pngCompressionSpeed : undefined,
-    strip: !!options.stripMetadata // Must be a bool
-
-  })]
-}).then(imageminBuffer => fs.writeFile(outputPath, imageminBuffer)));
-
-const compressJpg = (pipeline, outputPath, options) => pipeline.toBuffer().then(sharpBuffer => imagemin.buffer(sharpBuffer, {
-  plugins: [imageminMozjpeg({
-    quality: options.jpegQuality || options.quality,
-    progressive: options.jpegProgressive
-  })]
-}).then(imageminBuffer => fs.writeFile(outputPath, imageminBuffer)));
 
 exports.createArgsDigest = args => {
   const argsDigest = createContentDigest(args);

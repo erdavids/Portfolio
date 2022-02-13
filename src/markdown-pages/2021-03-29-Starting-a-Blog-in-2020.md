@@ -4,6 +4,7 @@ date: 2021-03-29
 title: "Starting a Daily Blog in 2021"
 description: "I have written a blog post that no one will read (for now), and I will always prefer that to having nothing for them to read at all."
 thought: true
+art: false
 ---
 
 

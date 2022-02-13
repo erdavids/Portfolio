@@ -12,6 +12,8 @@ exports.getDominantColor = exports.getSrcSet = exports.getSizes = void 0;
 
 var _safeSharp = _interopRequireDefault(require("./safe-sharp"));
 
+var _fsExtra = _interopRequireDefault(require("fs-extra"));
+
 function rgbToHex(red, green, blue) {
   return `#${(blue | green << 8 | red << 16 | 1 << 24).toString(16).slice(1)}`;
 }
@@ -286,7 +288,10 @@ const getDominantColor = async absolutePath => {
     return dominantColor;
   }
 
-  const pipeline = (0, _safeSharp.default)(absolutePath);
+  const pipeline = (0, _safeSharp.default)();
+
+  _fsExtra.default.createReadStream(absolutePath).pipe(pipeline);
+
   const {
     dominant
   } = await pipeline.stats(); // Fallback in case sharp doesn't support dominant

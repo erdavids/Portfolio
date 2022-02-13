@@ -12,19 +12,17 @@ import PostFull from "../components/post-full"
 
 import Toggle from "react-toggle"
 
-import errorUnknown from "../images/Site-8856.png"
-import aroundTheCorner from "../images/4888.png"
-import fallingChaos from "../images/97568.png"
-import aboveAndBelow from "../images/4446.png"
-import abstractThin from "../images/Abstract-thin.png"
-import offset from "../images/offset-1.png"
-import circleFive from "../images/circle_five.png"
-import paths from "../images/paths-1.png"
-import city from "../images/city-1.png"
-import fireAndWaves from "../images/fire-waves.png"
-import mondrian from "../images/mondrian-1.png"
-import bricks from "../images/0-5-60.png"
-import trippy from "../images/lines-trippy-1.png"
+import mas1 from "../images/masonry-1.png"
+import mas2 from "../images/masonry-2.png"
+import mas3 from "../images/masonry-3.png"
+import mas4 from "../images/masonry-4.png"
+import mas5 from "../images/masonry-5.png"
+import mas6 from "../images/masonry-6.png"
+import mas7 from "../images/masonry-7.png"
+import mas8 from "../images/masonry-8.png"
+import mas9 from "../images/masonry-9.png"
+import mas11 from "../images/masonry-11.png"
+
 
 const IndexPage = ({
       data: {
@@ -52,87 +50,46 @@ const IndexPage = ({
         <>
             <Header />
             <div class="content">
-                <p class="description">Hey, I'm a software engineer. In my spare time I work on turning <a href="https://qyll.dev">Qyll</a> into a useful tool for writers. All the images you see below were created with code! Take a look at my <a href="https://github.com/erdavids/generative-art">GitHub</a> for more examples, and email me at thebuffed [at] gmail [dot] com if you're interested in purchasing.</p>
+                <p class="description">Hey there, I'm a software engineer and a generative artist.</p>
+                <p class="description">The coolest thing I've worked on recently is <a href="https://www.artblocks.io/project/259">Masonry</a>, which you can see some examples of below. If you want to explore the original prototype code for this project, <a href="https://github.com/erdavids/Generative-Art/tree/master/Projects/Masonry">check it out here</a>.</p>
                 
                 <div class="flex-grid-container">
                 <figure>
-                    <div class="flex-col"><img class="artImage" src={errorUnknown} /></div>
-                    <figcaption>Error Unknown</figcaption>
-                    <figcaption>$79.00</figcaption>
+                    <div class="flex-col"><img class="artImage" src={mas8} /></div>
                 </figure>
                 <figure>
-                    <div class="flex-col"><img class="artImage" src={aroundTheCorner} /></div>
-                    <figcaption>Around the Corner</figcaption>
-                    <figcaption>$79.00</figcaption>
+                    <div class="flex-col"><img class="artImage" src={mas9} /></div>
+                </figure>
+                </div>
+
+
+                <div class="flex-grid-container">
+                <figure>
+                    <div class="flex-col"><img class="artImage" src={mas7} /></div>
                 </figure>
                 <figure>
-                    <div class="flex-col"><img class="artImage" src={fallingChaos} /></div>
-                    <figcaption>Falling Chaos</figcaption>
-                    <figcaption>$129.00</figcaption>
+                    <div class="flex-col"><img class="artImage" src={mas2} /></div>
                 </figure>
                 </div>
 
                 <div class="flex-grid-container">
                 <figure>
-                    <div class="flex-col"><img class="artImage" src={aboveAndBelow} /></div>
-                    <figcaption>Above and Below</figcaption>
-                    <figcaption>$149.00</figcaption>
+                    <div class="flex-col"><img class="artImage" src={mas6} /></div>
                 </figure>
                 <figure>
-                    <div class="flex-col"><img class="artImage" src={abstractThin} /></div>
-                    <figcaption>Threads</figcaption>
-                    <figcaption>$129.00</figcaption>
+                    <div class="flex-col"><img class="artImage" src={mas4} /></div>
                 </figure>
                 </div>
 
                 <div class="flex-grid-container">
                 <figure>
-                    <div class="flex-col"><img class="artImage" src={offset} /></div>
-                    <figcaption>Offset Quads</figcaption>
-                    <figcaption>$99.00</figcaption>
+                    <div class="flex-col"><img class="artImage" src={mas5} /></div>
                 </figure>
                 <figure>
-                    <div class="flex-col"><img class="artImage" src={circleFive} /></div>
-                    <figcaption>The Fifth Circle</figcaption>
-                    <figcaption>$79.00</figcaption>
-                </figure>
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={paths} /></div>
-                    <figcaption>Paths</figcaption>
-                    <figcaption>$79.00</figcaption>
+                    <div class="flex-col"><img class="artImage" src={mas11} /></div>
                 </figure>
                 </div>
 
-                <div class="flex-grid-container">
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={city} /></div>
-                    <figcaption>Binary Waterfall</figcaption>
-                    <figcaption>$79.00</figcaption>
-                </figure>
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={fireAndWaves} /></div>
-                    <figcaption>Fire and Waves</figcaption>
-                    <figcaption>$249.00</figcaption>
-                </figure>
-                </div>
-
-                <div class="flex-grid-container">
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={mondrian} /></div>
-                    <figcaption>Mondrian Tiles</figcaption>
-                    <figcaption>$59.00</figcaption>
-                </figure>
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={bricks} /></div>
-                    <figcaption>Bricks</figcaption>
-                    <figcaption>$79.00</figcaption>
-                </figure>
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={trippy} /></div>
-                    <figcaption>Trippy Growth</figcaption>
-                    <figcaption>$79.00</figcaption>
-                </figure>
-                </div>
                 
 
                 

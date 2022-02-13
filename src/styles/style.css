@@ -20,14 +20,14 @@ a {
 }
 
 .content {
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
 }
     /* background-color:#F1E8E3;
     color: #E03857; */
 
 .description {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -172,6 +172,10 @@ a {
     padding: 0px;
   }
 
+  .blog-col {
+    margin-bottom: 1rem;
+  }
+
   figcaption {
     color: #484848;
     text-align: center;
@@ -198,7 +202,8 @@ a {
     }
 
     .flex-col {
-      flex: 1;
+      flex-basis: 100%;
+      padding: 0px;
     }
 
 }
