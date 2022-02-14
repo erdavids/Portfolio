@@ -15,7 +15,7 @@
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
-  "component---src-pages-blog-js": preferDefault(__webpack_require__(/*! ./src/pages/blog.js */ "./src/pages/blog.js")),
+  "component---src-pages-art-js": preferDefault(__webpack_require__(/*! ./src/pages/art.js */ "./src/pages/art.js")),
   "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js"))
   }
 
@@ -4063,7 +4063,11 @@ const Header = () => {
     to: "/blog"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     class: "hidden-button login-top-link"
-  }, "Writing"))));
+  }, "Writing")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby__WEBPACK_IMPORTED_MODULE_2__.Link, {
+    to: "/art"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    class: "hidden-button login-top-link"
+  }, "Art"))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
@@ -4204,10 +4208,10 @@ const NotFoundPage = () => {
 
 /***/ }),
 
-/***/ "./src/pages/blog.js":
-/*!***************************!*\
-  !*** ./src/pages/blog.js ***!
-  \***************************/
+/***/ "./src/pages/art.js":
+/*!**************************!*\
+  !*** ./src/pages/art.js ***!
+  \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -4222,6 +4226,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_post_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/post-link */ "./src/components/post-link.js");
 /* harmony import */ var _components_post_full__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/post-full */ "./src/components/post-full.js");
+/* harmony import */ var _images_masonry_13_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../images/masonry-13.png */ "./src/images/masonry-13.png");
+/* harmony import */ var _images_masonry_14_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../images/masonry-14.png */ "./src/images/masonry-14.png");
+/* harmony import */ var _images_masonry_15_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../images/masonry-15.png */ "./src/images/masonry-15.png");
+
+
+
 
 
 
@@ -4235,39 +4245,44 @@ const IndexPage = ({
     }
   }
 }) => {
-  const Posts = edges.filter(edge => edge.node.frontmatter.thought) // You can filter your posts based on some criteria
-  .map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_link__WEBPACK_IMPORTED_MODULE_3__.default, {
-    class: "post-link",
-    key: edge.node.id,
-    post: edge.node
-  }));
-  const FullPosts = edges.filter(edge => !!edge.node.frontmatter.date).map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_full__WEBPACK_IMPORTED_MODULE_4__.default, {
-    class: "post-link-full",
-    key: edge.node.id,
-    post: edge.node
-  }));
-  const ArtPosts = edges.filter(edge => !!edge.node.frontmatter.date && edge.node.frontmatter.art).map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_link__WEBPACK_IMPORTED_MODULE_3__.default, {
-    class: "post-link",
-    key: edge.node.id,
-    post: edge.node
-  }));
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+    class: "column-title"
+  }, "Masonry"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "Deceptively simple, Masonry is one of my favorite projects to date. In it's simplest form, it's really just rectangles that have their fill color and outlines deformed. There are other random elements that lead to incredible outputs."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "If you're interested in minting one for yourself, ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/project/259"
+  }, "check out the project here"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    class: "blog-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Thoughts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, Posts))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/token/259000081"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_masonry_13_png__WEBPACK_IMPORTED_MODULE_5__.default
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    class: "blog-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Art"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, ArtPosts))))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/token/259000044"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_masonry_14_png__WEBPACK_IMPORTED_MODULE_6__.default
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/token/259000082"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_masonry_15_png__WEBPACK_IMPORTED_MODULE_7__.default
+  }))))), " "));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
-const pageQuery = "4205105069";
+const pageQuery = "458311063";
 
 /***/ }),
 
@@ -4361,15 +4376,7 @@ const IndexPage = ({
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-    class: "description"
-  }, "Hey there, I'm a software engineer and a generative artist."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-    class: "description"
-  }, "The coolest thing I've worked on recently is ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    href: "https://www.artblocks.io/project/259"
-  }, "Masonry"), ", which you can see some examples of below. If you want to explore the original prototype code for this project, ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    href: "https://github.com/erdavids/Generative-Art/tree/master/Projects/Masonry"
-  }, "check it out here"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
@@ -15395,6 +15402,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/masonry-11-7009159d781b944cc20807324a6dddec.png");
+
+/***/ }),
+
+/***/ "./src/images/masonry-13.png":
+/*!***********************************!*\
+  !*** ./src/images/masonry-13.png ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/masonry-13-14089c1d1de03809180aabd2d760cb55.png");
+
+/***/ }),
+
+/***/ "./src/images/masonry-14.png":
+/*!***********************************!*\
+  !*** ./src/images/masonry-14.png ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/masonry-14-8d24051dcd120c6782b81e83a5d3c86b.png");
+
+/***/ }),
+
+/***/ "./src/images/masonry-15.png":
+/*!***********************************!*\
+  !*** ./src/images/masonry-15.png ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/masonry-15-4221dd8358f2243b14168df20553fb07.png");
 
 /***/ }),
 

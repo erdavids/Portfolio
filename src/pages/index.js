@@ -50,9 +50,9 @@ const IndexPage = ({
         <>
             <Header />
             <div class="content">
-                <p class="description">Hey there, I'm a software engineer and a generative artist.</p>
+                {/* <p class="description">Hey there, I'm a software engineer and a generative artist.</p>
                 <p class="description">The coolest thing I've worked on recently is <a href="https://www.artblocks.io/project/259">Masonry</a>, which you can see some examples of below. If you want to explore the original prototype code for this project, <a href="https://github.com/erdavids/Generative-Art/tree/master/Projects/Masonry">check it out here</a>.</p>
-                
+                 */}
                 <div class="flex-grid-container">
                 <figure>
                     <div class="flex-col"><img class="artImage" src={mas8} /></div>

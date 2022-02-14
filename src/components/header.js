@@ -23,6 +23,8 @@ const Header = () => {
             {/* <Link to="/"><a class="hidden-button login-top-link">Projects</a></Link> */}
             <Link to="/about"><a class="hidden-button login-top-link">About</a></Link>
             <Link to="/blog"><a class="hidden-button login-top-link">Writing</a></Link>
+            <Link to="/art"><a class="hidden-button login-top-link">Art</a></Link>
+
 
 
         </nav>

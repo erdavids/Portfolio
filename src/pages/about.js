@@ -10,18 +10,6 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }) => {
-  const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink class="post-link" key={edge.node.id} post={edge.node} />)
-
-    const FullPosts = edges
-    .filter(edge => !!edge.node.frontmatter.date )
-    .map(edge => <PostFull class="post-link-full" key={edge.node.id} post={edge.node} />)
-
-    const ArtPosts = edges
-    .filter(edge => !!edge.node.frontmatter.date && edge.node.frontmatter.art)
-    .map(edge => <PostLink class="post-link" key={edge.node.id} post={edge.node} />)
-
     return (
         <>
             <Header />

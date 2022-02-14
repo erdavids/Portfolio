@@ -61,13 +61,13 @@ a {
     }
 
     .page-logo-title {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
     
     .login-top-link {
         cursor: pointer;
         color: #E03857;
-        font-size: 1rem;
+        font-size: .8rem;
     }
 
     .hidden-button {
@@ -84,4 +84,5 @@ a {
     li {
         font-size: .6rem;
     }
+    
 }

@@ -46,23 +46,20 @@ const IndexPage = ({
                   <div class="flex-grid-container">
                     <div class="flex-col">
                       <div class="blog-col">
-                        <h1>Thoughts</h1>
+                        <h1 class="column-title">Thoughts</h1>
                         <div>{Posts}</div>
                       </div>
                     </div>
                     <div class="flex-col">
                       <div class="blog-col">
-                        <h1>Art</h1>
+                        <h1 class="column-title">Art</h1>
                         <div>{ArtPosts}</div>
                       </div>
-
                     </div>
                   </div>
               </div>
         </>
     )
-
-
 }
 
 export default IndexPage
