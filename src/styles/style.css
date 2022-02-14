@@ -38,10 +38,11 @@ a {
 
   .flex-grid-container {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
   }
 
   .flex-col {
+    width: 100%;
     margin: 0;
     flex-basis: 100%;
     padding: 0px;

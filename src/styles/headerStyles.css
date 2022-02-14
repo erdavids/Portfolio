@@ -77,8 +77,7 @@ a {
         height: 40px;
         width: fit-content;
         padding: 0px 10px;
-        margin-bottom: 1rem;
-        font-size: 1rem;
+        font-size: .8rem;
     }
 
     li {
