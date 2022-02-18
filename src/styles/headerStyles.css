@@ -46,7 +46,7 @@ li {
 }
 
 h1 {
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 a {
@@ -61,7 +61,7 @@ a {
     }
 
     .page-logo-title {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
     
     .login-top-link {

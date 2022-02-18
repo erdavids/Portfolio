@@ -15,7 +15,9 @@
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
-  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js"))
+  "component---src-pages-blog-js": preferDefault(__webpack_require__(/*! ./src/pages/blog.js */ "./src/pages/blog.js")),
+  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")),
+  "component---src-pages-markdown-remark-frontmatter-slug-js": preferDefault(__webpack_require__(/*! ./src/pages/{MarkdownRemark.frontmatter__slug}.js */ "./src/pages/{MarkdownRemark.frontmatter__slug}.js"))
   }
 
 
@@ -4015,6 +4017,72 @@ exports.onRenderBody = onRenderBody;
 
 /***/ }),
 
+/***/ "./src/components/blogLinks.js":
+/*!*************************************!*\
+  !*** ./src/components/blogLinks.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/header */ "./src/components/header.js");
+/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/style.css */ "./src/styles/style.css");
+/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_style_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/blogListStyles.css */ "./src/styles/blogListStyles.css");
+/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _styles_headerStyles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/headerStyles.css */ "./src/styles/headerStyles.css");
+/* harmony import */ var _styles_headerStyles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_headerStyles_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_post_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/post-link */ "./src/components/post-link.js");
+/* harmony import */ var _components_post_full__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/post-full */ "./src/components/post-full.js");
+/* harmony import */ var react_toggle__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-toggle */ "./node_modules/react-toggle/dist/component/index.js");
+
+
+
+
+
+
+
+
+
+
+
+
+const BlogLinks = ({
+  data: {
+    allMarkdownRemark: {
+      edges
+    }
+  }
+}) => {
+  const Posts = edges.filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+  .map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_link__WEBPACK_IMPORTED_MODULE_6__.default, {
+    class: "post-link",
+    key: edge.node.id,
+    post: edge.node
+  }));
+  const FullPosts = edges.filter(edge => !!edge.node.frontmatter.date).map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_full__WEBPACK_IMPORTED_MODULE_7__.default, {
+    class: "post-link-full",
+    key: edge.node.id,
+    post: edge.node
+  }));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Thoughts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "blog-list"
+  }, Posts))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BlogLinks);
+const pageQuery = "458311063";
+
+/***/ }),
+
 /***/ "./src/components/header.js":
 /*!**********************************!*\
   !*** ./src/components/header.js ***!
@@ -4207,6 +4275,77 @@ const NotFoundPage = () => {
 
 /***/ }),
 
+/***/ "./src/pages/blog.js":
+/*!***************************!*\
+  !*** ./src/pages/blog.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/header */ "./src/components/header.js");
+/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/blogListStyles.css */ "./src/styles/blogListStyles.css");
+/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_post_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/post-link */ "./src/components/post-link.js");
+/* harmony import */ var _components_post_full__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/post-full */ "./src/components/post-full.js");
+
+
+
+
+
+
+const IndexPage = ({
+  data: {
+    allMarkdownRemark: {
+      edges
+    }
+  }
+}) => {
+  const Posts = edges.filter(edge => edge.node.frontmatter.thought) // You can filter your posts based on some criteria
+  .map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_link__WEBPACK_IMPORTED_MODULE_3__.default, {
+    class: "post-link",
+    key: edge.node.id,
+    post: edge.node
+  }));
+  const FullPosts = edges.filter(edge => !!edge.node.frontmatter.date).map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_full__WEBPACK_IMPORTED_MODULE_4__.default, {
+    class: "post-link-full",
+    key: edge.node.id,
+    post: edge.node
+  }));
+  const ArtPosts = edges.filter(edge => !!edge.node.frontmatter.date && edge.node.frontmatter.art).map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_link__WEBPACK_IMPORTED_MODULE_3__.default, {
+    class: "post-link",
+    key: edge.node.id,
+    post: edge.node
+  }));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-grid-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "blog-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+    class: "column-title"
+  }, "Thoughts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, Posts))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "blog-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+    class: "column-title"
+  }, "Art"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, ArtPosts))))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
+const pageQuery = "4205105069";
+
+/***/ }),
+
 /***/ "./src/pages/index.js":
 /*!****************************!*\
   !*** ./src/pages/index.js ***!
@@ -4350,6 +4489,56 @@ const IndexPage = ({
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
 const pageQuery = "458311063";
+
+/***/ }),
+
+/***/ "./src/pages/{MarkdownRemark.frontmatter__slug}.js":
+/*!*********************************************************!*\
+  !*** ./src/pages/{MarkdownRemark.frontmatter__slug}.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Template)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/header */ "./src/components/header.js");
+/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/blogListStyles.css */ "./src/styles/blogListStyles.css");
+/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_blogLinks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/blogLinks */ "./src/components/blogLinks.js");
+
+
+
+
+function Template({
+  data // this prop will be injected by the GraphQL query below.
+
+}) {
+  const {
+    markdownRemark
+  } = data; // data.markdownRemark holds your post data
+
+  const {
+    frontmatter,
+    html
+  } = markdownRemark;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+    class: "post-link-full-title"
+  }, frontmatter.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "blog-post-content",
+    dangerouslySetInnerHTML: {
+      __html: html
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+    class: "post-link-full-date"
+  }, frontmatter.date)));
+}
+const pageQuery = "65661558";
 
 /***/ }),
 
