@@ -11,7 +11,7 @@ I thought it would be fun to share the 41 color palettes that make up [Masonry](
 
 All of the palettes below were chosen by hand, usually starting with a tool like [Coolors](https://coolors.co/) and then tweaking the values. They are named based on their personal meaning to me. 
 
-Outside of the action palettes, there are also two default background colors ([#f0e5cb, #efebda]) and a default outline color (#001400).
+Outside of the actual palettes, there are also two default background colors ([#f0e5cb, #efebda]) and a default outline color (#001400).
 
 I plan on using many of these colors in future projects,  and I hope these are cool to see for others!
 
