@@ -1,7 +1,7 @@
 ---
 slug: "/blog/colors-of-masonry"
 date: 2022-02-13
-title: "The Colors or Masonry"
+title: "The Colors of Masonry"
 description: "So many color palettes,  too little time."
 art: true
 thought: false
