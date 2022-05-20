@@ -5,6 +5,8 @@ import "../styles/blogListStyles.css"
 import PostLink from "../components/post-link"
 import PostFull from "../components/post-full"
 
+import me from "../images/me.png"
+
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges },
@@ -17,6 +19,8 @@ const IndexPage = ({
               <p class="description">When I'm not making web applications with code, I like making art.</p>
               <p class="description">There's just something about generative art that brings me back over and over. I really love problem solving, and thinking through a potential generative project eventually becomes a technical challenge. You can visualize it, and you can make it statically by hand somehow, but you become interested in unleashing the idea completely and letting it make itself. Each stage of the process has it's own difficulties and it's own rewards.</p>
               <p class="description">I like doing other things as well. I've recently gotten in to woodworking, but only with handtools. I also love fitness and spending time outside.</p>
+              <div class="flex-col"><img class="artImage" src={me} /></div>
+
             </div>
         </>
     )
