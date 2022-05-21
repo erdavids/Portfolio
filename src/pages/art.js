@@ -23,7 +23,7 @@ const IndexPage = ({
         <>
             <Header />
             <div class="content">
-                <h1 class="column-title">Projection</h1>
+                <h1 class="column-title">Chord Uknown</h1>
                 <p class="description">Although I defined the mathematical parameters, every single output feels like a surprise to me.</p>
                 <p class="description">There are several patterns of deformation, but at the base level this project just layers chess-like grids on top of each other. The cells stay connected, no matter how strong the deformation is.</p>
                 <p class="description">This project is <a href="https://www.fxhash.xyz/u/Eric%20Davidson">coming soon on FXHASH</a>.</p>
