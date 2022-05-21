@@ -4,6 +4,7 @@ date: 2021-03-30
 title: "The work must be done"
 description: "Creation is non-negotiable"
 thought: true
+art: false
 ---
 
 We have the ability to create things because the work must be done.

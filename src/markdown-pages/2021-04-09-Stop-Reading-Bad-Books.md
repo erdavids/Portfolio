@@ -4,6 +4,7 @@ date: 2021-04-09
 title: "Stop reading bad books"
 description: "It might time to put one down"
 thought: true
+art: false
 ---
 
 

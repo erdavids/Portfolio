@@ -4,6 +4,7 @@ date: 2021-04-02
 title: "Dig slightly deeper"
 description: "Find what you need and learn just a little extra beyond that"
 thought: true
+art: false
 ---
 
 Imagine you're mining for gold, armed only with a pickaxe and healthy ambition. You finally hit a small vein after a full day's work and this is the first you've seen in weeks.

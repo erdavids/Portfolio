@@ -4,6 +4,7 @@ date: 2021-04-04
 title: "Respect your ideas"
 description: "Ideas come to you for a reason"
 thought: true
+art: false
 ---
 
 Having an idea by itself does not make you a creative person, but any idea that comes you has power and importance. Whether it is the stepping block to another idea or simply something to help you steer clear of poor decisions, it deserves your respect.

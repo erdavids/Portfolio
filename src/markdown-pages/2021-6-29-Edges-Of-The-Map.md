@@ -4,6 +4,7 @@ date: 2021-06-29
 title: "Edges of the map"
 description: "Be an explorer"
 thought: true
+art: false
 ---
 
 It always feels like the map has been completely filled in.

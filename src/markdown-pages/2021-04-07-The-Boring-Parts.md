@@ -4,6 +4,7 @@ date: 2021-04-07
 title: "The boring parts"
 description: "Remember the boring parts of your projects, conversations, and overall experiences."
 thought: true
+art: false
 ---
 
 Try and remember the boring parts of the things you work on. They usually fall through the cracks as memories are built and things get romanticized.

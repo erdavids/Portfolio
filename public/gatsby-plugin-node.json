@@ -64,9 +64,6 @@
       "path": "/blog/sustainable-daily-progress/"
     },
     {
-      "path": "/blog/building-masonry/"
-    },
-    {
       "path": "/blog/year-so-far/"
     },
     {
@@ -74,6 +71,9 @@
     },
     {
       "path": "/art/"
+    },
+    {
+      "path": "/blog/colors-of-masonry/"
     }
   ],
   "redirects": [],

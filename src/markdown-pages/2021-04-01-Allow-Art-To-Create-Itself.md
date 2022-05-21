@@ -4,6 +4,7 @@ date: 2021-04-01
 title: "Allow your art to surprise you"
 description: "Sometimes we need to get out of the way and let art take it's own form"
 thought: true
+art: false
 ---
 
 

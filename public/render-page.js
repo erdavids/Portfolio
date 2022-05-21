@@ -15,9 +15,8 @@
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
-  "component---src-pages-blog-js": preferDefault(__webpack_require__(/*! ./src/pages/blog.js */ "./src/pages/blog.js")),
-  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")),
-  "component---src-pages-markdown-remark-frontmatter-slug-js": preferDefault(__webpack_require__(/*! ./src/pages/{MarkdownRemark.frontmatter__slug}.js */ "./src/pages/{MarkdownRemark.frontmatter__slug}.js"))
+  "component---src-pages-art-js": preferDefault(__webpack_require__(/*! ./src/pages/art.js */ "./src/pages/art.js")),
+  "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js"))
   }
 
 
@@ -4017,72 +4016,6 @@ exports.onRenderBody = onRenderBody;
 
 /***/ }),
 
-/***/ "./src/components/blogLinks.js":
-/*!*************************************!*\
-  !*** ./src/components/blogLinks.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
-/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/header */ "./src/components/header.js");
-/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/style.css */ "./src/styles/style.css");
-/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_style_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/blogListStyles.css */ "./src/styles/blogListStyles.css");
-/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _styles_headerStyles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/headerStyles.css */ "./src/styles/headerStyles.css");
-/* harmony import */ var _styles_headerStyles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_headerStyles_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_post_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/post-link */ "./src/components/post-link.js");
-/* harmony import */ var _components_post_full__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/post-full */ "./src/components/post-full.js");
-/* harmony import */ var react_toggle__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-toggle */ "./node_modules/react-toggle/dist/component/index.js");
-
-
-
-
-
-
-
-
-
-
-
-
-const BlogLinks = ({
-  data: {
-    allMarkdownRemark: {
-      edges
-    }
-  }
-}) => {
-  const Posts = edges.filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-  .map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_link__WEBPACK_IMPORTED_MODULE_6__.default, {
-    class: "post-link",
-    key: edge.node.id,
-    post: edge.node
-  }));
-  const FullPosts = edges.filter(edge => !!edge.node.frontmatter.date).map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_full__WEBPACK_IMPORTED_MODULE_7__.default, {
-    class: "post-link-full",
-    key: edge.node.id,
-    post: edge.node
-  }));
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    class: "content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Thoughts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    class: "blog-list"
-  }, Posts))));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BlogLinks);
-const pageQuery = "458311063";
-
-/***/ }),
-
 /***/ "./src/components/header.js":
 /*!**********************************!*\
   !*** ./src/components/header.js ***!
@@ -4275,10 +4208,10 @@ const NotFoundPage = () => {
 
 /***/ }),
 
-/***/ "./src/pages/blog.js":
-/*!***************************!*\
-  !*** ./src/pages/blog.js ***!
-  \***************************/
+/***/ "./src/pages/art.js":
+/*!**************************!*\
+  !*** ./src/pages/art.js ***!
+  \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -4293,6 +4226,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_post_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/post-link */ "./src/components/post-link.js");
 /* harmony import */ var _components_post_full__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/post-full */ "./src/components/post-full.js");
+/* harmony import */ var _images_masonry_13_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../images/masonry-13.png */ "./src/images/masonry-13.png");
+/* harmony import */ var _images_masonry_14_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../images/masonry-14.png */ "./src/images/masonry-14.png");
+/* harmony import */ var _images_masonry_15_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../images/masonry-15.png */ "./src/images/masonry-15.png");
+/* harmony import */ var _images_34_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../images/34.png */ "./src/images/34.png");
+/* harmony import */ var _images_13_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../images/13.png */ "./src/images/13.png");
+/* harmony import */ var _images_19_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../images/19.png */ "./src/images/19.png");
+/* harmony import */ var _images_33_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../images/33.png */ "./src/images/33.png");
+
+
+
+
+
+
+
 
 
 
@@ -4306,43 +4253,79 @@ const IndexPage = ({
     }
   }
 }) => {
-  const Posts = edges.filter(edge => edge.node.frontmatter.thought) // You can filter your posts based on some criteria
-  .map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_link__WEBPACK_IMPORTED_MODULE_3__.default, {
-    class: "post-link",
-    key: edge.node.id,
-    post: edge.node
-  }));
-  const FullPosts = edges.filter(edge => !!edge.node.frontmatter.date).map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_full__WEBPACK_IMPORTED_MODULE_4__.default, {
-    class: "post-link-full",
-    key: edge.node.id,
-    post: edge.node
-  }));
-  const ArtPosts = edges.filter(edge => !!edge.node.frontmatter.date && edge.node.frontmatter.art).map(edge => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_post_link__WEBPACK_IMPORTED_MODULE_3__.default, {
-    class: "post-link",
-    key: edge.node.id,
-    post: edge.node
-  }));
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+    class: "column-title"
+  }, "Intention"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "Although I defined the mathematical parameters, every single output feels like a surprise to me."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "There are several patterns of deformation, but at the base level this project just layers chess-like grids on top of each other. The cells stay connected, no matter how strong the deformation is."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "This project is ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.fxhash.xyz/u/Eric%20Davidson"
+  }, "coming soon on FXHASH"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    class: "blog-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    class: "column-title"
-  }, "Thoughts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, Posts))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/token/259000081"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_34_png__WEBPACK_IMPORTED_MODULE_8__.default
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    class: "blog-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/token/259000044"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_13_png__WEBPACK_IMPORTED_MODULE_9__.default
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-grid-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/token/259000081"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_19_png__WEBPACK_IMPORTED_MODULE_10__.default
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/token/259000044"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_33_png__WEBPACK_IMPORTED_MODULE_11__.default
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
     class: "column-title"
-  }, "Art"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, ArtPosts))))));
+  }, "Masonry"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "Deceptively simple, Masonry is one of my favorite projects to date. In it's simplest form, it's really just rectangles that have their fill color and outlines deformed. There are other random elements that lead to incredible outputs."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "If you're interested in minting one for yourself, ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/project/259"
+  }, "check out the project here"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-grid-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/token/259000081"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_masonry_13_png__WEBPACK_IMPORTED_MODULE_5__.default
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/token/259000044"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_masonry_14_png__WEBPACK_IMPORTED_MODULE_6__.default
+  })))))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
-const pageQuery = "4205105069";
+const pageQuery = "458311063";
 
 /***/ }),
 
@@ -4489,56 +4472,6 @@ const IndexPage = ({
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
 const pageQuery = "458311063";
-
-/***/ }),
-
-/***/ "./src/pages/{MarkdownRemark.frontmatter__slug}.js":
-/*!*********************************************************!*\
-  !*** ./src/pages/{MarkdownRemark.frontmatter__slug}.js ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Template)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/header */ "./src/components/header.js");
-/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/blogListStyles.css */ "./src/styles/blogListStyles.css");
-/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_blogLinks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/blogLinks */ "./src/components/blogLinks.js");
-
-
-
-
-function Template({
-  data // this prop will be injected by the GraphQL query below.
-
-}) {
-  const {
-    markdownRemark
-  } = data; // data.markdownRemark holds your post data
-
-  const {
-    frontmatter,
-    html
-  } = markdownRemark;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    class: "post-link-full-title"
-  }, frontmatter.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "blog-post-content",
-    dangerouslySetInnerHTML: {
-      __html: html
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    class: "post-link-full-date"
-  }, frontmatter.date)));
-}
-const pageQuery = "65661558";
 
 /***/ }),
 
@@ -15485,6 +15418,66 @@ module.exports = str => encodeURIComponent(str).replace(/[!'()*]/g, x => `%${x.c
 
 /***/ }),
 
+/***/ "./src/images/13.png":
+/*!***************************!*\
+  !*** ./src/images/13.png ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/13-075ccee57744d0a5b4acd96e61a4e405.png");
+
+/***/ }),
+
+/***/ "./src/images/19.png":
+/*!***************************!*\
+  !*** ./src/images/19.png ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/19-4a63df53a7c75700f3e3f7ba5d0e1537.png");
+
+/***/ }),
+
+/***/ "./src/images/33.png":
+/*!***************************!*\
+  !*** ./src/images/33.png ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/33-69a0ff3370975dbfa3da01b7447cf359.png");
+
+/***/ }),
+
+/***/ "./src/images/34.png":
+/*!***************************!*\
+  !*** ./src/images/34.png ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/34-99baefb695c8608ea99010cb50b15bdd.png");
+
+/***/ }),
+
 /***/ "./src/images/masonry-1.png":
 /*!**********************************!*\
   !*** ./src/images/masonry-1.png ***!
@@ -15512,6 +15505,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/masonry-11-7009159d781b944cc20807324a6dddec.png");
+
+/***/ }),
+
+/***/ "./src/images/masonry-13.png":
+/*!***********************************!*\
+  !*** ./src/images/masonry-13.png ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/masonry-13-14089c1d1de03809180aabd2d760cb55.png");
+
+/***/ }),
+
+/***/ "./src/images/masonry-14.png":
+/*!***********************************!*\
+  !*** ./src/images/masonry-14.png ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/masonry-14-8d24051dcd120c6782b81e83a5d3c86b.png");
+
+/***/ }),
+
+/***/ "./src/images/masonry-15.png":
+/*!***********************************!*\
+  !*** ./src/images/masonry-15.png ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/masonry-15-4221dd8358f2243b14168df20553fb07.png");
 
 /***/ }),
 

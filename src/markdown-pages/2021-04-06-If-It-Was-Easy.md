@@ -4,6 +4,7 @@ date: 2021-04-06
 title: "If it was easy"
 description: "You've heard people say,'If it was easy, everyone would do it'. That's not true."
 thought: true
+art: false
 ---
 
 It bothers me when people say, "If it was easy, everyone would do it."

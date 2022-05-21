@@ -4,6 +4,7 @@ date: 2021-04-05
 title: "Stop apologizing"
 description: "You don't need to justify having ideas"
 thought: true
+art: false
 ---
 
 It's time to stop apologizing.

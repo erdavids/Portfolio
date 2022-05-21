@@ -4,6 +4,7 @@ date: 2021-04-08
 title: "Consistency (or bad blog posts)"
 description: "Whatever you decide to do, choose consistency "
 thought: true
+art: false
 ---
 
 Is it strange to admit that I'm writing this post in the last couple minutes of the day just to keep my daily blogging streak going?

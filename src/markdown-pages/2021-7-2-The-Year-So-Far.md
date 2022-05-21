@@ -4,7 +4,7 @@ date: 2021-07-02
 title: "The year so far"
 description: "The year is half over, it's time for understanding and preparation "
 thought: true
-
+art: false
 ---
 
 

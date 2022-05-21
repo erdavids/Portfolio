@@ -16,10 +16,10 @@ const IndexPage = ({
         <>
             <Header />
             <div class="content">
-              <p class="description">When I'm not making web applications with code, I like making art.</p>
-              <p class="description">There's just something about generative art that brings me back over and over. I really love problem solving, and thinking through a potential generative project eventually becomes a technical challenge. You can visualize it, and you can make it statically by hand somehow, but you become interested in unleashing the idea completely and letting it make itself. Each stage of the process has it's own difficulties and it's own rewards.</p>
-              <p class="description">I like doing other things as well. I've recently gotten in to woodworking, but only with handtools. I also love fitness and spending time outside.</p>
-              <div class="flex-col"><img class="artImage" src={me} /></div>
+              <p class="description">I'm a software engineer that loves making art with code.</p>
+              <p class="description">I want to create things that bring something positive to the lives of even the people I'll never meet.</p>
+              <p class="description">I'm working on a novel and one of the characters is a cat that wears a wristwatch.</p>
+              <p align="center"><div class="flex-col"><img class="artImage" src={me} /></div></p>
 
             </div>
         </>
