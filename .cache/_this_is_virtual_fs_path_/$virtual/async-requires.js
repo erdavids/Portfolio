@@ -8,6 +8,7 @@ exports.components = {
   "component---src-pages-art-js": () => import("./../../../src/pages/art.js" /* webpackChunkName: "component---src-pages-art-js" */),
   "component---src-pages-blog-js": () => import("./../../../src/pages/blog.js" /* webpackChunkName: "component---src-pages-blog-js" */),
   "component---src-pages-index-js": () => import("./../../../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
-  "component---src-pages-markdown-remark-frontmatter-slug-js": () => import("./../../../src/pages/{MarkdownRemark.frontmatter__slug}.js" /* webpackChunkName: "component---src-pages-markdown-remark-frontmatter-slug-js" */)
+  "component---src-pages-markdown-remark-frontmatter-slug-js": () => import("./../../../src/pages/{MarkdownRemark.frontmatter__slug}.js" /* webpackChunkName: "component---src-pages-markdown-remark-frontmatter-slug-js" */),
+  "component---src-pages-prints-js": () => import("./../../../src/pages/prints.js" /* webpackChunkName: "component---src-pages-prints-js" */)
 }
 

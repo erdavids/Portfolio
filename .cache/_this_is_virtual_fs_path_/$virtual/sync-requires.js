@@ -10,6 +10,7 @@ exports.components = {
   "component---src-pages-art-js": preferDefault(require("/Users/thebuffed/Documents/Portfolio/src/pages/art.js")),
   "component---src-pages-blog-js": preferDefault(require("/Users/thebuffed/Documents/Portfolio/src/pages/blog.js")),
   "component---src-pages-index-js": preferDefault(require("/Users/thebuffed/Documents/Portfolio/src/pages/index.js")),
-  "component---src-pages-markdown-remark-frontmatter-slug-js": preferDefault(require("/Users/thebuffed/Documents/Portfolio/src/pages/{MarkdownRemark.frontmatter__slug}.js"))
+  "component---src-pages-markdown-remark-frontmatter-slug-js": preferDefault(require("/Users/thebuffed/Documents/Portfolio/src/pages/{MarkdownRemark.frontmatter__slug}.js")),
+  "component---src-pages-prints-js": preferDefault(require("/Users/thebuffed/Documents/Portfolio/src/pages/prints.js"))
 }
 
