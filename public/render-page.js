@@ -4257,7 +4257,13 @@ const IndexPage = ({
     href: "https://www.github.com/erdavids/generative-art"
   }, "you can still find here"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     class: "description"
-  }, "I'm working on a novel and one of the characters is a cat that wears a wristwatch."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+  }, "If you want regular updates on what I'm working on, ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.twitter.com/thebuffed"
+  }, "I try to post often on Twitter"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "Thank you for your interest in my work."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "Every interaction means the world."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     align: "center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
@@ -4726,16 +4732,11 @@ const IndexPage = ({
     class: "description"
   }, "The simplest (and cheapest) method right now is to allow those interested to submit a Google form. This method involves me sending you a PayPal request for the total cost after I receive confirmation of your ownership and order."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     class: "description"
-  }, "Use the form below to submit your information."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://forms.gle/teW5aq1QkDMLZhsL7"
+  }, "Use this form to submit your information"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     class: "description"
-  }, "This process is constantly in development, so I appreciate your patience and interest in these projects. It means the world."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
-    src: "https://docs.google.com/forms/d/e/1FAIpQLScohGMAGILj27OC42y73qGIxlIlrxFPkFEamXOH1o0gb2KUaA/viewform?embedded=true",
-    width: "640",
-    height: "1537",
-    frameborder: "0",
-    marginheight: "0",
-    marginwidth: "0"
-  }, "Loading\u2026")));
+  }, "This process is constantly in development, so I appreciate your patience and interest in these projects. It means the world.")));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
