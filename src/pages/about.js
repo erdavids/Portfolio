@@ -16,9 +16,11 @@ const IndexPage = ({
         <>
             <Header />
             <div class="content">
-              <p class="description">I'm a software engineer that loves making art with code.</p>
-              <p class="description">I want to create things that bring something positive to the lives of even the people I'll never meet.</p>
-              <p class="description">I'm working on a novel and one of the characters is a cat that wears a wristwatch.</p>
+              <p class="description">I'm a software engineer that loves making art with code, particularly art that utilizes the simplicity of rectangles and their outlines.</p>
+              <p class="description">For years, I released my code on GitHub with random generative art projects, which <a href="https://www.github.com/erdavids/generative-art">you can still find here</a>.</p>
+              <p class="description">If you want regular updates on what I'm working on, <a href="https://www.twitter.com/thebuffed">I try to post often on Twitter</a>.</p>
+              <p class="description">Thank you for your interest in my work.</p>
+              <p class="description">Every interaction means the world.</p>
               <p align="center"><div class="flex-col"><img class="artImage" src={me} /></div></p>
 
             </div>

@@ -28,7 +28,7 @@ const IndexPage = ({
             <div class="content">
                 <h1 class="column-title">Ordering Prints</h1>
                 <p class="description">Art belongs wherever it can be appreciated the most.</p>
-                <p class="description">I'm excited to soon offer an experimental printing process for owners of Masonry, Chord Unknown, Across Paper Stones, and Thoughts of Meadow.</p>
+                <p class="description">I'm excited to offer an experimental printing process for owners of Masonry, Chord Unknown, Across Paper Stones, and Thoughts of Meadow.</p>
                 <div class="flex-grid-container">
                 <figure>
                     <div class="flex-col"><a href="https://www.artblocks.io/token/259000081"><img class="artImage" src={signature} /></a></div>
@@ -68,7 +68,7 @@ const IndexPage = ({
                 <h1 class="column-title">Purchasing</h1>
                 <p class="description">I am actively experimenting with better options for accepting payments.</p>
                 <p class="description">The simplest (and cheapest) method right now is to allow those interested to submit a Google form. This method involves me sending you a PayPal request for the total cost after I receive confirmation of your ownership and order.</p>
-                <p class="description">Use this link to submit your information.</p>
+                <p class="description">Use the form below to submit your information.</p>
                 <p class="description">This process is constantly in development, so I appreciate your patience and interest in these projects. It means the world.</p>
 
                 {/* <figure>

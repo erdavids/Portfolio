@@ -15,6 +15,7 @@
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
+  "component---src-pages-about-js": preferDefault(__webpack_require__(/*! ./src/pages/about.js */ "./src/pages/about.js")),
   "component---src-pages-art-js": preferDefault(__webpack_require__(/*! ./src/pages/art.js */ "./src/pages/art.js")),
   "component---src-pages-index-js": preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")),
   "component---src-pages-prints-js": preferDefault(__webpack_require__(/*! ./src/pages/prints.js */ "./src/pages/prints.js"))
@@ -4213,6 +4214,64 @@ const NotFoundPage = () => {
 
 /***/ }),
 
+/***/ "./src/pages/about.js":
+/*!****************************!*\
+  !*** ./src/pages/about.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/header */ "./src/components/header.js");
+/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/blogListStyles.css */ "./src/styles/blogListStyles.css");
+/* harmony import */ var _styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_blogListStyles_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_post_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/post-link */ "./src/components/post-link.js");
+/* harmony import */ var _components_post_full__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/post-full */ "./src/components/post-full.js");
+/* harmony import */ var _images_me_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../images/me.png */ "./src/images/me.png");
+
+
+
+
+
+
+
+const IndexPage = ({
+  data: {
+    allMarkdownRemark: {
+      edges
+    }
+  }
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "I'm a software engineer that loves making art with code, particularly art that utilizes the simplicity of rectangles and their outlines."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "For years, I released my code on GitHub with random generative art projects, which ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.github.com/erdavids/generative-art"
+  }, "you can still find here"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "I'm working on a novel and one of the characters is a cat that wears a wristwatch."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    align: "center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_me_png__WEBPACK_IMPORTED_MODULE_5__.default
+  })))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
+const pageQuery = "458311063";
+
+/***/ }),
+
 /***/ "./src/pages/art.js":
 /*!**************************!*\
   !*** ./src/pages/art.js ***!
@@ -4240,6 +4299,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_33_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../images/33.png */ "./src/images/33.png");
 /* harmony import */ var _images_aps_21_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../images/aps/21.png */ "./src/images/aps/21.png");
 /* harmony import */ var _images_aps_50_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../images/aps/50.png */ "./src/images/aps/50.png");
+/* harmony import */ var _images_meadow_8_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../images/meadow/8.png */ "./src/images/meadow/8.png");
+/* harmony import */ var _images_meadow_7_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../images/meadow/7.png */ "./src/images/meadow/7.png");
+/* harmony import */ var _images_meadow_1_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../images/meadow/1.png */ "./src/images/meadow/1.png");
+
+
+
 
 
 
@@ -4266,6 +4331,38 @@ const IndexPage = ({
     class: "content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
     class: "column-title"
+  }, "Thoughts of Meadow"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "These shapes are nothing more than rectangles and lines."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "And yet..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "This project releases ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/collections/factory/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/355"
+  }, "September 28th on ArtBlocks"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, "See more examples and learn more about the development of 'Thoughts of Meadow' by visiting the official site."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    class: "description"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://thoughtsofmeadow.com/pages/algorithm"
+  }, "https://thoughtsofmeadow.com/")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-grid-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/collections/factory/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/355"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_meadow_8_png__WEBPACK_IMPORTED_MODULE_14__.default
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/collections/factory/projects/0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270/355"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_meadow_7_png__WEBPACK_IMPORTED_MODULE_15__.default
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+    class: "column-title"
   }, "Across Paper Stones"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     class: "description"
   }, "Wherever you want to go, you'll find a path to take you there."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
@@ -4274,9 +4371,9 @@ const IndexPage = ({
     class: "description"
   }, "Over thirty color palettes are shuffled together on each output, helping form slight edges between groups."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     class: "description"
-  }, "This project is ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "This project is fully minted (250 editions) and ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://www.fxhash.xyz/generative/slug/across-paper-stones"
-  }, "available on FXHASH"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "available for viewing on FXHASH"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
@@ -4300,9 +4397,9 @@ const IndexPage = ({
     class: "description"
   }, "There are several patterns of deformation, but at the base level this project just layers chess-like grids on top of each other. The cells stay connected, no matter how strong the deformation is."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     class: "description"
-  }, "This project is ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "This project is fully minted (500 editions) and ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://www.fxhash.xyz/generative/slug/chord-unknown"
-  }, "available on FXHASH"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "available for viewing on FXHASH"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
@@ -4340,9 +4437,9 @@ const IndexPage = ({
     class: "description"
   }, "Deceptively simple, Masonry is one of my favorite projects to date. In it's simplest form, it's really just rectangles that have their fill color and outlines deformed. There are other random elements that lead to incredible outputs."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     class: "description"
-  }, "You can ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  }, "This project is fully minted (200 editions) and ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://www.artblocks.io/project/259"
-  }, "see this project on ArtBlocks"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "available for viewing on ArtBlocks"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
@@ -4569,7 +4666,7 @@ const IndexPage = ({
     class: "description"
   }, "Art belongs wherever it can be appreciated the most."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     class: "description"
-  }, "I'm excited to soon offer an experimental printing process for owners of Masonry, Chord Unknown, Across Paper Stones, and Thoughts of Meadow."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "I'm excited to offer an experimental printing process for owners of Masonry, Chord Unknown, Across Paper Stones, and Thoughts of Meadow."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-grid-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     class: "flex-col"
@@ -4629,7 +4726,7 @@ const IndexPage = ({
     class: "description"
   }, "The simplest (and cheapest) method right now is to allow those interested to submit a Google form. This method involves me sending you a PayPal request for the total cost after I receive confirmation of your ownership and order."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     class: "description"
-  }, "Use this link to submit your information."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+  }, "Use the form below to submit your information."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     class: "description"
   }, "This process is constantly in development, so I appreciate your patience and interest in these projects. It means the world."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
     src: "https://docs.google.com/forms/d/e/1FAIpQLScohGMAGILj27OC42y73qGIxlIlrxFPkFEamXOH1o0gb2KUaA/viewform?embedded=true",
@@ -15871,6 +15968,66 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/masonry-9-f68fffcb609849c2566358656d31f275.png");
+
+/***/ }),
+
+/***/ "./src/images/me.png":
+/*!***************************!*\
+  !*** ./src/images/me.png ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/me-30f920b933bcc675736302743dd2c066.png");
+
+/***/ }),
+
+/***/ "./src/images/meadow/1.png":
+/*!*********************************!*\
+  !*** ./src/images/meadow/1.png ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/1-9ebd936a9cde1b6ed70854452955fe91.png");
+
+/***/ }),
+
+/***/ "./src/images/meadow/7.png":
+/*!*********************************!*\
+  !*** ./src/images/meadow/7.png ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/7-0320af1695e77c2a8c91658257a44393.png");
+
+/***/ }),
+
+/***/ "./src/images/meadow/8.png":
+/*!*********************************!*\
+  !*** ./src/images/meadow/8.png ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/8-cfdc8bd9535d6049d87cb63620803a5d.png");
 
 /***/ }),
 
