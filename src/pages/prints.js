@@ -63,15 +63,16 @@ const IndexPage = ({
                 <p class="description">Thoughts of Meadow</p>
 
                 <ul>
-                <li class="description">Price - $350</li>
+                <li class="description">Price - $500</li>
                 <li class="description">Dimensions - 16.5" x 23.5"</li>
                 </ul>
                 <p class="description">Shipping will be included for deliveries within the United States. Any international orders will require an additional $250 shipping fee. Hopefully I can find a shipping option that will reduce this cost.</p>
                 <h1 class="column-title">Purchasing</h1>
-                <p class="description">I am actively experimenting with better options for accepting payments.</p>
+                <p class="description">I am actively working on setting up a process for actually ordering the prints. I am completely new to this, and it may take some time. I appreciate your patience and interest.</p>
+                {/* <p class="description">I am actively experimenting with better options for accepting payments.</p>
                 <p class="description">The simplest (and cheapest) method right now is to allow those interested to submit a Google form. This method involves me sending you a PayPal request for the total cost after I receive confirmation of your ownership and order.</p>
                 <p class="description"><a href="https://forms.gle/teW5aq1QkDMLZhsL7">Use this form to submit your information</a>.</p>
-                <p class="description">This process is constantly in development, so I appreciate your patience and interest in these projects. It means the world.</p>
+                <p class="description">This process is constantly in development, so I appreciate your patience and interest in these projects. It means the world.</p> */}
 
                 <figure>
                     <div class="flex-col"><a href="https://www.artblocks.io/token/259000082"><img class="artImage" src={bigPrint} /></a></div>

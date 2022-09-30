@@ -4642,6 +4642,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _images_33_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../images/33.png */ "./src/images/33.png");
 /* harmony import */ var _images_printing_signature_jpg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../images/printing/signature.jpg */ "./src/images/printing/signature.jpg");
 /* harmony import */ var _images_printing_thoughts_jpg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../images/printing/thoughts.jpg */ "./src/images/printing/thoughts.jpg");
+/* harmony import */ var _images_printing_big_print_jpg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../images/printing/big-print.jpg */ "./src/images/printing/big-print.jpg");
+
 
 
 
@@ -4736,7 +4738,14 @@ const IndexPage = ({
     href: "https://forms.gle/teW5aq1QkDMLZhsL7"
   }, "Use this form to submit your information"), "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     class: "description"
-  }, "This process is constantly in development, so I appreciate your patience and interest in these projects. It means the world.")));
+  }, "This process is constantly in development, so I appreciate your patience and interest in these projects. It means the world."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    class: "flex-col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://www.artblocks.io/token/259000082"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    class: "artImage",
+    src: _images_printing_big_print_jpg__WEBPACK_IMPORTED_MODULE_14__.default
+  }))))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
@@ -16029,6 +16038,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/8-cfdc8bd9535d6049d87cb63620803a5d.png");
+
+/***/ }),
+
+/***/ "./src/images/printing/big-print.jpg":
+/*!*******************************************!*\
+  !*** ./src/images/printing/big-print.jpg ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/big-print-a49886cd3c46f3f1c6ecb00359e025c8.jpg");
 
 /***/ }),
 
