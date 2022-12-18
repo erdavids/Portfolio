@@ -36,6 +36,11 @@ import cu1 from "../images/chord/token-66.png"
 import cu2 from "../images/chord/token-379.png"
 import cu3 from "../images/chord/token-155.png"
 
+import ug1 from "../images/ug/1.png"
+import ug2 from "../images/ug/2.png"
+import ug3 from "../images/ug/3.png"
+
+
 
 const IndexPage = ({
       data: {
@@ -66,8 +71,15 @@ const IndexPage = ({
                 <p class="description">I've been making <a href="https://github.com/erdavids/Generative-Art">Generative Art</a> through code since around 2018. Many of my projects use a simple technique of deforming the corners of a rectangle.</p>
                 <p class="description"></p>
                 <p class="description">I could never say thank you enough for all the opportunities I've experienced and the support I've been given.</p>
-                <p class="description">You can see my projects either on <a href="https://www.artblocks.io/user/0xc0f11179732cb1c7fde61201588506249de21dc1">Art Blocks</a> or <a href="https://www.fxhash.xyz/u/Eric%20Davidson">FxHash</a>.</p>
+                <p class="description">You can see my projects either on <a href="https://www.artblocks.io/user/0xc0f11179732cb1c7fde61201588506249de21dc1">Art Blocks</a> or <a href="https://www.fxhash.xyz/u/Eric%20Davidson">FxHash</a>, and keep up with what I'm doing on <a href="https://twitter.com/TheBuffED">Twitter</a>.</p>
 
+                <h2>Current Work-in-Progress</h2>
+                <p class="description">The elements of this project are inspired by the early stages of the creative process, sketches from famous artists like Anni Albers and Kenneth Martin, and pages from my own various notebooks.</p>
+                <div class="flex-grid-container">
+                <img class="artImage" src={ug1} />
+                <img class="artImage" src={ug3} />
+                <img class="artImage" src={ug2} />
+                </div>
 
                 <h2>Endeavor</h2>
                 <div class="flex-grid-container">
@@ -75,6 +87,7 @@ const IndexPage = ({
                 <img class="artImage" src={end2} />
                 <img class="artImage" src={end3} />
                 </div>
+
 
                 <h2>Departure Within Shattered Windmills</h2>
                 <div class="flex-grid-container">
