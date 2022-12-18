@@ -21,10 +21,10 @@ const Header = () => {
             </span>
             {/* <Link to="/pricing"><button class="hidden-button login-top-link">Pricing</button></Link> */}
             {/* <Link to="/"><a class="hidden-button login-top-link">Projects</a></Link> */}
-            <Link to="/about"><a class="hidden-button login-top-link">About</a></Link>
+            {/* <Link to="/about"><a class="hidden-button login-top-link">About</a></Link>
             <Link to="/blog"><a class="hidden-button login-top-link">Writing</a></Link>
             <Link to="/prints"><a class="hidden-button login-top-link">Prints</a></Link>
-            <Link to="/art"><a class="hidden-button login-top-link">Art</a></Link>
+            <Link to="/art"><a class="hidden-button login-top-link">Art</a></Link> */}
 
 
 

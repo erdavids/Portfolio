@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Solway&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 * {
-    font-family: 'Solway', serif;
+  font-family: 'Roboto', sans-serif;
     font-size: 18px;
     color: #484848;
+}
+
+h2 {
+  font-size: 24px;
 }
 
 li {
@@ -15,7 +19,7 @@ hr {
 }
 
 html {
-    background-color: white;
+    background-color: #FAF0E1;
 }
 
 a {
@@ -24,7 +28,7 @@ a {
 }
 
 .content {
-    width: 60%;
+    width: 65%;
     margin: 0 auto;
 }
     /* background-color:#F1E8E3;
@@ -63,12 +67,20 @@ a {
   }
 
   .artImage {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
+  .centerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 
   img {
-    max-width:100%;
+    max-width:33%;
+    margin: 8px;
+    box-shadow: 5px 5px 8px black;
   }
   
 @media (max-width: 720px) {

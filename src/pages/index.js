@@ -12,16 +12,29 @@ import PostFull from "../components/post-full"
 
 import Toggle from "react-toggle"
 
-import mas1 from "../images/masonry-1.png"
-import mas2 from "../images/masonry-2.png"
-import mas3 from "../images/masonry-3.png"
-import mas4 from "../images/masonry-4.png"
-import mas5 from "../images/masonry-5.png"
-import mas6 from "../images/masonry-6.png"
-import mas7 from "../images/masonry-7.png"
-import mas8 from "../images/masonry-8.png"
-import mas9 from "../images/masonry-9.png"
-import mas11 from "../images/masonry-11.png"
+import end1 from "../images/endeavor/1.png"
+import end2 from "../images/endeavor/2.png"
+import end3 from "../images/endeavor/3.png"
+
+import aps1 from "../images/aps/1.png"
+import aps2 from "../images/aps/2.png"
+import aps3 from "../images/aps/3.png"
+
+import dsw1 from "../images/dsw/1.png"
+import dsw2 from "../images/dsw/2.png"
+import dsw3 from "../images/dsw/3.png"
+
+import mas1 from "../images/mas/token-162.png"
+import mas2 from "../images/mas/token-26.png"
+import mas3 from "../images/mas/token-147.png"
+
+import tom1 from "../images/meadow/token-0.png"
+import tom2 from "../images/meadow/token-149.png"
+import tom3 from "../images/meadow/token-132.png"
+
+import cu1 from "../images/chord/token-66.png"
+import cu2 from "../images/chord/token-379.png"
+import cu3 from "../images/chord/token-155.png"
 
 
 const IndexPage = ({
@@ -50,46 +63,61 @@ const IndexPage = ({
         <>
             <Header />
             <div class="content">
-                {/* <p class="description">Hey there, I'm a software engineer and a generative artist.</p>
-                <p class="description">The coolest thing I've worked on recently is <a href="https://www.artblocks.io/project/259">Masonry</a>, which you can see some examples of below. If you want to explore the original prototype code for this project, <a href="https://github.com/erdavids/Generative-Art/tree/master/Projects/Masonry">check it out here</a>.</p>
-                 */}
+                <p class="description">I've been making <a href="https://github.com/erdavids/Generative-Art">Generative Art</a> through code since around 2018. Many of my projects use a simple technique of deforming the corners of a rectangle.</p>
+                <p class="description"></p>
+                <p class="description">I could never say thank you enough for all the opportunities I've experienced and the support I've been given.</p>
+                <p class="description">You can see my projects either on <a href="https://www.artblocks.io/user/0xc0f11179732cb1c7fde61201588506249de21dc1">Art Blocks</a> or <a href="https://www.fxhash.xyz/u/Eric%20Davidson">FxHash</a>.</p>
+
+
+                <h2>Endeavor</h2>
                 <div class="flex-grid-container">
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={mas8} /></div>
-                </figure>
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={mas9} /></div>
-                </figure>
+                <img class="artImage" src={end1} />
+                <img class="artImage" src={end2} />
+                <img class="artImage" src={end3} />
+                </div>
+
+                <h2>Departure Within Shattered Windmills</h2>
+                <div class="flex-grid-container">
+                <img class="artImage" src={dsw1} />
+                <img class="artImage" src={dsw2} />
+                <img class="artImage" src={dsw3} />
+                </div>
+
+                <h2>Thoughts of Meadow</h2>
+                <div class="flex-grid-container">
+                <img class="artImage" src={tom1} />
+                <img class="artImage" src={tom2} />
+                <img class="artImage" src={tom3} />
+                </div>
+
+                <h2>Across Paper Stones</h2>
+                <div class="flex-grid-container">
+                <img class="artImage" src={aps1} />
+                <img class="artImage" src={aps2} />
+                <img class="artImage" src={aps3} />
+                </div>
+
+                <h2>Chord Unknown</h2>
+                <div class="flex-grid-container">
+                <img class="artImage" src={cu1} />
+                <img class="artImage" src={cu2} />
+                <img class="artImage" src={cu3} />
+                </div>
+
+                <h2>Masonry</h2>
+                <div class="flex-grid-container">
+                <img class="artImage" src={mas1} />
+                <img class="artImage" src={mas2} />
+                <img class="artImage" src={mas3} />
                 </div>
 
 
-                <div class="flex-grid-container">
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={mas7} /></div>
-                </figure>
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={mas2} /></div>
-                </figure>
-                </div>
 
-                <div class="flex-grid-container">
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={mas6} /></div>
-                </figure>
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={mas4} /></div>
-                </figure>
-                </div>
-
-                <div class="flex-grid-container">
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={mas5} /></div>
-                </figure>
-                <figure>
-                    <div class="flex-col"><img class="artImage" src={mas11} /></div>
-                </figure>
-                </div>
-
+                {/* <div class="flex-grid-container">
+                <img class="artImage" src={mas9} />
+                <img class="artImage" src={mas9} />
+                <img class="artImage" src={mas9} />
+                </div> */}
                 
 
                 
