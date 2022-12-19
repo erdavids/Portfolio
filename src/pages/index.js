@@ -76,52 +76,52 @@ const IndexPage = ({
                 <h2>Current Work-in-Progress</h2>
                 <p class="description">The elements of this project are inspired by the early stages of the creative process, sketches from famous artists like Anni Albers and Kenneth Martin, and pages from my own various notebooks.</p>
                 <div class="flex-grid-container">
-                <img class="artImage" src={ug1} />
-                <img class="artImage" src={ug3} />
-                <img class="artImage" src={ug2} />
+                <img class="zoom artImage" src={ug1} />
+                <img class="zoom artImage" src={ug3} />
+                <img class="zoom artImage" src={ug2} />
                 </div>
 
                 <h2>Endeavor</h2>
                 <div class="flex-grid-container">
-                <img class="artImage" src={end1} />
-                <img class="artImage" src={end2} />
-                <img class="artImage" src={end3} />
+                <img class="zoom artImage" src={end1} />
+                <img class="zoom artImage" src={end2} />
+                <img class="zoom artImage" src={end3} />
                 </div>
 
 
                 <h2>Departure Within Shattered Windmills</h2>
                 <div class="flex-grid-container">
-                <img class="artImage" src={dsw1} />
-                <img class="artImage" src={dsw2} />
-                <img class="artImage" src={dsw3} />
+                <img class="zoom artImage" src={dsw1} />
+                <img class="zoom artImage" src={dsw2} />
+                <img class="zoom artImage" src={dsw3} />
                 </div>
 
                 <h2>Thoughts of Meadow</h2>
                 <div class="flex-grid-container">
-                <img class="artImage" src={tom1} />
-                <img class="artImage" src={tom2} />
-                <img class="artImage" src={tom3} />
+                <img class="zoom artImage" src={tom1} />
+                <img class="zoom artImage" src={tom2} />
+                <img class="zoom artImage" src={tom3} />
                 </div>
 
                 <h2>Across Paper Stones</h2>
                 <div class="flex-grid-container">
-                <img class="artImage" src={aps1} />
-                <img class="artImage" src={aps2} />
-                <img class="artImage" src={aps3} />
+                <img class="zoom artImage" src={aps1} />
+                <img class="zoom artImage" src={aps2} />
+                <img class="zoom artImage" src={aps3} />
                 </div>
 
                 <h2>Chord Unknown</h2>
                 <div class="flex-grid-container">
-                <img class="artImage" src={cu1} />
-                <img class="artImage" src={cu2} />
-                <img class="artImage" src={cu3} />
+                <img class="zoom artImage" src={cu1} />
+                <img class="zoom artImage" src={cu2} />
+                <img class="zoom artImage" src={cu3} />
                 </div>
 
                 <h2>Masonry</h2>
                 <div class="flex-grid-container">
-                <img class="artImage" src={mas1} />
-                <img class="artImage" src={mas2} />
-                <img class="artImage" src={mas3} />
+                <img class="zoom artImage" src={mas1} />
+                <img class="zoom artImage" src={mas2} />
+                <img class="zoom artImage" src={mas3} />
                 </div>
 
 
