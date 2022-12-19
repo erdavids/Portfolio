@@ -3,7 +3,7 @@
     padding: 20px;
     width: 65%;
     margin: 0 auto;
-    line-height:100px;
+    /* line-height:50px; */
 }
 
 .eric-image {
@@ -46,7 +46,7 @@ li {
 }
 
 h1 {
-    font-size: 1.25rem;
+    font-size: 1.6rem;
 }
 
 a {
@@ -55,13 +55,16 @@ a {
 }
 
 @media (max-width: 720px) {
+    h1 {
+        font-size: 1.25rem;
+    }
     .header {
         width: 95%;
         padding: 10px;
     }
 
     .page-logo-title {
-        font-size: 1.1rem;
+        font-size: 1.7rem;
     }
     
     .login-top-link {

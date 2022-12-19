@@ -7,7 +7,7 @@
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 li {
@@ -79,6 +79,12 @@ a {
   }
   
 @media (max-width: 720px) {
+  img {
+    max-width:30%;
+    margin: 1.5%;
+    box-shadow: 3px 3px 5px black;
+  }
+
     .flex-grid-container {
       display: flex;
       flex-direction: row;
@@ -91,6 +97,10 @@ a {
     .flex-col {
       flex-basis: 100%;
       padding: 0px;
+    }
+
+    h2 {
+      font-size: 18px;
     }
 
 }
