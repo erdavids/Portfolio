@@ -18,7 +18,7 @@
     "@material-ui/core": "^4.12.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "gatsby": "^3.9.0",
+    "gatsby": "^3.9.1",
     "gatsby-plugin-catch-links": "^3.9.0",
     "gatsby-plugin-google-analytics": "^3.9.0",
     "gatsby-plugin-image": "^1.10.1",
