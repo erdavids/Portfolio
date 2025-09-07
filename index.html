@@ -32,7 +32,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
 
   <div class="left-side">
-    <p class="main-text">Hi, I'm Eric and I'm writing<br> a book about <span style="padding-left: 6px; position:absolute" id="text"></span></p>
+    <!-- <p class="main-text">Hi, I'm Eric and I'm<br><span style="padding-left: 6px; position:absolute" id="text"></span></p> -->
 
     <p>I'm not a published author though. Yet.</p>
     <p>Right now I'm a software engineer with 7+ years of experience. I've used all kinds of technologies, but recently I've been learning React and spending more time in AWS.</p>
@@ -60,6 +60,7 @@
   </div>
 
   <div id="grab-me" class="right-side">
+        <p class="main-text">Hi, I'm Eric and I'm<br><span style="padding-left: 6px; position:absolute" id="text"></span></p>
     <div class="canvas">
       <div id="sketchdiv"></div>
     </div>
@@ -69,7 +70,7 @@
   <script>
     // List of sentences
     var _CONTENT = [
-      "Other Worlds", "Swordfighting", "Beautiful Magic"
+      "writing a book", "making games", "learning"
     ];
     // Current sentence being processed
     var _PART = 0;
