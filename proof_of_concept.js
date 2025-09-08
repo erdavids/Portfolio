@@ -27,10 +27,12 @@ const opts = {
   create: () => createPlant()
 };
 
-const pane = new Tweakpane();
-// const pane = new Tweakpane({
-//     container: document.getElementById('grab-me'),
-//   });
+// const pane = new Tweakpane();
+const pane = new Tweakpane({
+    container: document.getElementById('sketchdiv'),
+    title: 'Customization Options',
+    expanded: false,
+  });
 
 pane.addInput(opts, "grid_height", {
   min: 1,
@@ -145,7 +147,7 @@ function draw() {
 
   var iterations = 1;
 
-  var myDiv = document.getElementById("grab-me");
+  var myDiv = document.getElementById("sketchdiv");
   var myWidth = myDiv.clientWidth;
   var w = myWidth;
   // var w = opts.grid_width * opts.block_size + opts.grid_height * opts.block_size + opts.image_border_buff * opts.block_size

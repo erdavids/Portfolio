@@ -1,0 +1,22 @@
+.poem-div {
+    
+}
+
+.poem-area {
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+
+.ascii-div {
+}
+.ascii-area {
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+textarea {
+    border: 1px solid red;
+}
