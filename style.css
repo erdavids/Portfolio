@@ -1,21 +1,38 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins);
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono'); */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
   box-sizing: border-box;
   /* font-family: "Poppins"; */
 }
 
 body {
   /* font-family: "Poppins"; */
-  /* font-family: "Roboto Mono", monospace; */
-  color: #3C3836;
-  background: #FBF0C9;
+  color: #3c3836;
+  background: #fbf0c9;
 }
 
 .top-banner {
   padding: 15px;
 }
+
+.project-div {
+  border: 1px solid #ac3813;
+
+  .title {
+    background-color: #ac3813;
+    color: #fbf0c9;
+    padding: 5px;
+  }
+
+  .description {
+    padding: 5px;
+  }
+}
+
 
 .left-side {
   border: 1px solid red;
@@ -27,7 +44,7 @@ body {
 
 .right-side {
   border: 1px solid red;
-  padding: 15px;
+  padding: 20px;
   width: 80%;
 
   float: right;
@@ -37,8 +54,25 @@ body {
   /* text-align: center; */
 }
 
-.left-side-section-banner {
+.left-nav-item {
+  padding: 5px;
+}
 
+.selectable {
+  color: #458588;
+  transition: background 0.3s;
+  transition: color 0.3s;
+}
+
+.selected {
+  color: #fbf0c9;
+  background: #ac3813;
+  
+}
+
+.comment-text {
+  font-style: italic;
+  color: rgb(182, 173, 173)
 }
 
 .left-text {
@@ -51,8 +85,9 @@ body {
   font-size: 36px;
 }
 
-p, li {
-  font-size: 20px;
+p,
+li {
+  margin: 0;
 }
 
 h2 {
@@ -60,38 +95,37 @@ h2 {
 }
 
 a {
-    color: orange;
-    text-decoration: none;
+  color: orange;
+  text-decoration: none;
 }
 
-  .tp-dfwv {
-    position: fixed;
-  }
+.tp-dfwv {
+  position: fixed;
+}
 
 @media (max-width: 900px) {
   /* For mobile phones: */
 
-  p, li {
+  p,
+  li {
     font-size: 15px;
   }
-  
-    
+
   .tp-dfwv {
     display: none;
   }
-  
+
   [class*="main-text"] {
     font-size: 24px;
   }
-  
+
   [class*="right-side"] {
     display: none;
   }
-  
+
   [class*="left-side"] {
     width: 100%;
   }
-  
 }
 
 #container {
@@ -99,10 +133,11 @@ a {
 }
 
 #text {
-  display: inline-block;
-  vertical-align: middle;
-  color: #5598de;
-  letter-spacing: 2px;
+  color: #458588;
+}
+
+.typing-text {
+  font-size: 1rem;
 }
 
 @keyframes blink {
