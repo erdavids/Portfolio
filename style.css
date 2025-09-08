@@ -1,34 +1,44 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins);
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono'); */
 
 * {
   box-sizing: border-box;
-  font-family: "Poppins";
+  /* font-family: "Poppins"; */
 }
 
 body {
-  font-family: "Poppins";
-  color: #FCF0C9;
-  background: #32302F;
+  /* font-family: "Poppins"; */
+  /* font-family: "Roboto Mono", monospace; */
+  color: #3C3836;
+  background: #FBF0C9;
+}
+
+.top-banner {
+  padding: 15px;
 }
 
 .left-side {
   border: 1px solid red;
-  width: 30%;
+  width: 20%;
+  text-align: right;
   float: left;
-  padding: 5%;
-    background: #32302F;
+  padding: 15px;
 }
+
 .right-side {
   border: 1px solid red;
-  /* width: 50%; */
+  padding: 15px;
+  width: 80%;
+
+  float: right;
   height: 100%;
   /* position: fixed; */
-  top: 0;
-  right: 0;
-  background: gray;
-  color: #01ffa0;
 
-  text-align: center;
+  /* text-align: center; */
+}
+
+.left-side-section-banner {
+
 }
 
 .left-text {
@@ -46,7 +56,7 @@ p, li {
 }
 
 h2 {
-  color: #5598de;
+  color: #7591af;
 }
 
 a {
