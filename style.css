@@ -93,6 +93,10 @@ li {
   margin: 0;
 }
 
+.little-margin {
+  margin-bottom: 8px;
+}
+
 h2 {
   color: #7591af;
 }
