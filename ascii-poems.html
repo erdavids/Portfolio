@@ -2,7 +2,7 @@
 <html>
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-     
+
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-138963802-1"
@@ -27,20 +27,36 @@
 
   <body>
     <div id="top-home-link"></div>
-    <div style="width: 50%; margin: auto">
+    <div style="width: 80%; margin: auto">
       <p>Poem</p>
-    <div class="poem-div">
-      <textarea class="poem-area"></textarea>
-    </div>
-    <p>Ascii</p>
-    <div class="ascii-div">
-      <textarea rows="25" cols="25" id="ascii-area" class="ascii-area"></textarea>
-    </div>
+      <div class="poem-div">
+        <textarea
+          id="poem-area"
+          oninput="calculateAscii()"
+          class="poem-area"
+        ></textarea>
+      </div>
+      <p>Ascii</p>
+      <div class="ascii-div">
+        <textarea
+          rows="45"
+          cols="45"
+          id="ascii-area"
+          class="ascii-area"
+        ></textarea>
+      </div>
     </div>
 
     <script src="script.js"></script>
     <script src="Scripts/ascii-poem.js"></script>
-        <script src="Components/top-home-link-load.js"></script>
+    <script src="Components/top-home-link-load.js"></script>
+
+    <!-- <script>
+      function typeRandomly() {
+        console.log("Textarea content changed to: ");
+        // Add your desired JavaScript logic here
+      }
+    </script> -->
 
     <!-- <script src="Components/sidebar-load.js"></script> -->
   </body>
