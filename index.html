@@ -32,9 +32,9 @@
   <div id="sidebar"></div>
 
   <div id="grab-me" class="right-side">
-    <div id="about-page">
+    <div class="page-section" id="about-page" style="display: none">
       <div class="little-margin">
-        <span class="typing-text">Hi, I'm Eric and I'm... </span><span class="typing-text" id="text"></span>
+        <span class="typing-text">Hi, I'm Eric and these days I'm... </span><span class="typing-text" id="text"></span>
       </div>
       <!-- <p class="comment-text">My interests...</p> -->
       <p class="little-margin">
@@ -98,15 +98,62 @@
         </li>
       </ul>
     </div>
-    <div class="canvas">
-      <div id="sketchdiv"></div>
+
+    <div id="projects-page" class="page-section">
+      <p class="little-margin">I've accumulated quite a collection of "weekend projects" over the years, while a few of
+        them have gone on to claim months or even years of my life.</p>
+
+      <div class="project-div">
+        <p class="title"><span>Qyllscape</span><span style="float: right">A minimalist writing
+            editor</span></p>
+        <div class="description"> 
+          <p class="little-margin"><a src="https://www.youtube.com/watch?v=yoFllxt5Gfg">Example/demo</a> Website: <a href="https://www.qyllscape.com">www.qyllscape.com</a></p>
+          <p class="little-margin">
+            I primarily wanted a writing editor with responsive customization, so that I could somewhat view my writing as it would look in a book.</p>
+            <p class="little-margin">Over time, I added additional features such as lighting, which became one of my favorites.
+          </p>
+          <img style="width: 100%" src="images/basic-lighting.png" />
+        </div>
+      </div>
     </div>
+
+    <div id="games-page" class="page-section" style="display: none;">
+      <h2>Games</h2>
+      <p>This is your Games content.</p>
+    </div>
+
+    <div id="writing-page" class="page-section" style="display: none;">
+      <h2>Writing</h2>
+      <p>This is your Writing content.</p>
+    </div>
+
+    <div id="art-page" class="page-section" style="display: none;">
+      <h2>Generative Art</h2>
+      <p>This is your Generative Art content.</p>
+
+            <div class="project-div">
+        <p class="title"><span>Qyllscape</span><span style="float: right">A minimalist writing
+            editor</span></p>
+        <div class="description"> 
+          <p class="little-margin"><a src="https://www.youtube.com/watch?v=yoFllxt5Gfg">Example/demo</a> Website: <a href="https://www.qyllscape.com">www.qyllscape.com</a></p>
+          <p class="little-margin">
+            I primarily wanted a writing editor with responsive customization, so that I could somewhat view my writing as it would look in a book.</p>
+            <p class="little-margin">Over time, I added additional features such as lighting, which became one of my favorites.
+          </p>
+          <img style="width: 100%" src="images/paper-stones.png" />
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="canvas">
+      <div id="sketchdiv"></div>
+    </div> -->
   </div>
 
   <script src="proof_of_concept.js"></script>
-  <script src="script.js"></script>
 
   <script src="Components/sidebar-load.js"></script>
+  <script src="script.js"></script>
   <script>
     // List of sentences
     var _CONTENT = [

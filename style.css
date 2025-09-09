@@ -20,15 +20,16 @@ body {
 }
 
 .project-div {
-
+    border: 2px solid #50908e;
+    border-radius: 2px;
   .title {
     background-color: #50908e;
     color: #fbf0c9;
-    padding: 5px;
+    padding: 15px;
   }
 
   .description {
-    padding: 0px;
+    padding: 15px;
   }
 }
 
@@ -94,11 +95,12 @@ li {
 }
 
 .little-margin {
-  margin-bottom: 8px;
+  margin-bottom: 1rem;
 }
 
 h2 {
   color: #7591af;
+  margin: 0;
 }
 
 a {
