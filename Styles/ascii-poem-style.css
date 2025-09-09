@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap')
+
 .poem-div {
     
 }
 
 .poem-area {
-    background-color: black;
+    background-color: rgb(43, 43, 43);
     color: white;
     width: 100%;
 }
@@ -12,9 +15,12 @@
 .ascii-div {
 }
 .ascii-area {
+    font-family: "Courier Prime", monospace;
+    font-size: 1.5rem;
     background-color: black;
-    color: white;
+    color: rgb(156, 156, 156);
     width: 100%;
+    text-align: center;
 }
 
 textarea {

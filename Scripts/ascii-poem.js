@@ -1,5 +1,5 @@
 const textarea = document.getElementById("ascii-area");
-const chars = "abcdefghijklmnopqrstuvwxyz "; // characters to insert
+const chars = "!@#$%^&*.:[{}<>,/?~`]    "; // characters to insert
 
 const rows = textarea.rows;
 const cols = textarea.cols;
@@ -20,22 +20,27 @@ function randomInt(max) {
 }
 
 function typeRandomly() {
-  const text = textarea.value;
-  
-  // Pick a random position in the text
-  const pos = randomInt(text.length + 1);
-  
-  // Pick a random character
+const text = textarea.value;
+
+// Pick a random position
+const pos = randomInt(text.length);
+
+// Get the character at that position
+const currentChar = text[pos];
+
+// Only replace if it's not a newline
+if (currentChar !== '\n') {
   const char = chars[randomInt(chars.length)];
 
-  // Insert the character at that position
-  textarea.value = text.slice(0, pos - 1) + char + text.slice(pos);
+  // Replace the character at pos
+  textarea.value = text.slice(0, pos) + char + text.slice(pos + 1);
+}
 
   // Move the cursor to a new random spot
   const newPos = randomInt(textarea.value.length + 1);
-  textarea.focus();
+  // textarea.focus();
   textarea.setSelectionRange(newPos, newPos);
 }
 
 // Run every 500ms
-// setInterval(typeRandomly, 500);
+setInterval(typeRandomly, 1);

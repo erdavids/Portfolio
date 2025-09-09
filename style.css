@@ -20,16 +20,15 @@ body {
 }
 
 .project-div {
-  border: 1px solid #ac3813;
 
   .title {
-    background-color: #ac3813;
+    background-color: #50908e;
     color: #fbf0c9;
     padding: 5px;
   }
 
   .description {
-    padding: 5px;
+    padding: 0px;
   }
 }
 
@@ -67,7 +66,11 @@ body {
 .selected {
   color: #fbf0c9;
   background: #ac3813;
-  
+  transition: color 0.3s;
+  a {
+    color: #fbf0c9;
+    transition: color 0.3s;
+  }
 }
 
 .comment-text {
@@ -95,7 +98,7 @@ h2 {
 }
 
 a {
-  color: orange;
+  color: #50908e;
   text-decoration: none;
 }
 
